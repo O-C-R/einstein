@@ -1,5 +1,8 @@
 ArrayList<Citation> citations = new ArrayList();
-
+Citation currentCitation;
+Circle overlayCircle;
+boolean globalRollover;
+float closestDistance;
 
 void setup() {
   size(1400,900,P3D);
@@ -8,24 +11,42 @@ void setup() {
 }
 
 void draw() {
+  globalRollover = false;
   background(255);
 
   for (Citation c:citations) {
-   float x = map(c.year, 1900, 2014, -100, width - 100);
-   float y = height/2 + map(c.rank, 1, 1000, -400, 200);
-   float s = sqrt(c.citeCount); 
-   Circle circ = new Circle(x,y,s);
-   circ.rollover(mouseX, mouseY, s);
-   circ.display();
+    
+   c.circle.display(false);
+   c.circle.rollover(mouseX, mouseY, c.circle.diam);
    
-   if(circ.rollover) {
-     text(c.authors, 100, 700);
-     text(c.title, 100, 720);
-     text(c.year, 100, 740);
-     text("Rank: "+ c.rank, 100, 760);
-     text("Citations: "+ c.citeCount, 100, 780);
-   }
+   if(c.circle.rollover) {
+     closestDistance = 100;
+     //if this is the closest one set it to currentCitation
+     float distance = c.circle.distanceToCenter(mouseX, mouseY);
+     if (distance < closestDistance) {
+       closestDistance = distance;
+       println(closestDistance);
+       currentCitation = c;
+       overlayCircle = c.circle;
+       globalRollover = true;
+       //c.circle.display(true);
+     }  
+    }
   }
+   
+  //over here you should draw the overlay
+  //ive made a pseudo global boolean 
+  if(globalRollover){
+     overlayCircle.display(true);
+     fill(0, 100);
+     text(currentCitation.authors, 100, 700);
+     text(currentCitation.title, 100, 720);
+     text(currentCitation.year, 100, 740);
+     text("Rank: "+ currentCitation.rank, 100, 760);
+     text("Citations: "+ currentCitation.citeCount, 100, 780); 
+  
+  }
+  
 }
 
 void loadCitations(String url) {

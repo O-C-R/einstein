@@ -11,6 +11,8 @@ class Citation {
   int rank;
   int year;
   
+  Circle circle;
+  
   Citation() {
 
   }
@@ -21,8 +23,14 @@ class Citation {
     title = r.getString("Title");
     year = r.getInt("Year");
     rank = r.getInt("GSRank");
+    makeCircle(year, rank, citeCount);
     return(this);
   }
   
-  
+  void makeCircle(int _year, int _rank, int _citeCount) {
+   float x = map(_year, 1900, 2014, -100, width - 100);
+   float y = height/2 + map(_rank, 1, 1000, -400, 200);
+   float s = sqrt(_citeCount); 
+   circle = new Circle(x,y,s);
+  }
 }
