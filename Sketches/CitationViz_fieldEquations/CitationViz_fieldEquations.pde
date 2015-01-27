@@ -34,8 +34,6 @@ void draw() {
     }
   }
    
-  //over here you should draw the overlay
-  //ive made a pseudo global boolean 
   if(globalRollover){
      overlayCircle.display(true);
      fill(0, 100);
