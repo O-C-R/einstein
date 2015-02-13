@@ -1,8 +1,9 @@
 // This will read the .gdf file that is exported from Gephi
 import java.util.Map;
 
-String dataFile = "AirlinesGDF.gdf";
-//String dataFile = "HeidlerExport01GDF.gdf";
+//String dataFile = "AirlinesGDF.gdf";
+String dataFile = "HeidlerExport01GDF.gdf";
+//String dataFile = "jazz.gdf";
 
 HashMap<Integer, Node> nodes = new HashMap();
 HashMap<String, Edge> edges = new HashMap();

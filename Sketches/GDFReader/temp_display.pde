@@ -16,7 +16,7 @@ void tempDisplayStuff(PGraphics pg) {
     pg.pushMatrix();
     pg.translate(n.pos.x, n.pos.y);
     pg.noStroke();
-    pg.fill(n.c, 30);
+    pg.fill(n.c, 130);
     pg.ellipse(0, 0, n.dims.x, n.dims.y);
     pg.popMatrix();
   }

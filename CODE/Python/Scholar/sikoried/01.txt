@@ -1,0 +1,198 @@
+%0 Book
+%T Nonlinearity & Functional Analysis: Lectures on Nonlinear Problems in Mathematical Analysis
+%A Berger, Melvyn S
+%V 74
+%@ 0080570445
+%D 1977
+%I Academic press
+
+
+%0 Book
+%T Global lorentzian geometry
+%A Beem, John K
+%A Ehrlich, Paul
+%A Easley, Kevin
+%V 202
+%@ 0824793242
+%D 1996
+%I CRC Press
+
+
+%0 Journal Article
+%T The slow learner in the classroom.
+%A Kephart, Newell C
+%D 1960
+%I Charles E. Merrill
+
+
+%0 Journal Article
+%T Metric-affine gauge theory of gravity: field equations, Noether identities, world spinors, and breaking of dilation invariance
+%A Hehl, Friedrich W
+%A McCrea, J Dermott
+%A Mielke, Eckehard W
+%A Ne'eman, Yuval
+%J Physics Reports
+%V 258
+%N 1
+%P 1-171
+%@ 0370-1573
+%D 1995
+%I Elsevier
+
+
+%0 Book
+%T Electrodynamics of continua
+%A Eringen, A Cemal
+%A Maugin, Gérard A
+%@ 0387970053
+%D 1990
+%I Springer
+
+
+%0 Journal Article
+%T Quantized fields and particle creation in expanding universes. I
+%A Parker, Leonard
+%J Physical Review
+%V 183
+%N 5
+%P 1057
+%D 1969
+%I APS
+
+
+%0 Book
+%T Behavior therapy: Techniques and empirical findings.
+%A Rimm, David C
+%A Masters, John C
+%@ 0125888503
+%D 1974
+%I Academic Press
+
+
+%0 Journal Article
+%T Classical electrodynamics in terms of direct interparticle action
+%A Wheeler, John Archibald
+%A Feynman, Richard Phillips
+%J Reviews of Modern Physics
+%V 21
+%N 3
+%P 425
+%D 1949
+%I APS
+
+
+%0 Book
+%T Compact stars
+%A Glendenning, Norman K
+%@ 0387989773
+%D 2000
+%I Springer-Verlag New York
+
+
+%0 Book
+%T Gravitation and inertia
+%A Ciufolini, Ignazio
+%@ 0691033234
+%D 1995
+%I Princeton university press
+
+
+%0 Book
+%T The human becoming school of thought: A perspective for nurses and other health professionals
+%A Parse, Rosemarie Rizzo
+%@ 0761905839
+%D 1998
+%I Sage Publications, Inc
+
+
+%0 Book
+%T Modeling decisions: information fusion and aggregation operators
+%A Narukawa, Yasuo
+%@ 3540687912
+%D 2007
+%I Springer Science & Business Media
+
+
+%0 Book
+%T Foundations of classical electrodynamics: Charge, flux, and metric
+%A Hehl, Friedrich W
+%A Obukhov, I︠U︡riĭ Nikolaevich
+%V 33
+%@ 0817642226
+%D 2003
+%I Springer Science & Business Media
+
+
+%0 Journal Article
+%T Extended theories of gravity
+%A Capozziello, Salvatore
+%A De Laurentis, Mariafelicia
+%J Physics Reports
+%V 509
+%N 4
+%P 167-321
+%@ 0370-1573
+%D 2011
+%I North-Holland
+
+
+%0 Journal Article
+%T Heterochromatin, satellite DNA, and cell function
+%A Yunis, Jorge J
+%A Yasmineh, Walid G
+%J Science
+%V 174
+%N 4015
+%P 1200-1209
+%@ 0036-8075
+%D 1971
+%I American Association for the Advancement of Science
+
+
+%0 Journal Article
+%T On the origin of inertia
+%A Sciama, Dennis W
+%J Monthly Notices of the Royal Astronomical Society
+%V 113
+%N 1
+%P 34-42
+%@ 0035-8711
+%D 1953
+%I Oxford University Press
+
+
+%0 Journal Article
+%T The curvature of constitutional space: What lawyers can learn from modern physics
+%A Tribe, Laurence H
+%J Harvard Law Review
+%P 1-39
+%@ 0017-811X
+%D 1989
+%I JSTOR
+
+
+%0 Book
+%T The edge of organization: Chaos and complexity theories of formal social systems
+%A Marion, Russ
+%@ 1452263760
+%D 1999
+%I Sage Publications
+
+
+%0 Book
+%T Dark energy: theory and observations
+%A Amendola, Luca
+%A Tsujikawa, Shinji
+%@ 0521516005
+%D 2010
+%I Cambridge University Press
+
+
+%0 Book
+%T The indispensability of mathematics
+%A Colyvan, Mark
+%@ 019513754X
+%D 2001
+%I Oxford University Press
+
+
