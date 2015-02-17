@@ -208,15 +208,16 @@ class ScholarArticle(object):
         self.attrs = {
             'title':         [None, 'Title',          0],
             'url':           [None, 'URL',            1],
-            'year':          [None, 'Year',           2],
-            'num_citations': [0,    'Citations',      3],
-            'num_versions':  [0,    'Versions',       4],
-            'cluster_id':    [None, 'Cluster ID',     5],
-            'url_pdf':       [None, 'PDF link',       6],
-            'url_citations': [None, 'Citations list', 7],
-            'url_versions':  [None, 'Versions list',  8],
-            'url_citation':  [None, 'Citation link',  9],
-            'authors':       [None, 'Authors',       10],
+            'authors':       [None, 'Authors',        2],
+            'year':          [None, 'Year',           3],
+            'num_citations': [0,    'Citations',      4],
+            'num_versions':  [0,    'Versions',       5],
+            'cluster_id':    [None, 'Cluster ID',     6],
+            'url_pdf':       [None, 'PDF link',       7],
+            'url_citations': [None, 'Citations list', 8],
+            'url_versions':  [None, 'Versions list',  9],
+            'url_citation':  [None, 'Citation link',  10],
+            
         }
 
         # The citation data in one of the standard export formats,
@@ -467,7 +468,8 @@ class ScholarArticleParser120726(ScholarArticleParser):
     """
     def _parse_article(self, div):
         self.article = ScholarArticle()
-        authors_ = []
+        
+        authors_ = [] #declare local array to store authors
 
         for tag in div:
             if not hasattr(tag, 'name'):
@@ -525,18 +527,18 @@ class ScholarArticleParser120726(ScholarArticleParser):
                 if tag.find('div', {'class': 'gs_fl'}):
                     self._parse_links(tag.find('div', {'class': 'gs_fl'}))
 
-                if tag.find('div', {'class': 'gs_a'}):
-                    auths = self._parse_links(tag.find('div', {'class': 'gs_a'}))
-                    self.article['authors'] = auths
+                # if tag.find('div', {'class': 'gs_a'}):
+                #     auths = self._parse_links(tag.find('div', {'class': 'gs_a'}))
+                #     self.article['authors'] = auths
 
-        print(self.article['title'])
-        print(self.article['year'])
-        print(self.article['authors'])
-        print(authors_[0])
-        print(self.article['cluster_id'])
-        print(self.article['url'])
-        print(self.article['num_citations'])
-        print(self.article['url_citations'])
+        # print(self.article['title'])
+        # print(self.article['year'])
+        # print(self.article['authors'])
+        # print(authors_[0])
+        # print(self.article['cluster_id'])
+        # print(self.article['url'])
+        # print(self.article['num_citations'])
+        # print(self.article['url_citations'])
 
 
 class ScholarQuery(object):
