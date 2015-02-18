@@ -1018,6 +1018,7 @@ scholar.py -c 1 -C 17749203648027613321 --citation bt
 # does not contain the words "quantum" and "theory":
 scholar.py -c 5 -a "albert einstein" -t --none "quantum theory" --after 1970"""
 
+
     fmt = optparse.IndentedHelpFormatter(max_help_position=50, width=100)
     parser = optparse.OptionParser(usage=usage, formatter=fmt)
     group = optparse.OptionGroup(parser, 'Query arguments',
