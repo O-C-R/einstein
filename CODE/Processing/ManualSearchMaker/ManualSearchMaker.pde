@@ -18,11 +18,18 @@ void setup() {
       ArrayList<JSONObject> jsons = makeJSONObjects(jsonString);
       println("total jsons: " + jsons.size());
       for (JSONObject json : jsons) {
-        String thisClusterId = json.getString("Cluster ID");
-        int citeCount = json.getInt("Citations");
-        int year = json.getInt("Year");
-        Thing newThing = new Thing(thisClusterId, citeCount, year);
-        labelsToMake.put(thisClusterId, newThing);
+        // check for nulls.  if so skip
+        try {
+          String thisClusterId = json.getString("Cluster ID");
+          int citeCount = json.getInt("Citations");
+          int year = json.getInt("Year");
+          Thing newThing = new Thing(thisClusterId, citeCount, year);
+          labelsToMake.put(thisClusterId, newThing);
+        }
+        catch (Exception e) {
+          println("exception when making newThing for json:");
+          println(json);
+        }
       }
     }
   }
@@ -72,10 +79,16 @@ public ArrayList<JSONObject> makeJSONObjects(String jsonStringIn) {
   String[] answers = split(jsonStringIn, "}{");
   for (String s : answers) {
     if (s.charAt(0) != '{') s = "{" + s;
-    if (s.charAt(s.length() -1 ) != '}') s += '}'; 
-    JSONObject json = JSONObject.parse(s);
-    //println(json);
-    newObjs.add(json);
+    if (s.charAt(s.length() -1 ) != '}') s += '}';
+
+    try { 
+      JSONObject json = JSONObject.parse(s);
+      //println(json);
+      newObjs.add(json);
+    }
+    catch (Exception e) {
+      println("problem making json object for string: " + s);
+    }
   }
   return newObjs;
 } // end makeJSONObjects
