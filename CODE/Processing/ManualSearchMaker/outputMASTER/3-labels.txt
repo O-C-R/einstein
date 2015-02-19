@@ -17,6 +17,7 @@ python scholar.py --cites --cluster-id 8241988029677197660 --json --start 0 >> 3
 python scholar.py --cites --cluster-id 16223135719897629050 --json --start 0 >> 3/16223135719897629050-1.json
 python scholar.py --cites --cluster-id 5915866172981566317 --json --start 0 >> 3/5915866172981566317-1.json
 python scholar.py --cites --cluster-id 1880948881301794679 --json --start 0 >> 3/1880948881301794679-1.json
+**
 python scholar.py --cites --cluster-id 5220543107042880529 --json --start 0 >> 3/5220543107042880529-1.json
 python scholar.py --cites --cluster-id 15702034331667910159 --json --start 0 >> 3/15702034331667910159-1.json
 python scholar.py --cites --cluster-id 6892682849836142198 --json --start 0 >> 3/6892682849836142198-1.json
@@ -86,9 +87,11 @@ python scholar.py --cites --cluster-id 10650404028368958861 --json --start 0 >> 
 python scholar.py --cites --cluster-id 11235601579137545941 --json --start 0 >> 3/11235601579137545941-1.json
 python scholar.py --cites --cluster-id 8323041867074064223 --json --start 0 >> 3/8323041867074064223-1.json
 python scholar.py --cites --cluster-id 2101221661931891468 --json --start 0 >> 3/2101221661931891468-1.json
+**
 python scholar.py --cites --cluster-id 4650143059439853068 --json --start 0 >> 3/4650143059439853068-1.json
 python scholar.py --cites --cluster-id 18203790892406879924 --json --start 0 >> 3/18203790892406879924-1.json
 python scholar.py --cites --cluster-id 6089430789798386676 --json --start 0 >> 3/6089430789798386676-1.json
+&&
 python scholar.py --cites --cluster-id 789468812864626323 --json --start 0 >> 3/789468812864626323-1.json
 python scholar.py --cites --cluster-id 342103249347579926 --json --start 0 >> 3/342103249347579926-1.json
 python scholar.py --cites --cluster-id 14381482001435739969 --json --start 0 >> 3/14381482001435739969-1.json
