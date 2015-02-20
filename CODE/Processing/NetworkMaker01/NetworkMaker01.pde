@@ -9,8 +9,10 @@ void setup() {
   
   allArticles = loadAllArticles(sketchPath("") + mainDirectory);
   
-  for (Article a : allArticles) println(a.toSimplifiedString());
+  //for (Article a : allArticles) println(a.toSimplifiedString());
   
-  quickPlot1(g);
+  //quickPlot1(g);
   outputGephiFiles();
+  
+  exit();
 } // end setup

@@ -1,7 +1,7 @@
 //
 void outputGephiFiles() {
   // master file
-  PrintWriter output = createWriter("gephi/masterList.csv");
+  PrintWriter output = createWriter("gephi/nodes.csv");
   output.println("clusterId,year,citations,versions,title");
   for (Article a : allArticles) {
     output.println(a.clusterId+ "," +a.year+","+a.citations+","+a.versions+","+a.title);
