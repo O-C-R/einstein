@@ -115,6 +115,8 @@ import os
 import sys
 import re
 import json
+import httplib
+import urllib2
 
 try:
     # Try importing for Python 3
@@ -128,6 +130,7 @@ except ImportError:
     from urllib2 import Request, build_opener, HTTPCookieProcessor
     from urllib import quote
     from cookielib import MozillaCookieJar
+
 
 # Import BeautifulSoup -- try 4 first, fall back to older
 try:
@@ -170,6 +173,7 @@ class ScholarConf(object):
     # USER_AGENT = 'Mozilla/5.0 (X11; U; FreeBSD i386; en-US; rv:1.9.2.9) Gecko/20100913 Firefox/3.6.9'
     # Let's update at this point (3/14):
     USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0'
+    # USER_AGENT =  'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.101 Safari/537.36'
 
     # If set, we will use this file to read/save cookies to enable
     # cookie use across sessions.
@@ -961,7 +965,19 @@ class ScholarQuerier(object):
         try:
             ScholarUtils.log('info', 'requesting %s' % url)
 
-            req = Request(url=url, headers={'User-Agent': ScholarConf.USER_AGENT})
+            #proxy_support = urllib2.ProxyHandler({"http" : "127.0.0.1:8118"})
+            # opener = urllib2.build_opener(proxy_support) 
+            # opener.addheaders = [('User-agent', 'Mozilla/5.0')]
+
+            proxy = "127.0.0.1:8118"
+            proxies = {"http":"http://%s" % proxy}
+            headers={'User-Agent': ScholarConf.USER_AGENT}
+
+            proxy_support = urllib2.ProxyHandler(proxies)
+            opener = urllib2.build_opener(proxy_support, urllib2.HTTPHandler(debuglevel=1)) 
+            urllib2.install_opener(opener)
+
+            req = Request(url, None, headers)
             hdl = self.opener.open(req)
             html = hdl.read()
 
