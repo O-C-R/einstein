@@ -11,8 +11,9 @@ public ArrayList<Article> loadAllArticles(String directoryName) {
     String folderName = split(folderFullName, "/")[split(folderFullName, "/").length - 1];
     try {
       int folderNumber = Integer.parseInt(folderName);
-      //println("folderNumber: " + folderNumber);
+
       String[] allFiles = OCRUtils.getFileNames(folderFullName, false);
+      println("folderNumber: " + folderNumber + " has: " + allFiles.length + " files");
       for (String fileName : allFiles) {
         String parentCluster = splitTokens(fileName, "/.\\")[splitTokens(fileName, "/.\\").length - 2];
         parentCluster = split(parentCluster, "-")[0];
@@ -21,33 +22,45 @@ public ArrayList<Article> loadAllArticles(String directoryName) {
           parentArticle = (Article)newArticlesHM.get(parentCluster);
         }
 
-        String jsonString = join(loadStrings(fileName), "");
-        ArrayList<JSONObject> jsons = makeJSONObjects(jsonString);
-        //println("total jsons for fileName: " + fileName + " is " + jsons.size());
-        // make articles from jsons
-        for (JSONObject json : jsons) {
-          Article newArticle = new Article(json);
-          if (newArticle.isValid) {
-            // save this new article to the overall list
-            if (!newArticlesHM.containsKey(newArticle.clusterId)) {
-              newArticlesHM.put(newArticle.clusterId, newArticle);
-              newArticles.add(newArticle);
-              // assign cite children if parent exists
-            }
+        // try catch for null file
+        try {
+          String jsonString = join(loadStrings(fileName), "");
+          ArrayList<JSONObject> jsons = makeJSONObjects(jsonString);
+          //println("total jsons for fileName: " + fileName + " is " + jsons.size());
+          // make articles from jsons
+          for (JSONObject json : jsons) {
+            try {
+              Article newArticle = new Article(json);
+              if (newArticle.isValid) {
+                // save this new article to the overall list
+                if (!newArticlesHM.containsKey(newArticle.clusterId)) {
+                  newArticlesHM.put(newArticle.clusterId, newArticle);
+                  newArticles.add(newArticle);
+                  // assign cite children if parent exists
+                }
 
-            // switch to childArticle to ensure that the same article is used
-            Article childArticle = (Article)newArticlesHM.get(newArticle.clusterId);
-            if (parentArticle != null) {
-              parentArticle.addCiter(childArticle);
-              childArticle.addCites(parentArticle);
-            } else {
-              //println("PARENT ARTICLE IS NULL FOR CLUSTER: " + parentCluster);
+                // switch to childArticle to ensure that the same article is used
+                Article childArticle = (Article)newArticlesHM.get(newArticle.clusterId);
+                if (parentArticle != null) {
+                  parentArticle.addCiter(childArticle);
+                  childArticle.addCites(parentArticle);
+                } else {
+                  //println("PARENT ARTICLE IS NULL FOR CLUSTER: " + parentCluster);
+                }
+              }
+            }
+            catch (Exception ee) {
+              println("exception when making new Article from json");
             }
           }
+        } 
+        catch (Exception aa) {
+          println("exception when loading file: " + fileName);
         }
       }
     }
     catch (Exception e) {
+      println("exception for folder: " + folderName);
     }
   }
 
