@@ -28,6 +28,7 @@ class Article {
         isValid = false;
       }
     }
+    
     if (json.hasKey("Title")) {
       try {
         title = json.getString("Title");
@@ -91,6 +92,8 @@ class Article {
       catch (Exception e) {
       }
     }
+    
+        
   } // end constructor
 
   //

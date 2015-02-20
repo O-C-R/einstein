@@ -78,6 +78,9 @@ public ArrayList<JSONObject> makeJSONObjects(String jsonStringIn) {
     if (s.charAt(s.length() -1 ) != '}') s += '}';
 
     try { 
+      // replace any stray \\ marks because the db is weird sometimes
+      s = s.replace("\\\"", "");
+      
       JSONObject json = JSONObject.parse(s);
       //println(json);
       newObjs.add(json);
