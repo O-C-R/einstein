@@ -649,6 +649,58 @@ class CitesClusterScholarQuery(ScholarQuery):
 
         return self.SCHOLAR_CLUSTER_URL % urlargs
 
+#GH added this class
+class ByYearCitesClusterScholarQuery(ScholarQuery):
+    """
+    This version just pulls up citations of an article cluster whose ID we already
+    know about.
+    """
+    SCHOLAR_CLUSTER_URL = ScholarConf.SCHOLAR_SITE + '/scholar?' \
+        + 'oi=bibs&cites=%(cluster)s' \
+        + '&start=%(start)s' \
+        + '&as_ylo=%(ylo)s' \
+        + '&as_yhi=%(yhi)s' 
+
+    def __init__(self, cluster=None):
+        ScholarQuery.__init__(self)
+        self.cluster = None
+        self.set_cluster(cluster)
+        self.timeframe = [None, None]
+
+    def set_cluster(self, cluster):
+        """
+        Sets search to a Google Scholar results cluster ID.
+        """
+        msg = 'cluster ID must be numeric'
+        self.cluster = ScholarUtils.ensure_int(cluster, msg)
+
+    def set_timeframe(self, start=None, end=None):
+        """
+        Sets timeframe (in years as integer) in which result must have
+        appeared. It's fine to specify just start or end, or both.
+        """
+        if start:
+            start = ScholarUtils.ensure_int(start)
+        if end:
+            end = ScholarUtils.ensure_int(end)
+        self.timeframe = [start, end]  
+
+    def get_url(self):
+        if self.cluster is None:
+            raise QueryArgumentError('cluster query needs cluster ID')
+
+        urlargs = {'cluster': self.cluster,
+                   'ylo': self.timeframe[0] or '',
+                   'yhi': self.timeframe[1] or '',
+                   'num': self.num_results or ScholarConf.MAX_PAGE_RESULTS,
+                   'start': self.start or 0}
+
+        for key, val in urlargs.items():
+            urlargs[key] = quote(str(val))
+
+        return self.SCHOLAR_CLUSTER_URL % urlargs   
+   
+
 class SearchScholarQuery(ScholarQuery):
     """
     This version represents the search query parameters the user can
@@ -1110,10 +1162,15 @@ scholar.py -c 5 -a "albert einstein" -t --none "quantum theory" --after 1970"""
 
     # Sanity-check the options: if they include a cluster ID query, it
     # makes no sense to have search arguments:
+    # if options.cluster_id is not None:
+    #     if options.author or options.allw or options.some or options.none \
+    #        or options.phrase or options.title_only or options.pub \
+    #        or options.after or options.before:
+    #         print 'Cluster ID queries do not allow additional search arguments.'
+    #         return 1
     if options.cluster_id is not None:
         if options.author or options.allw or options.some or options.none \
-           or options.phrase or options.title_only or options.pub \
-           or options.after or options.before:
+           or options.phrase or options.title_only or options.pub:
             print 'Cluster ID queries do not allow additional search arguments.'
             return 1
 
@@ -1136,9 +1193,17 @@ scholar.py -c 5 -a "albert einstein" -t --none "quantum theory" --after 1970"""
 
     if options.cluster_id:
         if options.cites:
-          query = CitesClusterScholarQuery(cluster=options.cluster_id)
+            if options.before or options.after:
+                query = ByYearCitesClusterScholarQuery(cluster=options.cluster_id)
+                query.set_timeframe(options.after, options.before)
+                print 'cites argument, before or after'
+                print(options.cites)
+            else:
+                query = CitesClusterScholarQuery(cluster=options.cluster_id)
+                print 'only cites argument'
         else:
-          query = ClusterScholarQuery(cluster=options.cluster_id)
+            query = ClusterScholarQuery(cluster=options.cluster_id)
+
     else:
         query = SearchScholarQuery()
         if options.author:
