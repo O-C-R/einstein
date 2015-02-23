@@ -1196,11 +1196,11 @@ scholar.py -c 5 -a "albert einstein" -t --none "quantum theory" --after 1970"""
             if options.before or options.after:
                 query = ByYearCitesClusterScholarQuery(cluster=options.cluster_id)
                 query.set_timeframe(options.after, options.before)
-                print 'cites argument, before or after'
-                print(options.cites)
+                #print 'cites argument, before or after'
+                #print(options.cites)
             else:
                 query = CitesClusterScholarQuery(cluster=options.cluster_id)
-                print 'only cites argument'
+                #print 'only cites argument'
         else:
             query = ClusterScholarQuery(cluster=options.cluster_id)
 
