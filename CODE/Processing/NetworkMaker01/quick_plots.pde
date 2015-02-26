@@ -22,7 +22,7 @@ public void quickPlot1(PGraphics pg) {
   
   
   // override
-  firstYear = 1985;
+  //firstYear = 1985;
 
   // do some positioning
   float sidePadding = 30f;
