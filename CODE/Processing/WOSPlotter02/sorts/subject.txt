@@ -1,0 +1,7 @@
+Physics -- count: 2199
+Chemistry -- count: 1602
+Materials Science -- count: 1592
+Science & Technology - Other Topics -- count: 978
+Energy & Fuels -- count: 317
+Optics -- count: 224
+ -- count: 1
