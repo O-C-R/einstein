@@ -1,0 +1,60 @@
+count: 00003	high: 0.9437	 avg: 0.7283	   word: gravitational redshift
+count: 00002	high: 0.5094	 avg: 0.4872	   word: general relativity
+count: 00001	high: 0.4404	 avg: 0.4404	   word: details
+count: 00001	high: 0.4448	 avg: 0.4448	   word: information
+count: 00001	high: 0.4450	 avg: 0.4450	   word: way
+count: 00001	high: 0.4504	 avg: 0.4504	   word: comparison
+count: 00001	high: 0.4641	 avg: 0.4641	   word: observations
+count: 00001	high: 0.4942	 avg: 0.4942	   word: deflection
+count: 00001	high: 0.6296	 avg: 0.6296	   word: braneworld version
+count: 00001	high: 0.6323	 avg: 0.6323	   word: classic tests
+count: 00001	high: 0.6614	 avg: 0.6614	   word: planet Mercury
+count: 00001	high: 0.6631	 avg: 0.6631	   word: observational data
+count: 00001	high: 0.6642	 avg: 0.6642	   word: General Relativity
+count: 00001	high: 0.6650	 avg: 0.6650	   word: additional parameter
+count: 00001	high: 0.7123	 avg: 0.7123	   word: higher dimensions
+count: 00001	high: 0.7179	 avg: 0.7179	   word: massless particles
+count: 00001	high: 0.7337	 avg: 0.7337	   word: perihelion shift
+count: 00001	high: 0.8800	 avg: 0.8800	   word: atomic spectral lines
+count: 00001	high: 0.9313	 avg: 0.9313	   word: spherically symmetric solution
+count: 00001	high: 0.3289	 avg: 0.3289	   word: case
+count: 00001	high: 0.3337	 avg: 0.3337	   word: properties
+count: 00001	high: 0.3368	 avg: 0.3368	   word: balls
+count: 00001	high: 0.3539	 avg: 0.3539	   word: perturbation
+count: 00001	high: 0.4717	 avg: 0.4717	   word: larger class
+count: 00001	high: 0.4756	 avg: 0.4756	   word: polytropic fluid
+count: 00001	high: 0.4993	 avg: 0.4993	   word: numerical support
+count: 00001	high: 0.5059	 avg: 0.5059	   word: multiple shells
+count: 00001	high: 0.5064	 avg: 0.5064	   word: single shells
+count: 00001	high: 0.5144	 avg: 0.5144	   word: constitutive equation
+count: 00001	high: 0.5231	 avg: 0.5231	   word: perfect fluids
+count: 00001	high: 0.5260	 avg: 0.5260	   word: numerical tools
+count: 00001	high: 0.5358	 avg: 0.5358	   word: rigidity parameter
+count: 00001	high: 0.6298	 avg: 0.6298	   word: different possible shapes
+count: 00001	high: 0.6335	 avg: 0.6335	   word: dominant energy condition
+count: 00001	high: 0.6470	 avg: 0.6470	   word: elastic body
+count: 00001	high: 0.6573	 avg: 0.6573	   word: finite radius
+count: 00001	high: 0.7820	 avg: 0.7820	   word: elastic matter models
+count: 00001	high: 0.8124	 avg: 0.8124	   word: John elastic materials
+count: 00001	high: 0.9133	 avg: 0.9133	   word: symmetric elastic bodies
+count: 00001	high: 0.3282	 avg: 0.3282	   word: solutions
+count: 00001	high: 0.3288	 avg: 0.3288	   word: direction
+count: 00001	high: 0.3315	 avg: 0.3315	   word: implications
+count: 00001	high: 0.3321	 avg: 0.3321	   word: spin
+count: 00001	high: 0.3335	 avg: 0.3335	   word: variation
+count: 00001	high: 0.3368	 avg: 0.3368	   word: photon
+count: 00001	high: 0.3832	 avg: 0.3832	   word: geometry
+count: 00001	high: 0.4514	 avg: 0.4514	   word: present paper
+count: 00001	high: 0.4554	 avg: 0.4554	   word: numerical calculations
+count: 00001	high: 0.4632	 avg: 0.4632	   word: new challenges
+count: 00001	high: 0.4642	 avg: 0.4642	   word: great effect
+count: 00001	high: 0.4690	 avg: 0.4690	   word: Newtonian approximation
+count: 00001	high: 0.4701	 avg: 0.4701	   word: angular momentum
+count: 00001	high: 0.4733	 avg: 0.4733	   word: diagonal terms
+count: 00001	high: 0.4738	 avg: 0.4738	   word: equatorial region
+count: 00001	high: 0.4744	 avg: 0.4744	   word: Kerr family
+count: 00001	high: 0.5191	 avg: 0.5191	   word: central body
+count: 00001	high: 0.5416	 avg: 0.5416	   word: rotation
+count: 00001	high: 0.6032	 avg: 0.6032	   word: space time
+count: 00001	high: 0.6168	 avg: 0.6168	   word: consideration spherical symmetry
+count: 00001	high: 0.6306	 avg: 0.6306	   word: spherically symmetric Schwarzschild

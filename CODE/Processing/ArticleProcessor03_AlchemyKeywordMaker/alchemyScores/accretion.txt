@@ -1,0 +1,190 @@
+count: 00003	high: 0.9916	 avg: 0.7962	   word: black holes
+count: 00003	high: 0.9784	 avg: 0.7318	   word: black hole
+count: 00002	high: 0.3102	 avg: 0.2767	   word: accretion
+count: 00002	high: 0.3359	 avg: 0.2897	   word: presence
+count: 00002	high: 0.5447	 avg: 0.4150	   word: event horizon
+count: 00002	high: 0.9407	 avg: 0.7562	   word: accretion rate
+count: 00001	high: 0.2368	 avg: 0.2368	   word: binaries
+count: 00001	high: 0.2916	 avg: 0.2916	   word: methods
+count: 00001	high: 0.3431	 avg: 0.3431	   word: analytic predictions
+count: 00001	high: 0.3454	 avg: 0.3454	   word: orbital dynamics
+count: 00001	high: 0.3458	 avg: 0.3458	   word: orbital hangup
+count: 00001	high: 0.3505	 avg: 0.3505	   word: spin magnitude
+count: 00001	high: 0.3511	 avg: 0.3511	   word: numerical errors
+count: 00001	high: 0.3523	 avg: 0.3523	   word: accretion disks
+count: 00001	high: 0.3539	 avg: 0.3539	   word: Bowen-York limit
+count: 00001	high: 0.3557	 avg: 0.3557	   word: numerical convergence
+count: 00001	high: 0.3597	 avg: 0.3597	   word: black-hole masses
+count: 00001	high: 0.3599	 avg: 0.3599	   word: gravitational waves
+count: 00001	high: 0.3643	 avg: 0.3643	   word: numerical-relativity simulations
+count: 00001	high: 0.3825	 avg: 0.3825	   word: effective-one-body waveforms
+count: 00001	high: 0.3920	 avg: 0.3920	   word: numerical waveforms
+count: 00001	high: 0.4386	 avg: 0.4386	   word: larger black hole
+count: 00001	high: 0.4517	 avg: 0.4517	   word: Novikov-Thorne upper bound
+count: 00001	high: 0.5227	 avg: 0.5227	   word: future gravitational-wave observatories
+count: 00001	high: 0.5804	 avg: 0.5804	   word: Astrophysical black holes
+count: 00001	high: 0.6493	 avg: 0.6493	   word: binary black hole
+count: 00001	high: 0.6770	 avg: 0.6770	   word: black hole coalescence
+count: 00001	high: 0.8153	 avg: 0.8153	   word: extremal black holes
+count: 00001	high: 0.2547	 avg: 0.2547	   word: conditions
+count: 00001	high: 0.2569	 avg: 0.2569	   word: effect
+count: 00001	high: 0.2590	 avg: 0.2590	   word: Reissner-Nordstr\
+count: 00001	high: 0.2613	 avg: 0.2613	   word: stability
+count: 00001	high: 0.2616	 avg: 0.2616	   word: expressions
+count: 00001	high: 0.2630	 avg: 0.2630	   word: dynamics
+count: 00001	high: 0.2680	 avg: 0.2680	   word: infinity
+count: 00001	high: 0.2695	 avg: 0.2695	   word: collision
+count: 00001	high: 0.2760	 avg: 0.2760	   word: photon
+count: 00001	high: 0.3645	 avg: 0.3645	   word: vicinity
+count: 00001	high: 0.4746	 avg: 0.4746	   word: extremal RN-BH
+count: 00001	high: 0.4761	 avg: 0.4761	   word: stable regions
+count: 00001	high: 0.4987	 avg: 0.4987	   word: Time-like geodesics
+count: 00001	high: 0.5018	 avg: 0.5018	   word: accretion disk
+count: 00001	high: 0.5159	 avg: 0.5159	   word: escape velocity
+count: 00001	high: 0.5174	 avg: 0.5174	   word: ISCO increases
+count: 00001	high: 0.5189	 avg: 0.5189	   word: Lyapunov exponent
+count: 00001	high: 0.5363	 avg: 0.5363	   word: BH
+count: 00001	high: 0.6693	 avg: 0.6693	   word: neutral particle
+count: 00001	high: 0.7715	 avg: 0.7715	   word: particle
+count: 00001	high: 0.9389	 avg: 0.9389	   word: magnetic field
+count: 00001	high: 0.4352	 avg: 0.4352	   word: limit
+count: 00001	high: 0.4433	 avg: 0.4433	   word: emergence
+count: 00001	high: 0.4486	 avg: 0.4486	   word: approximation
+count: 00001	high: 0.4559	 avg: 0.4559	   word: frames
+count: 00001	high: 0.4572	 avg: 0.4572	   word: hitherto
+count: 00001	high: 0.5557	 avg: 0.5557	   word: 1PN order
+count: 00001	high: 0.5634	 avg: 0.5634	   word: General-relativistic contributions
+count: 00001	high: 0.5689	 avg: 0.5689	   word: compact systems
+count: 00001	high: 0.5748	 avg: 0.5748	   word: test fluids
+count: 00001	high: 0.5792	 avg: 0.5792	   word: net result
+count: 00001	high: 0.5860	 avg: 0.5860	   word: general-relativistic corrections
+count: 00001	high: 0.5876	 avg: 0.5876	   word: Keplerian motion
+count: 00001	high: 0.5878	 avg: 0.5878	   word: general-relativistic effects
+count: 00001	high: 0.5925	 avg: 0.5925	   word: Dust disks
+count: 00001	high: 0.6118	 avg: 0.6118	   word: integrability condition
+count: 00001	high: 0.6429	 avg: 0.6429	   word: gaseous disk
+count: 00001	high: 0.6439	 avg: 0.6439	   word: disk structure
+count: 00001	high: 0.7098	 avg: 0.7098	   word: rotation periods
+count: 00001	high: 0.7310	 avg: 0.7310	   word: unknown dynamic term
+count: 00001	high: 0.7750	 avg: 0.7750	   word: central disk zone
+count: 00001	high: 0.7809	 avg: 0.7809	   word: disk boundary zone
+count: 00001	high: 0.7925	 avg: 0.7925	   word: Newtonian angular velocity
+count: 00001	high: 0.7974	 avg: 0.7974	   word: Schwarzschild black hole
+count: 00001	high: 0.8269	 avg: 0.8269	   word: geometric dragging
+count: 00001	high: 0.8411	 avg: 0.8411	   word: stationary accretion disks
+count: 00001	high: 0.9462	 avg: 0.9462	   word: Newtonian rotation curve
+count: 00001	high: 0.4481	 avg: 0.4481	   word: polytropic
+count: 00001	high: 0.4897	 avg: 0.4897	   word: eigenvalue
+count: 00001	high: 0.5091	 avg: 0.5091	   word: Schwarzschild
+count: 00001	high: 0.6602	 avg: 0.6602	   word: equilibrium points
+count: 00001	high: 0.6822	 avg: 0.6822	   word: taxonomic scheme
+count: 00001	high: 0.7342	 avg: 0.7342	   word: isothermal conditions
+count: 00001	high: 0.7557	 avg: 0.7557	   word: critical points
+count: 00001	high: 0.8061	 avg: 0.8061	   word: physical transonic flow
+count: 00001	high: 0.8213	 avg: 0.8213	   word: centre type points
+count: 00001	high: 0.8961	 avg: 0.8961	   word: linear dynamical systems
+count: 00001	high: 0.9329	 avg: 0.9329	   word: different flow geometries
+count: 00001	high: 0.9453	 avg: 0.9453	   word: transonic accretion flow
+count: 00001	high: 0.9567	 avg: 0.9567	   word: general relativistic framework
+count: 00001	high: 0.2653	 avg: 0.2653	   word: temperature profiles
+count: 00001	high: 0.2822	 avg: 0.2822	   word: flow parameters
+count: 00001	high: 0.2852	 avg: 0.2852	   word: explicit function
+count: 00001	high: 0.2905	 avg: 0.2905	   word: analytic solution
+count: 00001	high: 0.2957	 avg: 0.2957	   word: polytropic fluid
+count: 00001	high: 0.3167	 avg: 0.3167	   word: non-relativistic fluid
+count: 00001	high: 0.3432	 avg: 0.3432	   word: critical radius
+count: 00001	high: 0.3972	 avg: 0.3972	   word: enlarged radius
+count: 00001	high: 0.3975	 avg: 0.3975	   word: black hole mass
+count: 00001	high: 0.4128	 avg: 0.4128	   word: gas boundary conditions
+count: 00001	high: 0.4154	 avg: 0.4154	   word: gas compression ratios
+count: 00001	high: 0.5491	 avg: 0.5491	   word: string cloud model
+count: 00001	high: 0.6047	 avg: 0.6047	   word: accretion radius
+count: 00001	high: 0.6414	 avg: 0.6414	   word: string cloud background
+count: 00001	high: 0.6419	 avg: 0.6419	   word: accretion process
+count: 00001	high: 0.7220	 avg: 0.7220	   word: mass accretion rate
+count: 00001	high: 0.7597	 avg: 0.7597	   word: spherically symmetric accretion
+count: 00001	high: 0.9296	 avg: 0.9296	   word: string cloud parameter
+count: 00001	high: 0.2042	 avg: 0.2042	   word: compatible properties
+count: 00001	high: 0.2083	 avg: 0.2083	   word: field frequency
+count: 00001	high: 0.2164	 avg: 0.2164	   word: mid-to-high-frequency regimes
+count: 00001	high: 0.2177	 avg: 0.2177	   word: general relativity
+count: 00001	high: 0.2182	 avg: 0.2182	   word: fundamental fields
+count: 00001	high: 0.2196	 avg: 0.2196	   word: event horizons
+count: 00001	high: 0.2262	 avg: 0.2262	   word: fundamental role
+count: 00001	high: 0.2596	 avg: 0.2596	   word: present singularities
+count: 00001	high: 0.2858	 avg: 0.2858	   word: Bardeen black hole
+count: 00001	high: 0.3021	 avg: 0.3021	   word: om black hole
+count: 00001	high: 0.3055	 avg: 0.3055	   word: black hole solutions
+count: 00001	high: 0.3082	 avg: 0.3082	   word: normalized black hole
+count: 00001	high: 0.3316	 avg: 0.3316	   word: absorption properties
+count: 00001	high: 0.3336	 avg: 0.3336	   word: planar massless scalar
+count: 00001	high: 0.3378	 avg: 0.3378	   word: active galactic nuclei
+count: 00001	high: 0.4050	 avg: 0.4050	   word: om black holes
+count: 00001	high: 0.4102	 avg: 0.4102	   word: high-frequency absorption cross
+count: 00001	high: 0.4173	 avg: 0.4173	   word: bigger absorption cross
+count: 00001	high: 0.7004	 avg: 0.7004	   word: regular black holes
+count: 00001	high: 0.8119	 avg: 0.8119	   word: absorption cross section
+count: 00001	high: 0.2284	 avg: 0.2284	   word: work
+count: 00001	high: 0.3370	 avg: 0.3370	   word: dark energies
+count: 00001	high: 0.3414	 avg: 0.3414	   word: conservation equation
+count: 00001	high: 0.3460	 avg: 0.3460	   word: power-law form
+count: 00001	high: 0.3536	 avg: 0.3536	   word: phantom phase
+count: 00001	high: 0.3550	 avg: 0.3550	   word: phantom phases
+count: 00001	high: 0.3558	 avg: 0.3558	   word: Hubble parameter
+count: 00001	high: 0.3594	 avg: 0.3594	   word: different forms
+count: 00001	high: 0.3676	 avg: 0.3676	   word: parameterization schemes
+count: 00001	high: 0.3701	 avg: 0.3701	   word: quintessence stage
+count: 00001	high: 0.4337	 avg: 0.4337	   word: dark energy candidates
+count: 00001	high: 0.4479	 avg: 0.4479	   word: dark energy densities
+count: 00001	high: 0.4528	 avg: 0.4528	   word: certain finite value
+count: 00001	high: 0.4900	 avg: 0.4900	   word: scale factor
+count: 00001	high: 0.4922	 avg: 0.4922	   word: wormhole mass
+count: 00001	high: 0.5654	 avg: 0.5654	   word: holographic Ricci
+count: 00001	high: 0.6441	 avg: 0.6441	   word: Ricci dark energy
+count: 00001	high: 0.7032	 avg: 0.7032	   word: Morris- Thorne wormhole
+count: 00001	high: 0.7206	 avg: 0.7206	   word: holographic dark energy
+count: 00001	high: 0.9006	 avg: 0.9006	   word: dark energy
+count: 00001	high: 0.2416	 avg: 0.2416	   word: paper
+count: 00001	high: 0.2426	 avg: 0.2426	   word: question
+count: 00001	high: 0.2428	 avg: 0.2428	   word: motion
+count: 00001	high: 0.2452	 avg: 0.2452	   word: blueshift
+count: 00001	high: 0.2546	 avg: 0.2546	   word: Cosmic
+count: 00001	high: 0.2622	 avg: 0.2622	   word: magnitude
+count: 00001	high: 0.2652	 avg: 0.2652	   word: divergence
+count: 00001	high: 0.2813	 avg: 0.2813	   word: photons
+count: 00001	high: 0.3125	 avg: 0.3125	   word: firewall
+count: 00001	high: 0.4404	 avg: 0.4404	   word: quantum effects
+count: 00001	high: 0.4573	 avg: 0.4573	   word: massive particles
+count: 00001	high: 0.4618	 avg: 0.4618	   word: \it vacuum
+count: 00001	high: 0.4631	 avg: 0.4631	   word: classical analogue
+count: 00001	high: 0.4681	 avg: 0.4681	   word: analytic calculations
+count: 00001	high: 0.4691	 avg: 0.4691	   word: Einstein field
+count: 00001	high: 0.4700	 avg: 0.4700	   word: equation solution
+count: 00001	high: 0.4901	 avg: 0.4901	   word: singular behavior
+count: 00001	high: 0.4944	 avg: 0.4944	   word: entire Universe
+count: 00001	high: 0.4948	 avg: 0.4948	   word: realistic approximation
+count: 00001	high: 0.5109	 avg: 0.5109	   word: infalling matter
+count: 00001	high: 0.5255	 avg: 0.5255	   word: divergent relation
+count: 00001	high: 0.5849	 avg: 0.5849	   word: static frame
+count: 00001	high: 0.6948	 avg: 0.6948	   word: black hole evolution
+count: 00001	high: 0.7053	 avg: 0.7053	   word: high energy density
+count: 00001	high: 0.7107	 avg: 0.7107	   word: realistic accretion discs
+count: 00001	high: 0.7114	 avg: 0.7114	   word: circular geodesic orbits
+count: 00001	high: 0.7178	 avg: 0.7178	   word: radiation stress tensor
+count: 00001	high: 0.7202	 avg: 0.7202	   word: Hole Complementarity principle
+count: 00001	high: 0.7508	 avg: 0.7508	   word: freely falling frame
+count: 00001	high: 0.7819	 avg: 0.7819	   word: matter stress tensor
+count: 00001	high: 0.7837	 avg: 0.7837	   word: astrophysical black hole
+count: 00001	high: 0.8095	 avg: 0.8095	   word: static observer
+count: 00001	high: 0.8105	 avg: 0.8105	   word: Blackbody Background Radiation
+count: 00001	high: 0.2036	 avg: 0.2036	   word: PBHs
+count: 00001	high: 0.2380	 avg: 0.2380	   word: radiation
+count: 00001	high: 0.3316	 avg: 0.3316	   word: General Theory
+count: 00001	high: 0.3601	 avg: 0.3601	   word: Standard Cosmology
+count: 00001	high: 0.3897	 avg: 0.3897	   word: present universe
+count: 00001	high: 0.3911	 avg: 0.3911	   word: faster rate
+count: 00001	high: 0.6640	 avg: 0.6640	   word: respective dominant periods
+count: 00001	high: 0.6995	 avg: 0.6995	   word: primordial black holes
+count: 00001	high: 0.7202	 avg: 0.7202	   word: energy accretion efficiency
+count: 00001	high: 0.8529	 avg: 0.8529	   word: vacuum energy
+count: 00001	high: 0.9589	 avg: 0.9589	   word: Brans-Dicke theory

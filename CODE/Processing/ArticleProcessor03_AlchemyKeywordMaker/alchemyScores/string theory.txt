@@ -1,0 +1,37 @@
+count: 00001	high: 0.2345	 avg: 0.2345	   word: dilaton solution
+count: 00001	high: 0.2678	 avg: 0.2678	   word: Chan Mann
+count: 00001	high: 0.2801	 avg: 0.2801	   word: stationary generalization
+count: 00001	high: 0.3029	 avg: 0.3029	   word: Einstein frame
+count: 00001	high: 0.3954	 avg: 0.3954	   word: Horowitz Welch
+count: 00001	high: 0.4175	 avg: 0.4175	   word: Horowitz type
+count: 00001	high: 0.4548	 avg: 0.4548	   word: string frame
+count: 00001	high: 0.4863	 avg: 0.4863	   word: dynamical equations
+count: 00001	high: 0.4983	 avg: 0.4983	   word: string solutions field
+count: 00001	high: 0.5518	 avg: 0.5518	   word: dimensional string theory
+count: 00001	high: 0.5734	 avg: 0.5734	   word: black hole solution
+count: 00001	high: 0.6073	 avg: 0.6073	   word: dimensional heterotic string
+count: 00001	high: 0.7215	 avg: 0.7215	   word: string black hole
+count: 00001	high: 0.9108	 avg: 0.9108	   word: Horne Horowitz string
+count: 00001	high: 0.2439	 avg: 0.2439	   word: field
+count: 00001	high: 0.2442	 avg: 0.2442	   word: paper
+count: 00001	high: 0.2607	 avg: 0.2607	   word: results
+count: 00001	high: 0.2762	 avg: 0.2762	   word: Einstein
+count: 00001	high: 0.3107	 avg: 0.3107	   word: scalar
+count: 00001	high: 0.4997	 avg: 0.4997	   word: light ray
+count: 00001	high: 0.5151	 avg: 0.5151	   word: canonical frame
+count: 00001	high: 0.5166	 avg: 0.5166	   word: expansion parameters
+count: 00001	high: 0.5339	 avg: 0.5339	   word: conformal transformation
+count: 00001	high: 0.6407	 avg: 0.6407	   word: low-energy limit
+count: 00001	high: 0.7242	 avg: 0.7242	   word: heterotic string theory
+count: 00001	high: 0.7619	 avg: 0.7619	   word: spherically symmetric object
+count: 00001	high: 0.9373	 avg: 0.9373	   word: limit deflection angle
+count: 00001	high: 0.4351	 avg: 0.4351	   word: two-body interactions
+count: 00001	high: 0.4454	 avg: 0.4454	   word: low-velocity limit
+count: 00001	high: 0.4537	 avg: 0.4537	   word: many-body interactions
+count: 00001	high: 0.4683	 avg: 0.4683	   word: Kaluza-Klein scalar
+count: 00001	high: 0.5711	 avg: 0.5711	   word: general dilaton couplings
+count: 00001	high: 0.5939	 avg: 0.5939	   word: string theory
+count: 00001	high: 0.6266	 avg: 0.6266	   word: low-energy classical scattering
+count: 00001	high: 0.6463	 avg: 0.6463	   word: moduli space
+count: 00001	high: 0.7038	 avg: 0.7038	   word: dilaton black holes
+count: 00001	high: 0.9213	 avg: 0.9213	   word: extreme black holes

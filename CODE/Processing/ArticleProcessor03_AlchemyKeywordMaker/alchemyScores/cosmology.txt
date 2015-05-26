@@ -1,0 +1,1271 @@
+count: 00019	high: 0.6887	 avg: 0.3685	   word: cosmology
+count: 00008	high: 0.6269	 avg: 0.4739	   word: energy density
+count: 00007	high: 0.4442	 avg: 0.4005	   word: model
+count: 00007	high: 0.9740	 avg: 0.6881	   word: dark energy
+count: 00006	high: 0.9906	 avg: 0.7401	   word: scalar field
+count: 00006	high: 0.4562	 avg: 0.3770	   word: work
+count: 00006	high: 0.4426	 avg: 0.3647	   word: paper
+count: 00006	high: 0.5046	 avg: 0.3651	   word: evolution
+count: 00006	high: 0.5445	 avg: 0.3856	   word: framework
+count: 00006	high: 0.9952	 avg: 0.7762	   word: loop quantum cosmology
+count: 00006	high: 0.9657	 avg: 0.8509	   word: massless scalar field
+count: 00006	high: 0.5578	 avg: 0.4032	   word: gravity
+count: 00006	high: 0.8868	 avg: 0.6700	   word: scale factor
+count: 00005	high: 0.4491	 avg: 0.3566	   word: terms
+count: 00005	high: 0.4592	 avg: 0.3792	   word: theory
+count: 00005	high: 0.9092	 avg: 0.5809	   word: dark matter
+count: 00005	high: 0.7505	 avg: 0.5713	   word: effective dynamics
+count: 00004	high: 0.4352	 avg: 0.3692	   word: presence
+count: 00004	high: 0.4676	 avg: 0.3781	   word: matter
+count: 00004	high: 0.4845	 avg: 0.3604	   word: state
+count: 00004	high: 0.6576	 avg: 0.5147	   word: quantum cosmology
+count: 00004	high: 0.5837	 avg: 0.4755	   word: exact solutions
+count: 00004	high: 0.4646	 avg: 0.4039	   word: dynamics
+count: 00004	high: 0.4605	 avg: 0.3972	   word: theories
+count: 00004	high: 0.9904	 avg: 0.8832	   word: Loop Quantum Cosmology
+count: 00004	high: 0.3402	 avg: 0.2967	   word: relation
+count: 00004	high: 0.9758	 avg: 0.7630	   word: quantum bounce
+count: 00004	high: 0.6603	 avg: 0.5935	   word: cosmological models
+count: 00004	high: 0.4757	 avg: 0.3743	   word: expression
+count: 00004	high: 0.9833	 avg: 0.7061	   word: deceleration parameter
+count: 00004	high: 0.4752	 avg: 0.3531	   word: existence
+count: 00004	high: 0.4812	 avg: 0.3638	   word: possibility
+count: 00004	high: 0.4512	 avg: 0.3817	   word: behavior
+count: 00003	high: 0.3327	 avg: 0.3066	   word: form
+count: 00003	high: 0.9026	 avg: 0.5684	   word: late time
+count: 00003	high: 0.8494	 avg: 0.7603	   word: big bang singularity
+count: 00003	high: 0.3738	 avg: 0.3038	   word: example
+count: 00003	high: 0.4297	 avg: 0.3367	   word: freedom
+count: 00003	high: 0.4697	 avg: 0.4047	   word: case
+count: 00003	high: 0.6474	 avg: 0.5732	   word: Einstein equations
+count: 00003	high: 0.6469	 avg: 0.5082	   word: energy-momentum tensor
+count: 00003	high: 0.6819	 avg: 0.5926	   word: general relativity
+count: 00003	high: 0.3448	 avg: 0.3071	   word: role
+count: 00003	high: 0.4347	 avg: 0.3419	   word: parameters
+count: 00003	high: 0.4210	 avg: 0.3855	   word: article
+count: 00003	high: 0.4275	 avg: 0.3919	   word: results
+count: 00003	high: 0.5666	 avg: 0.5218	   word: structure formation
+count: 00003	high: 0.4964	 avg: 0.4273	   word: quantum theory
+count: 00003	high: 0.4286	 avg: 0.3239	   word: kind
+count: 00003	high: 0.7114	 avg: 0.6207	   word: Friedmann equations
+count: 00003	high: 0.7478	 avg: 0.5017	   word: Einstein gravity
+count: 00003	high: 0.4476	 avg: 0.3448	   word: radiation
+count: 00003	high: 0.6716	 avg: 0.5097	   word: cosmological parameters
+count: 00003	high: 0.4275	 avg: 0.3359	   word: context
+count: 00003	high: 0.2554	 avg: 0.2458	   word: study
+count: 00003	high: 0.4285	 avg: 0.3503	   word: analysis
+count: 00003	high: 0.4098	 avg: 0.3676	   word: thermodynamics
+count: 00003	high: 0.7167	 avg: 0.5968	   word: matter field
+count: 00003	high: 0.8645	 avg: 0.5760	   word: different models
+count: 00003	high: 0.5421	 avg: 0.5074	   word: state parameter
+count: 00003	high: 0.6331	 avg: 0.5539	   word: numerical analysis
+count: 00003	high: 0.5084	 avg: 0.4342	   word: time
+count: 00003	high: 0.6015	 avg: 0.5375	   word: matter content
+count: 00002	high: 0.4788	 avg: 0.4365	   word: early time
+count: 00002	high: 0.4529	 avg: 0.3359	   word: particles
+count: 00002	high: 0.7166	 avg: 0.6132	   word: coincidence problem
+count: 00002	high: 0.6768	 avg: 0.4974	   word: perfect fluid
+count: 00002	high: 0.8043	 avg: 0.7837	   word: late time evolution
+count: 00002	high: 0.4579	 avg: 0.3702	   word: consequences
+count: 00002	high: 0.4693	 avg: 0.3854	   word: similarities
+count: 00002	high: 0.6031	 avg: 0.5505	   word: particle physics
+count: 00002	high: 0.4598	 avg: 0.4177	   word: Universe
+count: 00002	high: 0.5564	 avg: 0.5251	   word: gravitational field
+count: 00002	high: 0.4102	 avg: 0.3861	   word: expansion
+count: 00002	high: 0.4405	 avg: 0.4315	   word: structure
+count: 00002	high: 0.4327	 avg: 0.3867	   word: choices
+count: 00002	high: 0.4359	 avg: 0.3837	   word: validity
+count: 00002	high: 0.4436	 avg: 0.3996	   word: singularity
+count: 00002	high: 0.6899	 avg: 0.6161	   word: approximation methods
+count: 00002	high: 0.4948	 avg: 0.4669	   word: observations
+count: 00002	high: 0.4449	 avg: 0.3967	   word: technique
+count: 00002	high: 0.5579	 avg: 0.5127	   word: quantum evolution
+count: 00002	high: 0.6640	 avg: 0.6164	   word: isotropic model
+count: 00002	high: 0.4339	 avg: 0.3473	   word: agreement
+count: 00002	high: 0.5289	 avg: 0.5045	   word: CDM model
+count: 00002	high: 0.4434	 avg: 0.4210	   word: problem
+count: 00002	high: 0.4564	 avg: 0.3943	   word: equations
+count: 00002	high: 0.4444	 avg: 0.3969	   word: R,T
+count: 00002	high: 0.5483	 avg: 0.5280	   word: curvature
+count: 00002	high: 0.7016	 avg: 0.5615	   word: cosmological background
+count: 00002	high: 0.7318	 avg: 0.4980	   word: cosmological fluid
+count: 00002	high: 0.3293	 avg: 0.2709	   word: trace
+count: 00002	high: 0.6589	 avg: 0.6307	   word: new approach
+count: 00002	high: 0.9181	 avg: 0.7397	   word: -dimensional field equations
+count: 00002	high: 0.8718	 avg: 0.6677	   word: BD theory
+count: 00002	high: 0.8776	 avg: 0.7193	   word: turning point
+count: 00002	high: 0.4571	 avg: 0.4342	   word: interaction
+count: 00002	high: 0.4137	 avg: 0.3430	   word: consideration
+count: 00002	high: 0.9512	 avg: 0.7107	   word: phantom field
+count: 00002	high: 0.9422	 avg: 0.7081	   word: perturbation theory
+count: 00002	high: 0.9582	 avg: 0.7550	   word: cosmological perturbations
+count: 00002	high: 0.4748	 avg: 0.4723	   word: background geometry
+count: 00002	high: 0.9202	 avg: 0.6995	   word: particle creation
+count: 00002	high: 0.4322	 avg: 0.4039	   word: universe
+count: 00002	high: 0.4724	 avg: 0.3876	   word: coordinates
+count: 00002	high: 0.3400	 avg: 0.2790	   word: Hamiltonian
+count: 00002	high: 0.3968	 avg: 0.3933	   word: present universe
+count: 00002	high: 0.9589	 avg: 0.7690	   word: Brans-Dicke theory
+count: 00002	high: 0.4414	 avg: 0.3406	   word: LQC
+count: 00002	high: 0.6067	 avg: 0.4480	   word: self-interacting potential
+count: 00002	high: 0.6234	 avg: 0.5097	   word: arbitrary function
+count: 00002	high: 0.2632	 avg: 0.2574	   word: account
+count: 00002	high: 0.3436	 avg: 0.3068	   word: modification
+count: 00002	high: 0.4496	 avg: 0.3624	   word: scenarios
+count: 00002	high: 0.4298	 avg: 0.3364	   word: manuscript
+count: 00002	high: 0.8008	 avg: 0.7226	   word: isotropic loop quantum
+count: 00002	high: 0.9688	 avg: 0.9237	   word: Noether symmetry approach
+count: 00002	high: 0.3432	 avg: 0.2957	   word: point
+count: 00002	high: 0.4533	 avg: 0.4005	   word: infinity
+count: 00002	high: 0.3552	 avg: 0.2788	   word: Bianchi
+count: 00002	high: 0.4317	 avg: 0.4004	   word: space-time
+count: 00002	high: 0.9224	 avg: 0.7984	   word: Big Bang
+count: 00002	high: 0.4315	 avg: 0.3300	   word: correspondence
+count: 00002	high: 0.3199	 avg: 0.2810	   word: solutions
+count: 00002	high: 0.3357	 avg: 0.2901	   word: quintessence
+count: 00002	high: 0.7162	 avg: 0.5462	   word: Hubble parameter
+count: 00002	high: 0.3881	 avg: 0.3605	   word: phantom divide
+count: 00002	high: 0.5194	 avg: 0.4931	   word: flat universe
+count: 00002	high: 0.8632	 avg: 0.7631	   word: holographic dark energy
+count: 00002	high: 0.3287	 avg: 0.3093	   word: equation
+count: 00002	high: 0.6436	 avg: 0.5977	   word: observational data
+count: 00002	high: 0.4450	 avg: 0.4358	   word: degrees
+count: 00002	high: 0.4617	 avg: 0.4286	   word: Cosmology
+count: 00002	high: 0.4423	 avg: 0.4081	   word: effective description
+count: 00002	high: 0.8731	 avg: 0.6575	   word: canonical variables
+count: 00002	high: 0.4841	 avg: 0.4595	   word: Einstein
+count: 00002	high: 0.4888	 avg: 0.3946	   word: torsion
+count: 00002	high: 0.4367	 avg: 0.4332	   word: models
+count: 00002	high: 0.6007	 avg: 0.5796	   word: Friedmann-Robertson-Walker geometry
+count: 00002	high: 0.6039	 avg: 0.5275	   word: spatial sections
+count: 00001	high: 0.3726	 avg: 0.3726	   word: open issues
+count: 00001	high: 0.3739	 avg: 0.3739	   word: Current directions
+count: 00001	high: 0.3874	 avg: 0.3874	   word: central topic
+count: 00001	high: 0.3949	 avg: 0.3949	   word: general picture
+count: 00001	high: 0.4098	 avg: 0.4098	   word: fundamental ideas
+count: 00001	high: 0.4137	 avg: 0.4137	   word: moderate details
+count: 00001	high: 0.4363	 avg: 0.4363	   word: nonperturbative approach
+count: 00001	high: 0.4596	 avg: 0.4596	   word: canonical formulation
+count: 00001	high: 0.5042	 avg: 0.5042	   word: systematic derivations
+count: 00001	high: 0.7122	 avg: 0.7122	   word: spin foam theory
+count: 00001	high: 0.7135	 avg: 0.7135	   word: black hole thermodynamics
+count: 00001	high: 0.8006	 avg: 0.8006	   word: consistent quantum theory
+count: 00001	high: 0.8177	 avg: 0.8177	   word: logically orderly fashion
+count: 00001	high: 0.9538	 avg: 0.9538	   word: loop quantum gravity
+count: 00001	high: 0.3322	 avg: 0.3322	   word: p_
+count: 00001	high: 0.3326	 avg: 0.3326	   word: p=
+count: 00001	high: 0.3347	 avg: 0.3347	   word: means
+count: 00001	high: 0.3484	 avg: 0.3484	   word: rip
+count: 00001	high: 0.4851	 avg: 0.4851	   word: scale factors
+count: 00001	high: 0.4887	 avg: 0.4887	   word: universe fate
+count: 00001	high: 0.5014	 avg: 0.5014	   word: \gamma -1
+count: 00001	high: 0.5022	 avg: 0.5022	   word: specific choice
+count: 00001	high: 0.5026	 avg: 0.5026	   word: Einstein theory
+count: 00001	high: 0.5168	 avg: 0.5168	   word: bulk space
+count: 00001	high: 0.5360	 avg: 0.5360	   word: linear equation
+count: 00001	high: 0.6455	 avg: 0.6455	   word: Kantowski-Sachs cosmological model
+count: 00001	high: 0.6967	 avg: 0.6967	   word: specific matter choice
+count: 00001	high: 0.7271	 avg: 0.7271	   word: standard Kantowski-Sachs cosmology
+count: 00001	high: 0.7447	 avg: 0.7447	   word: dimensional anti-de Sitter
+count: 00001	high: 0.8712	 avg: 0.8712	   word: brane Kantowski-Scahs cosmology
+count: 00001	high: 0.8868	 avg: 0.8868	   word: brane Kantowski-Sachs universe
+count: 00001	high: 0.9152	 avg: 0.9152	   word: brane Kantowski-Sachs cosmology
+count: 00001	high: 0.3790	 avg: 0.3790	   word: Planck era
+count: 00001	high: 0.3928	 avg: 0.3928	   word: primordial region
+count: 00001	high: 0.4028	 avg: 0.4028	   word: Klein-Gordon equation
+count: 00001	high: 0.4117	 avg: 0.4117	   word: cyclic scenario
+count: 00001	high: 0.4174	 avg: 0.4174	   word: cosmological evolution
+count: 00001	high: 0.4462	 avg: 0.4462	   word: homogeneous universe
+count: 00001	high: 0.4516	 avg: 0.4516	   word: phantom matter
+count: 00001	high: 0.4532	 avg: 0.4532	   word: dust matter
+count: 00001	high: 0.4672	 avg: 0.4672	   word: Friedmann equation
+count: 00001	high: 0.5075	 avg: 0.5075	   word: quantum fields
+count: 00001	high: 0.5264	 avg: 0.5264	   word: future bounce
+count: 00001	high: 0.5587	 avg: 0.5587	   word: big bounce
+count: 00001	high: 0.5877	 avg: 0.5877	   word: late time phases
+count: 00001	high: 0.6027	 avg: 0.6027	   word: quantum particle production
+count: 00001	high: 0.6292	 avg: 0.6292	   word: non-minimally coupled scalar
+count: 00001	high: 0.6334	 avg: 0.6334	   word: dark energy component
+count: 00001	high: 0.6516	 avg: 0.6516	   word: quantum gravity modifications
+count: 00001	high: 0.6676	 avg: 0.6676	   word: quantum background density
+count: 00001	high: 0.7040	 avg: 0.7040	   word: big rip singularity
+count: 00001	high: 0.7639	 avg: 0.7639	   word: late time bounce
+count: 00001	high: 0.3124	 avg: 0.3124	   word: odel models
+count: 00001	high: 0.3272	 avg: 0.3272	   word: i. e.
+count: 00001	high: 0.3284	 avg: 0.3284	   word: consideration point
+count: 00001	high: 0.3374	 avg: 0.3374	   word: closed form
+count: 00001	high: 0.3896	 avg: 0.3896	   word: non-perfect fluids
+count: 00001	high: 0.3909	 avg: 0.3909	   word: anisotropic pressure
+count: 00001	high: 0.3961	 avg: 0.3961	   word: structure constants
+count: 00001	high: 0.4811	 avg: 0.4811	   word: thermodynamic equilibrium
+count: 00001	high: 0.5431	 avg: 0.5431	   word: parallax-free space-times
+count: 00001	high: 0.6249	 avg: 0.6249	   word: specific thermodynamic conditions
+count: 00001	high: 0.6324	 avg: 0.6324	   word: standard phase cosmology
+count: 00001	high: 0.6906	 avg: 0.6906	   word: three-dimensional isometry group
+count: 00001	high: 0.8858	 avg: 0.8858	   word: kinematical quantities
+count: 00001	high: 0.9177	 avg: 0.9177	   word: respective propagation equations
+count: 00001	high: 0.9618	 avg: 0.9618	   word: constitutive equations
+count: 00001	high: 0.2483	 avg: 0.2483	   word: Chavanis
+count: 00001	high: 0.2491	 avg: 0.2491	   word: Tooper
+count: 00001	high: 0.2551	 avg: 0.2551	   word: limitations
+count: 00001	high: 0.2679	 avg: 0.2679	   word: formalism
+count: 00001	high: 0.2965	 avg: 0.2965	   word: Zel'dovich
+count: 00001	high: 0.4631	 avg: 0.4631	   word: universe experiences
+count: 00001	high: 0.4773	 avg: 0.4773	   word: simple generalization
+count: 00001	high: 0.4779	 avg: 0.4779	   word: fully-relativistic model
+count: 00001	high: 0.4914	 avg: 0.4914	   word: pressure effects
+count: 00001	high: 0.5131	 avg: 0.5131	   word: cosmological singularity
+count: 00001	high: 0.5177	 avg: 0.5177	   word: baryon stars
+count: 00001	high: 0.5200	 avg: 0.5200	   word: high densities
+count: 00001	high: 0.5259	 avg: 0.5259	   word: neutron stars
+count: 00001	high: 0.5374	 avg: 0.5374	   word: cold baryons
+count: 00001	high: 0.5601	 avg: 0.5601	   word: stiff equation
+count: 00001	high: 0.5623	 avg: 0.5623	   word: superfluid properties
+count: 00001	high: 0.5774	 avg: 0.5774	   word: Bose-Einstein condensate
+count: 00001	high: 0.7101	 avg: 0.7101	   word: dark energy phase
+count: 00001	high: 0.7439	 avg: 0.7439	   word: rest-mass density
+count: 00001	high: 0.7646	 avg: 0.7646	   word: vector meson field
+count: 00001	high: 0.7833	 avg: 0.7833	   word: dust matter phase
+count: 00001	high: 0.7861	 avg: 0.7861	   word: general relativistic BEC
+count: 00001	high: 0.8132	 avg: 0.8132	   word: compact astrophysical objects
+count: 00001	high: 0.8225	 avg: 0.8225	   word: classical BECs
+count: 00001	high: 0.8259	 avg: 0.8259	   word: stiff matter phase
+count: 00001	high: 0.8657	 avg: 0.8657	   word: self-gravitating BECs
+count: 00001	high: 0.9463	 avg: 0.9463	   word: partially-relativistic model
+count: 00001	high: 0.9917	 avg: 0.9917	   word: maximum mass
+count: 00001	high: 0.3439	 avg: 0.3439	   word: package
+count: 00001	high: 0.3442	 avg: 0.3442	   word: features
+count: 00001	high: 0.3809	 avg: 0.3809	   word: basics
+count: 00001	high: 0.4590	 avg: 0.4590	   word: GRTensorII
+count: 00001	high: 0.6313	 avg: 0.6313	   word: Maple procedures
+count: 00001	high: 0.6476	 avg: 0.6476	   word: teaching purposes
+count: 00001	high: 0.6597	 avg: 0.6597	   word: Schwarzschild solution
+count: 00001	high: 0.8467	 avg: 0.8467	   word: simple cosmological models
+count: 00001	high: 0.5901	 avg: 0.5901	   word: recent results
+count: 00001	high: 0.6200	 avg: 0.6200	   word: conventional cosmology
+count: 00001	high: 0.6223	 avg: 0.6223	   word: PAMELA experiment
+count: 00001	high: 0.6300	 avg: 0.6300	   word: positron events
+count: 00001	high: 0.6360	 avg: 0.6360	   word: fluid components
+count: 00001	high: 0.6455	 avg: 0.6455	   word: dissipative effects
+count: 00001	high: 0.6495	 avg: 0.6495	   word: anomalous excess
+count: 00001	high: 0.7887	 avg: 0.7887	   word: different cooling rates
+count: 00001	high: 0.8085	 avg: 0.8085	   word: thermal relic abundance
+count: 00001	high: 0.8328	 avg: 0.8328	   word: Big Bang Nucleosynthesis
+count: 00001	high: 0.8591	 avg: 0.8591	   word: bulk viscosity
+count: 00001	high: 0.8927	 avg: 0.8927	   word: primordial cosmic matter
+count: 00001	high: 0.9266	 avg: 0.9266	   word: relativistic imperfect fluid
+count: 00001	high: 0.3654	 avg: 0.3654	   word: constraints
+count: 00001	high: 0.6450	 avg: 0.6450	   word: gravity models
+count: 00001	high: 0.6994	 avg: 0.6994	   word: simple symmetry
+count: 00001	high: 0.7609	 avg: 0.7609	   word: curved spaces
+count: 00001	high: 0.8172	 avg: 0.8172	   word: consistency considerations
+count: 00001	high: 0.9464	 avg: 0.9464	   word: possible Friedmann equations
+count: 00001	high: 0.4407	 avg: 0.4407	   word: step
+count: 00001	high: 0.4572	 avg: 0.4572	   word: differences
+count: 00001	high: 0.6355	 avg: 0.6355	   word: dimensional model
+count: 00001	high: 0.7409	 avg: 0.7409	   word: spacetime dimension
+count: 00001	high: 0.2530	 avg: 0.2530	   word: family
+count: 00001	high: 0.2555	 avg: 0.2555	   word: description
+count: 00001	high: 0.7634	 avg: 0.7634	   word: matter degrees
+count: 00001	high: 0.9912	 avg: 0.9912	   word: ahler-Einstein Fano manifolds
+count: 00001	high: 0.3401	 avg: 0.3401	   word: result
+count: 00001	high: 0.3539	 avg: 0.3539	   word: duality
+count: 00001	high: 0.4624	 avg: 0.4624	   word: cosmologies
+count: 00001	high: 0.5013	 avg: 0.5013	   word: known evidence
+count: 00001	high: 0.5019	 avg: 0.5019	   word: theoretical values
+count: 00001	high: 0.5179	 avg: 0.5179	   word: experimental counterparts
+count: 00001	high: 0.5212	 avg: 0.5212	   word: running parameter
+count: 00001	high: 0.5325	 avg: 0.5325	   word: inflation case
+count: 00001	high: 0.5391	 avg: 0.5391	   word: fine set
+count: 00001	high: 0.5516	 avg: 0.5516	   word: small parameters
+count: 00001	high: 0.5589	 avg: 0.5589	   word: scalar perturbations
+count: 00001	high: 0.5987	 avg: 0.5987	   word: inflationary cosmology
+count: 00001	high: 0.6647	 avg: 0.6647	   word: accurate astronomical observations
+count: 00001	high: 0.6744	 avg: 0.6744	   word: recent PLANCK data
+count: 00001	high: 0.7325	 avg: 0.7325	   word: matter bounce scenarios
+count: 00001	high: 0.7443	 avg: 0.7443	   word: exact Sitter regime
+count: 00001	high: 0.7582	 avg: 0.7582	   word: contracting phase
+count: 00001	high: 0.7793	 avg: 0.7793	   word: usual slow-roll parameters
+count: 00001	high: 0.7907	 avg: 0.7907	   word: nearly matter
+count: 00001	high: 0.7952	 avg: 0.7952	   word: Sitter regime
+count: 00001	high: 0.9148	 avg: 0.9148	   word: spectral index
+count: 00001	high: 0.4292	 avg: 0.4292	   word: functions
+count: 00001	high: 0.4306	 avg: 0.4306	   word: parametrizations
+count: 00001	high: 0.4309	 avg: 0.4309	   word: reparametrization
+count: 00001	high: 0.4320	 avg: 0.4320	   word: scheme
+count: 00001	high: 0.4361	 avg: 0.4361	   word: derivatives
+count: 00001	high: 0.4382	 avg: 0.4382	   word: transformations
+count: 00001	high: 0.5320	 avg: 0.5320	   word: different frames
+count: 00001	high: 0.5370	 avg: 0.5370	   word: invariants
+count: 00001	high: 0.5452	 avg: 0.5452	   word: Jordan frames
+count: 00001	high: 0.5546	 avg: 0.5546	   word: cosmological solutions
+count: 00001	high: 0.5592	 avg: 0.5592	   word: Friedmann-Lema\^itre-Robertson-Walker cosmology
+count: 00001	high: 0.5645	 avg: 0.5645	   word: physical meaning
+count: 00001	high: 0.5674	 avg: 0.5674	   word: approximate equations
+count: 00001	high: 0.5818	 avg: 0.5818	   word: post-Newtonian parameters
+count: 00001	high: 0.5936	 avg: 0.5936	   word: generic parametrization
+count: 00001	high: 0.6024	 avg: 0.6024	   word: derivative couplings
+count: 00001	high: 0.6993	 avg: 0.6993	   word: different conformal frames
+count: 00001	high: 0.7693	 avg: 0.7693	   word: general scalar-tensor gravity
+count: 00001	high: 0.7817	 avg: 0.7817	   word: scalar field solutions
+count: 00001	high: 0.3270	 avg: 0.3270	   word: behaviour
+count: 00001	high: 0.3307	 avg: 0.3307	   word: suitability
+count: 00001	high: 0.3480	 avg: 0.3480	   word: \textit
+count: 00001	high: 0.3831	 avg: 0.3831	   word: trajectories
+count: 00001	high: 0.4034	 avg: 0.4034	   word: early universe
+count: 00001	high: 0.4163	 avg: 0.4163	   word: big question
+count: 00001	high: 0.4334	 avg: 0.4334	   word: comparative scenario
+count: 00001	high: 0.4825	 avg: 0.4825	   word: future universe
+count: 00001	high: 0.5002	 avg: 0.5002	   word: various dark energy
+count: 00001	high: 0.5194	 avg: 0.5194	   word: various Chaplygin gas
+count: 00001	high: 0.5848	 avg: 0.5848	   word: Loop quantum deviations
+count: 00001	high: 0.7176	 avg: 0.7176	   word: dark energy models
+count: 00001	high: 0.7800	 avg: 0.7800	   word: Loop quantum effects
+count: 00001	high: 0.7856	 avg: 0.7856	   word: Loop quantum gravity
+count: 00001	high: 0.9747	 avg: 0.9747	   word: loop quantum
+count: 00001	high: 0.4339	 avg: 0.4339	   word: smeared ones
+count: 00001	high: 0.4382	 avg: 0.4382	   word: different choices
+count: 00001	high: 0.4483	 avg: 0.4483	   word: local variables
+count: 00001	high: 0.4590	 avg: 0.4590	   word: purely quantum
+count: 00001	high: 0.5114	 avg: 0.5114	   word: expectation value
+count: 00001	high: 0.5404	 avg: 0.5404	   word: regularization schemes
+count: 00001	high: 0.7623	 avg: 0.7623	   word: inverse volume corrections
+count: 00001	high: 0.8079	 avg: 0.8079	   word: lattice refinement framework
+count: 00001	high: 0.8085	 avg: 0.8085	   word: fundamental theory corresponds
+count: 00001	high: 0.8230	 avg: 0.8230	   word: fundamental microscopic theory
+count: 00001	high: 0.8417	 avg: 0.8417	   word: coherent states
+count: 00001	high: 0.9041	 avg: 0.9041	   word: Loop Quantum Gravity
+count: 00001	high: 0.9178	 avg: 0.9178	   word: effective semiclassical description
+count: 00001	high: 0.2023	 avg: 0.2023	   word: reheating
+count: 00001	high: 0.3760	 avg: 0.3760	   word: toy models
+count: 00001	high: 0.3948	 avg: 0.3948	   word: cosmological data
+count: 00001	high: 0.3965	 avg: 0.3965	   word: inflation
+count: 00001	high: 0.3979	 avg: 0.3979	   word: Friedmann universe
+count: 00001	high: 0.4305	 avg: 0.4305	   word: graceful exit
+count: 00001	high: 0.5795	 avg: 0.5795	   word: scalar field representation
+count: 00001	high: 0.8023	 avg: 0.8023	   word: inhomogeneous EoS parameter
+count: 00001	high: 0.9032	 avg: 0.9032	   word: inhomogeneous viscous fluid
+count: 00001	high: 0.3337	 avg: 0.3337	   word: action
+count: 00001	high: 0.4750	 avg: 0.4750	   word: early times
+count: 00001	high: 0.5000	 avg: 0.5000	   word: kinetic energy
+count: 00001	high: 0.5098	 avg: 0.5098	   word: infinitesimal generator
+count: 00001	high: 0.5787	 avg: 0.5787	   word: corresponding Noether
+count: 00001	high: 0.6043	 avg: 0.6043	   word: field potential function
+count: 00001	high: 0.6307	 avg: 0.6307	   word: potential function
+count: 00001	high: 0.6582	 avg: 0.6582	   word: accelerated expansion universe
+count: 00001	high: 0.6592	 avg: 0.6592	   word: vector field
+count: 00001	high: 0.6664	 avg: 0.6664	   word: coupling function
+count: 00001	high: 0.6687	 avg: 0.6687	   word: phase space variables
+count: 00001	high: 0.6757	 avg: 0.6757	   word: vector fields
+count: 00001	high: 0.7084	 avg: 0.7084	   word: minisuperspace cosmological model
+count: 00001	high: 0.3466	 avg: 0.3466	   word: difference
+count: 00001	high: 0.3474	 avg: 0.3474	   word: sense
+count: 00001	high: 0.3489	 avg: 0.3489	   word: concept
+count: 00001	high: 0.3588	 avg: 0.3588	   word: vac
+count: 00001	high: 0.3613	 avg: 0.3613	   word: consequence
+count: 00001	high: 0.3727	 avg: 0.3727	   word: Noether
+count: 00001	high: 0.5062	 avg: 0.5062	   word: topological characteristics
+count: 00001	high: 0.5346	 avg: 0.5346	   word: Gupta equations
+count: 00001	high: 0.5406	 avg: 0.5406	   word: FLRW cosmology
+count: 00001	high: 0.5565	 avg: 0.5565	   word: observable effect
+count: 00001	high: 0.5847	 avg: 0.5847	   word: Riemannian manifolds
+count: 00001	high: 0.5951	 avg: 0.5951	   word: smooth deformation
+count: 00001	high: 0.6606	 avg: 0.6606	   word: extrinsic geometry
+count: 00001	high: 0.7097	 avg: 0.7097	   word: Einstein-Hilbert-like dynamical principle
+count: 00001	high: 0.9400	 avg: 0.9400	   word: extrinsic curvature
+count: 00001	high: 0.4439	 avg: 0.4439	   word: influence
+count: 00001	high: 0.4489	 avg: 0.4489	   word: importance
+count: 00001	high: 0.4517	 avg: 0.4517	   word: significance
+count: 00001	high: 0.4697	 avg: 0.4697	   word: turbulence
+count: 00001	high: 0.5752	 avg: 0.5752	   word: anisotropy
+count: 00001	high: 0.6023	 avg: 0.6023	   word: recent developments
+count: 00001	high: 0.6480	 avg: 0.6480	   word: future singularities
+count: 00001	high: 0.6784	 avg: 0.6784	   word: Little Rip
+count: 00001	high: 0.6859	 avg: 0.6859	   word: power-law decay
+count: 00001	high: 0.7276	 avg: 0.7276	   word: viscous fluids
+count: 00001	high: 0.8394	 avg: 0.8394	   word: causal cosmology theories
+count: 00001	high: 0.8822	 avg: 0.8822	   word: relativistic universe models
+count: 00001	high: 0.8869	 avg: 0.8869	   word: early inflationary era
+count: 00001	high: 0.8976	 avg: 0.8976	   word: Bulk viscosity
+count: 00001	high: 0.9002	 avg: 0.9002	   word: nonlinear viscosity
+count: 00001	high: 0.9228	 avg: 0.9228	   word: cause exponential decay
+count: 00001	high: 0.2886	 avg: 0.2886	   word: HDE model
+count: 00001	high: 0.2931	 avg: 0.2931	   word: sound stability
+count: 00001	high: 0.3043	 avg: 0.3043	   word: best values
+count: 00001	high: 0.3185	 avg: 0.3185	   word: acceleration phase
+count: 00001	high: 0.3227	 avg: 0.3227	   word: non-interacting case
+count: 00001	high: 0.3234	 avg: 0.3234	   word: sound speed
+count: 00001	high: 0.3244	 avg: 0.3244	   word: HDE
+count: 00001	high: 0.4716	 avg: 0.4716	   word: BD framework
+count: 00001	high: 0.5399	 avg: 0.5399	   word: stable DE-dominated universe
+count: 00001	high: 0.5772	 avg: 0.5772	   word: matter-dark energy profile
+count: 00001	high: 0.5826	 avg: 0.5826	   word: latest observational data
+count: 00001	high: 0.5981	 avg: 0.5981	   word: flat FRW universe
+count: 00001	high: 0.6745	 avg: 0.6745	   word: cosmic coincidence problem
+count: 00001	high: 0.8124	 avg: 0.8124	   word: BD cosmology
+count: 00001	high: 0.9082	 avg: 0.9082	   word: effective EoS parameter
+count: 00001	high: 0.4397	 avg: 0.4397	   word: way
+count: 00001	high: 0.4498	 avg: 0.4498	   word: dust
+count: 00001	high: 0.6108	 avg: 0.6108	   word: quantum states
+count: 00001	high: 0.6480	 avg: 0.6480	   word: approximate solutions
+count: 00001	high: 0.6886	 avg: 0.6886	   word: Hamiltonian constraint
+count: 00001	high: 0.7065	 avg: 0.7065	   word: linear polarization
+count: 00001	high: 0.7157	 avg: 0.7157	   word: isotropic universe
+count: 00001	high: 0.7168	 avg: 0.7168	   word: hybrid quantization
+count: 00001	high: 0.7270	 avg: 0.7270	   word: inhomogeneous cosmology
+count: 00001	high: 0.8504	 avg: 0.8504	   word: fluid effective behaviors
+count: 00001	high: 0.8846	 avg: 0.8846	   word: physically interesting solutions
+count: 00001	high: 0.9044	 avg: 0.9044	   word: quantum Gowdy model
+count: 00001	high: 0.3894	 avg: 0.3894	   word: covariant
+count: 00001	high: 0.4049	 avg: 0.4049	   word: degeneracy
+count: 00001	high: 0.5068	 avg: 0.5068	   word: different rates
+count: 00001	high: 0.5223	 avg: 0.5223	   word: background level
+count: 00001	high: 0.5319	 avg: 0.5319	   word: LCDM solution
+count: 00001	high: 0.5375	 avg: 0.5375	   word: different forms
+count: 00001	high: 0.5650	 avg: 0.5650	   word: gauge-invariant formalism
+count: 00001	high: 0.6797	 avg: 0.6797	   word: first-order perturbations
+count: 00001	high: 0.7092	 avg: 0.7092	   word: standard LCDM cosmology
+count: 00001	high: 0.7470	 avg: 0.7470	   word: quasi\hs static regimes
+count: 00001	high: 0.9164	 avg: 0.9164	   word: scalar cosmological perturbations
+count: 00001	high: 0.4097	 avg: 0.4097	   word: functional form
+count: 00001	high: 0.4132	 avg: 0.4132	   word: new set
+count: 00001	high: 0.4205	 avg: 0.4205	   word: important predictions
+count: 00001	high: 0.4355	 avg: 0.4355	   word: quantum operators
+count: 00001	high: 0.4410	 avg: 0.4410	   word: classical variable
+count: 00001	high: 0.4480	 avg: 0.4480	   word: contraction phase
+count: 00001	high: 0.4922	 avg: 0.4922	   word: corresponding process
+count: 00001	high: 0.5111	 avg: 0.5111	   word: classical Hamiltonian
+count: 00001	high: 0.5401	 avg: 0.5401	   word: polymeric form
+count: 00001	high: 0.5593	 avg: 0.5593	   word: cosmological setup
+count: 00001	high: 0.5640	 avg: 0.5640	   word: classical polymerization
+count: 00001	high: 0.5795	 avg: 0.5795	   word: polymeric representation
+count: 00001	high: 0.5982	 avg: 0.5982	   word: polymeric counterpart
+count: 00001	high: 0.7201	 avg: 0.7201	   word: polymerized classical model
+count: 00001	high: 0.7296	 avg: 0.7296	   word: scalar field FRW
+count: 00001	high: 0.7314	 avg: 0.7314	   word: quantum cosmological theories
+count: 00001	high: 0.8256	 avg: 0.8256	   word: corresponding symplectic structure
+count: 00001	high: 0.4855	 avg: 0.4855	   word: phases
+count: 00001	high: 0.6996	 avg: 0.6996	   word: Kantowski-Sachs solution
+count: 00001	high: 0.7448	 avg: 0.7448	   word: anisotropy universe
+count: 00001	high: 0.7837	 avg: 0.7837	   word: GMGHS spacetimes
+count: 00001	high: 0.9727	 avg: 0.9727	   word: doubly warped products
+count: 00001	high: 0.4599	 avg: 0.4599	   word: regularization
+count: 00001	high: 0.5512	 avg: 0.5512	   word: preinflationary state
+count: 00001	high: 0.5611	 avg: 0.5611	   word: present observations
+count: 00001	high: 0.5639	 avg: 0.5639	   word: vacuum state
+count: 00001	high: 0.5653	 avg: 0.5653	   word: late-time cosmology
+count: 00001	high: 0.6140	 avg: 0.6140	   word: primordial bounce
+count: 00001	high: 0.6199	 avg: 0.6199	   word: isotropic Universe
+count: 00001	high: 0.6251	 avg: 0.6251	   word: super-Hamiltonian eigenvalue
+count: 00001	high: 0.6836	 avg: 0.6836	   word: cosmological implementation
+count: 00001	high: 0.6916	 avg: 0.6916	   word: polymer quantum approach
+count: 00001	high: 0.6999	 avg: 0.6999	   word: Universe scale factor
+count: 00001	high: 0.7054	 avg: 0.7054	   word: proper classical limit
+count: 00001	high: 0.7122	 avg: 0.7122	   word: nonsingular quantum behavior
+count: 00001	high: 0.7252	 avg: 0.7252	   word: positive emerging dust
+count: 00001	high: 0.7288	 avg: 0.7288	   word: high occupation number
+count: 00001	high: 0.7375	 avg: 0.7375	   word: Universe deSitter phase
+count: 00001	high: 0.7434	 avg: 0.7434	   word: ground state eigenvalue
+count: 00001	high: 0.7534	 avg: 0.7534	   word: evolutionary quantum gravity
+count: 00001	high: 0.9194	 avg: 0.9194	   word: dust energy density
+count: 00001	high: 0.3240	 avg: 0.3240	   word: gamma-law
+count: 00001	high: 0.3241	 avg: 0.3241	   word: =R+2f
+count: 00001	high: 0.3258	 avg: 0.3258	   word: element
+count: 00001	high: 0.3386	 avg: 0.3386	   word: redshift
+count: 00001	high: 0.4306	 avg: 0.4306	   word: lookback time
+count: 00001	high: 0.4315	 avg: 0.4315	   word: proper distance
+count: 00001	high: 0.4382	 avg: 0.4382	   word: pure number
+count: 00001	high: 0.4393	 avg: 0.4393	   word: phantom cosmology
+count: 00001	high: 0.4416	 avg: 0.4416	   word: density parameter
+count: 00001	high: 0.4425	 avg: 0.4425	   word: negative curvature
+count: 00001	high: 0.4433	 avg: 0.4433	   word: entropy increases
+count: 00001	high: 0.4441	 avg: 0.4441	   word: kinematics tests
+count: 00001	high: 0.4465	 avg: 0.4465	   word: luminosity distance
+count: 00001	high: 0.4479	 avg: 0.4479	   word: accelerated expansion
+count: 00001	high: 0.4495	 avg: 0.4495	   word: angular diameter
+count: 00001	high: 0.4598	 avg: 0.4598	   word: open systems
+count: 00001	high: 0.4742	 avg: 0.4742	   word: observational consequences
+count: 00001	high: 0.4827	 avg: 0.4827	   word: Ricci scalar
+count: 00001	high: 0.5668	 avg: 0.5668	   word: power-law expansion model
+count: 00001	high: 0.5694	 avg: 0.5694	   word: Big Rip singularity
+count: 00001	high: 0.5806	 avg: 0.5806	   word: simplest particular model
+count: 00001	high: 0.5879	 avg: 0.5879	   word: flat Friedmann-Robertson-Walker line
+count: 00001	high: 0.6692	 avg: 0.6692	   word: phenomenological particle creation
+count: 00001	high: 0.2461	 avg: 0.2461	   word: perspective
+count: 00001	high: 0.2480	 avg: 0.2480	   word: view
+count: 00001	high: 0.2490	 avg: 0.2490	   word: fields
+count: 00001	high: 0.3233	 avg: 0.3233	   word: analogies
+count: 00001	high: 0.5342	 avg: 0.5342	   word: algebraic properties
+count: 00001	high: 0.5476	 avg: 0.5476	   word: dynamical features
+count: 00001	high: 0.5511	 avg: 0.5511	   word: geometrical character
+count: 00001	high: 0.5848	 avg: 0.5848	   word: recently-introduced ELKO
+count: 00001	high: 0.9136	 avg: 0.9136	   word: well-known Dirac spinor
+count: 00001	high: 0.2126	 avg: 0.2126	   word: choice
+count: 00001	high: 0.2944	 avg: 0.2944	   word: formalisms
+count: 00001	high: 0.3803	 avg: 0.3803	   word: cosmic dynamo
+count: 00001	high: 0.3934	 avg: 0.3934	   word: useful tool
+count: 00001	high: 0.4153	 avg: 0.4153	   word: theoretical cosmology
+count: 00001	high: 0.4265	 avg: 0.4265	   word: perturbed variables
+count: 00001	high: 0.4296	 avg: 0.4296	   word: Poisson gauge
+count: 00001	high: 0.4437	 avg: 0.4437	   word: covariant formalism
+count: 00001	high: 0.6850	 avg: 0.6850	   word: gauge invariant approach
+count: 00001	high: 0.7938	 avg: 0.7938	   word: Cosmological Perturbation Theory
+count: 00001	high: 0.9270	 avg: 0.9270	   word: primordial magnetic fields
+count: 00001	high: 0.3486	 avg: 0.3486	   word: contributions
+count: 00001	high: 0.3489	 avg: 0.3489	   word: forms
+count: 00001	high: 0.3548	 avg: 0.3548	   word: search
+count: 00001	high: 0.3634	 avg: 0.3634	   word: periods
+count: 00001	high: 0.3732	 avg: 0.3732	   word: constituents
+count: 00001	high: 0.5496	 avg: 0.5496	   word: baryonic matter
+count: 00001	high: 0.5659	 avg: 0.5659	   word: Cosmological solutions
+count: 00001	high: 0.5691	 avg: 0.5691	   word: fermionic fields
+count: 00001	high: 0.5805	 avg: 0.5805	   word: power-law inflation
+count: 00001	high: 0.5976	 avg: 0.5976	   word: fundamental topic
+count: 00001	high: 0.6040	 avg: 0.6040	   word: accelerated regimes
+count: 00001	high: 0.6073	 avg: 0.6073	   word: exponential inflation
+count: 00001	high: 0.6074	 avg: 0.6074	   word: Noether symmetry
+count: 00001	high: 0.7782	 avg: 0.7782	   word: non-minimal coupling
+count: 00001	high: 0.9710	 avg: 0.9710	   word: fermion field
+count: 00001	high: 0.2308	 avg: 0.2308	   word: clock
+count: 00001	high: 0.3953	 avg: 0.3953	   word: quantum observables
+count: 00001	high: 0.4052	 avg: 0.4052	   word: critical volume
+count: 00001	high: 0.4083	 avg: 0.4083	   word: dynamical observables
+count: 00001	high: 0.4155	 avg: 0.4155	   word: general argument
+count: 00001	high: 0.4306	 avg: 0.4306	   word: inequivalent maps
+count: 00001	high: 0.4327	 avg: 0.4327	   word: Planck scale
+count: 00001	high: 0.4391	 avg: 0.4391	   word: quantum theories
+count: 00001	high: 0.4486	 avg: 0.4486	   word: suitable tools
+count: 00001	high: 0.4539	 avg: 0.4539	   word: twin theorems
+count: 00001	high: 0.4588	 avg: 0.4588	   word: constraint surface
+count: 00001	high: 0.4862	 avg: 0.4862	   word: canonical structure
+count: 00001	high: 0.5541	 avg: 0.5541	   word: semiclassical discrepancies
+count: 00001	high: 0.6488	 avg: 0.6488	   word: specific time function
+count: 00001	high: 0.6759	 avg: 0.6759	   word: critical energy density
+count: 00001	high: 0.7284	 avg: 0.7284	   word: different time functions
+count: 00001	high: 0.7791	 avg: 0.7791	   word: choice-of-time-induced semiclassical effects
+count: 00001	high: 0.9464	 avg: 0.9464	   word: time function
+count: 00001	high: 0.4461	 avg: 0.4461	   word: nature
+count: 00001	high: 0.6494	 avg: 0.6494	   word: early stage
+count: 00001	high: 0.6956	 avg: 0.6956	   word: stringy cosmology
+count: 00001	high: 0.7043	 avg: 0.7043	   word: phantom Universe
+count: 00001	high: 0.7043	 avg: 0.7043	   word: ten-dimensional spacetime
+count: 00001	high: 0.7100	 avg: 0.7100	   word: string evolution
+count: 00001	high: 0.7632	 avg: 0.7632	   word: photon size
+count: 00001	high: 0.8068	 avg: 0.8068	   word: higher-dimensional cosmology
+count: 00001	high: 0.8119	 avg: 0.8119	   word: photon spin
+count: 00001	high: 0.8436	 avg: 0.8436	   word: Universe size increases
+count: 00001	high: 0.8888	 avg: 0.8888	   word: standard inflationary Universe
+count: 00001	high: 0.9009	 avg: 0.9009	   word: string size
+count: 00001	high: 0.3260	 avg: 0.3260	   word: rescaling
+count: 00001	high: 0.3274	 avg: 0.3274	   word: reveals
+count: 00001	high: 0.3368	 avg: 0.3368	   word: limitation
+count: 00001	high: 0.4311	 avg: 0.4311	   word: interesting features
+count: 00001	high: 0.4338	 avg: 0.4338	   word: key features
+count: 00001	high: 0.4360	 avg: 0.4360	   word: associated physics
+count: 00001	high: 0.4396	 avg: 0.4396	   word: unique choice
+count: 00001	high: 0.4397	 avg: 0.4397	   word: dynamical evolution
+count: 00001	high: 0.4417	 avg: 0.4417	   word: general class
+count: 00001	high: 0.4449	 avg: 0.4449	   word: arbitrary scale
+count: 00001	high: 0.4503	 avg: 0.4503	   word: Bianchi-I spacetimes
+count: 00001	high: 0.4511	 avg: 0.4511	   word: quantum geometry
+count: 00001	high: 0.4547	 avg: 0.4547	   word: pancake singularities
+count: 00001	high: 0.4668	 avg: 0.4668	   word: generic bounds
+count: 00001	high: 0.5473	 avg: 0.5473	   word: loop quantization
+count: 00001	high: 0.5506	 avg: 0.5506	   word: Planck scale physics
+count: 00001	high: 0.5534	 avg: 0.5534	   word: fiducial cell dependence
+count: 00001	high: 0.5618	 avg: 0.5618	   word: quantum geometric effects
+count: 00001	high: 0.5703	 avg: 0.5703	   word: certain initial conditions
+count: 00001	high: 0.5793	 avg: 0.5793	   word: fiducial cell
+count: 00001	high: 0.6243	 avg: 0.6243	   word: various proposed choices
+count: 00001	high: 0.6277	 avg: 0.6277	   word: different proposed quantizations
+count: 00001	high: 0.6668	 avg: 0.6668	   word: possible quantization prescriptions
+count: 00001	high: 0.6909	 avg: 0.6909	   word: quantization prescriptions
+count: 00001	high: 0.8422	 avg: 0.8422	   word: Kantowski-Sachs spacetime
+count: 00001	high: 0.9098	 avg: 0.9098	   word: shear scalars
+count: 00001	high: 0.9153	 avg: 0.9153	   word: effective spacetime description
+count: 00001	high: 0.4216	 avg: 0.4216	   word: predictions
+count: 00001	high: 0.4219	 avg: 0.4219	   word: centres
+count: 00001	high: 0.4230	 avg: 0.4230	   word: Measurements
+count: 00001	high: 0.4237	 avg: 0.4237	   word: astrophysics
+count: 00001	high: 0.4255	 avg: 0.4255	   word: millions
+count: 00001	high: 0.4255	 avg: 0.4255	   word: merger
+count: 00001	high: 0.4263	 avg: 0.4263	   word: ESA
+count: 00001	high: 0.4434	 avg: 0.4434	   word: systems
+count: 00001	high: 0.4546	 avg: 0.4546	   word: mergers
+count: 00001	high: 0.5227	 avg: 0.5227	   word: new way
+count: 00001	high: 0.5242	 avg: 0.5242	   word: fundamental physics
+count: 00001	high: 0.5258	 avg: 0.5258	   word: wide applications
+count: 00001	high: 0.5276	 avg: 0.5276	   word: likely sources
+count: 00001	high: 0.5298	 avg: 0.5298	   word: mass range
+count: 00001	high: 0.5310	 avg: 0.5310	   word: Milky Way
+count: 00001	high: 0.5377	 avg: 0.5377	   word: 10 thousand
+count: 00001	high: 0.5406	 avg: 0.5406	   word: hierarchical assembly
+count: 00001	high: 0.5406	 avg: 0.5406	   word: dynamical regime
+count: 00001	high: 0.5421	 avg: 0.5421	   word: final plunge
+count: 00001	high: 0.5422	 avg: 0.5422	   word: unprecedented opportunity
+count: 00001	high: 0.5434	 avg: 0.5434	   word: solar masses
+count: 00001	high: 0.5464	 avg: 0.5464	   word: potential sources
+count: 00001	high: 0.5511	 avg: 0.5511	   word: ultra-compact binaries
+count: 00001	high: 0.5523	 avg: 0.5523	   word: host galaxies
+count: 00001	high: 0.5817	 avg: 0.5817	   word: space-based interferometer
+count: 00001	high: 0.6163	 avg: 0.6163	   word: Gravitational Universe
+count: 00001	high: 0.6214	 avg: 0.6214	   word: great scientific potential
+count: 00001	high: 0.6382	 avg: 0.6382	   word: central black hole
+count: 00001	high: 0.6396	 avg: 0.6396	   word: L3 large satellite
+count: 00001	high: 0.6412	 avg: 0.6412	   word: mass compact objects
+count: 00001	high: 0.6469	 avg: 0.6469	   word: scientific potential
+count: 00001	high: 0.6526	 avg: 0.6526	   word: galactic stellar populations
+count: 00001	high: 0.6665	 avg: 0.6665	   word: massive black holes
+count: 00001	high: 0.7324	 avg: 0.7324	   word: Millihertz gravitational waves
+count: 00001	high: 0.7345	 avg: 0.7345	   word: gravitational wave detectors
+count: 00001	high: 0.7643	 avg: 0.7643	   word: detectable gravitational radiation
+count: 00001	high: 0.7646	 avg: 0.7646	   word: millihertz gravitational radiation
+count: 00001	high: 0.8000	 avg: 0.8000	   word: gravitational wave band
+count: 00001	high: 0.9827	 avg: 0.9827	   word: millihertz gravitational wave
+count: 00001	high: 0.4269	 avg: 0.4269	   word: comparison
+count: 00001	high: 0.4288	 avg: 0.4288	   word: approaches
+count: 00001	high: 0.4305	 avg: 0.4305	   word: independence
+count: 00001	high: 0.4366	 avg: 0.4366	   word: regime
+count: 00001	high: 0.4377	 avg: 0.4377	   word: formulation
+count: 00001	high: 0.5509	 avg: 0.5509	   word: metric approach
+count: 00001	high: 0.5522	 avg: 0.5522	   word: effective equations
+count: 00001	high: 0.5594	 avg: 0.5594	   word: possible scaling
+count: 00001	high: 0.5611	 avg: 0.5611	   word: odinger equation
+count: 00001	high: 0.5643	 avg: 0.5643	   word: unitary evolution
+count: 00001	high: 0.5669	 avg: 0.5669	   word: approximate Schr\
+count: 00001	high: 0.5705	 avg: 0.5705	   word: alternate factor
+count: 00001	high: 0.5970	 avg: 0.5970	   word: gauge invariants
+count: 00001	high: 0.6573	 avg: 0.6573	   word: Quantum Field Theory
+count: 00001	high: 0.6829	 avg: 0.6829	   word: Born-Oppenheimer ansatz
+count: 00001	high: 0.6892	 avg: 0.6892	   word: different factor orderings
+count: 00001	high: 0.7085	 avg: 0.7085	   word: Loop Quantum Theory
+count: 00001	high: 0.7140	 avg: 0.7140	   word: quantization prescription issues
+count: 00001	high: 0.7414	 avg: 0.7414	   word: Mukhanov-Sasaki variables
+count: 00001	high: 0.7682	 avg: 0.7682	   word: inhomogeneous perturbations
+count: 00001	high: 0.7754	 avg: 0.7754	   word: hybrid quantization approach
+count: 00001	high: 0.3679	 avg: 0.3679	   word: regimes
+count: 00001	high: 0.3870	 avg: 0.3870	   word: diminution
+count: 00001	high: 0.5254	 avg: 0.5254	   word: flat cosmology
+count: 00001	high: 0.5461	 avg: 0.5461	   word: simple model
+count: 00001	high: 0.5730	 avg: 0.5730	   word: exact solution
+count: 00001	high: 0.6894	 avg: 0.6894	   word: big bang
+count: 00001	high: 0.6909	 avg: 0.6909	   word: big rip
+count: 00001	high: 0.7820	 avg: 0.7820	   word: confluent Heun functions
+count: 00001	high: 0.7966	 avg: 0.7966	   word: confluent Heun equations
+count: 00001	high: 0.8843	 avg: 0.8843	   word: gravitational wave astronomers
+count: 00001	high: 0.8945	 avg: 0.8945	   word: gravitational wave amplitude
+count: 00001	high: 0.9393	 avg: 0.9393	   word: primordial gravitational waves
+count: 00001	high: 0.3885	 avg: 0.3885	   word: explanation
+count: 00001	high: 0.3998	 avg: 0.3998	   word: review
+count: 00001	high: 0.4639	 avg: 0.4639	   word: difficulties
+count: 00001	high: 0.5170	 avg: 0.5170	   word: instabilities
+count: 00001	high: 0.8073	 avg: 0.8073	   word: different approaches
+count: 00001	high: 0.8245	 avg: 0.8245	   word: modern cosmology
+count: 00001	high: 0.9407	 avg: 0.9407	   word: gravity approach
+count: 00001	high: 0.3200	 avg: 0.3200	   word: set
+count: 00001	high: 0.3203	 avg: 0.3203	   word: condition
+count: 00001	high: 0.3224	 avg: 0.3224	   word: class
+count: 00001	high: 0.3265	 avg: 0.3265	   word: extent
+count: 00001	high: 0.4108	 avg: 0.4108	   word: entire evolution
+count: 00001	high: 0.4117	 avg: 0.4117	   word: univerese isotropize
+count: 00001	high: 0.4140	 avg: 0.4140	   word: time period
+count: 00001	high: 0.4173	 avg: 0.4173	   word: expansion phase
+count: 00001	high: 0.4226	 avg: 0.4226	   word: certain case
+count: 00001	high: 0.4259	 avg: 0.4259	   word: certain form
+count: 00001	high: 0.4269	 avg: 0.4269	   word: fixed points
+count: 00001	high: 0.4327	 avg: 0.4327	   word: nonsingular bounce
+count: 00001	high: 0.4411	 avg: 0.4411	   word: BKL instability
+count: 00001	high: 0.4506	 avg: 0.4506	   word: anisotropy background
+count: 00001	high: 0.4602	 avg: 0.4602	   word: dimensionless variables
+count: 00001	high: 0.5113	 avg: 0.5113	   word: kinetic term
+count: 00001	high: 0.5421	 avg: 0.5421	   word: cyclic universe exist
+count: 00001	high: 0.5758	 avg: 0.5758	   word: eternal bouncing scenario
+count: 00001	high: 0.5774	 avg: 0.5774	   word: single bouncing scenario
+count: 00001	high: 0.5778	 avg: 0.5778	   word: suitable dynamical variables
+count: 00001	high: 0.5788	 avg: 0.5788	   word: dynamical variables
+count: 00001	high: 0.9051	 avg: 0.9051	   word: noncanonical scalar field
+count: 00001	high: 0.4450	 avg: 0.4450	   word: Letter
+count: 00001	high: 0.4483	 avg: 0.4483	   word: Phys.Lett
+count: 00001	high: 0.4739	 avg: 0.4739	   word: unification
+count: 00001	high: 0.4950	 avg: 0.4950	   word: Born-Infeld
+count: 00001	high: 0.5861	 avg: 0.5861	   word: arXiv
+count: 00001	high: 0.6536	 avg: 0.6536	   word: non-periodic behavior
+count: 00001	high: 0.6764	 avg: 0.6764	   word: late-time acceleration
+count: 00001	high: 0.6786	 avg: 0.6786	   word: S. Odintsov
+count: 00001	high: 0.6824	 avg: 0.6824	   word: early-time inflation
+count: 00001	high: 0.7304	 avg: 0.7304	   word: G.J. Olmo
+count: 00001	high: 0.7466	 avg: 0.7466	   word: conformal approach
+count: 00001	high: 0.7495	 avg: 0.7495	   word: A.N. Makarenko
+count: 00001	high: 0.9053	 avg: 0.9053	   word: Dark Energy cosmology
+count: 00001	high: 0.4271	 avg: 0.4271	   word: challenges
+count: 00001	high: 0.4290	 avg: 0.4290	   word: Gaussianity
+count: 00001	high: 0.4291	 avg: 0.4291	   word: physics
+count: 00001	high: 0.4404	 avg: 0.4404	   word: satisfies
+count: 00001	high: 0.4439	 avg: 0.4439	   word: robustness
+count: 00001	high: 0.5389	 avg: 0.5389	   word: various properties
+count: 00001	high: 0.5490	 avg: 0.5490	   word: qualitative aspects
+count: 00001	high: 0.5519	 avg: 0.5519	   word: excellent agreement
+count: 00001	high: 0.5520	 avg: 0.5520	   word: strong constraints
+count: 00001	high: 0.5596	 avg: 0.5596	   word: peakedness properties
+count: 00001	high: 0.5602	 avg: 0.5602	   word: arbitrary states
+count: 00001	high: 0.5611	 avg: 0.5611	   word: multiple peaks
+count: 00001	high: 0.5636	 avg: 0.5636	   word: relative fluctuations
+count: 00001	high: 0.5683	 avg: 0.5683	   word: key issue
+count: 00001	high: 0.5706	 avg: 0.5706	   word: little resemblance
+count: 00001	high: 0.5721	 avg: 0.5721	   word: Chimera scheme
+count: 00001	high: 0.5732	 avg: 0.5732	   word: various models
+count: 00001	high: 0.5759	 avg: 0.5759	   word: semi-classical states
+count: 00001	high: 0.5823	 avg: 0.5823	   word: numerical simulations
+count: 00001	high: 0.6690	 avg: 0.6690	   word: quantum cosmological model
+count: 00001	high: 0.6938	 avg: 0.6938	   word: bounce volume
+count: 00001	high: 0.7031	 avg: 0.7031	   word: exactly solvable loop
+count: 00001	high: 0.7214	 avg: 0.7214	   word: general initial states
+count: 00001	high: 0.7722	 avg: 0.7722	   word: Gaussian initial states
+count: 00001	high: 0.9012	 avg: 0.9012	   word: highly non-Gaussian states
+count: 00001	high: 0.4405	 avg: 0.4405	   word: help
+count: 00001	high: 0.4557	 avg: 0.4557	   word: mechanics
+count: 00001	high: 0.4663	 avg: 0.4663	   word: Broglie-Bohm
+count: 00001	high: 0.4738	 avg: 0.4738	   word: solution
+count: 00001	high: 0.6571	 avg: 0.6571	   word: robust model
+count: 00001	high: 0.6610	 avg: 0.6610	   word: classical evolution
+count: 00001	high: 0.6833	 avg: 0.6833	   word: well-known problems
+count: 00001	high: 0.6963	 avg: 0.6963	   word: cosmological expansion
+count: 00001	high: 0.7101	 avg: 0.7101	   word: coasting evolution
+count: 00001	high: 0.7377	 avg: 0.7377	   word: Friedmann model
+count: 00001	high: 0.7982	 avg: 0.7982	   word: Wheeler-DeWitt equation
+count: 00001	high: 0.9327	 avg: 0.9327	   word: SNe Ia data
+count: 00001	high: 0.9694	 avg: 0.9694	   word: appropriate matter/energy density
+count: 00001	high: 0.9738	 avg: 0.9738	   word: exact quantum-classical correspondence
+count: 00001	high: 0.2532	 avg: 0.2532	   word: law
+count: 00001	high: 0.2540	 avg: 0.2540	   word: values
+count: 00001	high: 0.2569	 avg: 0.2569	   word: c_
+count: 00001	high: 0.2633	 avg: 0.2633	   word: V^
+count: 00001	high: 0.2637	 avg: 0.2637	   word: occurs
+count: 00001	high: 0.2711	 avg: 0.2711	   word: Variable
+count: 00001	high: 0.3238	 avg: 0.3238	   word: temperature
+count: 00001	high: 0.3286	 avg: 0.3286	   word: B_
+count: 00001	high: 0.3398	 avg: 0.3398	   word: fluid
+count: 00001	high: 0.4904	 avg: 0.4904	   word: large volume
+count: 00001	high: 0.5046	 avg: 0.5046	   word: special case
+count: 00001	high: 0.5114	 avg: 0.5114	   word: volume increases
+count: 00001	high: 0.5148	 avg: 0.5148	   word: positive expression
+count: 00001	high: 0.5164	 avg: 0.5164	   word: explicit function
+count: 00001	high: 0.5169	 avg: 0.5169	   word: phantom-like cosmology
+count: 00001	high: 0.5177	 avg: 0.5177	   word: thermal capacity
+count: 00001	high: 0.5430	 avg: 0.5430	   word: Guo \emph
+count: 00001	high: 0.5627	 avg: 0.5627	   word: thermodynamic stability
+count: 00001	high: 0.5631	 avg: 0.5631	   word: adiabatic expansions
+count: 00001	high: 0.5826	 avg: 0.5826	   word: VCG model
+count: 00001	high: 0.5841	 avg: 0.5841	   word: constant volume
+count: 00001	high: 0.6289	 avg: 0.6289	   word: thermodynamical behaviour
+count: 00001	high: 0.6732	 avg: 0.6732	   word: effective equation
+count: 00001	high: 0.7834	 avg: 0.7834	   word: best fit value
+count: 00001	high: 0.8301	 avg: 0.8301	   word: SNe Ia constraints
+count: 00001	high: 0.8877	 avg: 0.8877	   word: thermal equation
+count: 00001	high: 0.4647	 avg: 0.4647	   word: variation
+count: 00001	high: 0.4787	 avg: 0.4787	   word: imperfectness
+count: 00001	high: 0.4831	 avg: 0.4831	   word: Lagrangian
+count: 00001	high: 0.5442	 avg: 0.5442	   word: fluids
+count: 00001	high: 0.6482	 avg: 0.6482	   word: final step
+count: 00001	high: 0.6606	 avg: 0.6606	   word: formal solution
+count: 00001	high: 0.6720	 avg: 0.6720	   word: single fluid
+count: 00001	high: 0.7016	 avg: 0.7016	   word: natural implication
+count: 00001	high: 0.7042	 avg: 0.7042	   word: common procedure
+count: 00001	high: 0.7305	 avg: 0.7305	   word: robust formulation
+count: 00001	high: 0.7726	 avg: 0.7726	   word: covariant formulation
+count: 00001	high: 0.9188	 avg: 0.9188	   word: special FLRW space
+count: 00001	high: 0.9441	 avg: 0.9441	   word: effective fluid description
+count: 00001	high: 0.2454	 avg: 0.2454	   word: FIT
+count: 00001	high: 0.2545	 avg: 0.2545	   word: non-stable cosmology
+count: 00001	high: 0.3131	 avg: 0.3131	   word: new cosmologies
+count: 00001	high: 0.3380	 avg: 0.3380	   word: form-invariance transformations
+count: 00001	high: 0.3834	 avg: 0.3834	   word: inverse square potential
+count: 00001	high: 0.4136	 avg: 0.4136	   word: Hubble expansion rate
+count: 00001	high: 0.4982	 avg: 0.4982	   word: tachyon species
+count: 00001	high: 0.5945	 avg: 0.5945	   word: extended tachyon field
+count: 00001	high: 0.6243	 avg: 0.6243	   word: ordinary tachyon field
+count: 00001	high: 0.7046	 avg: 0.7046	   word: tachyon field universes
+count: 00001	high: 0.7886	 avg: 0.7886	   word: complementary tachyon cosmologies
+count: 00001	high: 0.9652	 avg: 0.9652	   word: tachyon field
+count: 00001	high: 0.4437	 avg: 0.4437	   word: mass
+count: 00001	high: 0.4439	 avg: 0.4439	   word: const.
+count: 00001	high: 0.4440	 avg: 0.4440	   word: points
+count: 00001	high: 0.4480	 avg: 0.4480	   word: method
+count: 00001	high: 0.4481	 avg: 0.4481	   word: extension
+count: 00001	high: 0.4509	 avg: 0.4509	   word: metrics
+count: 00001	high: 0.4551	 avg: 0.4551	   word: orbits
+count: 00001	high: 0.4865	 avg: 0.4865	   word: R_
+count: 00001	high: 0.5045	 avg: 0.5045	   word: clocks
+count: 00001	high: 0.5383	 avg: 0.5383	   word: Reissner-Nordstr\
+count: 00001	high: 0.5862	 avg: 0.5862	   word: Gautreau
+count: 00001	high: 0.6290	 avg: 0.6290	   word: generalized equation
+count: 00001	high: 0.6306	 avg: 0.6306	   word: important consequence
+count: 00001	high: 0.6356	 avg: 0.6356	   word: Newtonian calculation
+count: 00001	high: 0.6363	 avg: 0.6363	   word: coordinate time
+count: 00001	high: 0.6400	 avg: 0.6400	   word: electrostatic field
+count: 00001	high: 0.6510	 avg: 0.6510	   word: orbital radius
+count: 00001	high: 0.6687	 avg: 0.6687	   word: orbital spiralling
+count: 00001	high: 0.6807	 avg: 0.6807	   word: radial geodesics
+count: 00001	high: 0.8926	 avg: 0.8926	   word: different cosmological scenarios
+count: 00001	high: 0.9101	 avg: 0.9101	   word: geodesic coordinates
+count: 00001	high: 0.4720	 avg: 0.4720	   word: brief review
+count: 00001	high: 0.4838	 avg: 0.4838	   word: Kasner cosmology
+count: 00001	high: 0.4874	 avg: 0.4874	   word: original equations
+count: 00001	high: 0.5679	 avg: 0.5679	   word: arbitrary dimensions
+count: 00001	high: 0.5895	 avg: 0.5895	   word: cosmological quantities
+count: 00001	high: 0.7525	 avg: 0.7525	   word: extended Kasner solution
+count: 00001	high: 0.9422	 avg: 0.9422	   word: type~I anisotropic cosmology
+count: 00001	high: 0.9788	 avg: 0.9788	   word: effective induced scalar
+count: 00001	high: 0.3704	 avg: 0.3704	   word: specific forms
+count: 00001	high: 0.3824	 avg: 0.3824	   word: phantom-non-phantom era
+count: 00001	high: 0.4141	 avg: 0.4141	   word: consistent model
+count: 00001	high: 0.4208	 avg: 0.4208	   word: mathematical reconstruction
+count: 00001	high: 0.4305	 avg: 0.4305	   word: fluids mixture
+count: 00001	high: 0.4366	 avg: 0.4366	   word: gravity model
+count: 00001	high: 0.4771	 avg: 0.4771	   word: different epoches
+count: 00001	high: 0.4935	 avg: 0.4935	   word: newly proposal
+count: 00001	high: 0.6625	 avg: 0.6625	   word: torsion scalar
+count: 00001	high: 0.6734	 avg: 0.6734	   word: cosmological history
+count: 00001	high: 0.6798	 avg: 0.6798	   word: perfect fluid,Chaplygin gas
+count: 00001	high: 0.7494	 avg: 0.7494	   word: purely phantom cosmology
+count: 00001	high: 0.7730	 avg: 0.7730	   word: cosmological reconstruction
+count: 00001	high: 0.9356	 avg: 0.9356	   word: energy momentum tensor
+count: 00001	high: 0.9560	 avg: 0.9560	   word: flat cosmological background
+count: 00001	high: 0.3577	 avg: 0.3577	   word: ways
+count: 00001	high: 0.6295	 avg: 0.6295	   word: short review
+count: 00001	high: 0.6705	 avg: 0.6705	   word: spatial curvature
+count: 00001	high: 0.6792	 avg: 0.6792	   word: equivalence problem
+count: 00001	high: 0.7646	 avg: 0.7646	   word: Cartan scalars
+count: 00001	high: 0.8657	 avg: 0.8657	   word: different LTB models
+count: 00001	high: 0.8814	 avg: 0.8814	   word: correlation term
+count: 00001	high: 0.9405	 avg: 0.9405	   word: example leading correlation
+count: 00001	high: 0.9531	 avg: 0.9531	   word: monochromatic gravitational wave
+count: 00001	high: 0.2747	 avg: 0.2747	   word: -dimensional hypersurface
+count: 00001	high: 0.2750	 avg: 0.2750	   word: MBDT procedure
+count: 00001	high: 0.2759	 avg: 0.2759	   word: current ranges
+count: 00001	high: 0.2761	 avg: 0.2761	   word: power-law solutions
+count: 00001	high: 0.2763	 avg: 0.2763	   word: different phases
+count: 00001	high: 0.2874	 avg: 0.2874	   word: different epochs
+count: 00001	high: 0.2925	 avg: 0.2925	   word: resulted solutions
+count: 00001	high: 0.2935	 avg: 0.2935	   word: -dimensional theory
+count: 00001	high: 0.2949	 avg: 0.2949	   word: corresponding physics
+count: 00001	high: 0.2986	 avg: 0.2986	   word: conventional GR
+count: 00001	high: 0.3057	 avg: 0.3057	   word: new features
+count: 00001	high: 0.3161	 avg: 0.3161	   word: -dimensional space-time
+count: 00001	high: 0.3223	 avg: 0.3223	   word: scalar potential
+count: 00001	high: 0.3252	 avg: 0.3252	   word: observational viability
+count: 00001	high: 0.3397	 avg: 0.3397	   word: algebraic framework
+count: 00001	high: 0.4881	 avg: 0.4881	   word: perfect fluid background
+count: 00001	high: 0.5223	 avg: 0.5223	   word: BD theories
+count: 00001	high: 0.5631	 avg: 0.5631	   word: spatially flat FLRW
+count: 00001	high: 0.5832	 avg: 0.5832	   word: suitable dimensional reduction
+count: 00001	high: 0.6492	 avg: 0.6492	   word: extra dimension
+count: 00001	high: 0.8655	 avg: 0.8655	   word: dimensional BD theory
+count: 00001	high: 0.8858	 avg: 0.8858	   word: BD scalar field
+count: 00001	high: 0.4443	 avg: 0.4443	   word: phase
+count: 00001	high: 0.4484	 avg: 0.4484	   word: probability
+count: 00001	high: 0.4509	 avg: 0.4509	   word: difficulty
+count: 00001	high: 0.4564	 avg: 0.4564	   word: necessity
+count: 00001	high: 0.4640	 avg: 0.4640	   word: vicinity
+count: 00001	high: 0.5545	 avg: 0.5545	   word: bounce
+count: 00001	high: 0.6009	 avg: 0.6009	   word: specific feature
+count: 00001	high: 0.6086	 avg: 0.6086	   word: concrete example
+count: 00001	high: 0.6167	 avg: 0.6167	   word: closed Universe
+count: 00001	high: 0.6198	 avg: 0.6198	   word: unitarity
+count: 00001	high: 0.6238	 avg: 0.6238	   word: WKB methods
+count: 00001	high: 0.6269	 avg: 0.6269	   word: precise conditions
+count: 00001	high: 0.6741	 avg: 0.6741	   word: matter transitions
+count: 00001	high: 0.6822	 avg: 0.6822	   word: consistent notion
+count: 00001	high: 0.7833	 avg: 0.7833	   word: background field approximation
+count: 00001	high: 0.8918	 avg: 0.8918	   word: conjugate momentum representation
+count: 00001	high: 0.9492	 avg: 0.9492	   word: conjugate momentum
+count: 00001	high: 0.2397	 avg: 0.2397	   word: FLRW
+count: 00001	high: 0.2397	 avg: 0.2397	   word: tre-Robertson-Walker
+count: 00001	high: 0.2412	 avg: 0.2412	   word: definition
+count: 00001	high: 0.2615	 avg: 0.2615	   word: decay
+count: 00001	high: 0.3929	 avg: 0.3929	   word: evolution equation
+count: 00001	high: 0.4119	 avg: 0.4119	   word: different pressure
+count: 00001	high: 0.4182	 avg: 0.4182	   word: non-perfect fluid
+count: 00001	high: 0.4235	 avg: 0.4235	   word: Ricci identities
+count: 00001	high: 0.4250	 avg: 0.4250	   word: anisotropy parameter
+count: 00001	high: 0.6097	 avg: 0.6097	   word: higher dimensional space-time
+count: 00001	high: 0.6193	 avg: 0.6193	   word: shear increases
+count: 00001	high: 0.6293	 avg: 0.6293	   word: higher dimensional Friedmann-Lema\^
+count: 00001	high: 0.8316	 avg: 0.8316	   word: shear dynamics
+count: 00001	high: 0.8715	 avg: 0.8715	   word: extra dimensions
+count: 00001	high: 0.9876	 avg: 0.9876	   word: shear tensor
+count: 00001	high: 0.4315	 avg: 0.4315	   word: Ho\v
+count: 00001	high: 0.4319	 avg: 0.4319	   word: versions
+count: 00001	high: 0.4443	 avg: 0.4443	   word: DM
+count: 00001	high: 0.4676	 avg: 0.4676	   word: parametrization
+count: 00001	high: 0.4734	 avg: 0.4734	   word: expressions
+count: 00001	high: 0.5764	 avg: 0.5764	   word: strong dependence
+count: 00001	high: 0.5780	 avg: 0.5780	   word: Dark Matter
+count: 00001	high: 0.5811	 avg: 0.5811	   word: evolutionary form
+count: 00001	high: 0.5963	 avg: 0.5963	   word: Power Law
+count: 00001	high: 0.6020	 avg: 0.6020	   word: ava-Lifshitz cosmology
+count: 00001	high: 0.6583	 avg: 0.6583	   word: RDE
+count: 00001	high: 0.6897	 avg: 0.6897	   word: interacting case
+count: 00001	high: 0.7673	 avg: 0.7673	   word: Ricci Dark Energy
+count: 00001	high: 0.7688	 avg: 0.7688	   word: low redshift expansion
+count: 00001	high: 0.7700	 avg: 0.7700	   word: EoS parameter
+count: 00001	high: 0.7779	 avg: 0.7779	   word: exact differential equation
+count: 00001	high: 0.7790	 avg: 0.7790	   word: small redshift approximation
+count: 00001	high: 0.7859	 avg: 0.7859	   word: spatially non-flat universe
+count: 00001	high: 0.8262	 avg: 0.8262	   word: Logarithmic Entropy Corrected
+count: 00001	high: 0.9121	 avg: 0.9121	   word: energy density parameter
+count: 00001	high: 0.3462	 avg: 0.3462	   word: Machian
+count: 00001	high: 0.3469	 avg: 0.3469	   word: semiclassical-histories-records
+count: 00001	high: 0.3470	 avg: 0.3470	   word: levels
+count: 00001	high: 0.3527	 avg: 0.3527	   word: galaxies
+count: 00001	high: 0.3600	 avg: 0.3600	   word: parallels
+count: 00001	high: 0.3640	 avg: 0.3640	   word: geometries
+count: 00001	high: 0.3704	 avg: 0.3704	   word: Whilst
+count: 00001	high: 0.3736	 avg: 0.3736	   word: number
+count: 00001	high: 0.3765	 avg: 0.3765	   word: QM
+count: 00001	high: 0.3768	 avg: 0.3768	   word: perturbations
+count: 00001	high: 0.3955	 avg: 0.3955	   word: Time
+count: 00001	high: 0.4294	 avg: 0.4294	   word: elimination
+count: 00001	high: 0.5515	 avg: 0.5515	   word: basis set
+count: 00001	high: 0.5521	 avg: 0.5521	   word: intermediate geometry
+count: 00001	high: 0.5526	 avg: 0.5526	   word: model arena
+count: 00001	high: 0.5546	 avg: 0.5546	   word: -body problem
+count: 00001	high: 0.5564	 avg: 0.5564	   word: main features
+count: 00001	high: 0.5582	 avg: 0.5582	   word: modewise split
+count: 00001	high: 0.5609	 avg: 0.5609	   word: Halliwell-Hawking model
+count: 00001	high: 0.5613	 avg: 0.5613	   word: useful upgrades
+count: 00001	high: 0.5740	 avg: 0.5740	   word: specific model
+count: 00001	high: 0.5765	 avg: 0.5765	   word: local resolution
+count: 00001	high: 0.5803	 avg: 0.5803	   word: minisuperspace models
+count: 00001	high: 0.5811	 avg: 0.5811	   word: conceptual differences
+count: 00001	high: 0.5892	 avg: 0.5892	   word: Kuchar beables
+count: 00001	high: 0.5909	 avg: 0.5909	   word: relational triangle
+count: 00001	high: 0.5945	 avg: 0.5945	   word: quantum approach
+count: 00001	high: 0.6056	 avg: 0.6056	   word: fact 8/9ths
+count: 00001	high: 0.6061	 avg: 0.6061	   word: Theoretical Physics
+count: 00001	high: 0.6065	 avg: 0.6065	   word: inflationary mechanism
+count: 00001	high: 0.6101	 avg: 0.6101	   word: various areas
+count: 00001	high: 0.6102	 avg: 0.6102	   word: first-class constraints
+count: 00001	high: 0.6109	 avg: 0.6109	   word: CMB hotspots
+count: 00001	high: 0.6237	 avg: 0.6237	   word: collinear singularities
+count: 00001	high: 0.6475	 avg: 0.6475	   word: surprising singularities
+count: 00001	high: 0.7298	 avg: 0.7298	   word: inhomogeneous fluctuations
+count: 00001	high: 0.8239	 avg: 0.8239	   word: classical level
+count: 00001	high: 0.8678	 avg: 0.8678	   word: quantum cosmological fluctuations
+count: 00001	high: 0.9157	 avg: 0.9157	   word: slightly inhomogeneous cosmology
+count: 00001	high: 0.9604	 avg: 0.9604	   word: multi-faceted conceptual incompatibility
+count: 00001	high: 0.4110	 avg: 0.4110	   word: aim
+count: 00001	high: 0.4125	 avg: 0.4125	   word: descriptions
+count: 00001	high: 0.4134	 avg: 0.4134	   word: potential
+count: 00001	high: 0.4135	 avg: 0.4135	   word: interactions
+count: 00001	high: 0.4227	 avg: 0.4227	   word: details
+count: 00001	high: 0.4626	 avg: 0.4626	   word: inflaton background
+count: 00001	high: 0.4633	 avg: 0.4633	   word: New issue
+count: 00001	high: 0.4661	 avg: 0.4661	   word: general solution
+count: 00001	high: 0.4705	 avg: 0.4705	   word: quintom character
+count: 00001	high: 0.4714	 avg: 0.4714	   word: inflation theory
+count: 00001	high: 0.4742	 avg: 0.4742	   word: wide sense
+count: 00001	high: 0.4772	 avg: 0.4772	   word: present review
+count: 00001	high: 0.4774	 avg: 0.4774	   word: long-wave approximation
+count: 00001	high: 0.4782	 avg: 0.4782	   word: shortwave approximation
+count: 00001	high: 0.4822	 avg: 0.4822	   word: successive applications
+count: 00001	high: 0.4897	 avg: 0.4897	   word: inflationary epoch
+count: 00001	high: 0.5080	 avg: 0.5080	   word: two-component model
+count: 00001	high: 0.5166	 avg: 0.5166	   word: dark sector fields
+count: 00001	high: 0.5239	 avg: 0.5239	   word: law Universe expansion
+count: 00001	high: 0.5266	 avg: 0.5266	   word: Universe evolution
+count: 00001	high: 0.5359	 avg: 0.5359	   word: New generalized model
+count: 00001	high: 0.5382	 avg: 0.5382	   word: canonical scalar field
+count: 00001	high: 0.5426	 avg: 0.5426	   word: dark sector perturbations
+count: 00001	high: 0.5617	 avg: 0.5617	   word: self-gravitating nonlinear sigma
+count: 00001	high: 0.6142	 avg: 0.6142	   word: chiral fields
+count: 00001	high: 0.9327	 avg: 0.9327	   word: chiral cosmological model
+count: 00001	high: 0.2492	 avg: 0.2492	   word: group
+count: 00001	high: 0.2493	 avg: 0.2493	   word: vacuum
+count: 00001	high: 0.2545	 avg: 0.2545	   word: phenomenon
+count: 00001	high: 0.2730	 avg: 0.2730	   word: criterion
+count: 00001	high: 0.2760	 avg: 0.2760	   word: generalization
+count: 00001	high: 0.2864	 avg: 0.2864	   word: invariance
+count: 00001	high: 0.3103	 avg: 0.3103	   word: Laplacian
+count: 00001	high: 0.4735	 avg: 0.4735	   word: physical states
+count: 00001	high: 0.4976	 avg: 0.4976	   word: exponential production
+count: 00001	high: 0.4992	 avg: 0.4992	   word: physical predictions
+count: 00001	high: 0.5038	 avg: 0.5038	   word: unique way
+count: 00001	high: 0.5160	 avg: 0.5160	   word: field description
+count: 00001	high: 0.5214	 avg: 0.5214	   word: field propagates
+count: 00001	high: 0.5335	 avg: 0.5335	   word: Klein-Gordon type
+count: 00001	high: 0.5521	 avg: 0.5521	   word: elliptic regime
+count: 00001	high: 0.5622	 avg: 0.5622	   word: spatial symmetries
+count: 00001	high: 0.5763	 avg: 0.5763	   word: nonstationary spacetimes
+count: 00001	high: 0.5819	 avg: 0.5819	   word: unitary implementation
+count: 00001	high: 0.6048	 avg: 0.6048	   word: unitary transformations
+count: 00001	high: 0.6186	 avg: 0.6186	   word: scalar fields
+count: 00001	high: 0.6393	 avg: 0.6393	   word: Fock representation
+count: 00001	high: 0.6655	 avg: 0.6655	   word: spacetime interpretation
+count: 00001	high: 0.6856	 avg: 0.6856	   word: cosmological spacetime
+count: 00001	high: 0.6858	 avg: 0.6858	   word: signature change
+count: 00001	high: 0.7522	 avg: 0.7522	   word: field equations
+count: 00001	high: 0.7919	 avg: 0.7919	   word: specific canonical pair
+count: 00001	high: 0.8112	 avg: 0.8112	   word: hyperbolic dynamical regime
+count: 00001	high: 0.8654	 avg: 0.8654	   word: relevant spatial dependence
+count: 00001	high: 0.9136	 avg: 0.9136	   word: spacetime metric degenerates
+count: 00001	high: 0.9556	 avg: 0.9556	   word: privileged Fock quantization
+count: 00001	high: 0.4327	 avg: 0.4327	   word: conditions
+count: 00001	high: 0.4366	 avg: 0.4366	   word: source
+count: 00001	high: 0.4516	 avg: 0.4516	   word: acceleration
+count: 00001	high: 0.6128	 avg: 0.6128	   word: Einstein frame
+count: 00001	high: 0.6224	 avg: 0.6224	   word: asymptotic form
+count: 00001	high: 0.6330	 avg: 0.6330	   word: parameter space
+count: 00001	high: 0.6362	 avg: 0.6362	   word: viable cosmology
+count: 00001	high: 0.6411	 avg: 0.6411	   word: future attractor
+count: 00001	high: 0.6810	 avg: 0.6810	   word: cosmological viability
+count: 00001	high: 0.6815	 avg: 0.6815	   word: weak coupling
+count: 00001	high: 0.8499	 avg: 0.8499	   word: double exponential potential
+count: 00001	high: 0.8663	 avg: 0.8663	   word: acceptable cosmological history
+count: 00001	high: 0.8749	 avg: 0.8749	   word: transient matter era
+count: 00001	high: 0.9108	 avg: 0.9108	   word: scalar field non
+count: 00001	high: 0.9215	 avg: 0.9215	   word: perfect fluid matter
+count: 00001	high: 0.2861	 avg: 0.2861	   word: introduction
+count: 00001	high: 0.2991	 avg: 0.2991	   word: arguments
+count: 00001	high: 0.3295	 avg: 0.3295	   word: favour
+count: 00001	high: 0.6028	 avg: 0.6028	   word: effective level
+count: 00001	high: 0.7198	 avg: 0.7198	   word: infinitely many ways
+count: 00001	high: 0.7667	 avg: 0.7667	   word: canonical transformations
+count: 00001	high: 0.7892	 avg: 0.7892	   word: conjugate momenta
+count: 00001	high: 0.8184	 avg: 0.8184	   word: holonomy corrections
+count: 00001	high: 0.9658	 avg: 0.9658	   word: different modified holonomy
+count: 00001	high: 0.9805	 avg: 0.9805	   word: clear physical meaning
+count: 00001	high: 0.2036	 avg: 0.2036	   word: PBHs
+count: 00001	high: 0.3316	 avg: 0.3316	   word: General Theory
+count: 00001	high: 0.3601	 avg: 0.3601	   word: Standard Cosmology
+count: 00001	high: 0.3911	 avg: 0.3911	   word: faster rate
+count: 00001	high: 0.5717	 avg: 0.5717	   word: accretion rate
+count: 00001	high: 0.6640	 avg: 0.6640	   word: respective dominant periods
+count: 00001	high: 0.6995	 avg: 0.6995	   word: primordial black holes
+count: 00001	high: 0.7202	 avg: 0.7202	   word: energy accretion efficiency
+count: 00001	high: 0.8529	 avg: 0.8529	   word: vacuum energy
+count: 00001	high: 0.4360	 avg: 0.4360	   word: power-law
+count: 00001	high: 0.4725	 avg: 0.4725	   word: M_
+count: 00001	high: 0.6140	 avg: 0.6140	   word: particular cases
+count: 00001	high: 0.6159	 avg: 0.6159	   word: complicated case
+count: 00001	high: 0.6456	 avg: 0.6456	   word: exponential ones
+count: 00001	high: 0.6495	 avg: 0.6495	   word: Sitter solution
+count: 00001	high: 0.8094	 avg: 0.8094	   word: scalar field description
+count: 00001	high: 0.8545	 avg: 0.8545	   word: exact cosmological solutions
+count: 00001	high: 0.8958	 avg: 0.8958	   word: isotropic Friedmann-Robertson-Walker Universe
+count: 00001	high: 0.9223	 avg: 0.9223	   word: main cosmological properties
+count: 00001	high: 0.9885	 avg: 0.9885	   word: classical Friedmann equations
+count: 00001	high: 0.2576	 avg: 0.2576	   word: examples
+count: 00001	high: 0.5104	 avg: 0.5104	   word: Different forms
+count: 00001	high: 0.5303	 avg: 0.5303	   word: -modified gravity
+count: 00001	high: 0.5414	 avg: 0.5414	   word: finite-time singularities
+count: 00001	high: 0.5731	 avg: 0.5731	   word: early-time acceleration
+count: 00001	high: 0.5900	 avg: 0.5900	   word: FRW space-time
+count: 00001	high: 0.6229	 avg: 0.6229	   word: corresponding fluids
+count: 00001	high: 0.8118	 avg: 0.8118	   word: bounce cosmology
+count: 00001	high: 0.9147	 avg: 0.9147	   word: inhomogeneous viscous fluids
+count: 00001	high: 0.2421	 avg: 0.2421	   word: general
+count: 00001	high: 0.2424	 avg: 0.2424	   word: properties
+count: 00001	high: 0.2427	 avg: 0.2427	   word: reliability
+count: 00001	high: 0.2485	 avg: 0.2485	   word: departure
+count: 00001	high: 0.2648	 avg: 0.2648	   word: discrepancy
+count: 00001	high: 0.3180	 avg: 0.3180	   word: departures
+count: 00001	high: 0.4402	 avg: 0.4402	   word: field momentum
+count: 00001	high: 0.4430	 avg: 0.4430	   word: different fluctuations
+count: 00001	high: 0.4433	 avg: 0.4433	   word: good approximation
+count: 00001	high: 0.4458	 avg: 0.4458	   word: generic feature
+count: 00001	high: 0.4466	 avg: 0.4466	   word: coarse level
+count: 00001	high: 0.4535	 avg: 0.4535	   word: surprising results
+count: 00001	high: 0.4544	 avg: 0.4544	   word: non-monotonic way
+count: 00001	high: 0.4564	 avg: 0.4564	   word: important questions
+count: 00001	high: 0.4786	 avg: 0.4786	   word: wide spread
+count: 00001	high: 0.4839	 avg: 0.4839	   word: universal maximum
+count: 00001	high: 0.4840	 avg: 0.4840	   word: key result
+count: 00001	high: 0.4876	 avg: 0.4876	   word: spacetime curvature
+count: 00001	high: 0.6338	 avg: 0.6338	   word: Planck density
+count: 00001	high: 0.6758	 avg: 0.6758	   word: Chimera numerical scheme
+count: 00001	high: 0.6762	 avg: 0.6762	   word: spatially flat model
+count: 00001	high: 0.6804	 avg: 0.6804	   word: severe computational challenges
+count: 00001	high: 0.6865	 avg: 0.6865	   word: exactly solvable model
+count: 00001	high: 0.6876	 avg: 0.6876	   word: underlying quantum dynamics
+count: 00001	high: 0.7075	 avg: 0.7075	   word: scalar field momenta
+count: 00001	high: 0.7155	 avg: 0.7155	   word: various matter models
+count: 00001	high: 0.7158	 avg: 0.7158	   word: matter field probes
+count: 00001	high: 0.7216	 avg: 0.7216	   word: continuum effective spacetime
+count: 00001	high: 0.7312	 avg: 0.7312	   word: widely spread states
+count: 00001	high: 0.9273	 avg: 0.9273	   word: Planck volume
+count: 00001	high: 0.4299	 avg: 0.4299	   word: specific choices
+count: 00001	high: 0.4854	 avg: 0.4854	   word: Brans-Dicke function
+count: 00001	high: 0.6051	 avg: 0.6051	   word: scalar-tensor cosmology
+count: 00001	high: 0.7633	 avg: 0.7633	   word: corresponding differential equations
+count: 00001	high: 0.3401	 avg: 0.3401	   word: sign
+count: 00001	high: 0.3515	 avg: 0.3515	   word: crossover
+count: 00001	high: 0.3583	 avg: 0.3583	   word: boundaries
+count: 00001	high: 0.3631	 avg: 0.3631	   word: kinematics
+count: 00001	high: 0.3647	 avg: 0.3647	   word: crossovers
+count: 00001	high: 0.3764	 avg: 0.3764	   word: aeons
+count: 00001	high: 0.4487	 avg: 0.4487	   word: Penrose
+count: 00001	high: 0.5160	 avg: 0.5160	   word: early history
+count: 00001	high: 0.5269	 avg: 0.5269	   word: Minkowski space
+count: 00001	high: 0.5298	 avg: 0.5298	   word: imaginary time
+count: 00001	high: 0.5364	 avg: 0.5364	   word: light cone
+count: 00001	high: 0.5387	 avg: 0.5387	   word: projective space
+count: 00001	high: 0.5498	 avg: 0.5498	   word: tangent directions
+count: 00001	high: 0.5528	 avg: 0.5528	   word: previous aeon
+count: 00001	high: 0.5855	 avg: 0.5855	   word: natural boundary
+count: 00001	high: 0.5967	 avg: 0.5967	   word: Mixmaster Universe
+count: 00001	high: 0.7534	 avg: 0.7534	   word: reverse Wick rotation
+count: 00001	high: 0.8006	 avg: 0.8006	   word: algebraic geometric models
+count: 00001	high: 0.8097	 avg: 0.8097	   word: Wick rotation
+count: 00001	high: 0.8223	 avg: 0.8223	   word: Big Bang boundary
+count: 00001	high: 0.6186	 avg: 0.6186	   word: Statefinder diagnostic
+count: 00001	high: 0.7780	 avg: 0.7780	   word: Lyra manifold
+count: 00001	high: 0.8265	 avg: 0.8265	   word: quintessence cosmology
+count: 00001	high: 0.2249	 avg: 0.2249	   word: matter-chameleon
+count: 00001	high: 0.2263	 avg: 0.2263	   word: DBI-essence
+count: 00001	high: 0.2302	 avg: 0.2302	   word: stability
+count: 00001	high: 0.2303	 avg: 0.2303	   word: al.
+count: 00001	high: 0.2374	 avg: 0.2374	   word: Yang
+count: 00001	high: 0.2374	 avg: 0.2374	   word: potentials
+count: 00001	high: 0.2595	 avg: 0.2595	   word: Phys
+count: 00001	high: 0.3482	 avg: 0.3482	   word: NHDE model
+count: 00001	high: 0.3591	 avg: 0.3591	   word: potential increases
+count: 00001	high: 0.3620	 avg: 0.3620	   word: H^2+\nu \dot
+count: 00001	high: 0.3874	 avg: 0.3874	   word: \emph{Mod.
+count: 00001	high: 0.5109	 avg: 0.5109	   word: New Holographic Dark
+count: 00001	high: 0.5236	 avg: 0.5236	   word: massless conformally-invariant fields
+count: 00001	high: 0.5401	 avg: 0.5401	   word: tachyon scalar field
+count: 00001	high: 0.5464	 avg: 0.5464	   word: phantom crossing occurs
+count: 00001	high: 0.5644	 avg: 0.5644	   word: quantum correction
+count: 00001	high: 0.7250	 avg: 0.7250	   word: scalar field models
+count: 00001	high: 0.7688	 avg: 0.7688	   word: chameleon Brans-Dicke chameleon
+count: 00001	high: 0.9951	 avg: 0.9951	   word: chameleon Brans-Dicke cosmology
+count: 00001	high: 0.3340	 avg: 0.3340	   word: change
+count: 00001	high: 0.3351	 avg: 0.3351	   word: rate
+count: 00001	high: 0.3395	 avg: 0.3395	   word: confirmation
+count: 00001	high: 0.3430	 avg: 0.3430	   word: conclusion
+count: 00001	high: 0.4733	 avg: 0.4733	   word: fact shows
+count: 00001	high: 0.4849	 avg: 0.4849	   word: total entropy
+count: 00001	high: 0.4892	 avg: 0.4892	   word: thermal equilibrium
+count: 00001	high: 0.4962	 avg: 0.4962	   word: generalized second law
+count: 00001	high: 0.4991	 avg: 0.4991	   word: event horizon
+count: 00001	high: 0.5649	 avg: 0.5649	   word: dark energy temperature
+count: 00001	high: 0.6412	 avg: 0.6412	   word: perfect thermodynamic boundary
+count: 00001	high: 0.6796	 avg: 0.6796	   word: non-equilibrium conditions
+count: 00001	high: 0.8479	 avg: 0.8479	   word: apparent horizon
+count: 00001	high: 0.2594	 avg: 0.2594	   word: criteria
+count: 00001	high: 0.4380	 avg: 0.4380	   word: wide class
+count: 00001	high: 0.4747	 avg: 0.4747	   word: important tool
+count: 00001	high: 0.4920	 avg: 0.4920	   word: master parameters
+count: 00001	high: 0.5374	 avg: 0.5374	   word: cosmological horizon
+count: 00001	high: 0.5451	 avg: 0.5451	   word: curvature profiles
+count: 00001	high: 0.6112	 avg: 0.6112	   word: primordial spectrum
+count: 00001	high: 0.7440	 avg: 0.7440	   word: PBHs formation
+count: 00001	high: 0.7532	 avg: 0.7532	   word: highly perturbed configurations
+count: 00001	high: 0.7989	 avg: 0.7989	   word: radiation domination epoch
+count: 00001	high: 0.8602	 avg: 0.8602	   word: Primordial black holes
+count: 00001	high: 0.9270	 avg: 0.9270	   word: small-scale curvature perturbations
+count: 00001	high: 0.3503	 avg: 0.3503	   word: different effects
+count: 00001	high: 0.3590	 avg: 0.3590	   word: single model
+count: 00001	high: 0.3854	 avg: 0.3854	   word: standard models
+count: 00001	high: 0.4392	 avg: 0.4392	   word: particle masses
+count: 00001	high: 0.4604	 avg: 0.4604	   word: zero-point energy
+count: 00001	high: 0.4773	 avg: 0.4773	   word: neutrino oscillations
+count: 00001	high: 0.7087	 avg: 0.7087	   word: leptonic weak-like forces
+count: 00001	high: 0.7839	 avg: 0.7839	   word: gravitational singularity formation
+count: 00001	high: 0.8177	 avg: 0.8177	   word: background-induced non-linear potentials
+count: 00001	high: 0.8489	 avg: 0.8489	   word: least-order torsional completion
+count: 00001	high: 0.9391	 avg: 0.9391	   word: fermionic Dirac matter
+count: 00001	high: 0.2517	 avg: 0.2517	   word: P_
+count: 00001	high: 0.5087	 avg: 0.5087	   word: interaction term
+count: 00001	high: 0.5351	 avg: 0.5351	   word: barotropic fluid
+count: 00001	high: 0.8320	 avg: 0.8320	   word: ghost dark energy
+count: 00001	high: 0.9373	 avg: 0.9373	   word: higher dimensional cosmology
+count: 00001	high: 0.4346	 avg: 0.4346	   word: Russia
+count: 00001	high: 0.4353	 avg: 0.4353	   word: Russian-Spanish
+count: 00001	high: 0.4514	 avg: 0.4514	   word: Congress
+count: 00001	high: 0.4541	 avg: 0.4541	   word: Scales
+count: 00001	high: 0.4580	 avg: 0.4580	   word: Particle
+count: 00001	high: 0.4581	 avg: 0.4581	   word: Proceedings
+count: 00001	high: 0.4635	 avg: 0.4635	   word: contribution
+count: 00001	high: 0.5990	 avg: 0.5990	   word: standard material
+count: 00001	high: 0.6030	 avg: 0.6030	   word: brief overview
+count: 00001	high: 0.6276	 avg: 0.6276	   word: Nuclear Physics
+count: 00001	high: 0.6278	 avg: 0.6278	   word: precise number
+count: 00001	high: 0.6415	 avg: 0.6415	   word: uniqueness problems
+count: 00001	high: 0.6468	 avg: 0.6468	   word: Saint Petersburg
+count: 00001	high: 0.6507	 avg: 0.6507	   word: ADM approach
+count: 00001	high: 0.6586	 avg: 0.6586	   word: bimetric gravity
+count: 00001	high: 0.7191	 avg: 0.7191	   word: massive gravity
+count: 00001	high: 0.7413	 avg: 0.7413	   word: non-perturbative aspects
+count: 00001	high: 0.8022	 avg: 0.8022	   word: matrix square roots
+count: 00001	high: 0.9592	 avg: 0.9592	   word: non-perturbative metric formulations
+count: 00001	high: 0.5427	 avg: 0.5427	   word: Friedmann-Calabi-Yau
+count: 00001	high: 0.6509	 avg: 0.6509	   word: origin
+count: 00001	high: 0.6556	 avg: 0.6556	   word: Newton
+count: 00001	high: 0.9385	 avg: 0.9385	   word: time variation
+count: 00001	high: 0.9436	 avg: 0.9436	   word: present epoch
+count: 00001	high: 0.3858	 avg: 0.3858	   word: qualitative results
+count: 00001	high: 0.3868	 avg: 0.3868	   word: infrared region
+count: 00001	high: 0.3959	 avg: 0.3959	   word: backreaction contributions
+count: 00001	high: 0.3984	 avg: 0.3984	   word: initial data
+count: 00001	high: 0.4007	 avg: 0.4007	   word: phase synchronization
+count: 00001	high: 0.4081	 avg: 0.4081	   word: statistical amplification
+count: 00001	high: 0.4395	 avg: 0.4395	   word: distant future
+count: 00001	high: 0.4463	 avg: 0.4463	   word: distant past
+count: 00001	high: 0.4522	 avg: 0.4522	   word: three-torus topology
+count: 00001	high: 0.4631	 avg: 0.4631	   word: convenient gauge
+count: 00001	high: 0.5258	 avg: 0.5258	   word: isotropic spacetime
+count: 00001	high: 0.6248	 avg: 0.6248	   word: quantum gravity phenomena
+count: 00001	high: 0.6684	 avg: 0.6684	   word: Mukhanov-Sasaki gauge invariants
+count: 00001	high: 0.6905	 avg: 0.6905	   word: hybrid quantum description
+count: 00001	high: 0.7547	 avg: 0.7547	   word: previous hybrid quantization
+count: 00001	high: 0.7718	 avg: 0.7718	   word: massless vacuum state
+count: 00001	high: 0.9673	 avg: 0.9673	   word: small scalar perturbations
+count: 00001	high: 0.4596	 avg: 0.4596	   word: Poincar\
+count: 00001	high: 0.4705	 avg: 0.4705	   word: effect
+count: 00001	high: 0.4760	 avg: 0.4760	   word: relativity
+count: 00001	high: 0.5173	 avg: 0.5173	   word: resultant
+count: 00001	high: 0.7231	 avg: 0.7231	   word: gauge theory
+count: 00001	high: 0.7350	 avg: 0.7350	   word: teleparallelism condition
+count: 00001	high: 0.7473	 avg: 0.7473	   word: cosmic acceleration
+count: 00001	high: 0.8316	 avg: 0.8316	   word: Friedmann cosmology
+count: 00001	high: 0.9119	 avg: 0.9119	   word: spinning dark energy
+count: 00001	high: 0.9572	 avg: 0.9572	   word: current accelerating universe
+count: 00001	high: 0.9932	 avg: 0.9932	   word: cosmological constant driving
+count: 00001	high: 0.4302	 avg: 0.4302	   word: oscillates
+count: 00001	high: 0.4326	 avg: 0.4326	   word: domain
+count: 00001	high: 0.4362	 avg: 0.4362	   word: limits
+count: 00001	high: 0.4399	 avg: 0.4399	   word: energies
+count: 00001	high: 0.4446	 avg: 0.4446	   word: maxima
+count: 00001	high: 0.4456	 avg: 0.4456	   word: singularities
+count: 00001	high: 0.5616	 avg: 0.5616	   word: present paper
+count: 00001	high: 0.5618	 avg: 0.5618	   word: quantum level
+count: 00001	high: 0.5686	 avg: 0.5686	   word: early stages
+count: 00001	high: 0.5856	 avg: 0.5856	   word: drastic modification
+count: 00001	high: 0.5967	 avg: 0.5967	   word: present work
+count: 00001	high: 0.6009	 avg: 0.6009	   word: initial indication
+count: 00001	high: 0.6062	 avg: 0.6062	   word: minima values
+count: 00001	high: 0.6249	 avg: 0.6249	   word: constant curvature
+count: 00001	high: 0.6272	 avg: 0.6272	   word: corresponding eigenfunctions
+count: 00001	high: 0.6383	 avg: 0.6383	   word: noncommutative parameter
+count: 00001	high: 0.6389	 avg: 0.6389	   word: noncommutative version
+count: 00001	high: 0.7199	 avg: 0.7199	   word: quantum mechanical version
+count: 00001	high: 0.7254	 avg: 0.7254	   word: present model
+count: 00001	high: 0.7255	 avg: 0.7255	   word: corresponding commutative version
+count: 00001	high: 0.7606	 avg: 0.7606	   word: quantum cosmology model
+count: 00001	high: 0.7823	 avg: 0.7823	   word: radiative perfect fluid
+count: 00001	high: 0.9708	 avg: 0.9708	   word: discrete energy spectrum
+count: 00001	high: 0.3837	 avg: 0.3837	   word: power law
+count: 00001	high: 0.3976	 avg: 0.3976	   word: interesting model
+count: 00001	high: 0.4516	 avg: 0.4516	   word: specific potentials
+count: 00001	high: 0.4591	 avg: 0.4591	   word: time guarantees
+count: 00001	high: 0.4700	 avg: 0.4700	   word: strong constraint
+count: 00001	high: 0.5064	 avg: 0.5064	   word: Dirac equations
+count: 00001	high: 0.5147	 avg: 0.5147	   word: Sitter phases
+count: 00001	high: 0.5226	 avg: 0.5226	   word: fermionic condensate
+count: 00001	high: 0.5440	 avg: 0.5440	   word: phase space
+count: 00001	high: 0.5548	 avg: 0.5548	   word: inflationary phase
+count: 00001	high: 0.7145	 avg: 0.7145	   word: dark energy era
+count: 00001	high: 0.9017	 avg: 0.9017	   word: Relativistic cosmological models
+count: 00001	high: 0.9445	 avg: 0.9445	   word: non minimal coupling
