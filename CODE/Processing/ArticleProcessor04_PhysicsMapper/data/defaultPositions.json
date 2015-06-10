@@ -1,0 +1,1808 @@
+{"terms": [
+  {
+    "term": "string theory",
+    "connections": [
+      {
+        "id": "spacetime",
+        "strength": 0.005210045259445906,
+        "length": 69.50494384765625
+      },
+      {
+        "id": "special relativity",
+        "strength": 0.005136188119649887,
+        "length": 160.37266540527344
+      },
+      {
+        "id": "time",
+        "strength": 0.004730256740003824,
+        "length": 170.34483337402344
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.005596261005848646,
+        "length": 142.89157104492188
+      },
+      {
+        "id": "standard model",
+        "strength": 0.00478818453848362,
+        "length": 159.53488159179688
+      },
+      {
+        "id": "hilbert space",
+        "strength": 0.005046575330197811,
+        "length": 197.77777099609375
+      },
+      {
+        "id": "de sitter space",
+        "strength": 0.005630286410450935,
+        "length": 53.333343505859375
+      },
+      {
+        "id": "loop quantum gravity",
+        "strength": 0.00477271294221282,
+        "length": 20
+      },
+      {
+        "id": "minkowski space",
+        "strength": 0.005739919375628233,
+        "length": 195
+      },
+      {
+        "id": "supersymmetry",
+        "strength": 0.005103206727653742,
+        "length": 20
+      },
+      {
+        "id": "wormhole",
+        "strength": 0.005855836905539036,
+        "length": 183.63636779785156
+      },
+      {
+        "id": "theory of everything",
+        "strength": 0.005649452097713947,
+        "length": 20
+      },
+      {
+        "id": "gravitational constant",
+        "strength": 0.005510404706001282,
+        "length": 120
+      },
+      {
+        "id": "time travel",
+        "strength": 0.007270237430930138,
+        "length": 140
+      },
+      {
+        "id": "m-theory",
+        "strength": 0.006208207458257675,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 625.7036743164062,
+    "x": 731.7623291015625
+  },
+  {
+    "term": "black hole",
+    "connections": [
+      {
+        "id": "big bang",
+        "strength": 0.007287085521966219,
+        "length": 216.55172729492188
+      },
+      {
+        "id": "hawking radiation",
+        "strength": 0.005579266231507063,
+        "length": 20
+      },
+      {
+        "id": "neutron star",
+        "strength": 0.005893483757972717,
+        "length": 20
+      },
+      {
+        "id": "white dwarf",
+        "strength": 0.005208805203437805,
+        "length": 20
+      },
+      {
+        "id": "event horizon",
+        "strength": 0.004554182291030884,
+        "length": 20
+      },
+      {
+        "id": "supernova",
+        "strength": 0.005369216203689575,
+        "length": 20
+      },
+      {
+        "id": "black hole thermodynamics",
+        "strength": 0.004970261827111244,
+        "length": 20
+      },
+      {
+        "id": "hilbert space",
+        "strength": 0.006758059840649366,
+        "length": 208.88888549804688
+      },
+      {
+        "id": "de sitter space",
+        "strength": 0.0053917961195111275,
+        "length": 186.66665649414062
+      },
+      {
+        "id": "loop quantum gravity",
+        "strength": 0.005002543330192566,
+        "length": 145.92593383789062
+      },
+      {
+        "id": "pulsar",
+        "strength": 0.004653678275644779,
+        "length": 20
+      },
+      {
+        "id": "accretion disc",
+        "strength": 0.004706083796918392,
+        "length": 20
+      },
+      {
+        "id": "black hole information paradox",
+        "strength": 0.006257191766053438,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 388.01715087890625,
+    "x": 642.0674438476562
+  },
+  {
+    "term": "physical cosmology",
+    "connections": [
+      {
+        "id": "dark matter",
+        "strength": 0.004824399016797543,
+        "length": 20
+      },
+      {
+        "id": "big bang",
+        "strength": 0.004835010040551424,
+        "length": 20
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.007488665636628866,
+        "length": 215.18072509765625
+      },
+      {
+        "id": "hawking radiation",
+        "strength": 0.005830530542880297,
+        "length": 202.7957000732422
+      },
+      {
+        "id": "dark energy",
+        "strength": 0.005629387218505144,
+        "length": 20
+      },
+      {
+        "id": "cosmological constant",
+        "strength": 0.004538984503597021,
+        "length": 20
+      },
+      {
+        "id": "white dwarf",
+        "strength": 0.004506866913288832,
+        "length": 199.3103485107422
+      },
+      {
+        "id": "supernova",
+        "strength": 0.004670997615903616,
+        "length": 186.66665649414062
+      },
+      {
+        "id": "cosmic microwave background radiation",
+        "strength": 0.005732735153287649,
+        "length": 26.451614379882812
+      },
+      {
+        "id": "hubble's law",
+        "strength": 0.006498632952570915,
+        "length": 20
+      },
+      {
+        "id": "vacuum energy",
+        "strength": 0.004662045277655125,
+        "length": 86.66665649414062
+      },
+      {
+        "id": "cosmic inflation",
+        "strength": 0.008402004837989807,
+        "length": 175.55555725097656
+      },
+      {
+        "id": "lambda-cdm model",
+        "strength": 0.006001711823046207,
+        "length": 20
+      }
+    ],
+    "hardLock": true,
+    "y": 483.0950012207031,
+    "x": 266.3355407714844
+  },
+  {
+    "term": "gravitation",
+    "connections": [
+      {
+        "id": "symmetry",
+        "strength": 0.00520941149443388,
+        "length": 210.3614501953125
+      },
+      {
+        "id": "gravitational singularity",
+        "strength": 0.0054090009070932865,
+        "length": 210.243896484375
+      }
+    ],
+    "hardLock": false,
+    "y": 470.0388488769531,
+    "x": 1124.8311767578125
+  },
+  {
+    "term": "spacetime",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.005210045259445906,
+        "length": 69.50494384765625
+      },
+      {
+        "id": "special relativity",
+        "strength": 0.005157145671546459,
+        "length": 43.60247802734375
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.004640160594135523,
+        "length": 94.69879150390625
+      },
+      {
+        "id": "noether's theorem",
+        "strength": 0.004503222182393074,
+        "length": 189.23077392578125
+      },
+      {
+        "id": "de sitter space",
+        "strength": 0.004737614654004574,
+        "length": 136.6666717529297
+      },
+      {
+        "id": "loop quantum gravity",
+        "strength": 0.00454639783129096,
+        "length": 175.55555725097656
+      },
+      {
+        "id": "cosmology",
+        "strength": 0.0063206907361745834,
+        "length": 204
+      },
+      {
+        "id": "minkowski space",
+        "strength": 0.00467609241604805,
+        "length": 20
+      },
+      {
+        "id": "wormhole",
+        "strength": 0.006844237446784973,
+        "length": 147.27273559570312
+      },
+      {
+        "id": "exotic matter",
+        "strength": 0.007795122917741537,
+        "length": 120
+      },
+      {
+        "id": "time travel",
+        "strength": 0.006963993888348341,
+        "length": 60
+      }
+    ],
+    "hardLock": false,
+    "y": 558.9910278320312,
+    "x": 741.4312133789062
+  },
+  {
+    "term": "dark matter",
+    "connections": [
+      {
+        "id": "physical cosmology",
+        "strength": 0.004824399016797543,
+        "length": 20
+      },
+      {
+        "id": "special relativity",
+        "strength": 0.005482137203216553,
+        "length": 215.0310516357422
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.004711239133030176,
+        "length": 210.3614501953125
+      },
+      {
+        "id": "hubble's law",
+        "strength": 0.005361095070838928,
+        "length": 60
+      },
+      {
+        "id": "lambda-cdm model",
+        "strength": 0.005408259108662605,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 567.9127197265625,
+    "x": 438.1407775878906
+  },
+  {
+    "term": "special relativity",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.005136188119649887,
+        "length": 160.37266540527344
+      },
+      {
+        "id": "spacetime",
+        "strength": 0.005157145671546459,
+        "length": 43.60247802734375
+      },
+      {
+        "id": "dark matter",
+        "strength": 0.005482137203216553,
+        "length": 215.0310516357422
+      },
+      {
+        "id": "time",
+        "strength": 0.004933536052703857,
+        "length": 167.58621215820312
+      },
+      {
+        "id": "noether's theorem",
+        "strength": 0.007166897878050804,
+        "length": 209.74359130859375
+      },
+      {
+        "id": "de sitter space",
+        "strength": 0.00703311525285244,
+        "length": 203.3333282470703
+      },
+      {
+        "id": "minkowski space",
+        "strength": 0.005206710658967495,
+        "length": 20
+      },
+      {
+        "id": "pulsar",
+        "strength": 0.00560856843367219,
+        "length": 170
+      }
+    ],
+    "hardLock": false,
+    "y": 541.683837890625,
+    "x": 632.4244995117188
+  },
+  {
+    "term": "quantum gravity",
+    "connections": [
+      {
+        "id": "standard model",
+        "strength": 0.005207197740674019,
+        "length": 192.093017578125
+      },
+      {
+        "id": "neutron star",
+        "strength": 0.005317781586199999,
+        "length": 213.442626953125
+      },
+      {
+        "id": "hilbert space",
+        "strength": 0.00492168590426445,
+        "length": 164.44444274902344
+      },
+      {
+        "id": "de sitter space",
+        "strength": 0.006067074369639158,
+        "length": 203.3333282470703
+      },
+      {
+        "id": "loop quantum gravity",
+        "strength": 0.005620839074254036,
+        "length": 20
+      },
+      {
+        "id": "theory of everything",
+        "strength": 0.005085929296910763,
+        "length": 20
+      },
+      {
+        "id": "time travel",
+        "strength": 0.007904816418886185,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 652.5581665039062,
+    "x": 650.2796020507812
+  },
+  {
+    "term": "time",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.004730256740003824,
+        "length": 170.34483337402344
+      },
+      {
+        "id": "special relativity",
+        "strength": 0.004933536052703857,
+        "length": 167.58621215820312
+      },
+      {
+        "id": "neutron star",
+        "strength": 0.0064531718380749226,
+        "length": 206.88525390625
+      },
+      {
+        "id": "white dwarf",
+        "strength": 0.005348903592675924,
+        "length": 213.10345458984375
+      },
+      {
+        "id": "supernova",
+        "strength": 0.005184927489608526,
+        "length": 211.6666717529297
+      },
+      {
+        "id": "cosmic microwave background radiation",
+        "strength": 0.007726011332124472,
+        "length": 207.09677124023438
+      },
+      {
+        "id": "noether's theorem",
+        "strength": 0.005483059212565422,
+        "length": 199.4871826171875
+      },
+      {
+        "id": "hilbert space",
+        "strength": 0.004989381413906813,
+        "length": 175.55555725097656
+      },
+      {
+        "id": "de sitter space",
+        "strength": 0.006286219228059053,
+        "length": 186.66665649414062
+      },
+      {
+        "id": "multiverse",
+        "strength": 0.006750091910362244,
+        "length": 135.7894744873047
+      },
+      {
+        "id": "minkowski space",
+        "strength": 0.006767688784748316,
+        "length": 170
+      },
+      {
+        "id": "binary star",
+        "strength": 0.007935171946883202,
+        "length": 200
+      },
+      {
+        "id": "accelerating universe",
+        "strength": 0.005893061403185129,
+        "length": 158.46153259277344
+      }
+    ],
+    "hardLock": true,
+    "y": 289.5498352050781,
+    "x": 575.2919311523438
+  },
+  {
+    "term": "big bang",
+    "connections": [
+      {
+        "id": "black hole",
+        "strength": 0.007287085521966219,
+        "length": 216.55172729492188
+      },
+      {
+        "id": "physical cosmology",
+        "strength": 0.004835010040551424,
+        "length": 20
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.0048789274878799915,
+        "length": 215.18072509765625
+      },
+      {
+        "id": "white dwarf",
+        "strength": 0.007410044316202402,
+        "length": 213.10345458984375
+      },
+      {
+        "id": "supernova",
+        "strength": 0.004546670708805323,
+        "length": 186.66665649414062
+      },
+      {
+        "id": "cosmic microwave background radiation",
+        "strength": 0.0052690571174025536,
+        "length": 20
+      },
+      {
+        "id": "noether's theorem",
+        "strength": 0.006404274608939886,
+        "length": 209.74359130859375
+      },
+      {
+        "id": "hubble's law",
+        "strength": 0.00538821704685688,
+        "length": 20
+      },
+      {
+        "id": "cosmology",
+        "strength": 0.004591211210936308,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 516.4172973632812,
+    "x": 464.9554138183594
+  },
+  {
+    "term": "gravitational wave",
+    "connections": [
+      {
+        "id": "neutron star",
+        "strength": 0.005665801465511322,
+        "length": 154.42623901367188
+      },
+      {
+        "id": "white dwarf",
+        "strength": 0.004829591605812311,
+        "length": 151.03448486328125
+      },
+      {
+        "id": "cosmic microwave background radiation",
+        "strength": 0.006358671467751265,
+        "length": 194.19354248046875
+      }
+    ],
+    "hardLock": false,
+    "y": 291.4046630859375,
+    "x": 497.0419921875
+  },
+  {
+    "term": "symmetry",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.005596261005848646,
+        "length": 142.89157104492188
+      },
+      {
+        "id": "physical cosmology",
+        "strength": 0.007488665636628866,
+        "length": 215.18072509765625
+      },
+      {
+        "id": "gravitation",
+        "strength": 0.00520941149443388,
+        "length": 210.3614501953125
+      },
+      {
+        "id": "spacetime",
+        "strength": 0.004640160594135523,
+        "length": 94.69879150390625
+      },
+      {
+        "id": "dark matter",
+        "strength": 0.004711239133030176,
+        "length": 210.3614501953125
+      },
+      {
+        "id": "big bang",
+        "strength": 0.0048789274878799915,
+        "length": 215.18072509765625
+      },
+      {
+        "id": "standard model",
+        "strength": 0.005781929939985275,
+        "length": 200.722900390625
+      },
+      {
+        "id": "euclidean space",
+        "strength": 0.006136806681752205,
+        "length": 212.72727966308594
+      },
+      {
+        "id": "noether's theorem",
+        "strength": 0.00615602545440197,
+        "length": 107.17948150634766
+      },
+      {
+        "id": "de sitter space",
+        "strength": 0.005441846791654825,
+        "length": 186.66665649414062
+      },
+      {
+        "id": "riemannian manifold",
+        "strength": 0.006520458497107029,
+        "length": 170
+      },
+      {
+        "id": "wormhole",
+        "strength": 0.0069136843085289,
+        "length": 147.27273559570312
+      },
+      {
+        "id": "exotic matter",
+        "strength": 0.007860149256885052,
+        "length": 120
+      },
+      {
+        "id": "time travel",
+        "strength": 0.007032867055386305,
+        "length": 60
+      }
+    ],
+    "hardLock": true,
+    "y": 635.315673828125,
+    "x": 986.57080078125
+  },
+  {
+    "term": "hawking radiation",
+    "connections": [
+      {
+        "id": "black hole",
+        "strength": 0.005579266231507063,
+        "length": 20
+      },
+      {
+        "id": "physical cosmology",
+        "strength": 0.005830530542880297,
+        "length": 202.7957000732422
+      },
+      {
+        "id": "loop quantum gravity",
+        "strength": 0.00473551033064723,
+        "length": 190.37037658691406
+      },
+      {
+        "id": "cosmology",
+        "strength": 0.0052468059584498405,
+        "length": 204
+      },
+      {
+        "id": "minkowski space",
+        "strength": 0.005974719766527414,
+        "length": 195
+      }
+    ],
+    "hardLock": false,
+    "y": 433.30572509765625,
+    "x": 500.9320373535156
+  },
+  {
+    "term": "standard model",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.00478818453848362,
+        "length": 159.53488159179688
+      },
+      {
+        "id": "quantum gravity",
+        "strength": 0.005207197740674019,
+        "length": 192.093017578125
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.005781929939985275,
+        "length": 200.722900390625
+      },
+      {
+        "id": "cosmological constant",
+        "strength": 0.0063611543737351894,
+        "length": 213.5483856201172
+      },
+      {
+        "id": "euclidean space",
+        "strength": 0.0063651930540800095,
+        "length": 212.72727966308594
+      },
+      {
+        "id": "loop quantum gravity",
+        "strength": 0.00591640081256628,
+        "length": 205.1851806640625
+      },
+      {
+        "id": "accretion disc",
+        "strength": 0.00461690966039896,
+        "length": 180
+      }
+    ],
+    "hardLock": false,
+    "y": 501.2916564941406,
+    "x": 733.15966796875
+  },
+  {
+    "term": "neutron star",
+    "connections": [
+      {
+        "id": "black hole",
+        "strength": 0.005893483757972717,
+        "length": 20
+      },
+      {
+        "id": "quantum gravity",
+        "strength": 0.005317781586199999,
+        "length": 213.442626953125
+      },
+      {
+        "id": "time",
+        "strength": 0.0064531718380749226,
+        "length": 206.88525390625
+      },
+      {
+        "id": "gravitational wave",
+        "strength": 0.005665801465511322,
+        "length": 154.42623901367188
+      },
+      {
+        "id": "white dwarf",
+        "strength": 0.005697267595678568,
+        "length": 20
+      },
+      {
+        "id": "supernova",
+        "strength": 0.005483055487275124,
+        "length": 20
+      },
+      {
+        "id": "binary star",
+        "strength": 0.005619518458843231,
+        "length": 120
+      },
+      {
+        "id": "pulsar",
+        "strength": 0.00605729129165411,
+        "length": 20
+      },
+      {
+        "id": "exotic matter",
+        "strength": 0.00606911163777113,
+        "length": 120
+      }
+    ],
+    "hardLock": false,
+    "y": 434.3875732421875,
+    "x": 648.57861328125
+  },
+  {
+    "term": "dark energy",
+    "connections": [
+      {
+        "id": "physical cosmology",
+        "strength": 0.005629387218505144,
+        "length": 20
+      },
+      {
+        "id": "white dwarf",
+        "strength": 0.005898814182728529,
+        "length": 213.10345458984375
+      },
+      {
+        "id": "noether's theorem",
+        "strength": 0.004892181139439344,
+        "length": 209.74359130859375
+      },
+      {
+        "id": "hubble's law",
+        "strength": 0.006443795282393694,
+        "length": 76
+      },
+      {
+        "id": "lambda-cdm model",
+        "strength": 0.004991086199879646,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 509.84954833984375,
+    "x": 347.8712463378906
+  },
+  {
+    "term": "schwarzschild radius",
+    "connections": [],
+    "hardLock": false,
+    "y": 869.6963500976562,
+    "x": 961.4671020507812
+  },
+  {
+    "term": "cosmological constant",
+    "connections": [
+      {
+        "id": "physical cosmology",
+        "strength": 0.004538984503597021,
+        "length": 20
+      },
+      {
+        "id": "standard model",
+        "strength": 0.0063611543737351894,
+        "length": 213.5483856201172
+      },
+      {
+        "id": "cosmology",
+        "strength": 0.00619136868044734,
+        "length": 172
+      },
+      {
+        "id": "vacuum energy",
+        "strength": 0.005771665833890438,
+        "length": 20
+      },
+      {
+        "id": "cosmic inflation",
+        "strength": 0.006484838668256998,
+        "length": 175.55555725097656
+      }
+    ],
+    "hardLock": false,
+    "y": 416.67486572265625,
+    "x": 380.0672607421875
+  },
+  {
+    "term": "white dwarf",
+    "connections": [
+      {
+        "id": "black hole",
+        "strength": 0.005208805203437805,
+        "length": 20
+      },
+      {
+        "id": "physical cosmology",
+        "strength": 0.004506866913288832,
+        "length": 199.3103485107422
+      },
+      {
+        "id": "time",
+        "strength": 0.005348903592675924,
+        "length": 213.10345458984375
+      },
+      {
+        "id": "big bang",
+        "strength": 0.007410044316202402,
+        "length": 213.10345458984375
+      },
+      {
+        "id": "gravitational wave",
+        "strength": 0.004829591605812311,
+        "length": 151.03448486328125
+      },
+      {
+        "id": "neutron star",
+        "strength": 0.005697267595678568,
+        "length": 20
+      },
+      {
+        "id": "dark energy",
+        "strength": 0.005898814182728529,
+        "length": 213.10345458984375
+      },
+      {
+        "id": "supernova",
+        "strength": 0.005911560729146004,
+        "length": 20
+      },
+      {
+        "id": "binary star",
+        "strength": 0.005604281090199947,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 439.88238525390625,
+    "x": 583.94873046875
+  },
+  {
+    "term": "euclidean space",
+    "connections": [
+      {
+        "id": "symmetry",
+        "strength": 0.006136806681752205,
+        "length": 212.72727966308594
+      },
+      {
+        "id": "standard model",
+        "strength": 0.0063651930540800095,
+        "length": 212.72727966308594
+      },
+      {
+        "id": "supersymmetry",
+        "strength": 0.0047593251802027225,
+        "length": 193.3333282470703
+      },
+      {
+        "id": "non-euclidean geometry",
+        "strength": 0.005353234242647886,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 739.5331420898438,
+    "x": 867.5662841796875
+  },
+  {
+    "term": "event horizon",
+    "connections": [
+      {
+        "id": "black hole",
+        "strength": 0.004554182291030884,
+        "length": 20
+      },
+      {
+        "id": "hilbert space",
+        "strength": 0.005132067482918501,
+        "length": 208.88888549804688
+      },
+      {
+        "id": "black hole information paradox",
+        "strength": 0.004830252844840288,
+        "length": 60
+      }
+    ],
+    "hardLock": false,
+    "y": 333.486572265625,
+    "x": 632.4714965820312
+  },
+  {
+    "term": "supernova",
+    "connections": [
+      {
+        "id": "black hole",
+        "strength": 0.005369216203689575,
+        "length": 20
+      },
+      {
+        "id": "physical cosmology",
+        "strength": 0.004670997615903616,
+        "length": 186.66665649414062
+      },
+      {
+        "id": "time",
+        "strength": 0.005184927489608526,
+        "length": 211.6666717529297
+      },
+      {
+        "id": "big bang",
+        "strength": 0.004546670708805323,
+        "length": 186.66665649414062
+      },
+      {
+        "id": "neutron star",
+        "strength": 0.005483055487275124,
+        "length": 20
+      },
+      {
+        "id": "white dwarf",
+        "strength": 0.005911560729146004,
+        "length": 20
+      },
+      {
+        "id": "binary star",
+        "strength": 0.006411664187908173,
+        "length": 60
+      },
+      {
+        "id": "accretion disc",
+        "strength": 0.0059602390974760056,
+        "length": 180
+      }
+    ],
+    "hardLock": false,
+    "y": 440.8105163574219,
+    "x": 592.0620727539062
+  },
+  {
+    "term": "schwarzschild metric",
+    "connections": [],
+    "hardLock": false,
+    "y": 604.9512939453125,
+    "x": 72.89741516113281
+  },
+  {
+    "term": "cosmic microwave background radiation",
+    "connections": [
+      {
+        "id": "physical cosmology",
+        "strength": 0.005732735153287649,
+        "length": 26.451614379882812
+      },
+      {
+        "id": "time",
+        "strength": 0.007726011332124472,
+        "length": 207.09677124023438
+      },
+      {
+        "id": "big bang",
+        "strength": 0.0052690571174025536,
+        "length": 20
+      },
+      {
+        "id": "gravitational wave",
+        "strength": 0.006358671467751265,
+        "length": 194.19354248046875
+      },
+      {
+        "id": "accelerating universe",
+        "strength": 0.005949488375335932,
+        "length": 189.23077392578125
+      }
+    ],
+    "hardLock": false,
+    "y": 457.4237060546875,
+    "x": 411.9219665527344
+  },
+  {
+    "term": "noether's theorem",
+    "connections": [
+      {
+        "id": "spacetime",
+        "strength": 0.004503222182393074,
+        "length": 189.23077392578125
+      },
+      {
+        "id": "special relativity",
+        "strength": 0.007166897878050804,
+        "length": 209.74359130859375
+      },
+      {
+        "id": "time",
+        "strength": 0.005483059212565422,
+        "length": 199.4871826171875
+      },
+      {
+        "id": "big bang",
+        "strength": 0.006404274608939886,
+        "length": 209.74359130859375
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.00615602545440197,
+        "length": 107.17948150634766
+      },
+      {
+        "id": "dark energy",
+        "strength": 0.004892181139439344,
+        "length": 209.74359130859375
+      }
+    ],
+    "hardLock": false,
+    "y": 458.45587158203125,
+    "x": 746.5775146484375
+  },
+  {
+    "term": "black hole thermodynamics",
+    "connections": [{
+      "id": "black hole",
+      "strength": 0.004970261827111244,
+      "length": 20
+    }],
+    "hardLock": false,
+    "y": 349.6882019042969,
+    "x": 763.3974609375
+  },
+  {
+    "term": "black holes",
+    "connections": [],
+    "hardLock": false,
+    "y": 240.81089782714844,
+    "x": 1202.5423583984375
+  },
+  {
+    "term": "hilbert space",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.005046575330197811,
+        "length": 197.77777099609375
+      },
+      {
+        "id": "black hole",
+        "strength": 0.006758059840649366,
+        "length": 208.88888549804688
+      },
+      {
+        "id": "quantum gravity",
+        "strength": 0.00492168590426445,
+        "length": 164.44444274902344
+      },
+      {
+        "id": "time",
+        "strength": 0.004989381413906813,
+        "length": 175.55555725097656
+      },
+      {
+        "id": "event horizon",
+        "strength": 0.005132067482918501,
+        "length": 208.88888549804688
+      },
+      {
+        "id": "loop quantum gravity",
+        "strength": 0.005309111438691616,
+        "length": 175.55555725097656
+      },
+      {
+        "id": "equivalence principle",
+        "strength": 0.00662034098058939,
+        "length": 162.85714721679688
+      }
+    ],
+    "hardLock": false,
+    "y": 552.3021850585938,
+    "x": 533.2127075195312
+  },
+  {
+    "term": "gravitational singularity",
+    "connections": [{
+      "id": "gravitation",
+      "strength": 0.0054090009070932865,
+      "length": 210.243896484375
+    }],
+    "hardLock": false,
+    "y": 298.9788513183594,
+    "x": 1000.2362670898438
+  },
+  {
+    "term": "de sitter space",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.005630286410450935,
+        "length": 53.333343505859375
+      },
+      {
+        "id": "black hole",
+        "strength": 0.0053917961195111275,
+        "length": 186.66665649414062
+      },
+      {
+        "id": "spacetime",
+        "strength": 0.004737614654004574,
+        "length": 136.6666717529297
+      },
+      {
+        "id": "special relativity",
+        "strength": 0.00703311525285244,
+        "length": 203.3333282470703
+      },
+      {
+        "id": "quantum gravity",
+        "strength": 0.006067074369639158,
+        "length": 203.3333282470703
+      },
+      {
+        "id": "time",
+        "strength": 0.006286219228059053,
+        "length": 186.66665649414062
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.005441846791654825,
+        "length": 186.66665649414062
+      },
+      {
+        "id": "de sitter universe",
+        "strength": 0.005358128342777491,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 471.8243103027344,
+    "x": 809.6910400390625
+  },
+  {
+    "term": "loop quantum gravity",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.00477271294221282,
+        "length": 20
+      },
+      {
+        "id": "black hole",
+        "strength": 0.005002543330192566,
+        "length": 145.92593383789062
+      },
+      {
+        "id": "spacetime",
+        "strength": 0.00454639783129096,
+        "length": 175.55555725097656
+      },
+      {
+        "id": "quantum gravity",
+        "strength": 0.005620839074254036,
+        "length": 20
+      },
+      {
+        "id": "hawking radiation",
+        "strength": 0.00473551033064723,
+        "length": 190.37037658691406
+      },
+      {
+        "id": "standard model",
+        "strength": 0.00591640081256628,
+        "length": 205.1851806640625
+      },
+      {
+        "id": "hilbert space",
+        "strength": 0.005309111438691616,
+        "length": 175.55555725097656
+      }
+    ],
+    "hardLock": false,
+    "y": 627.3221435546875,
+    "x": 622.9305419921875
+  },
+  {
+    "term": "frame-dragging",
+    "connections": [],
+    "hardLock": false,
+    "y": 112.8597640991211,
+    "x": 48.292396545410156
+  },
+  {
+    "term": "hubble's law",
+    "connections": [
+      {
+        "id": "physical cosmology",
+        "strength": 0.006498632952570915,
+        "length": 20
+      },
+      {
+        "id": "dark matter",
+        "strength": 0.005361095070838928,
+        "length": 60
+      },
+      {
+        "id": "big bang",
+        "strength": 0.00538821704685688,
+        "length": 20
+      },
+      {
+        "id": "dark energy",
+        "strength": 0.006443795282393694,
+        "length": 76
+      },
+      {
+        "id": "lambda-cdm model",
+        "strength": 0.005747370421886444,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 532.3058471679688,
+    "x": 388.3229675292969
+  },
+  {
+    "term": "cosmology",
+    "connections": [
+      {
+        "id": "spacetime",
+        "strength": 0.0063206907361745834,
+        "length": 204
+      },
+      {
+        "id": "big bang",
+        "strength": 0.004591211210936308,
+        "length": 140
+      },
+      {
+        "id": "hawking radiation",
+        "strength": 0.0052468059584498405,
+        "length": 204
+      },
+      {
+        "id": "cosmological constant",
+        "strength": 0.00619136868044734,
+        "length": 172
+      }
+    ],
+    "hardLock": false,
+    "y": 353.4576416015625,
+    "x": 529.1800537109375
+  },
+  {
+    "term": "multiverse",
+    "connections": [{
+      "id": "time",
+      "strength": 0.006750091910362244,
+      "length": 135.7894744873047
+    }],
+    "hardLock": false,
+    "y": 153.9239959716797,
+    "x": 583.4393920898438
+  },
+  {
+    "term": "minkowski space",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.005739919375628233,
+        "length": 195
+      },
+      {
+        "id": "spacetime",
+        "strength": 0.00467609241604805,
+        "length": 20
+      },
+      {
+        "id": "special relativity",
+        "strength": 0.005206710658967495,
+        "length": 20
+      },
+      {
+        "id": "time",
+        "strength": 0.006767688784748316,
+        "length": 170
+      },
+      {
+        "id": "hawking radiation",
+        "strength": 0.005974719766527414,
+        "length": 195
+      }
+    ],
+    "hardLock": false,
+    "y": 519.371337890625,
+    "x": 660.716064453125
+  },
+  {
+    "term": "supersymmetry",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.005103206727653742,
+        "length": 20
+      },
+      {
+        "id": "euclidean space",
+        "strength": 0.0047593251802027225,
+        "length": 193.3333282470703
+      }
+    ],
+    "hardLock": false,
+    "y": 639.9132690429688,
+    "x": 751.18212890625
+  },
+  {
+    "term": "binary star",
+    "connections": [
+      {
+        "id": "time",
+        "strength": 0.007935171946883202,
+        "length": 200
+      },
+      {
+        "id": "neutron star",
+        "strength": 0.005619518458843231,
+        "length": 120
+      },
+      {
+        "id": "white dwarf",
+        "strength": 0.005604281090199947,
+        "length": 20
+      },
+      {
+        "id": "supernova",
+        "strength": 0.006411664187908173,
+        "length": 60
+      },
+      {
+        "id": "pulsar",
+        "strength": 0.006925592664629221,
+        "length": 170
+      }
+    ],
+    "hardLock": false,
+    "y": 476.72021484375,
+    "x": 556.6185913085938
+  },
+  {
+    "term": "kerr metric",
+    "connections": [],
+    "hardLock": false,
+    "y": 741.4138793945312,
+    "x": 156.4222869873047
+  },
+  {
+    "term": "vacuum energy",
+    "connections": [
+      {
+        "id": "physical cosmology",
+        "strength": 0.004662045277655125,
+        "length": 86.66665649414062
+      },
+      {
+        "id": "cosmological constant",
+        "strength": 0.005771665833890438,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 388.3439025878906,
+    "x": 325.36785888671875
+  },
+  {
+    "term": "accelerating universe",
+    "connections": [
+      {
+        "id": "time",
+        "strength": 0.005893061403185129,
+        "length": 158.46153259277344
+      },
+      {
+        "id": "cosmic microwave background radiation",
+        "strength": 0.005949488375335932,
+        "length": 189.23077392578125
+      }
+    ],
+    "hardLock": false,
+    "y": 258.46875,
+    "x": 396.5904541015625
+  },
+  {
+    "term": "cosmic inflation",
+    "connections": [
+      {
+        "id": "physical cosmology",
+        "strength": 0.008402004837989807,
+        "length": 175.55555725097656
+      },
+      {
+        "id": "cosmological constant",
+        "strength": 0.006484838668256998,
+        "length": 175.55555725097656
+      },
+      {
+        "id": "theory of everything",
+        "strength": 0.007221170701086521,
+        "length": 175.55555725097656
+      }
+    ],
+    "hardLock": false,
+    "y": 636.5470581054688,
+    "x": 428.0826721191406
+  },
+  {
+    "term": "de sitter universe",
+    "connections": [{
+      "id": "de sitter space",
+      "strength": 0.005358128342777491,
+      "length": 20
+    }],
+    "hardLock": false,
+    "y": 434.14544677734375,
+    "x": 862.590087890625
+  },
+  {
+    "term": "riemannian manifold",
+    "connections": [
+      {
+        "id": "symmetry",
+        "strength": 0.006520458497107029,
+        "length": 170
+      },
+      {
+        "id": "non-euclidean geometry",
+        "strength": 0.006669573485851288,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 518.6768188476562,
+    "x": 982.2507934570312
+  },
+  {
+    "term": "wormhole",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.005855836905539036,
+        "length": 183.63636779785156
+      },
+      {
+        "id": "spacetime",
+        "strength": 0.006844237446784973,
+        "length": 147.27273559570312
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.0069136843085289,
+        "length": 147.27273559570312
+      },
+      {
+        "id": "exotic matter",
+        "strength": 0.007345924619585276,
+        "length": 20
+      },
+      {
+        "id": "time travel",
+        "strength": 0.004897078033536673,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 577.2322998046875,
+    "x": 875.0642700195312
+  },
+  {
+    "term": "lambda-cdm model",
+    "connections": [
+      {
+        "id": "physical cosmology",
+        "strength": 0.006001711823046207,
+        "length": 20
+      },
+      {
+        "id": "dark matter",
+        "strength": 0.005408259108662605,
+        "length": 20
+      },
+      {
+        "id": "dark energy",
+        "strength": 0.004991086199879646,
+        "length": 20
+      },
+      {
+        "id": "hubble's law",
+        "strength": 0.005747370421886444,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 536.4694213867188,
+    "x": 310.9041748046875
+  },
+  {
+    "term": "pulsar",
+    "connections": [
+      {
+        "id": "black hole",
+        "strength": 0.004653678275644779,
+        "length": 20
+      },
+      {
+        "id": "special relativity",
+        "strength": 0.00560856843367219,
+        "length": 170
+      },
+      {
+        "id": "neutron star",
+        "strength": 0.00605729129165411,
+        "length": 20
+      },
+      {
+        "id": "binary star",
+        "strength": 0.006925592664629221,
+        "length": 170
+      }
+    ],
+    "hardLock": false,
+    "y": 398.78863525390625,
+    "x": 682.3888549804688
+  },
+  {
+    "term": "accretion disc",
+    "connections": [
+      {
+        "id": "black hole",
+        "strength": 0.004706083796918392,
+        "length": 20
+      },
+      {
+        "id": "standard model",
+        "strength": 0.00461690966039896,
+        "length": 180
+      },
+      {
+        "id": "supernova",
+        "strength": 0.0059602390974760056,
+        "length": 180
+      }
+    ],
+    "hardLock": false,
+    "y": 303.1438903808594,
+    "x": 723.3960571289062
+  },
+  {
+    "term": "exotic matter",
+    "connections": [
+      {
+        "id": "spacetime",
+        "strength": 0.007795122917741537,
+        "length": 120
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.007860149256885052,
+        "length": 120
+      },
+      {
+        "id": "neutron star",
+        "strength": 0.00606911163777113,
+        "length": 120
+      },
+      {
+        "id": "wormhole",
+        "strength": 0.007345924619585276,
+        "length": 20
+      },
+      {
+        "id": "time travel",
+        "strength": 0.006823469419032335,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 566.7125854492188,
+    "x": 849.6948852539062
+  },
+  {
+    "term": "theory of everything",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.005649452097713947,
+        "length": 20
+      },
+      {
+        "id": "quantum gravity",
+        "strength": 0.005085929296910763,
+        "length": 20
+      },
+      {
+        "id": "cosmic inflation",
+        "strength": 0.007221170701086521,
+        "length": 175.55555725097656
+      },
+      {
+        "id": "time travel",
+        "strength": 0.0076833260245621204,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 662.9899291992188,
+    "x": 666.080078125
+  },
+  {
+    "term": "gravitational constant",
+    "connections": [{
+      "id": "string theory",
+      "strength": 0.005510404706001282,
+      "length": 120
+    }],
+    "hardLock": false,
+    "y": 788.814697265625,
+    "x": 698.6812744140625
+  },
+  {
+    "term": "equivalence principle",
+    "connections": [{
+      "id": "hilbert space",
+      "strength": 0.00662034098058939,
+      "length": 162.85714721679688
+    }],
+    "hardLock": false,
+    "y": 730.8372802734375,
+    "x": 522.5814208984375
+  },
+  {
+    "term": "black hole information paradox",
+    "connections": [
+      {
+        "id": "black hole",
+        "strength": 0.006257191766053438,
+        "length": 20
+      },
+      {
+        "id": "event horizon",
+        "strength": 0.004830252844840288,
+        "length": 60
+      }
+    ],
+    "hardLock": false,
+    "y": 300.08349609375,
+    "x": 647.7086181640625
+  },
+  {
+    "term": "closed timelike curve",
+    "connections": [],
+    "hardLock": false,
+    "y": 61.215248107910156,
+    "x": 312.50665283203125
+  },
+  {
+    "term": "time travel",
+    "connections": [
+      {
+        "id": "string theory",
+        "strength": 0.007270237430930138,
+        "length": 140
+      },
+      {
+        "id": "spacetime",
+        "strength": 0.006963993888348341,
+        "length": 60
+      },
+      {
+        "id": "quantum gravity",
+        "strength": 0.007904816418886185,
+        "length": 140
+      },
+      {
+        "id": "symmetry",
+        "strength": 0.007032867055386305,
+        "length": 60
+      },
+      {
+        "id": "wormhole",
+        "strength": 0.004897078033536673,
+        "length": 20
+      },
+      {
+        "id": "exotic matter",
+        "strength": 0.006823469419032335,
+        "length": 20
+      },
+      {
+        "id": "theory of everything",
+        "strength": 0.0076833260245621204,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 596.2637939453125,
+    "x": 842.0303344726562
+  },
+  {
+    "term": "m-theory",
+    "connections": [{
+      "id": "string theory",
+      "strength": 0.006208207458257675,
+      "length": 20
+    }],
+    "hardLock": false,
+    "y": 699.3580932617188,
+    "x": 766.6470947265625
+  },
+  {
+    "term": "non-euclidean geometry",
+    "connections": [
+      {
+        "id": "euclidean space",
+        "strength": 0.005353234242647886,
+        "length": 20
+      },
+      {
+        "id": "riemannian manifold",
+        "strength": 0.006669573485851288,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 707.6870727539062,
+    "x": 910.8666381835938
+  }
+]}

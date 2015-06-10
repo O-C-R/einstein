@@ -25,6 +25,7 @@ void mouseDragged() {
   if (mouseButton == RIGHT) {
     zpt.dealWithMouseDragged(mouseLoc, mouseOffset);
   } else if (mouseButton == LEFT) {
+    if (lockDefaultTermPositions) return;
     termManager.dealWithMouseDragged(worldLoc);
   }
 } // end mouseDragged
@@ -47,13 +48,16 @@ void keyReleased() {
     selectOutput("Write out the term locations to file:", "outputTermLocations");
   }
   if (key == '=') {
+    if (lockDefaultTermPositions) return;
     termManager.setTermPositionsRandom();
   }
   if (key == 's') {
-    termManager.saveDefaultPositions(termDirectory);
+    if (lockDefaultTermPositions) return;
+    termManager.saveDefaultPositions(sketchPath("") + termDirectory);
   }
   if (key == 'd') {
-    termManager.loadDefaultTermPositions(termDirectory);
+    if (lockDefaultTermPositions) return;
+    termManager.loadDefaultTermPositions(sketchPath("") + termDirectory);
   }
   if (key == '-') {
     //termManager.setTermPositionsLeft();
@@ -65,6 +69,7 @@ void keyReleased() {
 
 
   if (key == '\\') {
+    if (lockDefaultTermPositions) return;
     println("going to setup the term network");
     makeTermNetwork();
   }
@@ -73,8 +78,20 @@ void keyReleased() {
     println("changed showPhysics to: " + showPhysics);
   }
   if (key == 'p') {
+    if (lockDefaultTermPositions) return;
     physicsOn = !physicsOn;
     println("physicsOn set to: " + physicsOn);
+  }
+  if (key == ' ') {
+    if (lockDefaultTermPositions) return; 
+    // lock any currently selected term.  eg if you're dragging it you can lock it so physics doesnt apply any more
+    for (Term t : termManager.terms) {
+     if (t.selected) t.setHardLock(); 
+    }
+  } 
+  if (key == '`') {
+   saveFrame("frames/" + OCRUtils.getTimeStampWithDate() + ".tif"); 
+   println("saved frame");
   }
 } // end keyReleased
 

@@ -16,6 +16,7 @@ import org.jbox2d.dynamics.*;
 
 import toxi.geom.*;
 import toxi.physics2d.*;
+import toxi.physics.*;
 
 // Reference to physics world
 VerletPhysics2D physics;
@@ -46,7 +47,11 @@ int[] targetYears = {
 TermManager termManager = new TermManager();
 // setting up the term network via box2d
 boolean showPhysics = true;
-boolean physicsOn = false;
+boolean physicsOn = false; // leave as false
+
+// ****** //
+boolean lockDefaultTermPositions = true; // if set to true will not save or overwrite the default nor will it do the physics stuff
+
 
 
 // temp zpt stuff
@@ -79,7 +84,7 @@ void setup() {
   importTerms(sketchPath("") + termDirectory);
   println("loaded: " + termManager.terms.size() + " terms");
 
-  //termManager.loadDefaultTermPositions(sketchPath("") + termDirectory);
+  termManager.loadDefaultTermPositions(sketchPath("") + termDirectory);
 
 
   // make box2d
@@ -102,17 +107,17 @@ void setup() {
 
 
 
-  /* 
+  
    // setup the bodies for the articles
-   for (Article a : articles) a.setupBody(10f);
+   //for (Article a : articles) a.setupBody(10f);
    
    
    // make the 'gravity' for each term
-   termManager.assignGravities(articles.size());
+  // termManager.assignGravities(articles.size());
    
    // set the initial positions
-   termManager.setArticlesToExactPositions(articles);
-   */
+   //termManager.setArticlesToExactPositions(articles);
+  
 
 
 

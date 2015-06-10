@@ -24,9 +24,16 @@ class TermManager {
 
   //
   void loadDefaultTermPositions(String dirName) {
+    println("\n\n in loadDefaultTermPositions");
     String[] options = OCRUtils.getFileNames(dirName, false);
     String fileName = "";
-    for (String s : options) if (s.contains("defaultPositions.json")) fileName = s;
+    println("options.size(): "+ options.length + " for dirName: " + dirName);
+    for (String s : options) {
+
+      if (s.contains("defaultPositions.json")) {
+        fileName = s;
+      }
+    }
     if (fileName.length() > 0) readInTermPositions(fileName);
   } // end loadDefaultTermPositions
 
@@ -125,7 +132,19 @@ class TermManager {
 
   //
   void update(PVector worldLocIn) {
-    for (Term t : terms) t.update(worldLocIn);
+    for (Term t : terms) {
+      t.update(worldLocIn);
+      // set the connectionSelected to false
+      t.resetConnectionSelected();
+    }
+    // then if a term is selected or moused over set its connections to connectionSelected
+    for (Term t : terms) {
+      if (t.mouseIsOver || t.selected) {
+        for (Term con : t.connections) {
+          con.setConnectionSelected();
+        }
+      }
+    }
   } // end update
 
   //
@@ -211,9 +230,25 @@ class TermManager {
       println("term: " + t.term);
       jj.setFloat("x", t.pos.x);
       jj.setFloat("y", t.pos.y);
+      jj.setBoolean("hardLock", t.hardLock);
+
+      // save connections and strength
+      JSONArray conJar = new JSONArray();
+      for (int i = 0; i < t.connections.size (); i++) {
+        JSONObject con = new JSONObject();
+        con.setString("id", t.connections.get(i).term);
+        con.setFloat("strength", t.connectionStrengths.get(i));
+        con.setFloat("length", t.connectionLengths.get(i));
+        conJar.setJSONObject(conJar.size(), con);
+      }
+      jj.setJSONArray("connections", conJar);
+
+
+
       jar.setJSONObject(jar.size(), jj);
     }
     json.setJSONArray("terms", jar);
+
     saveJSONObject(json, fileName + ".json");
   } // end writeOutTermPositions
 
@@ -229,16 +264,49 @@ class TermManager {
         float x = jj.getFloat("x");
         float y = jj.getFloat("y");
         PVector pos = new PVector(x, y);
+        boolean hardLock = jj.getBoolean("hardLock");
         Term t = (Term)termsHM.get(termName);
         t.setPosition(pos);
+        if (hardLock) t.setHardLock();
+        else t.releaseHardLock();
+        // erase connections
+        t.connections.clear();
+        t.connectionStrengths.clear();
+        t.connectionLengths.clear();
+
+        JSONArray connections = jj.getJSONArray("connections");
+        for (int j = 0; j < connections.size (); j++) {
+          JSONObject con = connections.getJSONObject(j);
+          String conTerm = con.getString("id");
+          float conStrength = con.getFloat("strength");
+          float conLength = con.getFloat("length");
+          Term otherTerm = (Term)termsHM.get(conTerm);
+          t.addConnection(otherTerm, conStrength, conLength);
+        }
       }
     } 
     catch (Exception e) {
+      println("error when reading in term positions for file: " + fileName);
     }
+
+    println("done reading in");
+    rebuildExistingTermNetwork(); // rebuild the network
   } // end readInTermPositions
 } // end class TermManager
 
 
+
+
+
+
+
+
+
+
+
+// some variables used for repulsion -- since used to makeTermNetwork and also rebuildTermNetwork
+float repulseLength = 160;
+float repulseStrength = .003;
 
 
 // 
@@ -254,12 +322,19 @@ class TermManager {
 //   
 public void makeTermNetwork() {
   physics.clear();
+  for (Term t : termManager.terms) {
+    t.connections.clear();
+    t.connectionStrengths.clear();
+  }
+  //for (Object vs : allSprings) physics.removeSpring((VerletSpring2D)vs);
+  //allSprings.clear();
+
   // clear any existing springs?
-  // make random spots for all
+  // make random spots for all IFF they are all located at 0, 0
   for (int i = 0; i < termManager.terms.size (); i++) {
     Term t1 = termManager.terms.get(i);
-    t1.particle.x = random(width);
-    t1.particle.y = random(height);
+    if (t1.particle.x == 0) t1.particle.x = random(width);
+    if (t1.particle.y == 0) t1.particle.y = random(height);
   }
 
   // then assign the pulls towards one another based on the articles between them
@@ -272,7 +347,7 @@ public void makeTermNetwork() {
   float minAttractLength = 20f;
   float maxAttractLength = 220f;
   float attractStrength = 0f;
-  float maxAttractStrength = .03;
+  float maxAttractStrength = .01;
   for (int i = 0; i < termManager.terms.size (); i++) {
     Term t1 = termManager.terms.get(i);
     for (int j = i + 1; j < termManager.terms.size (); j++) {
@@ -295,24 +370,62 @@ public void makeTermNetwork() {
         attractStrength = constrain(map(log(averageScore), 0, log(2), 0, maxAttractStrength), 0, maxAttractStrength);
         float highestSharedPercent = max((float)similarArticleCount / t1.articleIndex.size(), (float)similarArticleCount / t2.articleIndex.size());
         attractLength = constrain(map(highestSharedPercent, 0, .5, maxAttractLength, minAttractLength), minAttractLength, maxAttractLength);
-        
-         
-        if (attractStrength < .5 * maxAttractStrength) continue;
+
+        // ****** CHANGE TOLERANCE HERE ****** //
+        if (attractStrength < .45 * maxAttractStrength) continue;
         println("similar: " + similarArticleCount + " attractStrength: " + attractStrength + " highestSharedPercent: " + highestSharedPercent);
         VerletParticle2D a = t1.particle;
         VerletParticle2D b = t2.particle;
         VerletSpring2D spring = new VerletSpring2D(a, b, attractLength, attractStrength);
         physics.addSpring(spring);
-        t1.addConnection(t2, attractStrength);
-        t2.addConnection(t1, attractStrength);
+        //allSprings.add(spring);
+        t1.addConnection(t2, attractStrength, attractLength);
+        t2.addConnection(t1, attractStrength, attractLength);
         maxNumberOfConnections = (maxNumberOfConnections > t1.connections.size() ? maxNumberOfConnections : t1.connections.size());
       }
     }
   }
 
-  // first assign all the repulsion springs
-  float repulseLength = 160;
-  float repulseStrength = .01;
+  // then assign all the repulsion springs
+  for (int i = 0; i < termManager.terms.size (); i++) {
+    Term t1 = termManager.terms.get(i);
+    for (int j = i + 1; j < termManager.terms.size (); j++) {
+      Term t2 = termManager.terms.get(j);
+      VerletParticle2D a = t1.particle;
+      VerletParticle2D b = t2.particle;
+      VerletMinDistanceSpring2D spring = new VerletMinDistanceSpring2D(a, b, repulseLength, repulseStrength);
+      physics.addSpring(spring);
+      //allSprings.add(spring);
+    }
+  }
+
+  // make a relative count of the connections used for fill
+  for (Term t : termManager.terms) t.relativeConnectionPercentile = ((float)t.connections.size()) / maxNumberOfConnections;
+} // end makeTermNetwork
+
+
+//
+// rebuild an existing term network assuming it's already been set
+//
+void rebuildExistingTermNetwork() {
+  println("in rebuildExistingTermNetwork");
+  physics.clear();
+  int maxNumberOfConnections = 0;
+  for (Term t1 : termManager.terms) {
+    for (int i = 0; i < t1.connections.size (); i++) {
+      Term t2 = t1.connections.get(i);
+      println("looking at t1.term: " + t1.term + " and i: " + i);
+      float attractStrength = t1.connectionStrengths.get(i);
+      float attractLength = t1.connectionLengths.get(i);
+      VerletParticle2D a = t1.particle;
+      VerletParticle2D b = t2.particle;
+      VerletSpring2D spring = new VerletSpring2D(a, b, attractLength, attractStrength);
+      physics.addSpring(spring);
+    }
+    maxNumberOfConnections = (maxNumberOfConnections > t1.connections.size() ? maxNumberOfConnections : t1.connections.size());
+  }
+
+  // then assign all the repulsion springs
   for (int i = 0; i < termManager.terms.size (); i++) {
     Term t1 = termManager.terms.get(i);
     for (int j = i + 1; j < termManager.terms.size (); j++) {
@@ -326,7 +439,8 @@ public void makeTermNetwork() {
 
   // make a relative count of the connections used for fill
   for (Term t : termManager.terms) t.relativeConnectionPercentile = ((float)t.connections.size()) / maxNumberOfConnections;
-} // end makeTermNetwork
+} // end rebuildExistingTermNetwork
+
 
 //
 //

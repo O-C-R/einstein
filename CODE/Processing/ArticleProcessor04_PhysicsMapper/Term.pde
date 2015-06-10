@@ -26,8 +26,11 @@ class Term {
   VerletParticle2D particle;
   ArrayList<Term> connections = new ArrayList(); // for which other Terms this is connected to 
   ArrayList<Float> connectionStrengths = new ArrayList();  // the strength of the connection
+  ArrayList<Float> connectionLengths = new ArrayList();  // the length of the connection
   boolean hardLock = false; // if manually locking a thing this gets set to true
   float relativeConnectionPercentile = 0; // based on how many connections this Term has relative to the term with max no of connections
+
+  boolean connectionSelected = false;
 
 
 
@@ -47,9 +50,10 @@ class Term {
   } // end addArticle
 
     //
-  public void addConnection(Term t, float str) {
+  public void addConnection(Term t, float str, float len) {
     connections.add(t);
     connectionStrengths.add(str);
+    connectionLengths.add(len);
   } // end addConnection
 
   //
@@ -60,9 +64,21 @@ class Term {
     else mouseIsOver = false;
   } // end update
 
-
-
     //
+  // this will reset the connectionSelected to false  
+  public void resetConnectionSelected() {
+    connectionSelected = false;
+  } // end resetConnectionSelected
+
+  //
+  // when a buddy is selected, it will set this one to true so that it can be indicated in debugView
+  public void setConnectionSelected() {
+    connectionSelected = true;
+  } // end setConnectionSelected
+
+
+
+  //
   boolean ptIsOver(PVector pt) {
     if (pt.dist(pos) <= rad) return true;
     return false;
@@ -91,30 +107,37 @@ class Term {
 
   //
   public void setPosition(PVector pos) {
-    this.pos = pos.get();
+    //this.pos = pos.get();
+    this.particle.x = pos.x;
+    this.particle.y = pos.y;
+    this.pos.set(pos.x, pos.y); /// update the local position
   } // end setPosition
-  
+
   //
   public void setHardLock() {
     hardLock = true;
     particle.lock();
   } // end setHardLock
-  
-  //
+
+    //
   public void releaseHardLock() {
     hardLock = false;
     particle.unlock();
   } // end releaseHardLock
 
-  //
+    //
   public void debugDisplay(PGraphics pg) {
     pg.pushMatrix();
     pg.translate(pos.x, pos.y);
     pg.fill(255, 0, 0, map(relativeConnectionPercentile, 0, 1f, 0, 255));
+    if (connectionSelected) {
+      pg.fill(0, 255, 0, constrain(2 * map(relativeConnectionPercentile, 0, 1f, 0, 255), 0, 255));
+    }
     pg.stroke(255, 0, 0);
     if (particle.isLocked()) {
       pg.stroke(0, 255, 255);
     }
+
     pg.ellipse(0, 0, 2 * rad, 2 * rad);
 
     if (mouseIsOver) {
