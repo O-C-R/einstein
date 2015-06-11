@@ -51,11 +51,22 @@ class Article {
 
   //box2d stuff
   Body body = null; // the box2d object of the article
-  float radius = 20; // the radius used for the box2d and for the screen display
+  float radius = random(3, 20); // the radius used for the box2d and for the screen display
   Vec2 regPosVec2 = new Vec2(); // the screen vec2 pos of the article
   PVector regPos = new PVector(); // the screen pos of the article
   Vec2 targetVec2 = new Vec2(); // the vec2 world pos of the target??
   PVector target = new PVector(); // the screen position of the target
+
+
+  // TERMLESS ARTICLES
+  // keep track of the search by a search of the concepts within the abstract
+  boolean hasConceptInText = false;
+  HashMap<Term, Integer> hasConceptInTextCounts = new HashMap(); // <the Term, the count within the abstract> 
+  // for those articles that don't have any terms nor any keyword matches, a position will be determined by the average of it's reference buddies and cite buddies
+  boolean isTermless = true; 
+
+
+
 
 
   //
@@ -119,7 +130,7 @@ class Article {
 
     body.createFixture(fd);
 
-    body.setLinearVelocity(new Vec2(random(-15, 15), random(-15, -15)));
+    body.setLinearVelocity(new Vec2());
     //body.setAngularVelocity(random(-1, 1));
   } // end setupBody
 
@@ -145,11 +156,18 @@ class Article {
     terms = (Term[])append(terms, t);
     termScores = (float[])append(termScores, score);
     termIndex.put(t, termIndex.size());
+    isTermless = false;
   } // end addTerm
 
-
-
   //
+  // when an article is termless, will look to see if the text of the term is in the abstract, if so keep track of it
+  public void addHasConceptInText(Term t, int count) {
+    hasConceptInTextCounts.put(t, count);
+    hasConceptInText = true;
+  } // end addHasConceptInText
+
+
+    //
   public void update() {
     if (body != null) {
       regPosVec2 = box2d.getBodyPixelCoord(body);
@@ -185,11 +203,13 @@ class Article {
   public boolean debugDisplay(PGraphics pg, float sc, PVector pt, boolean doCheck) {
     pg.pushMatrix();
     pg.translate(regPos.x, regPos.y);
-    pg.noFill();
+    pg.fill(255, 127);
+    if (isTermless && hasConceptInText) pg.fill(127, 255, 155, 70);
+    else if (isTermless && !hasConceptInText) pg.fill(255, 255, 0, 70);
     pg.stroke(255, 127);
 
     // draw the circle
-    pg.ellipse(0, 0, 2 * radius, 2 * radius);
+    pg.ellipse(0, 0, 2 * radius, 2.5 * radius);
 
     // draw the polygon
     /*

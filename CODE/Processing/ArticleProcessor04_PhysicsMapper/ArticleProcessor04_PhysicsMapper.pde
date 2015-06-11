@@ -61,6 +61,7 @@ HashMap<String, Article> articlesHM = new HashMap();
 int[] targetYears = {
   2014,
 }; // years to choose from
+boolean articlesOn = true; // whether or not show the articles and do the box2d stuff
 
 // TERMS
 TermManager termManager = new TermManager();
@@ -132,25 +133,30 @@ void setup() {
   dealOutAuthors(sketchPath("") + articleAuthorDirectory, articlesHM);
 
   // read in the cites
-  dealOutCites(sketchPath("") + articleCitesDirectory, articlesHM) ;
+  dealOutCites(sketchPath("") + articleCitesDirectory, articlesHM);
 
   // and the references
-  dealOutReferences(sketchPath("") + articleReferencesDirectory, articlesHM) ;
+  dealOutReferences(sketchPath("") + articleReferencesDirectory, articlesHM);
+
+
+  // and finally deal with the termless articles
+  dealWithTermless(articlesHM, termManager.terms);
 
 
   // temp check
   //for (int i = 0; i < 10; i++) println(articles.get(i).toSimplifiedString() + " \n\n\n____");
 
   // setup the bodies for the articles
-  for (Article a : articles) a.setupBody(10f);
+  //for (Article a : articles) a.setupBody(10f);
+  if (articlesOn) for (Article a : articles) a.setupBody(a.radius);
 
 
   // make the 'gravity' for each term
-  //termManager.assignGravities(articles.size());
+  termManager.assignGravities(articlesHM);
 
   // set the initial positions
-  termManager.setArticlesToExactPositions(articles);
-  termManager.updateArticleTargets(articles);
+  if (articlesOn) termManager.setArticlesToExactPositions(articles);
+  if (articlesOn) termManager.updateArticleTargets(articles);
 
 
 
@@ -181,20 +187,21 @@ void draw() {
   stroke(255, 0, 0, 150);
   rect(0, 0, width, height);
 
-  termManager.update(worldLoc, articles);
+  termManager.update(worldLoc, articles, !articlesOn);
   termManager.debugDisplay(g);
 
   float sc = zpt.sc.value();
 
 
-
-  for (Article a : articles) {
-    a.update();
-    a.debugDisplayTarget(g);
-  }
-  boolean doShowMouseOver = true;
-  for (Article a : articles) {
-    if (a.debugDisplay(g, sc, worldLoc, doShowMouseOver)) doShowMouseOver = false;
+  if (articlesOn) {
+    for (Article a : articles) {
+      a.update();
+      a.debugDisplayTarget(g);
+    }
+    boolean doShowMouseOver = true;
+    for (Article a : articles) {
+      if (a.debugDisplay(g, sc, worldLoc, doShowMouseOver)) doShowMouseOver = false;
+    }
   }
 
 
@@ -208,7 +215,6 @@ void draw() {
 
 
   zpt.pause();
-  
 } // end draw
 
 //

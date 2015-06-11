@@ -23,7 +23,7 @@ void importArticles(String dir, int[] targetYears) {
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
-  int manualImportLimit = 611; // set to < 0 to import all
+  int manualImportLimit = -1611; // set to < 0 to import all
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 

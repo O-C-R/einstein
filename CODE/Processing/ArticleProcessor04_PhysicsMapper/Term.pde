@@ -149,7 +149,7 @@ class Term {
     pg.fill(255, 0, 0);
     pg.textAlign(CENTER, CENTER);
 
-    pg.text(term + "\n" + nf(gravity, 0, 2) + "\n" + (int)pos.x  + ", " + (int)pos.y, 0, 0);
+    pg.text(term + "\n" + nf(gravity, 0, 2) + "--" + articles.length + "\n" + (int)pos.x  + ", " + (int)pos.y, 0, 0);
 
     pg.popMatrix();
 

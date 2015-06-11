@@ -40,13 +40,13 @@ void mouseWheel(MouseEvent event) {
 void keyReleased() {
   if (keyCode == UP || keyCode == LEFT || keyCode == RIGHT || keyCode == DOWN) {
     termManager.updateArticleTargets(articles);
-    }
+  }
 
 
-    if (key == 'i') {
-      println("inputting the term locations");
-      selectInput("Choose term location file:", "inputTermLocations");
-    }
+  if (key == 'i') {
+    println("inputting the term locations");
+    selectInput("Choose term location file:", "inputTermLocations");
+  }
   if (key == 'z') {
     // output the layers -- all pdf maps and text and all that stuff
     println("saving out the term locations");
@@ -67,6 +67,7 @@ void keyReleased() {
   if (key == '-') {
     //termManager.setTermPositionsLeft();
     termManager.setArticlesToExactPositions(articles);
+    termManager.updateArticleTargets(articles); // update all article targets
   }
   if (key == 'b') {
     box2dOn = !box2dOn;
