@@ -39,7 +39,7 @@ class TermManager {
 
   //
   // this will save the current positions in the default location
-  void saveDefaultPositions(String dirName) {
+  void saveDefaultTermPositions(String dirName) {
     println("in saveDefaultPositions");
     saveTermPositions(dirName + "defaultPositions");
   } // end saveDefaultPositions

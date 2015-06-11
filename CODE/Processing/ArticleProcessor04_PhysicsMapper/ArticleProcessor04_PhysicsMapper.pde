@@ -30,6 +30,8 @@ import toxi.physics.*;
 VerletPhysics2D physics;
 
 
+
+
 // the arxiv directory with all 50k articles for general relativity
 // not used
 //String arxivDirectory = "/Users/noa/Desktop/OCR-local/Einstein/CODE/Processing/ArxivAPI/arxiv/";
@@ -40,6 +42,9 @@ String arxivDirectory2014 = "x_2014/";
 
 // termDirectory
 String termDirectory = "data/";
+
+// article positions
+String articlePositionsDirectory = "articlePositions/";
 
 // article concepts directory  -- save the concepts/terms to each article  
 String articleConceptsDirectory = "alchemyConceptsForArticles/";
@@ -61,7 +66,7 @@ HashMap<String, Article> articlesHM = new HashMap();
 int[] targetYears = {
   2014,
 }; // years to choose from
-boolean articlesOn = true; // whether or not show the articles and do the box2d stuff
+boolean articlesOn = false; // whether or not show the articles and do the box2d stuff
 
 // TERMS
 TermManager termManager = new TermManager();
@@ -82,6 +87,11 @@ boolean lockDefaultTermPositions = false; // if set to true will not save or ove
 ZoomPanTilt zpt;
 PVector mouseLoc = new PVector();
 PVector worldLoc = new PVector();
+// rotation/axo stuff
+float xAngle = PI/5;
+float zAngle = PI/8;
+boolean useAngles = false;
+
 
 // box2d
 Box2DProcessing box2d;
@@ -166,6 +176,12 @@ void setup() {
 //
 void draw() {
   zpt.use();
+  if (useAngles) {
+    ortho();
+    rotateX(xAngle); // angles it to the side
+    rotateZ(zAngle); // rotates it around z axis
+  }
+
 
   if (box2dOn) box2d.step();  
 
@@ -215,6 +231,14 @@ void draw() {
 
 
   zpt.pause();
+
+  // 
+  fill(255);
+  textAlign(LEFT, TOP);
+  if (useAngles) {
+    text("xAngle: " + xAngle, 20, 20);
+    text("zAngle: " + zAngle, 20, 40);
+  }
 } // end draw
 
 //

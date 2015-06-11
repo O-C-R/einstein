@@ -395,6 +395,58 @@ public void outputTermLocations(File selection) {
 
 
 //
+// save the default Article positions
+public void saveDefaultArticlePositions(){
+  
+} // end saveDefaultArticlePositions 
+
+// 
+// save the Article positions
+public void saveArticlePositions(String fileName) {
+  println("in saveArticlePositions");
+  try {
+    JSONObject json = new JSONObject();
+    JSONArray jar = new JSONArray();
+    for (Article a : articles) {
+      JSONObject jj = new JSONObject();
+      jj.setString("id", a.id);
+      jj.setFloat("x", a.regPos.x);
+      jj.setFloat("y", a.regPos.y);
+      jar.setJSONObject(jar.size(), jj);
+    }
+    json.setJSONArray("articles", jar);
+  } 
+  catch (Exception e) {
+    println("problem saving out article positions");
+  }
+} // end saveArticlePositions
+
+//
+// load up the Article positions
+public void loadArticlePositions(String fileName) {
+  println("in saveArticlePositions to fileName: " + fileName);
+  try {
+    JSONObject json = loadJSONObject(fileName);
+    JSONArray jar = json.getJSONArray("articles");
+    for (int i = 0; i < jar.size (); i++) {
+      JSONObject jj = jar.getJSONObject(i);
+      String id = jj.getString("id");
+      float x = jj.getFloat("x");
+      float y = jj.getFloat("y");
+      if (articlesHM.containsKey(id)) {
+        Vec2 newPos = new Vec2(x, y);
+        Article a = (Article)articlesHM.get(id);
+        a.setExactPosition(newPos);
+      }
+    }
+  } 
+  catch (Exception e) {
+    println("problem loading in article positions from file: " + fileName);
+  }
+} // end loadArticlePositions
+
+
+//
 //
 //
 //

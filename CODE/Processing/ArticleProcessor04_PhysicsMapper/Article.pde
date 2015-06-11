@@ -23,7 +23,9 @@ class Article {
 
   public boolean isValid = true; // marked as false if the basic criteria isnt met
 
-  public PVector pos = new PVector();
+  public PVector pos = new PVector(); // note that this just has the x, y
+  
+  public float z = 0f;
 
 
 
@@ -209,7 +211,7 @@ class Article {
     pg.stroke(255, 127);
 
     // draw the circle
-    pg.ellipse(0, 0, 2 * radius, 2.5 * radius);
+    pg.ellipse(0, 0, 2.5 * radius, 2.5 * radius);
 
     // draw the polygon
     /*

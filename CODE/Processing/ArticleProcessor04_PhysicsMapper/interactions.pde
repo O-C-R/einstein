@@ -38,8 +38,19 @@ void mouseWheel(MouseEvent event) {
 
 //
 void keyReleased() {
-  if (keyCode == UP || keyCode == LEFT || keyCode == RIGHT || keyCode == DOWN) {
-    termManager.updateArticleTargets(articles);
+  if (useAngles) {
+    if ((keyCode == UP || keyCode == RIGHT || keyCode == LEFT || keyCode == DOWN)) {
+      if (keyCode == UP || keyCode == DOWN) {
+        xAngle -= (keyCode == UP ? 1 : -1) * PI/32;
+      } else {
+        zAngle -= (keyCode == RIGHT ? 1 : -1) * PI/32;
+      }
+    }
+  }
+
+  if (key == 'a') {
+    useAngles = !useAngles;
+    println("toggled useAngles to: " + useAngles);
   }
 
 
@@ -58,12 +69,22 @@ void keyReleased() {
   }
   if (key == 's') {
     if (lockDefaultTermPositions) return;
-    termManager.saveDefaultPositions(sketchPath("") + termDirectory);
+    termManager.saveDefaultTermPositions(sketchPath("") + termDirectory);
   }
   if (key == 'd') {
     if (lockDefaultTermPositions) return;
     termManager.loadDefaultTermPositions(sketchPath("") + termDirectory);
   }
+
+  if (key == '1') {
+    println("saving out default article positions");
+    saveArticlePositions(sketchPath("") + articlePositionsDirectory);
+  }
+  if (key == '2') {
+    println("loading default article positions");
+    loadArticlePositions(sketchPath("") + articlePositionsDirectory);
+  }
+
   if (key == '-') {
     //termManager.setTermPositionsLeft();
     termManager.setArticlesToExactPositions(articles);
@@ -71,6 +92,7 @@ void keyReleased() {
   }
   if (key == 'b') {
     box2dOn = !box2dOn;
+    println("toggling box2d to: " + box2dOn);
   }
 
 

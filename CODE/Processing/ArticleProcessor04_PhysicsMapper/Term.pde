@@ -11,6 +11,9 @@ class Term {
   // and a radius
   float rad = 10f;
 
+  // and a z
+  float z = 0f;
+
 
   boolean mouseIsOver = false;
   boolean selected = false;
@@ -32,6 +35,9 @@ class Term {
   float relativeConnectionPercentile = 0; // based on how many connections this Term has relative to the term with max no of connections
 
   boolean connectionSelected = false;
+  
+  
+  
 
 
 
