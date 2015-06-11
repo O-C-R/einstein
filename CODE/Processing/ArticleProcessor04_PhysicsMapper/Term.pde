@@ -7,6 +7,7 @@ class Term {
   float gravity = 1f; // gravity -- how much it pulls
   // each term will also have a location associated with it
   PVector pos = new PVector();
+  PVector lastPos = pos.get();
   // and a radius
   float rad = 10f;
 
@@ -59,6 +60,7 @@ class Term {
   //
   public void update(PVector pt) {
     // always record if mouse is over
+    lastPos.set(pos.x, pos.y);
     pos.set(particle.x, particle.y);
     if (ptIsOver(pt)) mouseIsOver = true;
     else mouseIsOver = false;
@@ -152,7 +154,7 @@ class Term {
     pg.popMatrix();
 
     // connect to term positions
-    if (mouseIsOver) {
+    if (mouseIsOver || selected) {
       pg.stroke(0, 127, 225, 100);
       for (int i = 0; i < articles.length; i++) {
         pg.pushStyle();

@@ -23,7 +23,7 @@ void importArticles(String dir, int[] targetYears) {
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
-  int manualImportLimit = -111; // set to < 0 to import all
+  int manualImportLimit = 611; // set to < 0 to import all
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
   // ****** MANUAL LIMIT MANUAL LIMIT ****** // 
@@ -206,6 +206,153 @@ public void dealOutTerms(String dir, HashMap<String, Article> articlesHMIn, Hash
 
 
 
+
+// do the author stuff
+public void dealOutAuthors(String dir, HashMap<String, Article> articlesHMIn) {
+  println("in dealOutAuthors");
+  int tempCount = 0;
+  String[] fileNames = OCRUtils.getFileNames(dir, false);
+  for (String fileName : fileNames) {
+    if (!fileName.contains(".json")) continue;
+    println(" dealOutAuthors for file: " + fileName);
+    try {
+      JSONObject json = loadJSONObject(fileName);
+      for (Object key : json.keys ()) {
+        String articleId = (String)key;
+        if (articlesHMIn.containsKey(articleId)) {
+          Article thisArticle = (Article)articlesHMIn.get(articleId);
+          tempCount++;
+          //println("article: " + (String)key);
+          HashMap<String, Integer> authorCounts = new HashMap();
+          int authorCountsSum = 0;
+          JSONArray jar = json.getJSONArray((String)key);
+          for (int i = 0; i < jar.size (); i++) {
+            JSONObject jj = jar.getJSONObject(i);
+            for (Object jjKey : jj.keys ()) {
+              String name = (String)jjKey;
+              int count = 1;
+              try {
+                count = jj.getInt(name);
+              } 
+              catch (Exception e) {
+                print("•");
+              }
+              //println("name: " + name + " count: " + count);
+              authorCountsSum += count;
+              authorCounts.put(name, count);
+            }
+          }
+          // assign the authorCounts
+          thisArticle.authorCounts = authorCounts;
+          thisArticle.authorCountsSum = authorCountsSum;
+        }
+      }
+    }
+    catch (Exception e) {
+      println("problem dealing out authors for file: " + fileName);
+    }
+  }
+  println("done with dealOutAuthors.  total articles dealt with: " + tempCount + " out of possible: " + articlesHMIn.size());
+} // end dealOutAuthors
+
+
+
+// do the cites
+public void dealOutCites(String dir, HashMap<String, Article> articlesHMIn) {
+  println("in dealOutCites");
+  int tempCount = 0;
+  String[] fileNames = OCRUtils.getFileNames(dir, false);
+  HashMap<String, ArrayList<Article>> theCited = new HashMap();
+  for (String fileName : fileNames) {
+    if (!fileName.contains(".json")) continue;
+    println(" dealOutCites for file: " + fileName);
+    try {
+      JSONObject json = loadJSONObject(fileName);
+      for (Object key : json.keys ()) {
+        String articleId = (String)key;
+        if (articlesHMIn.containsKey(articleId)) {
+          Article thisArticle = (Article)articlesHMIn.get(articleId);
+          HashMap<String, Integer> citerIds = new HashMap();
+          JSONArray jar = json.getJSONArray(articleId);
+          for (int i = 0; i < jar.size (); i++) {
+            String citerId = jar.getString(i); 
+            //println(citerId);
+            citerIds.put(citerId, 0);
+            if (!theCited.containsKey(citerId)) theCited.put(citerId, new ArrayList<Article>());
+            ArrayList<Article> listOfTheCited = (ArrayList<Article>)theCited.get(citerId);
+            listOfTheCited.add(thisArticle);
+            //if (citerId.equals("arXiv:1412.4674")) println("_______ found arXiv:1412.4674 for article: " + thisArticle.id + " .. size: " + listOfTheCited.size());
+          }
+          thisArticle.citerIds = citerIds;
+        }
+      }
+    }
+    catch (Exception e) {
+    }
+  }
+
+  // now go back through and find all of the other article that have the same citer
+  for (Map.Entry me : articlesHMIn.entrySet ()) {
+    Article article = (Article)me.getValue();
+    HashMap<String, ArrayList<Article>> citerBuddies = new HashMap();
+    for (Map.Entry you : article.citerIds.entrySet ()) {
+      String citerId = (String)you.getKey();
+      ArrayList<Article> tempBuddies = (ArrayList<Article>)theCited.get(citerId).clone();
+      tempBuddies.remove(article);
+      citerBuddies.put(citerId, tempBuddies);
+    }
+    article.citerBuddies = citerBuddies;
+  }
+} // end dealOutCites
+
+
+
+// do the REFERENCES
+public void dealOutReferences(String dir, HashMap<String, Article> articlesHMIn) {
+  println("in dealOutReferences");
+  int tempCount = 0;
+  String[] fileNames = OCRUtils.getFileNames(dir, false);
+  HashMap<String, ArrayList<Article>> theReferenced = new HashMap();
+  for (String fileName : fileNames) {
+    if (!fileName.contains(".json")) continue;
+    println(" dealOutReferences for file: " + fileName);
+    try {
+      JSONObject json = loadJSONObject(fileName);
+      for (Object key : json.keys ()) {
+        String articleId = (String)key;
+        if (articlesHMIn.containsKey(articleId)) {
+          Article thisArticle = (Article)articlesHMIn.get(articleId);
+          HashMap<String, Integer> referenceIds = new HashMap();
+          JSONArray jar = json.getJSONArray(articleId);
+          for (int i = 0; i < jar.size (); i++) {
+            String referenceId = jar.getString(i); 
+            //println(citerId);
+            referenceIds.put(referenceId, 0);
+            if (!theReferenced.containsKey(referenceId)) theReferenced.put(referenceId, new ArrayList<Article>());
+            ArrayList<Article> listOfTheReferenced = (ArrayList<Article>)theReferenced.get(referenceId);
+            listOfTheReferenced.add(thisArticle);
+          }
+          thisArticle.referenceIds = referenceIds;
+        }
+      }
+    }
+    catch (Exception e) {
+    }
+  }
+
+  // now go back through and find all of the other article that have the same citer
+  for (Map.Entry me : articlesHMIn.entrySet ()) {
+    Article article = (Article)me.getValue();
+    HashMap<String, ArrayList<Article>> referenceBuddies = new HashMap();
+    for (Map.Entry you : article.referenceIds.entrySet ()) {
+      String referenceId = (String)you.getKey();
+      ArrayList<Article> tempBuddies = (ArrayList<Article>)theReferenced.get(referenceId).clone();
+      tempBuddies.remove(article);
+      referenceBuddies.put(referenceId, tempBuddies);
+    }
+    article.referenceBuddies = referenceBuddies;
+  }
+} // end dealOutReferences
 
 
 

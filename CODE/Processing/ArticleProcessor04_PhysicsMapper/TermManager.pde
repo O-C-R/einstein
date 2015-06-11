@@ -73,7 +73,8 @@ class TermManager {
       //println("xxxxx precisePosition: " + precisePosition);
       //println("   double check of precise world position to screen: " + box2d.vectorWorldToPixelsPVector(precisePosition));
       // add a littttttle variation so it wiggles
-      precisePosition.y += random(-3, 3);
+      precisePosition.y += random(-13, 13);
+      precisePosition.x += random(-13, 13);
       a.setTarget(precisePosition);
       a.setExactPosition(precisePosition);
     }
@@ -82,6 +83,7 @@ class TermManager {
   //
   // run when a term is released.. 
   public void updateArticleTargets(ArrayList<Article> articlesIn) {
+    //println(frameCount + " in updateArticleTargets");
     for (Article a : articlesIn) a.setTarget(getVecTargetPos(a));
   } // end updateArticleTargets
 
@@ -131,7 +133,7 @@ class TermManager {
 
 
   //
-  void update(PVector worldLocIn) {
+  void update(PVector worldLocIn, ArrayList<Article> articlesIn) {
     for (Term t : terms) {
       t.update(worldLocIn);
       // set the connectionSelected to false
@@ -142,6 +144,17 @@ class TermManager {
       if (t.mouseIsOver || t.selected) {
         for (Term con : t.connections) {
           con.setConnectionSelected();
+        }
+      }
+    }
+
+    // if any of the term's particles have a velocity > a certain number then update the article targets accordingly
+    float velocityLimit = .1;
+    if (frameCount % 1 == 0) {
+      for (Term t : terms) {
+        if (abs(t.lastPos.x - t.pos.x) > velocityLimit || abs(t.lastPos.y - t.pos.y) > velocityLimit) {
+          updateArticleTargets(articlesIn);
+          break;
         }
       }
     }
@@ -231,6 +244,7 @@ class TermManager {
       jj.setFloat("x", t.pos.x);
       jj.setFloat("y", t.pos.y);
       jj.setBoolean("hardLock", t.hardLock);
+      jj.setFloat("gravity", t.gravity);
 
       // save connections and strength
       JSONArray conJar = new JSONArray();
@@ -269,6 +283,8 @@ class TermManager {
         t.setPosition(pos);
         if (hardLock) t.setHardLock();
         else t.releaseHardLock();
+        float gravity = jj.getFloat("gravity");
+        t.gravity = gravity;
         // erase connections
         t.connections.clear();
         t.connectionStrengths.clear();
@@ -305,7 +321,7 @@ class TermManager {
 
 
 // some variables used for repulsion -- since used to makeTermNetwork and also rebuildTermNetwork
-float repulseLength = 160;
+float repulseLength = 460;
 float repulseStrength = .003;
 
 

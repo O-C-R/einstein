@@ -1,0 +1,3 @@
+This is a result of looking into the authors for the gc-qr-2014 papers.  For each article the authors were queried.  The result is a list, by paper, or each author and the number of papers that they are said to have authored via the arxiv database.  
+
+Maybe this will allow for some kind of metric of value per paper by looking at the number of authors of a paper divided by the total number of papers that author has been a part of

@@ -38,10 +38,15 @@ void mouseWheel(MouseEvent event) {
 
 //
 void keyReleased() {
-  if (key == 'i') {
-    println("inputting the term locations");
-    selectInput("Choose term location file:", "inputTermLocations");
-  }
+  if (keyCode == UP || keyCode == LEFT || keyCode == RIGHT || keyCode == DOWN) {
+    termManager.updateArticleTargets(articles);
+    }
+
+
+    if (key == 'i') {
+      println("inputting the term locations");
+      selectInput("Choose term location file:", "inputTermLocations");
+    }
   if (key == 'z') {
     // output the layers -- all pdf maps and text and all that stuff
     println("saving out the term locations");
@@ -86,12 +91,12 @@ void keyReleased() {
     if (lockDefaultTermPositions) return; 
     // lock any currently selected term.  eg if you're dragging it you can lock it so physics doesnt apply any more
     for (Term t : termManager.terms) {
-     if (t.selected) t.setHardLock(); 
+      if (t.selected) t.setHardLock();
     }
   } 
   if (key == '`') {
-   saveFrame("frames/" + OCRUtils.getTimeStampWithDate() + ".tif"); 
-   println("saved frame");
+    saveFrame("frames/" + OCRUtils.getTimeStampWithDate() + ".jpg"); 
+    println("saved frame");
   }
 } // end keyReleased
 

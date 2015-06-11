@@ -1,3 +1,11 @@
+// to do list
+// read in the rest of the data files = 
+
+// figure out how to deal with articles that do not have a category connection
+
+// assign the gravity to the terms -- also save to the json file
+
+
 import ocrUtils.maths.*;
 import ocrUtils.*;
 import ocrUtils.ocr3D.*;
@@ -33,8 +41,19 @@ String arxivDirectory2014 = "x_2014/";
 // termDirectory
 String termDirectory = "data/";
 
-// article concepts directory = 
+// article concepts directory  -- save the concepts/terms to each article  
 String articleConceptsDirectory = "alchemyConceptsForArticles/";
+
+// the author list per article
+String articleAuthorDirectory = "alchemyAuthorCounts/";
+
+// the cites list per article
+String articleCitesDirectory = "arxivCites/";
+
+// and the refrences list per article
+String articleReferencesDirectory = "arxivReferences/";
+
+// 
 
 // ARTICLES
 ArrayList<Article> articles = new ArrayList(); // what is to be queried
@@ -50,7 +69,11 @@ boolean showPhysics = true;
 boolean physicsOn = false; // leave as false
 
 // ****** //
-boolean lockDefaultTermPositions = true; // if set to true will not save or overwrite the default nor will it do the physics stuff
+// note that this will make it so that it will load up whatever the defaultPositions.json file is .. .which should include all physics stuff and positions regarless of how many articles are loaded
+// ideally the positions of the Terms should be made when all of the Articles have been loaded -- this sets the springs correctly
+// then after the default positions have been set and saved -- press 's', set this boolean to true and then relaunch the program
+// that will auto load the defaults and make it so that the space can't be modified.  
+boolean lockDefaultTermPositions = false; // if set to true will not save or overwrite the default nor will it do the physics stuff
 
 
 
@@ -102,22 +125,32 @@ void setup() {
   importArticles(sketchPath("") + arxivDirectory2014, new int[0]);
 
   //HashMap<String, ArrayList<Term>> articleTerms = importArticleTerms();
+  // this will read in the category scores for the articles as assigned by alchemy
   dealOutTerms(sketchPath("") + articleConceptsDirectory, articlesHM, termManager.termsHM);
 
+  // set up the authors for the articles
+  dealOutAuthors(sketchPath("") + articleAuthorDirectory, articlesHM);
+
+  // read in the cites
+  dealOutCites(sketchPath("") + articleCitesDirectory, articlesHM) ;
+
+  // and the references
+  dealOutReferences(sketchPath("") + articleReferencesDirectory, articlesHM) ;
 
 
+  // temp check
+  //for (int i = 0; i < 10; i++) println(articles.get(i).toSimplifiedString() + " \n\n\n____");
 
-  
-   // setup the bodies for the articles
-   //for (Article a : articles) a.setupBody(10f);
-   
-   
-   // make the 'gravity' for each term
-  // termManager.assignGravities(articles.size());
-   
-   // set the initial positions
-   //termManager.setArticlesToExactPositions(articles);
-  
+  // setup the bodies for the articles
+  for (Article a : articles) a.setupBody(10f);
+
+
+  // make the 'gravity' for each term
+  //termManager.assignGravities(articles.size());
+
+  // set the initial positions
+  termManager.setArticlesToExactPositions(articles);
+  termManager.updateArticleTargets(articles);
 
 
 
@@ -148,20 +181,22 @@ void draw() {
   stroke(255, 0, 0, 150);
   rect(0, 0, width, height);
 
-  termManager.update(worldLoc);
+  termManager.update(worldLoc, articles);
   termManager.debugDisplay(g);
 
   float sc = zpt.sc.value();
-  /*
-   for (Article a : articles) {
-   a.update();
-   a.debugDisplayTarget(g);
-   }
-   boolean doShowMouseOver = true;
-   for (Article a : articles) {
-   if (a.debugDisplay(g, sc, worldLoc, doShowMouseOver)) doShowMouseOver = false;
-   }
-   */
+
+
+
+  for (Article a : articles) {
+    a.update();
+    a.debugDisplayTarget(g);
+  }
+  boolean doShowMouseOver = true;
+  for (Article a : articles) {
+    if (a.debugDisplay(g, sc, worldLoc, doShowMouseOver)) doShowMouseOver = false;
+  }
+
 
 
   // physics stuff
@@ -173,6 +208,7 @@ void draw() {
 
 
   zpt.pause();
+  
 } // end draw
 
 //
