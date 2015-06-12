@@ -6,7 +6,9 @@ class Article {
     //
   public String id = "";
   public String title = "";
-  public String[] authors = new String[0];
+  //public String[] authors = new String[0];
+
+  public boolean published = false; // set to true if the base xml has "arxiv:journal_ref.."
 
   // term stuff - keep track of which terms this article belongs to
   Term[] terms = new Term[0]; // the term.  only added if it has at least one occurance in this article
@@ -14,6 +16,10 @@ class Article {
   float[] termScores = new float[0]; // the score of times this term occurs... alchemy scores
   //boolean[] termInTitle = new boolean[0]; // if the term is in the title
   HashMap<Term, Integer> termIndex = new HashMap(); // Term, index for above arrays where the term lives
+  
+  
+  
+  
 
   // wos characteristics  
   public String abstractString = "";
@@ -24,8 +30,11 @@ class Article {
   public boolean isValid = true; // marked as false if the basic criteria isnt met
 
   public PVector pos = new PVector(); // note that this just has the x, y
-  
+
   public float z = 0f;
+  public float innerRadius = 4f; // the radius of the inner circle, set in setInnerRadiusAndColor
+  public color innerColor = color(255);
+  public color innerStroke = color(255, 0, 0);
 
 
 
@@ -77,8 +86,9 @@ class Article {
   } // end constructor
 
   //
-  public void setupBody(float radius) {
-    this.radius = radius;
+  public void setupBody() {
+    // assume that the radius has already been set
+
     // Define a body
     BodyDef bd = new BodyDef();
     bd.type = BodyType.DYNAMIC;
@@ -94,7 +104,8 @@ class Article {
     // Make the body's shape a circle
 
     CircleShape cs = new CircleShape();
-    cs.m_radius = box2d.scalarPixelsToWorld(radius);
+    float radiusAdjust = radius + 1;
+    cs.m_radius = box2d.scalarPixelsToWorld(radiusAdjust);
 
 
     //polygon
@@ -137,7 +148,7 @@ class Article {
   } // end setupBody
 
   //
-  // will set the body to the box2d position
+  // will set the body to the box2d position -- NOTE: USE BOX2D WORLD stuff
   public void setExactPosition (Vec2 exactPosition) {
     if (body != null) body.setTransform(exactPosition, 0);
     //println("setting position to: " + exactPosition);
@@ -146,11 +157,30 @@ class Article {
   } // end setExactPosition
 
   //
+  // return a PVector of the box2d position of the thing
+  public PVector getBox2dPosition() {
+    if (body != null) return new PVector(body.getPosition().x, body.getPosition().y);
+    else return new PVector();
+  } // end getBox2dPosition
+
+  //
   // will set the targetVec2 to the box2d world position
   public void setTarget(Vec2 targetVec2) {
     this.targetVec2 = targetVec2;
     //println("setting target to: " + targetVec2);
   } // end setTarget
+
+  //
+  public void setZ(float z) {
+    this.z = z;
+  } // end setZ
+
+  //
+  public void setInner(float innerRadius, color innerColor, color innerStroke) {
+    this.innerRadius = innerRadius;
+    this.innerColor = innerColor;
+    this.innerStroke = innerStroke;
+  } // end setInner
 
 
   // with the new concept base, use the Alchemy score
@@ -169,7 +199,7 @@ class Article {
   } // end addHasConceptInText
 
 
-    //
+  //
   public void update() {
     if (body != null) {
       regPosVec2 = box2d.getBodyPixelCoord(body);
@@ -205,13 +235,16 @@ class Article {
   public boolean debugDisplay(PGraphics pg, float sc, PVector pt, boolean doCheck) {
     pg.pushMatrix();
     pg.translate(regPos.x, regPos.y);
-    pg.fill(255, 127);
-    if (isTermless && hasConceptInText) pg.fill(127, 255, 155, 70);
-    else if (isTermless && !hasConceptInText) pg.fill(255, 255, 0, 70);
-    pg.stroke(255, 127);
+    pg.fill(255, 87);
+    if (isTermless && hasConceptInText) pg.fill(127, 255, 155, 20);
+    else if (isTermless && !hasConceptInText) pg.fill(255, 255, 0, 20);
+    pg.stroke(255, 40);
 
     // draw the circle
-    pg.ellipse(0, 0, 2.5 * radius, 2.5 * radius);
+    pg.ellipse(0, 0, 2 * radius, 2 * radius);
+    pg.fill(255, 0, 255, 127);
+    pg.textAlign(CENTER, CENTER);
+    //pg.text(citerIds.size(), 0, 0);
 
     // draw the polygon
     /*
@@ -252,7 +285,7 @@ class Article {
           pushStyle();
           //pg.strokeWeight(termCounts[i]);
           pg.strokeWeight(10 * termScores[i]);
-          pg.line(regPos.x, regPos.y, terms[i].pos.x, terms[i].pos.y);
+          //pg.line(regPos.x, regPos.y, terms[i].pos.x, terms[i].pos.y);
           popStyle();
         }
         popMatrix();
@@ -264,6 +297,36 @@ class Article {
     pg.popMatrix();
     return isOver;
   } // end debugDisplay
+
+
+  //
+  public void display(PGraphics pg, boolean useArticleZIn) {
+    pg.pushMatrix();
+    pg.pushStyle();
+    pg.translate(regPos.x, regPos.y, (useArticleZIn ? 1 : 0) * z);
+    // draw the main circle
+    // figure the color using colorArticleBackgroundMin and colorArticleBackgroundMax
+    color colorToUse = colorArticleBackgroundMin; 
+    pg.fill(colorToUse, 100);
+    // determine the stroke here
+    color strokeToUse = colorUnpublished;
+    if (published) strokeToUse = colorPublished;
+    pg.stroke(strokeToUse);
+    float strokeWeightToUse = 1f;
+    pg.strokeWeight(strokeWeightToUse);
+    pg.ellipse(0, 0, radius * 2, radius * 2);
+
+
+    // draw the author bubble
+    pg.translate(0, 0, .5f);
+    //pg.fill(innerColor);
+    pg.noStroke();
+    pg.strokeWeight(strokeWeightToUse);
+    pg.stroke(innerStroke);
+    pg.ellipse(0, 0, innerRadius * 2, innerRadius * 2);
+    pg.popStyle();
+    pg.popMatrix();
+  } // end display
 
 
 

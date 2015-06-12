@@ -106,7 +106,7 @@ void draw() {
   // this is the key to ortho
   // this is the key to ortho
   // this is the key to ortho
-  ortho();
+  ortho(0, width, 0, height, -1300, 1300);
   
   if (keyPressed && keyCode == SHIFT) {
     rotAngle += PI * (float)(pmouseY - mouseY) / height;
@@ -138,7 +138,7 @@ void draw() {
   // draw curves
   noFill();
   strokeWeight(.5);
-  stroke(255, 4);
+  stroke(250, 255, 0,4);
   for (ArrayList<PVector> pps : pts) {
     beginShape();
     curveVertex(pps.get(0).x, pps.get(0).y, pps.get(0).z + 20 + 2.5 * abs(pps.get(1).z - pps.get(0).z));
@@ -147,12 +147,11 @@ void draw() {
     //curveVertex(pps.get(2).x, pps.get(2).y, pps.get(2).z);
     curveVertex(pps.get(3).x, pps.get(3).y, pps.get(3).z);
     curveVertex(pps.get(3).x, pps.get(3).y, pps.get(3).z - 2.5 * abs(pps.get(3).z - pps.get(2).z));
-
     endShape();
   }
 
   // draw circles
-  fill(255, 127);
+  fill(0, 127, 255, 127);
   for (PVector p : starts) {
     stroke(map(p.z, 0, zVariation, 127, 0));
     pushMatrix();

@@ -10,7 +10,7 @@ public void dealWithTermless(HashMap<String, Article> articlesHM, ArrayList<Term
       for (Term t : terms) {
         int count = countOccurances(a, t);
         if (count > 0) {
-          println("looking at article: " + a.title + " total count of term: " + t.term + " is: " + count);
+          //println("looking at article: " + a.title + " total count of term: " + t.term + " is: " + count);
           foundOne = true;
           a.addHasConceptInText(t, count);
         }
@@ -18,7 +18,7 @@ public void dealWithTermless(HashMap<String, Article> articlesHM, ArrayList<Term
     }
     if (foundOne) {
       countOfThoseWithFoundTerms++;
-      println("xxxxxxxxx and the title/abstract: "  + a.title + "\n   " + a.abstractString);
+      //println("xxxxxxxxx and the title/abstract: "  + a.title + "\n   " + a.abstractString);
     }
   }
   println("end of dealWithTermless.  total without terms: " + countOfThoseWithoutTerms + " and found terms for " + countOfThoseWithFoundTerms);

@@ -1,0 +1,5097 @@
+{"terms": [
+  {
+    "term": "string theory",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.7676v1",
+          "http://arxiv.org/abs/1401.1402v2",
+          "http://arxiv.org/abs/1404.7492v1",
+          "http://arxiv.org/abs/1407.2252v2",
+          "http://arxiv.org/abs/1407.1716v1",
+          "http://arxiv.org/abs/1401.4115v1",
+          "http://arxiv.org/abs/1406.3975v1",
+          "http://arxiv.org/abs/1402.5484v1",
+          "http://arxiv.org/abs/1403.4388v2",
+          "http://arxiv.org/abs/1406.1588v2",
+          "http://arxiv.org/abs/1403.0171v1",
+          "http://arxiv.org/abs/1405.0229v2",
+          "http://arxiv.org/abs/1404.7242v1",
+          "http://arxiv.org/abs/1407.0966v1",
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1410.4248v2",
+          "http://arxiv.org/abs/1402.2912v2",
+          "http://arxiv.org/abs/1406.4611v2",
+          "http://arxiv.org/abs/1404.3929v1",
+          "http://arxiv.org/abs/1411.0286v1",
+          "http://arxiv.org/abs/1406.3312v1",
+          "http://arxiv.org/abs/1402.7047v1",
+          "http://arxiv.org/abs/1403.3558v3",
+          "http://arxiv.org/abs/1405.1692v1",
+          "http://arxiv.org/abs/1406.2012v2",
+          "http://arxiv.org/abs/1404.1919v1",
+          "http://arxiv.org/abs/1406.0634v2",
+          "http://arxiv.org/abs/1404.4770v2",
+          "http://arxiv.org/abs/1401.4987v2",
+          "http://arxiv.org/abs/1406.3186v2",
+          "http://arxiv.org/abs/1407.6152v1",
+          "http://arxiv.org/abs/1412.5618v1",
+          "http://arxiv.org/abs/1404.6114v6",
+          "http://arxiv.org/abs/1402.7343v1",
+          "http://arxiv.org/abs/1406.3914v1",
+          "http://arxiv.org/abs/1405.4785v5",
+          "http://arxiv.org/abs/1407.4444v1",
+          "http://arxiv.org/abs/1403.4898v2",
+          "http://arxiv.org/abs/1401.2062v2",
+          "http://arxiv.org/abs/1406.2571v2",
+          "http://arxiv.org/abs/1407.4275v1",
+          "http://arxiv.org/abs/1405.0064v3",
+          "http://arxiv.org/abs/1503.03439v2",
+          "http://arxiv.org/abs/1411.2323v1",
+          "http://arxiv.org/abs/1501.00428v2",
+          "http://arxiv.org/abs/1402.0690v1",
+          "http://arxiv.org/abs/1403.7559v2",
+          "http://arxiv.org/abs/1406.3379v2",
+          "http://arxiv.org/abs/1407.8036v1",
+          "http://arxiv.org/abs/1405.6629v2",
+          "http://arxiv.org/abs/1406.0572v1",
+          "http://arxiv.org/abs/1402.5130v1",
+          "http://arxiv.org/abs/1403.6316v1",
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1406.0060v2",
+          "http://arxiv.org/abs/1404.1878v2",
+          "http://arxiv.org/abs/1405.6657v1",
+          "http://arxiv.org/abs/1409.7516v1",
+          "http://arxiv.org/abs/1407.4875v2",
+          "http://arxiv.org/abs/1407.6428v1",
+          "http://arxiv.org/abs/1404.6219v2",
+          "http://arxiv.org/abs/1407.6378v2",
+          "http://arxiv.org/abs/1406.2610v1",
+          "http://arxiv.org/abs/1412.3317v1",
+          "http://arxiv.org/abs/1409.7874v1",
+          "http://arxiv.org/abs/1401.2941v2",
+          "http://arxiv.org/abs/1408.4598v1",
+          "http://arxiv.org/abs/1412.6136v1",
+          "http://arxiv.org/abs/1406.3096v1",
+          "http://arxiv.org/abs/1404.2785v3",
+          "http://arxiv.org/abs/1406.4533v1",
+          "http://arxiv.org/abs/1404.1411v2",
+          "http://arxiv.org/abs/1405.2402v1",
+          "http://arxiv.org/abs/1408.4611v1",
+          "http://arxiv.org/abs/1406.6688v1",
+          "http://arxiv.org/abs/1404.5993v2"
+        ],
+        "id": "spacetime",
+        "strength": 0.013025117106735706,
+        "length": 69.50494384765625
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.4115v1",
+          "http://arxiv.org/abs/1406.3975v1",
+          "http://arxiv.org/abs/1403.4388v2",
+          "http://arxiv.org/abs/1405.5941v3",
+          "http://arxiv.org/abs/1411.0286v1",
+          "http://arxiv.org/abs/1406.3312v1",
+          "http://arxiv.org/abs/1403.3558v3",
+          "http://arxiv.org/abs/1407.5597v1",
+          "http://arxiv.org/abs/1411.1986v1",
+          "http://arxiv.org/abs/1409.0809v3",
+          "http://arxiv.org/abs/1401.2062v2",
+          "http://arxiv.org/abs/1405.0064v3",
+          "http://arxiv.org/abs/1403.2080v3",
+          "http://arxiv.org/abs/1405.5085v2",
+          "http://arxiv.org/abs/1407.8036v1",
+          "http://arxiv.org/abs/1405.6629v2",
+          "http://arxiv.org/abs/1403.6316v1",
+          "http://arxiv.org/abs/1409.7516v1",
+          "http://arxiv.org/abs/1407.6428v1",
+          "http://arxiv.org/abs/1407.2909v1",
+          "http://arxiv.org/abs/1407.7891v1",
+          "http://arxiv.org/abs/1407.6378v2",
+          "http://arxiv.org/abs/1401.2941v2",
+          "http://arxiv.org/abs/1408.4598v1"
+        ],
+        "id": "special relativity",
+        "strength": 0.012840471230447292,
+        "length": 160.37266540527344
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.5455v1",
+          "http://arxiv.org/abs/1406.4611v2",
+          "http://arxiv.org/abs/1403.3852v2",
+          "http://arxiv.org/abs/1405.5552v1",
+          "http://arxiv.org/abs/1406.3312v1",
+          "http://arxiv.org/abs/1403.3558v3",
+          "http://arxiv.org/abs/1403.1599v1",
+          "http://arxiv.org/abs/1404.6114v6",
+          "http://arxiv.org/abs/1402.7343v1",
+          "http://arxiv.org/abs/1406.3914v1",
+          "http://arxiv.org/abs/1405.1806v2",
+          "http://arxiv.org/abs/1405.0139v2",
+          "http://arxiv.org/abs/1501.00428v2",
+          "http://arxiv.org/abs/1402.5130v1",
+          "http://arxiv.org/abs/1403.6316v1",
+          "http://arxiv.org/abs/1406.0203v1",
+          "http://arxiv.org/abs/1405.2712v3",
+          "http://arxiv.org/abs/1407.6378v2"
+        ],
+        "id": "time",
+        "strength": 0.011825642548501492,
+        "length": 170.34483337402344
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.1402v2",
+          "http://arxiv.org/abs/1407.8002v2",
+          "http://arxiv.org/abs/1403.4388v2",
+          "http://arxiv.org/abs/1405.6668v3",
+          "http://arxiv.org/abs/1404.3937v2",
+          "http://arxiv.org/abs/1409.4115v2",
+          "http://arxiv.org/abs/1403.2885v2",
+          "http://arxiv.org/abs/1407.6364v1",
+          "http://arxiv.org/abs/1406.0572v1",
+          "http://arxiv.org/abs/1407.3086v2",
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1405.6821v2",
+          "http://arxiv.org/abs/1407.8545v3",
+          "http://arxiv.org/abs/1407.4875v2",
+          "http://arxiv.org/abs/1405.0363v1",
+          "http://arxiv.org/abs/1406.3096v1"
+        ],
+        "id": "symmetry",
+        "strength": 0.013990652747452259,
+        "length": 142.89157104492188
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.1948v2",
+          "http://arxiv.org/abs/1406.7304v1",
+          "http://arxiv.org/abs/1412.4795v1",
+          "http://arxiv.org/abs/1409.7726v1",
+          "http://arxiv.org/abs/1409.0836v1",
+          "http://arxiv.org/abs/1404.3231v2",
+          "http://arxiv.org/abs/1403.3164v2",
+          "http://arxiv.org/abs/1403.7217v2",
+          "http://arxiv.org/abs/1404.1919v1",
+          "http://arxiv.org/abs/1402.3650v3",
+          "http://arxiv.org/abs/1404.0382v2",
+          "http://arxiv.org/abs/1402.6406v1",
+          "http://arxiv.org/abs/1407.5848v2"
+        ],
+        "id": "standard model",
+        "strength": 0.01197047159075737,
+        "length": 159.53488159179688
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.7080v3",
+          "http://arxiv.org/abs/1402.5658v6"
+        ],
+        "id": "hilbert space",
+        "strength": 0.01261643972247839,
+        "length": 197.77777099609375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.5112v3",
+          "http://arxiv.org/abs/1403.3335v2",
+          "http://arxiv.org/abs/1404.1565v2",
+          "http://arxiv.org/abs/1402.3592v1",
+          "http://arxiv.org/abs/1402.2912v2",
+          "http://arxiv.org/abs/1405.6629v2",
+          "http://arxiv.org/abs/1405.3827v2",
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1402.7080v3",
+          "http://arxiv.org/abs/1406.3360v2"
+        ],
+        "id": "de sitter space",
+        "strength": 0.01407571043819189,
+        "length": 53.333343505859375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1409.3751v2",
+          "http://arxiv.org/abs/1402.2384v3",
+          "http://arxiv.org/abs/1410.4788v1",
+          "http://arxiv.org/abs/1412.7435v1",
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1409.0836v1",
+          "http://arxiv.org/abs/1406.5524v1",
+          "http://arxiv.org/abs/1405.5552v1",
+          "http://arxiv.org/abs/1405.7287v2",
+          "http://arxiv.org/abs/1407.4444v1",
+          "http://arxiv.org/abs/1401.5256v1",
+          "http://arxiv.org/abs/1407.2909v1",
+          "http://arxiv.org/abs/1412.4362v1",
+          "http://arxiv.org/abs/1402.1343v2"
+        ],
+        "id": "loop quantum gravity",
+        "strength": 0.011931787244975567,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1408.4598v1"],
+        "id": "minkowski space",
+        "strength": 0.014349798671901226,
+        "length": 195
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1412.7827v1",
+          "http://arxiv.org/abs/1407.8002v2",
+          "http://arxiv.org/abs/1412.7435v1",
+          "http://arxiv.org/abs/1409.7726v1",
+          "http://arxiv.org/abs/1407.3355v2",
+          "http://arxiv.org/abs/1401.6974v2",
+          "http://arxiv.org/abs/1404.4167v1",
+          "http://arxiv.org/abs/1402.0627v5",
+          "http://arxiv.org/abs/1407.4275v1",
+          "http://arxiv.org/abs/1401.3664v2",
+          "http://arxiv.org/abs/1402.2835v2",
+          "http://arxiv.org/abs/1407.5377v1",
+          "http://arxiv.org/abs/1406.3096v1"
+        ],
+        "id": "supersymmetry",
+        "strength": 0.012758016586303711,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1406.0976v2"],
+        "id": "wormhole",
+        "strength": 0.014639592729508877,
+        "length": 183.63636779785156
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.0276v1",
+          "http://arxiv.org/abs/1402.2757v1",
+          "http://arxiv.org/abs/1404.5529v1",
+          "http://arxiv.org/abs/1407.6023v2",
+          "http://arxiv.org/abs/1403.6166v1",
+          "http://arxiv.org/abs/1407.3002v2",
+          "http://arxiv.org/abs/1401.7014v2",
+          "http://arxiv.org/abs/1401.4933v3"
+        ],
+        "id": "theory of everything",
+        "strength": 0.014123635366559029,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1403.2470v2"],
+        "id": "gravitational constant",
+        "strength": 0.013776011765003204,
+        "length": 120
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1401.4933v3"],
+        "id": "time travel",
+        "strength": 0.01817559450864792,
+        "length": 140
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1410.4190v2",
+          "http://arxiv.org/abs/1402.3376v1",
+          "http://arxiv.org/abs/1412.5618v1",
+          "http://arxiv.org/abs/1406.6688v1"
+        ],
+        "id": "m-theory",
+        "strength": 0.015520519576966763,
+        "length": 20
+      }
+    ],
+    "hardLock": true,
+    "y": -33.54326629638672,
+    "gravity": 0.31895214319229126,
+    "x": 1055.76806640625
+  },
+  {
+    "term": "black hole",
+    "connections": [
+      {
+        "shared": ["http://arxiv.org/abs/1402.7088v2"],
+        "id": "big bang",
+        "strength": 0.01821771450340748,
+        "length": 216.55172729492188
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.4039v1",
+          "http://arxiv.org/abs/1407.7295v3",
+          "http://arxiv.org/abs/1401.5761v1",
+          "http://arxiv.org/abs/1403.1921v1",
+          "http://arxiv.org/abs/1404.7489v1",
+          "http://arxiv.org/abs/1405.4243v4",
+          "http://arxiv.org/abs/1401.7740v1",
+          "http://arxiv.org/abs/1407.7796v2",
+          "http://arxiv.org/abs/1406.1658v1",
+          "http://arxiv.org/abs/1401.3560v2",
+          "http://arxiv.org/abs/1402.1998v3",
+          "http://arxiv.org/abs/1401.1599v2",
+          "http://arxiv.org/abs/1401.0288v1",
+          "http://arxiv.org/abs/1402.5514v2",
+          "http://arxiv.org/abs/1401.3480v1",
+          "http://arxiv.org/abs/1402.2084v1",
+          "http://arxiv.org/abs/1403.7215v1",
+          "http://arxiv.org/abs/1410.1486v1",
+          "http://arxiv.org/abs/1404.7783v1",
+          "http://arxiv.org/abs/1407.5971v2",
+          "http://arxiv.org/abs/1404.5215v2",
+          "http://arxiv.org/abs/1411.5778v2",
+          "http://arxiv.org/abs/1406.0290v2",
+          "http://arxiv.org/abs/1406.3809v3",
+          "http://arxiv.org/abs/1401.4097v1",
+          "http://arxiv.org/abs/1406.2012v2",
+          "http://arxiv.org/abs/1406.0841v1",
+          "http://arxiv.org/abs/1401.4227v1",
+          "http://arxiv.org/abs/1410.7909v1",
+          "http://arxiv.org/abs/1402.1427v1",
+          "http://arxiv.org/abs/1401.4838v1",
+          "http://arxiv.org/abs/1405.7846v2",
+          "http://arxiv.org/abs/1407.6292v1",
+          "http://arxiv.org/abs/1402.5127v3",
+          "http://arxiv.org/abs/1403.3986v1",
+          "http://arxiv.org/abs/1406.4098v1",
+          "http://arxiv.org/abs/1407.7119v2",
+          "http://arxiv.org/abs/1405.7922v1",
+          "http://arxiv.org/abs/1401.5804v3",
+          "http://arxiv.org/abs/1408.4531v4",
+          "http://arxiv.org/abs/1406.6551v3",
+          "http://arxiv.org/abs/1401.5397v4",
+          "http://arxiv.org/abs/1410.5065v1",
+          "http://arxiv.org/abs/1401.7820v1",
+          "http://arxiv.org/abs/1402.1343v2",
+          "http://arxiv.org/abs/1403.7314v1",
+          "http://arxiv.org/abs/1405.1246v1",
+          "http://arxiv.org/abs/1404.1845v2",
+          "http://arxiv.org/abs/1409.5941v1",
+          "http://arxiv.org/abs/1406.6043v2",
+          "http://arxiv.org/abs/1407.7367v3",
+          "http://arxiv.org/abs/1403.7213v1",
+          "http://arxiv.org/abs/1406.0330v2",
+          "http://arxiv.org/abs/1403.7279v2",
+          "http://arxiv.org/abs/1406.0677v2",
+          "http://arxiv.org/abs/1405.4038v1",
+          "http://arxiv.org/abs/1405.4229v2",
+          "http://arxiv.org/abs/1409.7872v1",
+          "http://arxiv.org/abs/1401.2133v2",
+          "http://arxiv.org/abs/1402.1524v1",
+          "http://arxiv.org/abs/1409.5988v2",
+          "http://arxiv.org/abs/1407.3577v3",
+          "http://arxiv.org/abs/1405.5392v2",
+          "http://arxiv.org/abs/1410.8281v2",
+          "http://arxiv.org/abs/1401.5075v2",
+          "http://arxiv.org/abs/1404.4472v2",
+          "http://arxiv.org/abs/1406.2011v2",
+          "http://arxiv.org/abs/1402.2514v2",
+          "http://arxiv.org/abs/1406.0807v1",
+          "http://arxiv.org/abs/1410.2993v3",
+          "http://arxiv.org/abs/1402.6378v1",
+          "http://arxiv.org/abs/1401.1337v1",
+          "http://arxiv.org/abs/1410.4758v1",
+          "http://arxiv.org/abs/1403.7728v2",
+          "http://arxiv.org/abs/1401.6612v1",
+          "http://arxiv.org/abs/1407.6983v3",
+          "http://arxiv.org/abs/1406.6884v1",
+          "http://arxiv.org/abs/1405.3466v1",
+          "http://arxiv.org/abs/1402.5446v3",
+          "http://arxiv.org/abs/1407.7656v1",
+          "http://arxiv.org/abs/1405.4898v1"
+        ],
+        "id": "hawking radiation",
+        "strength": 0.01394815742969513,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1403.6917v2",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1403.8066v2",
+          "http://arxiv.org/abs/1410.8866v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1403.5746v1",
+          "http://arxiv.org/abs/1406.1581v2",
+          "http://arxiv.org/abs/1405.0504v1",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1402.3581v2",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.7038v2",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1407.3426v2",
+          "http://arxiv.org/abs/1408.0013v1",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1410.0199v1",
+          "http://arxiv.org/abs/1404.2199v4",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1410.8503v2",
+          "http://arxiv.org/abs/1407.2180v1",
+          "http://arxiv.org/abs/1412.5499v2",
+          "http://arxiv.org/abs/1405.6976v1",
+          "http://arxiv.org/abs/1408.2412v3",
+          "http://arxiv.org/abs/1404.6023v2",
+          "http://arxiv.org/abs/1407.6080v1",
+          "http://arxiv.org/abs/1412.3251v2",
+          "http://arxiv.org/abs/1411.3073v2",
+          "http://arxiv.org/abs/1405.6731v3",
+          "http://arxiv.org/abs/1401.1282v3",
+          "http://arxiv.org/abs/1401.4546v3",
+          "http://arxiv.org/abs/1412.8368v3",
+          "http://arxiv.org/abs/1411.1963v1"
+        ],
+        "id": "neutron star",
+        "strength": 0.01473370473831892,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1411.7326v2",
+          "http://arxiv.org/abs/1403.6917v2",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1410.8866v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1408.6929v1",
+          "http://arxiv.org/abs/1403.5746v1",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1404.1543v2",
+          "http://arxiv.org/abs/1406.0152v1",
+          "http://arxiv.org/abs/1402.3581v2",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1406.0417v2",
+          "http://arxiv.org/abs/1406.2181v2",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1406.2317v1",
+          "http://arxiv.org/abs/1406.2151v1",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1410.0199v1",
+          "http://arxiv.org/abs/1405.1508v2",
+          "http://arxiv.org/abs/1404.2199v4",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1401.0939v1",
+          "http://arxiv.org/abs/1407.2180v1",
+          "http://arxiv.org/abs/1412.5499v2",
+          "http://arxiv.org/abs/1405.1146v1",
+          "http://arxiv.org/abs/1408.2412v3",
+          "http://arxiv.org/abs/1406.5677v3",
+          "http://arxiv.org/abs/1408.1810v2",
+          "http://arxiv.org/abs/1412.3251v2",
+          "http://arxiv.org/abs/1412.1803v1",
+          "http://arxiv.org/abs/1405.6731v3",
+          "http://arxiv.org/abs/1403.4136v2",
+          "http://arxiv.org/abs/1407.7656v1",
+          "http://arxiv.org/abs/1403.0512v1",
+          "http://arxiv.org/abs/1405.3774v2",
+          "http://arxiv.org/abs/1411.1963v1",
+          "http://arxiv.org/abs/1402.2748v3"
+        ],
+        "id": "white dwarf",
+        "strength": 0.013022017665207386,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.4039v1",
+          "http://arxiv.org/abs/1407.7295v3",
+          "http://arxiv.org/abs/1401.5761v1",
+          "http://arxiv.org/abs/1406.5798v2",
+          "http://arxiv.org/abs/1401.0511v1",
+          "http://arxiv.org/abs/1405.4243v4",
+          "http://arxiv.org/abs/1401.3560v2",
+          "http://arxiv.org/abs/1401.1599v2",
+          "http://arxiv.org/abs/1405.2133v4",
+          "http://arxiv.org/abs/1410.4248v2",
+          "http://arxiv.org/abs/1402.5514v2",
+          "http://arxiv.org/abs/1403.7215v1",
+          "http://arxiv.org/abs/1404.7783v1",
+          "http://arxiv.org/abs/1406.6107v1",
+          "http://arxiv.org/abs/1407.5971v2",
+          "http://arxiv.org/abs/1411.5778v2",
+          "http://arxiv.org/abs/1406.2012v2",
+          "http://arxiv.org/abs/1406.0841v1",
+          "http://arxiv.org/abs/1401.4227v1",
+          "http://arxiv.org/abs/1410.7909v1",
+          "http://arxiv.org/abs/1402.1427v1",
+          "http://arxiv.org/abs/1401.4838v1",
+          "http://arxiv.org/abs/1405.7846v2",
+          "http://arxiv.org/abs/1407.6292v1",
+          "http://arxiv.org/abs/1406.4189v2",
+          "http://arxiv.org/abs/1406.4098v1",
+          "http://arxiv.org/abs/1407.7119v2",
+          "http://arxiv.org/abs/1408.4531v4",
+          "http://arxiv.org/abs/1401.7820v1",
+          "http://arxiv.org/abs/1412.0105v1",
+          "http://arxiv.org/abs/1404.1845v2",
+          "http://arxiv.org/abs/1409.5941v1",
+          "http://arxiv.org/abs/1406.6043v2",
+          "http://arxiv.org/abs/1407.7367v3",
+          "http://arxiv.org/abs/1403.7213v1",
+          "http://arxiv.org/abs/1403.7279v2",
+          "http://arxiv.org/abs/1406.0677v2",
+          "http://arxiv.org/abs/1405.4038v1",
+          "http://arxiv.org/abs/1409.7872v1",
+          "http://arxiv.org/abs/1402.1524v1",
+          "http://arxiv.org/abs/1402.0906v1",
+          "http://arxiv.org/abs/1410.1737v2",
+          "http://arxiv.org/abs/1401.4452v1",
+          "http://arxiv.org/abs/1405.5392v2",
+          "http://arxiv.org/abs/1401.5075v2",
+          "http://arxiv.org/abs/1404.4472v2",
+          "http://arxiv.org/abs/1401.1337v1",
+          "http://arxiv.org/abs/1403.7728v2",
+          "http://arxiv.org/abs/1401.6612v1",
+          "http://arxiv.org/abs/1406.6884v1",
+          "http://arxiv.org/abs/1405.3466v1",
+          "http://arxiv.org/abs/1402.5446v3",
+          "http://arxiv.org/abs/1404.0791v1",
+          "http://arxiv.org/abs/1408.1779v2",
+          "http://arxiv.org/abs/1404.3421v2",
+          "http://arxiv.org/abs/1405.4898v1",
+          "http://arxiv.org/abs/1411.2193v2"
+        ],
+        "id": "event horizon",
+        "strength": 0.011385456658899784,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1412.8123v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1403.5746v1",
+          "http://arxiv.org/abs/1406.1581v2",
+          "http://arxiv.org/abs/1405.0504v1",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.7038v2",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1407.3426v2",
+          "http://arxiv.org/abs/1407.7088v1",
+          "http://arxiv.org/abs/1408.0860v1",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1401.0939v1",
+          "http://arxiv.org/abs/1402.7088v2",
+          "http://arxiv.org/abs/1401.1282v3",
+          "http://arxiv.org/abs/1401.4546v3",
+          "http://arxiv.org/abs/1407.7656v1",
+          "http://arxiv.org/abs/1412.8368v3",
+          "http://arxiv.org/abs/1405.3774v2",
+          "http://arxiv.org/abs/1402.2748v3"
+        ],
+        "id": "supernova",
+        "strength": 0.013423043303191662,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.4039v1",
+          "http://arxiv.org/abs/1407.7295v3",
+          "http://arxiv.org/abs/1405.4243v4",
+          "http://arxiv.org/abs/1401.3560v2",
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1410.4248v2",
+          "http://arxiv.org/abs/1402.5514v2",
+          "http://arxiv.org/abs/1401.3480v1",
+          "http://arxiv.org/abs/1402.2084v1",
+          "http://arxiv.org/abs/1410.1486v1",
+          "http://arxiv.org/abs/1407.5971v2",
+          "http://arxiv.org/abs/1407.1698v2",
+          "http://arxiv.org/abs/1411.5778v2",
+          "http://arxiv.org/abs/1401.4097v1",
+          "http://arxiv.org/abs/1406.0841v1",
+          "http://arxiv.org/abs/1410.7909v1",
+          "http://arxiv.org/abs/1402.1427v1",
+          "http://arxiv.org/abs/1405.7846v2",
+          "http://arxiv.org/abs/1402.5127v3",
+          "http://arxiv.org/abs/1401.3054v1",
+          "http://arxiv.org/abs/1401.3107v2",
+          "http://arxiv.org/abs/1401.5804v3",
+          "http://arxiv.org/abs/1408.4531v4",
+          "http://arxiv.org/abs/1401.7820v1",
+          "http://arxiv.org/abs/1402.1343v2",
+          "http://arxiv.org/abs/1406.2357v2",
+          "http://arxiv.org/abs/1409.5941v1",
+          "http://arxiv.org/abs/1404.2126v1",
+          "http://arxiv.org/abs/1403.7279v2",
+          "http://arxiv.org/abs/1405.4038v1",
+          "http://arxiv.org/abs/1410.1737v2",
+          "http://arxiv.org/abs/1406.5524v1",
+          "http://arxiv.org/abs/1410.5950v1",
+          "http://arxiv.org/abs/1401.5075v2",
+          "http://arxiv.org/abs/1404.4472v2",
+          "http://arxiv.org/abs/1402.1465v2",
+          "http://arxiv.org/abs/1410.2993v3",
+          "http://arxiv.org/abs/1407.1992v1",
+          "http://arxiv.org/abs/1406.6884v1",
+          "http://arxiv.org/abs/1404.0791v1",
+          "http://arxiv.org/abs/1404.3421v2",
+          "http://arxiv.org/abs/1406.7153v1"
+        ],
+        "id": "black hole thermodynamics",
+        "strength": 0.012425664812326431,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.6695v2"],
+        "id": "hilbert space",
+        "strength": 0.016895150765776634,
+        "length": 208.88888549804688
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1402.3592v1"
+        ],
+        "id": "de sitter space",
+        "strength": 0.013479490764439106,
+        "length": 186.66665649414062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1402.2084v1",
+          "http://arxiv.org/abs/1402.1343v2",
+          "http://arxiv.org/abs/1406.5524v1",
+          "http://arxiv.org/abs/1405.7287v2"
+        ],
+        "id": "loop quantum gravity",
+        "strength": 0.012506362982094288,
+        "length": 145.92593383789062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.7038v2",
+          "http://arxiv.org/abs/1407.3426v2"
+        ],
+        "id": "pulsar",
+        "strength": 0.011634196154773235,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.0417v2",
+          "http://arxiv.org/abs/1406.2181v2",
+          "http://arxiv.org/abs/1406.2317v1",
+          "http://arxiv.org/abs/1405.1508v2",
+          "http://arxiv.org/abs/1412.1803v1",
+          "http://arxiv.org/abs/1403.4136v2",
+          "http://arxiv.org/abs/1402.2748v3",
+          "http://arxiv.org/abs/1408.1779v2"
+        ],
+        "id": "accretion disc",
+        "strength": 0.011765209957957268,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.4097v1",
+          "http://arxiv.org/abs/1401.7820v1",
+          "http://arxiv.org/abs/1409.5941v1",
+          "http://arxiv.org/abs/1406.2011v2",
+          "http://arxiv.org/abs/1406.0807v1"
+        ],
+        "id": "black hole information paradox",
+        "strength": 0.015642978250980377,
+        "length": 20
+      }
+    ],
+    "hardLock": true,
+    "y": 523.3638916015625,
+    "gravity": 0.30000001192092896,
+    "x": -55.6846923828125
+  },
+  {
+    "term": "physical cosmology",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0399v2",
+          "http://arxiv.org/abs/1407.4079v1",
+          "http://arxiv.org/abs/1406.3347v3",
+          "http://arxiv.org/abs/1403.0261v1",
+          "http://arxiv.org/abs/1403.0083v2",
+          "http://arxiv.org/abs/1412.2427v1",
+          "http://arxiv.org/abs/1403.1198v1",
+          "http://arxiv.org/abs/1409.0760v3",
+          "http://arxiv.org/abs/1410.6709v1",
+          "http://arxiv.org/abs/1405.5232v1",
+          "http://arxiv.org/abs/1406.4090v2",
+          "http://arxiv.org/abs/1411.3580v1",
+          "http://arxiv.org/abs/1412.5426v1",
+          "http://arxiv.org/abs/1404.3713v3",
+          "http://arxiv.org/abs/1405.7219v1",
+          "http://arxiv.org/abs/1407.1821v2",
+          "http://arxiv.org/abs/1405.7006v2",
+          "http://arxiv.org/abs/1401.7639v2",
+          "http://arxiv.org/abs/1407.8100v1",
+          "http://arxiv.org/abs/1403.1718v2",
+          "http://arxiv.org/abs/1404.7689v3",
+          "http://arxiv.org/abs/1405.3811v2",
+          "http://arxiv.org/abs/1401.5768v1",
+          "http://arxiv.org/abs/1405.7288v2",
+          "http://arxiv.org/abs/1408.6436v1",
+          "http://arxiv.org/abs/1401.7069v4",
+          "http://arxiv.org/abs/1402.5993v2",
+          "http://arxiv.org/abs/1405.3771v1",
+          "http://arxiv.org/abs/1407.0951v2",
+          "http://arxiv.org/abs/1401.3634v2",
+          "http://arxiv.org/abs/1406.5142v1",
+          "http://arxiv.org/abs/1401.7549v2",
+          "http://arxiv.org/abs/1401.3155v1",
+          "http://arxiv.org/abs/1405.1291v2",
+          "http://arxiv.org/abs/1401.2656v1",
+          "http://arxiv.org/abs/1407.4306v1",
+          "http://arxiv.org/abs/1402.1437v1",
+          "http://arxiv.org/abs/1403.5490v2",
+          "http://arxiv.org/abs/1404.2850v2",
+          "http://arxiv.org/abs/1403.7743v1",
+          "http://arxiv.org/abs/1410.6710v2",
+          "http://arxiv.org/abs/1411.7788v1",
+          "http://arxiv.org/abs/1402.2592v4",
+          "http://arxiv.org/abs/1401.4819v2",
+          "http://arxiv.org/abs/1404.1681v1",
+          "http://arxiv.org/abs/1401.6649v1",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1405.4003v2",
+          "http://arxiv.org/abs/1406.4747v1",
+          "http://arxiv.org/abs/1405.2178v2",
+          "http://arxiv.org/abs/1404.1887v1",
+          "http://arxiv.org/abs/1406.2307v2",
+          "http://arxiv.org/abs/1404.7124v1",
+          "http://arxiv.org/abs/1410.1849v1",
+          "http://arxiv.org/abs/1412.0775v1",
+          "http://arxiv.org/abs/1410.5283v2",
+          "http://arxiv.org/abs/1404.1910v2",
+          "http://arxiv.org/abs/1408.0203v1",
+          "http://arxiv.org/abs/1410.0460v1",
+          "http://arxiv.org/abs/1404.0476v1",
+          "http://arxiv.org/abs/1402.2256v1",
+          "http://arxiv.org/abs/1403.7452v1",
+          "http://arxiv.org/abs/1407.3846v2",
+          "http://arxiv.org/abs/1411.3475v2",
+          "http://arxiv.org/abs/1406.4526v1",
+          "http://arxiv.org/abs/1407.5481v1",
+          "http://arxiv.org/abs/1501.00107v1",
+          "http://arxiv.org/abs/1406.4367v2",
+          "http://arxiv.org/abs/1402.0520v2",
+          "http://arxiv.org/abs/1403.0854v3",
+          "http://arxiv.org/abs/1401.4846v2",
+          "http://arxiv.org/abs/1411.4735v2",
+          "http://arxiv.org/abs/1403.0913v4",
+          "http://arxiv.org/abs/1406.6943v1",
+          "http://arxiv.org/abs/1408.2689v1",
+          "http://arxiv.org/abs/1411.3583v1",
+          "http://arxiv.org/abs/1412.0005v1",
+          "http://arxiv.org/abs/1401.0473v2",
+          "http://arxiv.org/abs/1401.2128v3",
+          "http://arxiv.org/abs/1404.3518v1",
+          "http://arxiv.org/abs/1411.6589v1",
+          "http://arxiv.org/abs/1410.2750v1",
+          "http://arxiv.org/abs/1404.7140v2",
+          "http://arxiv.org/abs/1401.3596v3",
+          "http://arxiv.org/abs/1403.4947v1",
+          "http://arxiv.org/abs/1406.1705v1",
+          "http://arxiv.org/abs/1402.5678v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1412.0743v1",
+          "http://arxiv.org/abs/1402.4350v1",
+          "http://arxiv.org/abs/1406.6891v1",
+          "http://arxiv.org/abs/1406.0563v2",
+          "http://arxiv.org/abs/1403.3701v2",
+          "http://arxiv.org/abs/1402.0350v2",
+          "http://arxiv.org/abs/1404.2273v2",
+          "http://arxiv.org/abs/1402.3650v3",
+          "http://arxiv.org/abs/1406.2850v2",
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1401.4573v5",
+          "http://arxiv.org/abs/1406.7297v2",
+          "http://arxiv.org/abs/1409.3115v1",
+          "http://arxiv.org/abs/1403.6690v2",
+          "http://arxiv.org/abs/1403.8095v1",
+          "http://arxiv.org/abs/1405.3197v2",
+          "http://arxiv.org/abs/1412.0496v1",
+          "http://arxiv.org/abs/1403.0081v2",
+          "http://arxiv.org/abs/1405.7952v3",
+          "http://arxiv.org/abs/1403.7287v3"
+        ],
+        "id": "dark matter",
+        "strength": 0.012060998938977718,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0399v2",
+          "http://arxiv.org/abs/1403.6746v1",
+          "http://arxiv.org/abs/1405.7419v1",
+          "http://arxiv.org/abs/1406.7555v2",
+          "http://arxiv.org/abs/1502.01929v1",
+          "http://arxiv.org/abs/1403.0083v2",
+          "http://arxiv.org/abs/1404.3665v2",
+          "http://arxiv.org/abs/1412.2427v1",
+          "http://arxiv.org/abs/1403.6396v3",
+          "http://arxiv.org/abs/1405.2743v2",
+          "http://arxiv.org/abs/1410.6709v1",
+          "http://arxiv.org/abs/1406.4258v2",
+          "http://arxiv.org/abs/1411.3580v1",
+          "http://arxiv.org/abs/1408.1238v2",
+          "http://arxiv.org/abs/1407.1821v2",
+          "http://arxiv.org/abs/1404.4418v2",
+          "http://arxiv.org/abs/1401.8113v1",
+          "http://arxiv.org/abs/1405.7288v2",
+          "http://arxiv.org/abs/1402.5993v2",
+          "http://arxiv.org/abs/1407.1265v2",
+          "http://arxiv.org/abs/1412.5417v1",
+          "http://arxiv.org/abs/1401.4906v2",
+          "http://arxiv.org/abs/1401.3634v2",
+          "http://arxiv.org/abs/1405.3640v2",
+          "http://arxiv.org/abs/1408.6435v1",
+          "http://arxiv.org/abs/1405.1291v2",
+          "http://arxiv.org/abs/1406.3040v1",
+          "http://arxiv.org/abs/1411.7479v2",
+          "http://arxiv.org/abs/1407.1632v2",
+          "http://arxiv.org/abs/1410.8787v1",
+          "http://arxiv.org/abs/1403.7743v1",
+          "http://arxiv.org/abs/1410.6710v2",
+          "http://arxiv.org/abs/1402.5004v1",
+          "http://arxiv.org/abs/1411.7788v1",
+          "http://arxiv.org/abs/1406.2089v1",
+          "http://arxiv.org/abs/1403.5420v2",
+          "http://arxiv.org/abs/1408.4535v1",
+          "http://arxiv.org/abs/1405.4769v3",
+          "http://arxiv.org/abs/1411.5201v1",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1406.4747v1",
+          "http://arxiv.org/abs/1404.1887v1",
+          "http://arxiv.org/abs/1407.7792v2",
+          "http://arxiv.org/abs/1407.3118v2",
+          "http://arxiv.org/abs/1405.6066v2",
+          "http://arxiv.org/abs/1404.6205v1",
+          "http://arxiv.org/abs/1412.0775v1",
+          "http://arxiv.org/abs/1405.6935v2",
+          "http://arxiv.org/abs/1404.1910v2",
+          "http://arxiv.org/abs/1407.6602v1",
+          "http://arxiv.org/abs/1407.0728v2",
+          "http://arxiv.org/abs/1406.0857v2",
+          "http://arxiv.org/abs/1410.0460v1",
+          "http://arxiv.org/abs/1407.2958v4",
+          "http://arxiv.org/abs/1407.4005v2",
+          "http://arxiv.org/abs/1409.3163v1",
+          "http://arxiv.org/abs/1403.7452v1",
+          "http://arxiv.org/abs/1406.2308v1",
+          "http://arxiv.org/abs/1411.3475v2",
+          "http://arxiv.org/abs/1406.4526v1",
+          "http://arxiv.org/abs/1405.5813v1",
+          "http://arxiv.org/abs/1402.0520v2",
+          "http://arxiv.org/abs/1405.7949v1",
+          "http://arxiv.org/abs/1401.4846v2",
+          "http://arxiv.org/abs/1403.0913v4",
+          "http://arxiv.org/abs/1406.6943v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1401.8208v4",
+          "http://arxiv.org/abs/1407.5405v1",
+          "http://arxiv.org/abs/1410.2750v1",
+          "http://arxiv.org/abs/1403.5424v2",
+          "http://arxiv.org/abs/1407.3420v2",
+          "http://arxiv.org/abs/1402.5678v1",
+          "http://arxiv.org/abs/1402.2158v3",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1412.0743v1",
+          "http://arxiv.org/abs/1406.6891v1",
+          "http://arxiv.org/abs/1404.2142v3",
+          "http://arxiv.org/abs/1411.5154v2",
+          "http://arxiv.org/abs/1408.0276v1",
+          "http://arxiv.org/abs/1404.2273v2",
+          "http://arxiv.org/abs/1407.7812v2",
+          "http://arxiv.org/abs/1404.0211v2",
+          "http://arxiv.org/abs/1412.1583v1",
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1401.4573v5",
+          "http://arxiv.org/abs/1401.3296v2",
+          "http://arxiv.org/abs/1406.7297v2",
+          "http://arxiv.org/abs/1409.3115v1",
+          "http://arxiv.org/abs/1404.6522v5",
+          "http://arxiv.org/abs/1407.7406v1",
+          "http://arxiv.org/abs/1403.0081v2",
+          "http://arxiv.org/abs/1401.5627v3",
+          "http://arxiv.org/abs/1403.7287v3",
+          "http://arxiv.org/abs/1405.6959v1"
+        ],
+        "id": "big bang",
+        "strength": 0.012087523005902767,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1410.6675v3"],
+        "id": "symmetry",
+        "strength": 0.01872166432440281,
+        "length": 215.18072509765625
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.7740v1",
+          "http://arxiv.org/abs/1407.3577v3",
+          "http://arxiv.org/abs/1403.6690v2",
+          "http://arxiv.org/abs/1405.3624v1"
+        ],
+        "id": "hawking radiation",
+        "strength": 0.014576323330402374,
+        "length": 202.7957000732422
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.6630v4",
+          "http://arxiv.org/abs/1405.7419v1",
+          "http://arxiv.org/abs/1407.4079v1",
+          "http://arxiv.org/abs/1403.5706v1",
+          "http://arxiv.org/abs/1502.01929v1",
+          "http://arxiv.org/abs/1403.5009v2",
+          "http://arxiv.org/abs/1407.7791v1",
+          "http://arxiv.org/abs/1411.3580v1",
+          "http://arxiv.org/abs/1407.1821v2",
+          "http://arxiv.org/abs/1401.8113v1",
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1401.5768v1",
+          "http://arxiv.org/abs/1408.6436v1",
+          "http://arxiv.org/abs/1407.0951v2",
+          "http://arxiv.org/abs/1406.5142v1",
+          "http://arxiv.org/abs/1401.7549v2",
+          "http://arxiv.org/abs/1401.3155v1",
+          "http://arxiv.org/abs/1405.1291v2",
+          "http://arxiv.org/abs/1406.3040v1",
+          "http://arxiv.org/abs/1411.7479v2",
+          "http://arxiv.org/abs/1407.1632v2",
+          "http://arxiv.org/abs/1405.0729v1",
+          "http://arxiv.org/abs/1402.2592v4",
+          "http://arxiv.org/abs/1403.5420v2",
+          "http://arxiv.org/abs/1411.0941v1",
+          "http://arxiv.org/abs/1405.4769v3",
+          "http://arxiv.org/abs/1404.1681v1",
+          "http://arxiv.org/abs/1401.6649v1",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1404.1887v1",
+          "http://arxiv.org/abs/1404.3860v1",
+          "http://arxiv.org/abs/1407.7792v2",
+          "http://arxiv.org/abs/1404.7124v1",
+          "http://arxiv.org/abs/1404.1910v2",
+          "http://arxiv.org/abs/1408.0633v2",
+          "http://arxiv.org/abs/1407.6602v1",
+          "http://arxiv.org/abs/1407.2958v4",
+          "http://arxiv.org/abs/1409.3163v1",
+          "http://arxiv.org/abs/1403.7452v1",
+          "http://arxiv.org/abs/1406.4526v1",
+          "http://arxiv.org/abs/1403.3768v3",
+          "http://arxiv.org/abs/1402.4291v1",
+          "http://arxiv.org/abs/1405.7949v1",
+          "http://arxiv.org/abs/1401.4846v2",
+          "http://arxiv.org/abs/1403.0913v4",
+          "http://arxiv.org/abs/1406.6943v1",
+          "http://arxiv.org/abs/1411.3583v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1405.0282v1",
+          "http://arxiv.org/abs/1408.5483v1",
+          "http://arxiv.org/abs/1401.2128v3",
+          "http://arxiv.org/abs/1401.8208v4",
+          "http://arxiv.org/abs/1407.5405v1",
+          "http://arxiv.org/abs/1410.2750v1",
+          "http://arxiv.org/abs/1407.3420v2",
+          "http://arxiv.org/abs/1402.5678v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1412.0743v1",
+          "http://arxiv.org/abs/1411.5154v2",
+          "http://arxiv.org/abs/1404.2273v2",
+          "http://arxiv.org/abs/1407.7812v2",
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1402.6821v1",
+          "http://arxiv.org/abs/1409.3115v1",
+          "http://arxiv.org/abs/1404.6522v5",
+          "http://arxiv.org/abs/1403.8095v1",
+          "http://arxiv.org/abs/1403.0081v2",
+          "http://arxiv.org/abs/1408.6997v4",
+          "http://arxiv.org/abs/1403.7287v3",
+          "http://arxiv.org/abs/1405.6959v1"
+        ],
+        "id": "dark energy",
+        "strength": 0.014073480851948261,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.7419v1",
+          "http://arxiv.org/abs/1403.5706v1",
+          "http://arxiv.org/abs/1411.7326v2",
+          "http://arxiv.org/abs/1405.2743v2",
+          "http://arxiv.org/abs/1407.7791v1",
+          "http://arxiv.org/abs/1403.3749v1",
+          "http://arxiv.org/abs/1401.8113v1",
+          "http://arxiv.org/abs/1411.6294v2",
+          "http://arxiv.org/abs/1404.0561v2",
+          "http://arxiv.org/abs/1412.5417v1",
+          "http://arxiv.org/abs/1401.4906v2",
+          "http://arxiv.org/abs/1405.3640v2",
+          "http://arxiv.org/abs/1401.3155v1",
+          "http://arxiv.org/abs/1407.8101v1",
+          "http://arxiv.org/abs/1401.2585v4",
+          "http://arxiv.org/abs/1402.2592v4",
+          "http://arxiv.org/abs/1405.4769v3",
+          "http://arxiv.org/abs/1406.3992v1",
+          "http://arxiv.org/abs/1404.7124v1",
+          "http://arxiv.org/abs/1410.1849v1",
+          "http://arxiv.org/abs/1407.8139v1",
+          "http://arxiv.org/abs/1408.0633v2",
+          "http://arxiv.org/abs/1410.6757v5",
+          "http://arxiv.org/abs/1407.4005v2",
+          "http://arxiv.org/abs/1411.7969v1",
+          "http://arxiv.org/abs/1403.0913v4",
+          "http://arxiv.org/abs/1406.6943v1",
+          "http://arxiv.org/abs/1412.0005v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1404.3518v1",
+          "http://arxiv.org/abs/1402.5678v1",
+          "http://arxiv.org/abs/1403.4529v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1412.0743v1",
+          "http://arxiv.org/abs/1404.2142v3",
+          "http://arxiv.org/abs/1406.7636v1",
+          "http://arxiv.org/abs/1408.0276v1",
+          "http://arxiv.org/abs/1403.8095v1",
+          "http://arxiv.org/abs/1405.7952v3",
+          "http://arxiv.org/abs/1405.6959v1"
+        ],
+        "id": "cosmological constant",
+        "strength": 0.011347458697855473,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1411.7326v2",
+          "http://arxiv.org/abs/1405.7016v1",
+          "http://arxiv.org/abs/1407.7812v2"
+        ],
+        "id": "white dwarf",
+        "strength": 0.011267168447375298,
+        "length": 199.3103485107422
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.6066v2",
+          "http://arxiv.org/abs/1403.6493v1",
+          "http://arxiv.org/abs/1407.5405v1",
+          "http://arxiv.org/abs/1407.7812v2"
+        ],
+        "id": "supernova",
+        "strength": 0.011677494272589684,
+        "length": 186.66665649414062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.0083v2",
+          "http://arxiv.org/abs/1404.3665v2",
+          "http://arxiv.org/abs/1402.5993v2",
+          "http://arxiv.org/abs/1407.1265v2",
+          "http://arxiv.org/abs/1405.1291v2",
+          "http://arxiv.org/abs/1403.5407v2",
+          "http://arxiv.org/abs/1407.1632v2",
+          "http://arxiv.org/abs/1404.5310v1",
+          "http://arxiv.org/abs/1406.0857v2",
+          "http://arxiv.org/abs/1406.2308v1",
+          "http://arxiv.org/abs/1408.2689v1",
+          "http://arxiv.org/abs/1401.3296v2",
+          "http://arxiv.org/abs/1406.7297v2",
+          "http://arxiv.org/abs/1401.5627v3",
+          "http://arxiv.org/abs/1403.7287v3"
+        ],
+        "id": "cosmic microwave background radiation",
+        "strength": 0.014331839047372341,
+        "length": 26.451614379882812
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0399v2",
+          "http://arxiv.org/abs/1404.4418v2",
+          "http://arxiv.org/abs/1403.1718v2",
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1401.4906v2",
+          "http://arxiv.org/abs/1401.7549v2",
+          "http://arxiv.org/abs/1403.7743v1",
+          "http://arxiv.org/abs/1405.0729v1",
+          "http://arxiv.org/abs/1406.4747v1",
+          "http://arxiv.org/abs/1404.3860v1",
+          "http://arxiv.org/abs/1404.6205v1",
+          "http://arxiv.org/abs/1405.6935v2",
+          "http://arxiv.org/abs/1407.2958v4",
+          "http://arxiv.org/abs/1402.0520v2",
+          "http://arxiv.org/abs/1405.7949v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1402.4350v1",
+          "http://arxiv.org/abs/1406.7636v1",
+          "http://arxiv.org/abs/1402.1933v2",
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1404.6522v5"
+        ],
+        "id": "hubble's law",
+        "strength": 0.016246583312749863,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.5706v1",
+          "http://arxiv.org/abs/1403.3749v1",
+          "http://arxiv.org/abs/1405.0282v1",
+          "http://arxiv.org/abs/1405.7952v3"
+        ],
+        "id": "vacuum energy",
+        "strength": 0.01165511179715395,
+        "length": 86.66665649414062
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.7692v2"],
+        "id": "cosmic inflation",
+        "strength": 0.021005013957619667,
+        "length": 175.55555725097656
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.4079v1",
+          "http://arxiv.org/abs/1406.7555v2",
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1405.7288v2",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1404.2273v2"
+        ],
+        "id": "lambda-cdm model",
+        "strength": 0.015004280023276806,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 411.4630432128906,
+    "gravity": 0.3312798738479614,
+    "x": 379.51470947265625
+  },
+  {
+    "term": "gravitation",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1409.0527v2",
+          "http://arxiv.org/abs/1403.7930v1"
+        ],
+        "id": "symmetry",
+        "strength": 0.013023528270423412,
+        "length": 210.3614501953125
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1406.5635v2"],
+        "id": "gravitational singularity",
+        "strength": 0.013522502966225147,
+        "length": 210.243896484375
+      }
+    ],
+    "hardLock": false,
+    "y": 463.2328186035156,
+    "gravity": 0.3601616621017456,
+    "x": 806.13134765625
+  },
+  {
+    "term": "spacetime",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.7676v1",
+          "http://arxiv.org/abs/1401.1402v2",
+          "http://arxiv.org/abs/1404.7492v1",
+          "http://arxiv.org/abs/1407.2252v2",
+          "http://arxiv.org/abs/1407.1716v1",
+          "http://arxiv.org/abs/1401.4115v1",
+          "http://arxiv.org/abs/1406.3975v1",
+          "http://arxiv.org/abs/1402.5484v1",
+          "http://arxiv.org/abs/1403.4388v2",
+          "http://arxiv.org/abs/1406.1588v2",
+          "http://arxiv.org/abs/1403.0171v1",
+          "http://arxiv.org/abs/1405.0229v2",
+          "http://arxiv.org/abs/1404.7242v1",
+          "http://arxiv.org/abs/1407.0966v1",
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1410.4248v2",
+          "http://arxiv.org/abs/1402.2912v2",
+          "http://arxiv.org/abs/1406.4611v2",
+          "http://arxiv.org/abs/1404.3929v1",
+          "http://arxiv.org/abs/1411.0286v1",
+          "http://arxiv.org/abs/1406.3312v1",
+          "http://arxiv.org/abs/1402.7047v1",
+          "http://arxiv.org/abs/1403.3558v3",
+          "http://arxiv.org/abs/1405.1692v1",
+          "http://arxiv.org/abs/1406.2012v2",
+          "http://arxiv.org/abs/1404.1919v1",
+          "http://arxiv.org/abs/1406.0634v2",
+          "http://arxiv.org/abs/1404.4770v2",
+          "http://arxiv.org/abs/1401.4987v2",
+          "http://arxiv.org/abs/1406.3186v2",
+          "http://arxiv.org/abs/1407.6152v1",
+          "http://arxiv.org/abs/1412.5618v1",
+          "http://arxiv.org/abs/1404.6114v6",
+          "http://arxiv.org/abs/1402.7343v1",
+          "http://arxiv.org/abs/1406.3914v1",
+          "http://arxiv.org/abs/1405.4785v5",
+          "http://arxiv.org/abs/1407.4444v1",
+          "http://arxiv.org/abs/1403.4898v2",
+          "http://arxiv.org/abs/1401.2062v2",
+          "http://arxiv.org/abs/1406.2571v2",
+          "http://arxiv.org/abs/1407.4275v1",
+          "http://arxiv.org/abs/1405.0064v3",
+          "http://arxiv.org/abs/1503.03439v2",
+          "http://arxiv.org/abs/1411.2323v1",
+          "http://arxiv.org/abs/1501.00428v2",
+          "http://arxiv.org/abs/1402.0690v1",
+          "http://arxiv.org/abs/1403.7559v2",
+          "http://arxiv.org/abs/1406.3379v2",
+          "http://arxiv.org/abs/1407.8036v1",
+          "http://arxiv.org/abs/1405.6629v2",
+          "http://arxiv.org/abs/1406.0572v1",
+          "http://arxiv.org/abs/1402.5130v1",
+          "http://arxiv.org/abs/1403.6316v1",
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1406.0060v2",
+          "http://arxiv.org/abs/1404.1878v2",
+          "http://arxiv.org/abs/1405.6657v1",
+          "http://arxiv.org/abs/1409.7516v1",
+          "http://arxiv.org/abs/1407.4875v2",
+          "http://arxiv.org/abs/1407.6428v1",
+          "http://arxiv.org/abs/1404.6219v2",
+          "http://arxiv.org/abs/1407.6378v2",
+          "http://arxiv.org/abs/1406.2610v1",
+          "http://arxiv.org/abs/1412.3317v1",
+          "http://arxiv.org/abs/1409.7874v1",
+          "http://arxiv.org/abs/1401.2941v2",
+          "http://arxiv.org/abs/1408.4598v1",
+          "http://arxiv.org/abs/1412.6136v1",
+          "http://arxiv.org/abs/1406.3096v1",
+          "http://arxiv.org/abs/1404.2785v3",
+          "http://arxiv.org/abs/1406.4533v1",
+          "http://arxiv.org/abs/1404.1411v2",
+          "http://arxiv.org/abs/1405.2402v1",
+          "http://arxiv.org/abs/1408.4611v1",
+          "http://arxiv.org/abs/1406.6688v1",
+          "http://arxiv.org/abs/1404.5993v2"
+        ],
+        "id": "string theory",
+        "strength": 0.013025117106735706,
+        "length": 69.50494384765625
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1412.8108v1",
+          "http://arxiv.org/abs/1407.3980v1",
+          "http://arxiv.org/abs/1411.1558v9",
+          "http://arxiv.org/abs/1408.4601v1",
+          "http://arxiv.org/abs/1403.5988v2",
+          "http://arxiv.org/abs/1412.5045v1",
+          "http://arxiv.org/abs/1411.7254v1",
+          "http://arxiv.org/abs/1401.6948v1",
+          "http://arxiv.org/abs/1403.3467v2",
+          "http://arxiv.org/abs/1401.4115v1",
+          "http://arxiv.org/abs/1406.3975v1",
+          "http://arxiv.org/abs/1401.6388v2",
+          "http://arxiv.org/abs/1406.0577v1",
+          "http://arxiv.org/abs/1403.4388v2",
+          "http://arxiv.org/abs/1403.3038v2",
+          "http://arxiv.org/abs/1404.4166v3",
+          "http://arxiv.org/abs/1402.7155v1",
+          "http://arxiv.org/abs/1401.4706v2",
+          "http://arxiv.org/abs/1408.3989v1",
+          "http://arxiv.org/abs/1406.3232v1",
+          "http://arxiv.org/abs/1404.2567v2",
+          "http://arxiv.org/abs/1404.6410v2",
+          "http://arxiv.org/abs/1401.4767v2",
+          "http://arxiv.org/abs/1409.6513v2",
+          "http://arxiv.org/abs/1406.6107v1",
+          "http://arxiv.org/abs/1411.0286v1",
+          "http://arxiv.org/abs/1405.5224v1",
+          "http://arxiv.org/abs/1406.4303v1",
+          "http://arxiv.org/abs/1406.3312v1",
+          "http://arxiv.org/abs/1406.0729v1",
+          "http://arxiv.org/abs/1403.3558v3",
+          "http://arxiv.org/abs/1409.1746v1",
+          "http://arxiv.org/abs/1402.7048v7",
+          "http://arxiv.org/abs/1402.3284v2",
+          "http://arxiv.org/abs/1412.5621v1",
+          "http://arxiv.org/abs/1409.8144v1",
+          "http://arxiv.org/abs/1408.5487v1",
+          "http://arxiv.org/abs/1407.1649v2",
+          "http://arxiv.org/abs/1408.0468v2",
+          "http://arxiv.org/abs/1402.2417v2",
+          "http://arxiv.org/abs/1401.2062v2",
+          "http://arxiv.org/abs/1407.8085v2",
+          "http://arxiv.org/abs/1401.1374v2",
+          "http://arxiv.org/abs/1408.4947v1",
+          "http://arxiv.org/abs/1405.0064v3",
+          "http://arxiv.org/abs/1412.4003v1",
+          "http://arxiv.org/abs/1401.7160v2",
+          "http://arxiv.org/abs/1411.4599v1",
+          "http://arxiv.org/abs/1405.7439v2",
+          "http://arxiv.org/abs/1408.5259v1",
+          "http://arxiv.org/abs/1407.0032v2",
+          "http://arxiv.org/abs/1412.3424v3",
+          "http://arxiv.org/abs/1407.8036v1",
+          "http://arxiv.org/abs/1405.6629v2",
+          "http://arxiv.org/abs/1403.6316v1",
+          "http://arxiv.org/abs/1405.5219v1",
+          "http://arxiv.org/abs/1404.3696v2",
+          "http://arxiv.org/abs/1403.7615v2",
+          "http://arxiv.org/abs/1409.7516v1",
+          "http://arxiv.org/abs/1402.1443v1",
+          "http://arxiv.org/abs/1407.6428v1",
+          "http://arxiv.org/abs/1412.2054v1",
+          "http://arxiv.org/abs/1402.3287v1",
+          "http://arxiv.org/abs/1403.2618v1",
+          "http://arxiv.org/abs/1408.4277v1",
+          "http://arxiv.org/abs/1409.5060v1",
+          "http://arxiv.org/abs/1407.2268v3",
+          "http://arxiv.org/abs/1407.6378v2",
+          "http://arxiv.org/abs/1401.2941v2",
+          "http://arxiv.org/abs/1408.4598v1",
+          "http://arxiv.org/abs/1401.2057v1"
+        ],
+        "id": "special relativity",
+        "strength": 0.01289286371320486,
+        "length": 43.60247802734375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.6491v2",
+          "http://arxiv.org/abs/1401.1402v2",
+          "http://arxiv.org/abs/1412.5045v1",
+          "http://arxiv.org/abs/1403.4388v2",
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1407.6465v3",
+          "http://arxiv.org/abs/1412.0900v1",
+          "http://arxiv.org/abs/1406.4303v1",
+          "http://arxiv.org/abs/1404.2475v1",
+          "http://arxiv.org/abs/1402.3976v1",
+          "http://arxiv.org/abs/1401.3652v1",
+          "http://arxiv.org/abs/1408.5259v1",
+          "http://arxiv.org/abs/1412.3424v3",
+          "http://arxiv.org/abs/1405.7627v1",
+          "http://arxiv.org/abs/1408.0516v1",
+          "http://arxiv.org/abs/1403.1725v1",
+          "http://arxiv.org/abs/1406.0572v1",
+          "http://arxiv.org/abs/1402.4355v2",
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1404.3696v2",
+          "http://arxiv.org/abs/1411.1843v1",
+          "http://arxiv.org/abs/1407.4875v2",
+          "http://arxiv.org/abs/1407.2268v3",
+          "http://arxiv.org/abs/1406.3096v1",
+          "http://arxiv.org/abs/1401.2057v1"
+        ],
+        "id": "symmetry",
+        "strength": 0.011600402183830738,
+        "length": 94.69879150390625
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1408.4945v1",
+          "http://arxiv.org/abs/1405.3185v1",
+          "http://arxiv.org/abs/1411.1843v1"
+        ],
+        "id": "noether's theorem",
+        "strength": 0.01125805638730526,
+        "length": 189.23077392578125
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.2912v2",
+          "http://arxiv.org/abs/1405.3135v2",
+          "http://arxiv.org/abs/1405.6629v2",
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1408.2799v2"
+        ],
+        "id": "de sitter space",
+        "strength": 0.011844037100672722,
+        "length": 136.6666717529297
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1409.7455v1",
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1407.4444v1"
+        ],
+        "id": "loop quantum gravity",
+        "strength": 0.011365994811058044,
+        "length": 175.55555725097656
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1402.3071v2"],
+        "id": "cosmology",
+        "strength": 0.015801727771759033,
+        "length": 204
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1408.4601v1",
+          "http://arxiv.org/abs/1402.3975v2",
+          "http://arxiv.org/abs/1401.6948v1",
+          "http://arxiv.org/abs/1404.4166v3",
+          "http://arxiv.org/abs/1406.6107v1",
+          "http://arxiv.org/abs/1408.5487v1",
+          "http://arxiv.org/abs/1407.8085v2",
+          "http://arxiv.org/abs/1408.4947v1",
+          "http://arxiv.org/abs/1412.3424v3",
+          "http://arxiv.org/abs/1403.7615v2",
+          "http://arxiv.org/abs/1412.7403v1",
+          "http://arxiv.org/abs/1408.4277v1",
+          "http://arxiv.org/abs/1401.1060v2",
+          "http://arxiv.org/abs/1408.4598v1"
+        ],
+        "id": "minkowski space",
+        "strength": 0.011690229177474976,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2"
+        ],
+        "id": "wormhole",
+        "strength": 0.017110593616962433,
+        "length": 147.27273559570312
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2"
+        ],
+        "id": "exotic matter",
+        "strength": 0.019487807527184486,
+        "length": 120
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2"
+        ],
+        "id": "time travel",
+        "strength": 0.01740998588502407,
+        "length": 60
+      }
+    ],
+    "hardLock": true,
+    "y": -42.951385498046875,
+    "gravity": 0.3769199252128601,
+    "x": 920.755126953125
+  },
+  {
+    "term": "dark matter",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0399v2",
+          "http://arxiv.org/abs/1407.4079v1",
+          "http://arxiv.org/abs/1406.3347v3",
+          "http://arxiv.org/abs/1403.0261v1",
+          "http://arxiv.org/abs/1403.0083v2",
+          "http://arxiv.org/abs/1412.2427v1",
+          "http://arxiv.org/abs/1403.1198v1",
+          "http://arxiv.org/abs/1409.0760v3",
+          "http://arxiv.org/abs/1410.6709v1",
+          "http://arxiv.org/abs/1405.5232v1",
+          "http://arxiv.org/abs/1406.4090v2",
+          "http://arxiv.org/abs/1411.3580v1",
+          "http://arxiv.org/abs/1412.5426v1",
+          "http://arxiv.org/abs/1404.3713v3",
+          "http://arxiv.org/abs/1405.7219v1",
+          "http://arxiv.org/abs/1407.1821v2",
+          "http://arxiv.org/abs/1405.7006v2",
+          "http://arxiv.org/abs/1401.7639v2",
+          "http://arxiv.org/abs/1407.8100v1",
+          "http://arxiv.org/abs/1403.1718v2",
+          "http://arxiv.org/abs/1404.7689v3",
+          "http://arxiv.org/abs/1405.3811v2",
+          "http://arxiv.org/abs/1401.5768v1",
+          "http://arxiv.org/abs/1405.7288v2",
+          "http://arxiv.org/abs/1408.6436v1",
+          "http://arxiv.org/abs/1401.7069v4",
+          "http://arxiv.org/abs/1402.5993v2",
+          "http://arxiv.org/abs/1405.3771v1",
+          "http://arxiv.org/abs/1407.0951v2",
+          "http://arxiv.org/abs/1401.3634v2",
+          "http://arxiv.org/abs/1406.5142v1",
+          "http://arxiv.org/abs/1401.7549v2",
+          "http://arxiv.org/abs/1401.3155v1",
+          "http://arxiv.org/abs/1405.1291v2",
+          "http://arxiv.org/abs/1401.2656v1",
+          "http://arxiv.org/abs/1407.4306v1",
+          "http://arxiv.org/abs/1402.1437v1",
+          "http://arxiv.org/abs/1403.5490v2",
+          "http://arxiv.org/abs/1404.2850v2",
+          "http://arxiv.org/abs/1403.7743v1",
+          "http://arxiv.org/abs/1410.6710v2",
+          "http://arxiv.org/abs/1411.7788v1",
+          "http://arxiv.org/abs/1402.2592v4",
+          "http://arxiv.org/abs/1401.4819v2",
+          "http://arxiv.org/abs/1404.1681v1",
+          "http://arxiv.org/abs/1401.6649v1",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1405.4003v2",
+          "http://arxiv.org/abs/1406.4747v1",
+          "http://arxiv.org/abs/1405.2178v2",
+          "http://arxiv.org/abs/1404.1887v1",
+          "http://arxiv.org/abs/1406.2307v2",
+          "http://arxiv.org/abs/1404.7124v1",
+          "http://arxiv.org/abs/1410.1849v1",
+          "http://arxiv.org/abs/1412.0775v1",
+          "http://arxiv.org/abs/1410.5283v2",
+          "http://arxiv.org/abs/1404.1910v2",
+          "http://arxiv.org/abs/1408.0203v1",
+          "http://arxiv.org/abs/1410.0460v1",
+          "http://arxiv.org/abs/1404.0476v1",
+          "http://arxiv.org/abs/1402.2256v1",
+          "http://arxiv.org/abs/1403.7452v1",
+          "http://arxiv.org/abs/1407.3846v2",
+          "http://arxiv.org/abs/1411.3475v2",
+          "http://arxiv.org/abs/1406.4526v1",
+          "http://arxiv.org/abs/1407.5481v1",
+          "http://arxiv.org/abs/1501.00107v1",
+          "http://arxiv.org/abs/1406.4367v2",
+          "http://arxiv.org/abs/1402.0520v2",
+          "http://arxiv.org/abs/1403.0854v3",
+          "http://arxiv.org/abs/1401.4846v2",
+          "http://arxiv.org/abs/1411.4735v2",
+          "http://arxiv.org/abs/1403.0913v4",
+          "http://arxiv.org/abs/1406.6943v1",
+          "http://arxiv.org/abs/1408.2689v1",
+          "http://arxiv.org/abs/1411.3583v1",
+          "http://arxiv.org/abs/1412.0005v1",
+          "http://arxiv.org/abs/1401.0473v2",
+          "http://arxiv.org/abs/1401.2128v3",
+          "http://arxiv.org/abs/1404.3518v1",
+          "http://arxiv.org/abs/1411.6589v1",
+          "http://arxiv.org/abs/1410.2750v1",
+          "http://arxiv.org/abs/1404.7140v2",
+          "http://arxiv.org/abs/1401.3596v3",
+          "http://arxiv.org/abs/1403.4947v1",
+          "http://arxiv.org/abs/1406.1705v1",
+          "http://arxiv.org/abs/1402.5678v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1412.0743v1",
+          "http://arxiv.org/abs/1402.4350v1",
+          "http://arxiv.org/abs/1406.6891v1",
+          "http://arxiv.org/abs/1406.0563v2",
+          "http://arxiv.org/abs/1403.3701v2",
+          "http://arxiv.org/abs/1402.0350v2",
+          "http://arxiv.org/abs/1404.2273v2",
+          "http://arxiv.org/abs/1402.3650v3",
+          "http://arxiv.org/abs/1406.2850v2",
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1401.4573v5",
+          "http://arxiv.org/abs/1406.7297v2",
+          "http://arxiv.org/abs/1409.3115v1",
+          "http://arxiv.org/abs/1403.6690v2",
+          "http://arxiv.org/abs/1403.8095v1",
+          "http://arxiv.org/abs/1405.3197v2",
+          "http://arxiv.org/abs/1412.0496v1",
+          "http://arxiv.org/abs/1403.0081v2",
+          "http://arxiv.org/abs/1405.7952v3",
+          "http://arxiv.org/abs/1403.7287v3"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.012060998938977718,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.4110v2",
+          "http://arxiv.org/abs/1405.3197v2"
+        ],
+        "id": "special relativity",
+        "strength": 0.013705343008041382,
+        "length": 215.0310516357422
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.1846v1",
+          "http://arxiv.org/abs/1403.7930v1"
+        ],
+        "id": "symmetry",
+        "strength": 0.011778098531067371,
+        "length": 210.3614501953125
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0399v2",
+          "http://arxiv.org/abs/1403.1718v2",
+          "http://arxiv.org/abs/1401.7549v2",
+          "http://arxiv.org/abs/1403.7743v1",
+          "http://arxiv.org/abs/1406.4747v1",
+          "http://arxiv.org/abs/1402.0520v2",
+          "http://arxiv.org/abs/1403.0926v1",
+          "http://arxiv.org/abs/1407.7322v1",
+          "http://arxiv.org/abs/1402.4350v1",
+          "http://arxiv.org/abs/1412.8454v1"
+        ],
+        "id": "hubble's law",
+        "strength": 0.013402734883129597,
+        "length": 60
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.4079v1",
+          "http://arxiv.org/abs/1405.7288v2",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1412.4000v1",
+          "http://arxiv.org/abs/1404.2273v2",
+          "http://arxiv.org/abs/1403.2424v1"
+        ],
+        "id": "lambda-cdm model",
+        "strength": 0.013520647771656513,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 385.15533447265625,
+    "gravity": 0.3792675733566284,
+    "x": 451.3313293457031
+  },
+  {
+    "term": "special relativity",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.4115v1",
+          "http://arxiv.org/abs/1406.3975v1",
+          "http://arxiv.org/abs/1403.4388v2",
+          "http://arxiv.org/abs/1405.5941v3",
+          "http://arxiv.org/abs/1411.0286v1",
+          "http://arxiv.org/abs/1406.3312v1",
+          "http://arxiv.org/abs/1403.3558v3",
+          "http://arxiv.org/abs/1407.5597v1",
+          "http://arxiv.org/abs/1411.1986v1",
+          "http://arxiv.org/abs/1409.0809v3",
+          "http://arxiv.org/abs/1401.2062v2",
+          "http://arxiv.org/abs/1405.0064v3",
+          "http://arxiv.org/abs/1403.2080v3",
+          "http://arxiv.org/abs/1405.5085v2",
+          "http://arxiv.org/abs/1407.8036v1",
+          "http://arxiv.org/abs/1405.6629v2",
+          "http://arxiv.org/abs/1403.6316v1",
+          "http://arxiv.org/abs/1409.7516v1",
+          "http://arxiv.org/abs/1407.6428v1",
+          "http://arxiv.org/abs/1407.2909v1",
+          "http://arxiv.org/abs/1407.7891v1",
+          "http://arxiv.org/abs/1407.6378v2",
+          "http://arxiv.org/abs/1401.2941v2",
+          "http://arxiv.org/abs/1408.4598v1"
+        ],
+        "id": "string theory",
+        "strength": 0.012840471230447292,
+        "length": 160.37266540527344
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1412.8108v1",
+          "http://arxiv.org/abs/1407.3980v1",
+          "http://arxiv.org/abs/1411.1558v9",
+          "http://arxiv.org/abs/1408.4601v1",
+          "http://arxiv.org/abs/1403.5988v2",
+          "http://arxiv.org/abs/1412.5045v1",
+          "http://arxiv.org/abs/1411.7254v1",
+          "http://arxiv.org/abs/1401.6948v1",
+          "http://arxiv.org/abs/1403.3467v2",
+          "http://arxiv.org/abs/1401.4115v1",
+          "http://arxiv.org/abs/1406.3975v1",
+          "http://arxiv.org/abs/1401.6388v2",
+          "http://arxiv.org/abs/1406.0577v1",
+          "http://arxiv.org/abs/1403.4388v2",
+          "http://arxiv.org/abs/1403.3038v2",
+          "http://arxiv.org/abs/1404.4166v3",
+          "http://arxiv.org/abs/1402.7155v1",
+          "http://arxiv.org/abs/1401.4706v2",
+          "http://arxiv.org/abs/1408.3989v1",
+          "http://arxiv.org/abs/1406.3232v1",
+          "http://arxiv.org/abs/1404.2567v2",
+          "http://arxiv.org/abs/1404.6410v2",
+          "http://arxiv.org/abs/1401.4767v2",
+          "http://arxiv.org/abs/1409.6513v2",
+          "http://arxiv.org/abs/1406.6107v1",
+          "http://arxiv.org/abs/1411.0286v1",
+          "http://arxiv.org/abs/1405.5224v1",
+          "http://arxiv.org/abs/1406.4303v1",
+          "http://arxiv.org/abs/1406.3312v1",
+          "http://arxiv.org/abs/1406.0729v1",
+          "http://arxiv.org/abs/1403.3558v3",
+          "http://arxiv.org/abs/1409.1746v1",
+          "http://arxiv.org/abs/1402.7048v7",
+          "http://arxiv.org/abs/1402.3284v2",
+          "http://arxiv.org/abs/1412.5621v1",
+          "http://arxiv.org/abs/1409.8144v1",
+          "http://arxiv.org/abs/1408.5487v1",
+          "http://arxiv.org/abs/1407.1649v2",
+          "http://arxiv.org/abs/1408.0468v2",
+          "http://arxiv.org/abs/1402.2417v2",
+          "http://arxiv.org/abs/1401.2062v2",
+          "http://arxiv.org/abs/1407.8085v2",
+          "http://arxiv.org/abs/1401.1374v2",
+          "http://arxiv.org/abs/1408.4947v1",
+          "http://arxiv.org/abs/1405.0064v3",
+          "http://arxiv.org/abs/1412.4003v1",
+          "http://arxiv.org/abs/1401.7160v2",
+          "http://arxiv.org/abs/1411.4599v1",
+          "http://arxiv.org/abs/1405.7439v2",
+          "http://arxiv.org/abs/1408.5259v1",
+          "http://arxiv.org/abs/1407.0032v2",
+          "http://arxiv.org/abs/1412.3424v3",
+          "http://arxiv.org/abs/1407.8036v1",
+          "http://arxiv.org/abs/1405.6629v2",
+          "http://arxiv.org/abs/1403.6316v1",
+          "http://arxiv.org/abs/1405.5219v1",
+          "http://arxiv.org/abs/1404.3696v2",
+          "http://arxiv.org/abs/1403.7615v2",
+          "http://arxiv.org/abs/1409.7516v1",
+          "http://arxiv.org/abs/1402.1443v1",
+          "http://arxiv.org/abs/1407.6428v1",
+          "http://arxiv.org/abs/1412.2054v1",
+          "http://arxiv.org/abs/1402.3287v1",
+          "http://arxiv.org/abs/1403.2618v1",
+          "http://arxiv.org/abs/1408.4277v1",
+          "http://arxiv.org/abs/1409.5060v1",
+          "http://arxiv.org/abs/1407.2268v3",
+          "http://arxiv.org/abs/1407.6378v2",
+          "http://arxiv.org/abs/1401.2941v2",
+          "http://arxiv.org/abs/1408.4598v1",
+          "http://arxiv.org/abs/1401.2057v1"
+        ],
+        "id": "spacetime",
+        "strength": 0.01289286371320486,
+        "length": 43.60247802734375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.4110v2",
+          "http://arxiv.org/abs/1405.3197v2"
+        ],
+        "id": "dark matter",
+        "strength": 0.013705343008041382,
+        "length": 215.0310516357422
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.3980v1",
+          "http://arxiv.org/abs/1407.1649v2",
+          "http://arxiv.org/abs/1408.5259v1",
+          "http://arxiv.org/abs/1406.0577v1",
+          "http://arxiv.org/abs/1403.3038v2",
+          "http://arxiv.org/abs/1404.4166v3",
+          "http://arxiv.org/abs/1405.4155v1",
+          "http://arxiv.org/abs/1403.6316v1",
+          "http://arxiv.org/abs/1405.4430v2",
+          "http://arxiv.org/abs/1401.4706v2",
+          "http://arxiv.org/abs/1404.3696v2",
+          "http://arxiv.org/abs/1402.3287v1",
+          "http://arxiv.org/abs/1405.5224v1",
+          "http://arxiv.org/abs/1405.1865v4",
+          "http://arxiv.org/abs/1407.6378v2",
+          "http://arxiv.org/abs/1406.3312v1",
+          "http://arxiv.org/abs/1403.3558v3",
+          "http://arxiv.org/abs/1407.2862v3",
+          "http://arxiv.org/abs/1412.5892v3"
+        ],
+        "id": "time",
+        "strength": 0.012333838269114494,
+        "length": 167.58621215820312
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1406.6334v1"],
+        "id": "noether's theorem",
+        "strength": 0.017917245626449585,
+        "length": 209.74359130859375
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.6629v2"],
+        "id": "de sitter space",
+        "strength": 0.017582789063453674,
+        "length": 203.3333282470703
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1408.4601v1",
+          "http://arxiv.org/abs/1408.5487v1",
+          "http://arxiv.org/abs/1407.8085v2",
+          "http://arxiv.org/abs/1408.4947v1",
+          "http://arxiv.org/abs/1401.6948v1",
+          "http://arxiv.org/abs/1412.3424v3",
+          "http://arxiv.org/abs/1404.4166v3",
+          "http://arxiv.org/abs/1403.7615v2",
+          "http://arxiv.org/abs/1406.6107v1",
+          "http://arxiv.org/abs/1408.4277v1",
+          "http://arxiv.org/abs/1408.4598v1",
+          "http://arxiv.org/abs/1401.0597v2"
+        ],
+        "id": "minkowski space",
+        "strength": 0.013016777113080025,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1412.1142v2"],
+        "id": "pulsar",
+        "strength": 0.014021421782672405,
+        "length": 170
+      }
+    ],
+    "hardLock": false,
+    "y": 144.11585998535156,
+    "gravity": 0.4035489559173584,
+    "x": 596.510986328125
+  },
+  {
+    "term": "quantum gravity",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.6316v1",
+          "http://arxiv.org/abs/1404.1948v2",
+          "http://arxiv.org/abs/1409.7726v1",
+          "http://arxiv.org/abs/1407.5848v2",
+          "http://arxiv.org/abs/1409.0836v1",
+          "http://arxiv.org/abs/1412.7981v1"
+        ],
+        "id": "standard model",
+        "strength": 0.013017994351685047,
+        "length": 192.093017578125
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1412.8368v3"],
+        "id": "neutron star",
+        "strength": 0.013294453732669353,
+        "length": 213.442626953125
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1412.3604v1",
+          "http://arxiv.org/abs/1403.7121v1",
+          "http://arxiv.org/abs/1402.3155v1",
+          "http://arxiv.org/abs/1401.0931v1",
+          "http://arxiv.org/abs/1410.5276v2"
+        ],
+        "id": "hilbert space",
+        "strength": 0.012304218485951424,
+        "length": 164.44444274902344
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.3827v2"],
+        "id": "de sitter space",
+        "strength": 0.01516768615692854,
+        "length": 203.3333282470703
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.7287v2",
+          "http://arxiv.org/abs/1407.2428v2",
+          "http://arxiv.org/abs/1407.4444v1",
+          "http://arxiv.org/abs/1403.7121v1",
+          "http://arxiv.org/abs/1402.2384v3",
+          "http://arxiv.org/abs/1410.4788v1",
+          "http://arxiv.org/abs/1401.0931v1",
+          "http://arxiv.org/abs/1412.7435v1",
+          "http://arxiv.org/abs/1409.7455v1",
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1409.0836v1",
+          "http://arxiv.org/abs/1407.8167v2",
+          "http://arxiv.org/abs/1406.5524v1",
+          "http://arxiv.org/abs/1412.4362v1",
+          "http://arxiv.org/abs/1405.5552v1",
+          "http://arxiv.org/abs/1411.4316v1",
+          "http://arxiv.org/abs/1402.1343v2"
+        ],
+        "id": "loop quantum gravity",
+        "strength": 0.014052094891667366,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.6166v1",
+          "http://arxiv.org/abs/1401.0276v1",
+          "http://arxiv.org/abs/1402.2757v1",
+          "http://arxiv.org/abs/1408.2691v1",
+          "http://arxiv.org/abs/1407.3002v2",
+          "http://arxiv.org/abs/1401.7014v2",
+          "http://arxiv.org/abs/1404.5529v1",
+          "http://arxiv.org/abs/1401.4933v3"
+        ],
+        "id": "theory of everything",
+        "strength": 0.01271482091397047,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1401.4933v3"],
+        "id": "time travel",
+        "strength": 0.01976204290986061,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 203.90768432617188,
+    "gravity": 0.4216430187225342,
+    "x": 684.8934326171875
+  },
+  {
+    "term": "time",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.5455v1",
+          "http://arxiv.org/abs/1406.4611v2",
+          "http://arxiv.org/abs/1403.3852v2",
+          "http://arxiv.org/abs/1405.5552v1",
+          "http://arxiv.org/abs/1406.3312v1",
+          "http://arxiv.org/abs/1403.3558v3",
+          "http://arxiv.org/abs/1403.1599v1",
+          "http://arxiv.org/abs/1404.6114v6",
+          "http://arxiv.org/abs/1402.7343v1",
+          "http://arxiv.org/abs/1406.3914v1",
+          "http://arxiv.org/abs/1405.1806v2",
+          "http://arxiv.org/abs/1405.0139v2",
+          "http://arxiv.org/abs/1501.00428v2",
+          "http://arxiv.org/abs/1402.5130v1",
+          "http://arxiv.org/abs/1403.6316v1",
+          "http://arxiv.org/abs/1406.0203v1",
+          "http://arxiv.org/abs/1405.2712v3",
+          "http://arxiv.org/abs/1407.6378v2"
+        ],
+        "id": "string theory",
+        "strength": 0.011825642548501492,
+        "length": 170.34483337402344
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.3980v1",
+          "http://arxiv.org/abs/1407.1649v2",
+          "http://arxiv.org/abs/1408.5259v1",
+          "http://arxiv.org/abs/1406.0577v1",
+          "http://arxiv.org/abs/1403.3038v2",
+          "http://arxiv.org/abs/1404.4166v3",
+          "http://arxiv.org/abs/1405.4155v1",
+          "http://arxiv.org/abs/1403.6316v1",
+          "http://arxiv.org/abs/1405.4430v2",
+          "http://arxiv.org/abs/1401.4706v2",
+          "http://arxiv.org/abs/1404.3696v2",
+          "http://arxiv.org/abs/1402.3287v1",
+          "http://arxiv.org/abs/1405.5224v1",
+          "http://arxiv.org/abs/1405.1865v4",
+          "http://arxiv.org/abs/1407.6378v2",
+          "http://arxiv.org/abs/1406.3312v1",
+          "http://arxiv.org/abs/1403.3558v3",
+          "http://arxiv.org/abs/1407.2862v3",
+          "http://arxiv.org/abs/1412.5892v3"
+        ],
+        "id": "special relativity",
+        "strength": 0.012333838269114494,
+        "length": 167.58621215820312
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.6976v1",
+          "http://arxiv.org/abs/1406.6938v1"
+        ],
+        "id": "neutron star",
+        "strength": 0.016132930293679237,
+        "length": 206.88525390625
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.2498v1"],
+        "id": "white dwarf",
+        "strength": 0.013372259214520454,
+        "length": 213.10345458984375
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1406.6938v1"],
+        "id": "supernova",
+        "strength": 0.01296231895685196,
+        "length": 211.6666717529297
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1410.8643v1"],
+        "id": "cosmic microwave background radiation",
+        "strength": 0.019315028563141823,
+        "length": 207.09677124023438
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1411.1843v1",
+          "http://arxiv.org/abs/1402.2953v2"
+        ],
+        "id": "noether's theorem",
+        "strength": 0.013707648031413555,
+        "length": 199.4871826171875
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1409.3770v1",
+          "http://arxiv.org/abs/1403.6252v1",
+          "http://arxiv.org/abs/1406.3829v3",
+          "http://arxiv.org/abs/1406.7528v1"
+        ],
+        "id": "hilbert space",
+        "strength": 0.01247345469892025,
+        "length": 175.55555725097656
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.2621v2",
+          "http://arxiv.org/abs/1405.3135v2"
+        ],
+        "id": "de sitter space",
+        "strength": 0.015715548768639565,
+        "length": 186.66665649414062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1501.00488v3",
+          "http://arxiv.org/abs/1403.7275v1",
+          "http://arxiv.org/abs/1403.1599v1",
+          "http://arxiv.org/abs/1412.3749v2"
+        ],
+        "id": "multiverse",
+        "strength": 0.01687522977590561,
+        "length": 135.7894744873047
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.3975v2",
+          "http://arxiv.org/abs/1404.4166v3"
+        ],
+        "id": "minkowski space",
+        "strength": 0.016919223591685295,
+        "length": 170
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.2498v1"],
+        "id": "binary star",
+        "strength": 0.01983792893588543,
+        "length": 200
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1408.6436v1",
+          "http://arxiv.org/abs/1402.6821v1"
+        ],
+        "id": "accelerating universe",
+        "strength": 0.014732654206454754,
+        "length": 158.46153259277344
+      }
+    ],
+    "hardLock": true,
+    "y": 335.2350769042969,
+    "gravity": 0.41583508253097534,
+    "x": 2.7521514892578125
+  },
+  {
+    "term": "big bang",
+    "connections": [
+      {
+        "shared": ["http://arxiv.org/abs/1402.7088v2"],
+        "id": "black hole",
+        "strength": 0.01821771450340748,
+        "length": 216.55172729492188
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0399v2",
+          "http://arxiv.org/abs/1403.6746v1",
+          "http://arxiv.org/abs/1405.7419v1",
+          "http://arxiv.org/abs/1406.7555v2",
+          "http://arxiv.org/abs/1502.01929v1",
+          "http://arxiv.org/abs/1403.0083v2",
+          "http://arxiv.org/abs/1404.3665v2",
+          "http://arxiv.org/abs/1412.2427v1",
+          "http://arxiv.org/abs/1403.6396v3",
+          "http://arxiv.org/abs/1405.2743v2",
+          "http://arxiv.org/abs/1410.6709v1",
+          "http://arxiv.org/abs/1406.4258v2",
+          "http://arxiv.org/abs/1411.3580v1",
+          "http://arxiv.org/abs/1408.1238v2",
+          "http://arxiv.org/abs/1407.1821v2",
+          "http://arxiv.org/abs/1404.4418v2",
+          "http://arxiv.org/abs/1401.8113v1",
+          "http://arxiv.org/abs/1405.7288v2",
+          "http://arxiv.org/abs/1402.5993v2",
+          "http://arxiv.org/abs/1407.1265v2",
+          "http://arxiv.org/abs/1412.5417v1",
+          "http://arxiv.org/abs/1401.4906v2",
+          "http://arxiv.org/abs/1401.3634v2",
+          "http://arxiv.org/abs/1405.3640v2",
+          "http://arxiv.org/abs/1408.6435v1",
+          "http://arxiv.org/abs/1405.1291v2",
+          "http://arxiv.org/abs/1406.3040v1",
+          "http://arxiv.org/abs/1411.7479v2",
+          "http://arxiv.org/abs/1407.1632v2",
+          "http://arxiv.org/abs/1410.8787v1",
+          "http://arxiv.org/abs/1403.7743v1",
+          "http://arxiv.org/abs/1410.6710v2",
+          "http://arxiv.org/abs/1402.5004v1",
+          "http://arxiv.org/abs/1411.7788v1",
+          "http://arxiv.org/abs/1406.2089v1",
+          "http://arxiv.org/abs/1403.5420v2",
+          "http://arxiv.org/abs/1408.4535v1",
+          "http://arxiv.org/abs/1405.4769v3",
+          "http://arxiv.org/abs/1411.5201v1",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1406.4747v1",
+          "http://arxiv.org/abs/1404.1887v1",
+          "http://arxiv.org/abs/1407.7792v2",
+          "http://arxiv.org/abs/1407.3118v2",
+          "http://arxiv.org/abs/1405.6066v2",
+          "http://arxiv.org/abs/1404.6205v1",
+          "http://arxiv.org/abs/1412.0775v1",
+          "http://arxiv.org/abs/1405.6935v2",
+          "http://arxiv.org/abs/1404.1910v2",
+          "http://arxiv.org/abs/1407.6602v1",
+          "http://arxiv.org/abs/1407.0728v2",
+          "http://arxiv.org/abs/1406.0857v2",
+          "http://arxiv.org/abs/1410.0460v1",
+          "http://arxiv.org/abs/1407.2958v4",
+          "http://arxiv.org/abs/1407.4005v2",
+          "http://arxiv.org/abs/1409.3163v1",
+          "http://arxiv.org/abs/1403.7452v1",
+          "http://arxiv.org/abs/1406.2308v1",
+          "http://arxiv.org/abs/1411.3475v2",
+          "http://arxiv.org/abs/1406.4526v1",
+          "http://arxiv.org/abs/1405.5813v1",
+          "http://arxiv.org/abs/1402.0520v2",
+          "http://arxiv.org/abs/1405.7949v1",
+          "http://arxiv.org/abs/1401.4846v2",
+          "http://arxiv.org/abs/1403.0913v4",
+          "http://arxiv.org/abs/1406.6943v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1401.8208v4",
+          "http://arxiv.org/abs/1407.5405v1",
+          "http://arxiv.org/abs/1410.2750v1",
+          "http://arxiv.org/abs/1403.5424v2",
+          "http://arxiv.org/abs/1407.3420v2",
+          "http://arxiv.org/abs/1402.5678v1",
+          "http://arxiv.org/abs/1402.2158v3",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1412.0743v1",
+          "http://arxiv.org/abs/1406.6891v1",
+          "http://arxiv.org/abs/1404.2142v3",
+          "http://arxiv.org/abs/1411.5154v2",
+          "http://arxiv.org/abs/1408.0276v1",
+          "http://arxiv.org/abs/1404.2273v2",
+          "http://arxiv.org/abs/1407.7812v2",
+          "http://arxiv.org/abs/1404.0211v2",
+          "http://arxiv.org/abs/1412.1583v1",
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1401.4573v5",
+          "http://arxiv.org/abs/1401.3296v2",
+          "http://arxiv.org/abs/1406.7297v2",
+          "http://arxiv.org/abs/1409.3115v1",
+          "http://arxiv.org/abs/1404.6522v5",
+          "http://arxiv.org/abs/1407.7406v1",
+          "http://arxiv.org/abs/1403.0081v2",
+          "http://arxiv.org/abs/1401.5627v3",
+          "http://arxiv.org/abs/1403.7287v3",
+          "http://arxiv.org/abs/1405.6959v1"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.012087523005902767,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.1026v1"],
+        "id": "symmetry",
+        "strength": 0.01219731941819191,
+        "length": 215.18072509765625
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.7812v2"],
+        "id": "white dwarf",
+        "strength": 0.01852511242032051,
+        "length": 213.10345458984375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.5405v1",
+          "http://arxiv.org/abs/1407.7812v2",
+          "http://arxiv.org/abs/1402.7088v2",
+          "http://arxiv.org/abs/1405.6066v2"
+        ],
+        "id": "supernova",
+        "strength": 0.011366676539182663,
+        "length": 186.66665649414062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.0083v2",
+          "http://arxiv.org/abs/1404.3665v2",
+          "http://arxiv.org/abs/1406.2981v1",
+          "http://arxiv.org/abs/1407.6293v1",
+          "http://arxiv.org/abs/1411.4531v2",
+          "http://arxiv.org/abs/1401.5898v3",
+          "http://arxiv.org/abs/1402.5993v2",
+          "http://arxiv.org/abs/1407.1265v2",
+          "http://arxiv.org/abs/1406.4664v2",
+          "http://arxiv.org/abs/1401.5737v1",
+          "http://arxiv.org/abs/1405.1291v2",
+          "http://arxiv.org/abs/1407.1632v2",
+          "http://arxiv.org/abs/1404.6347v3",
+          "http://arxiv.org/abs/1401.3296v2",
+          "http://arxiv.org/abs/1406.7297v2",
+          "http://arxiv.org/abs/1406.0857v2",
+          "http://arxiv.org/abs/1401.5627v3",
+          "http://arxiv.org/abs/1406.2308v1",
+          "http://arxiv.org/abs/1403.7287v3"
+        ],
+        "id": "cosmic microwave background radiation",
+        "strength": 0.013172643259167671,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1411.3580v1"],
+        "id": "noether's theorem",
+        "strength": 0.01601068675518036,
+        "length": 209.74359130859375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0399v2",
+          "http://arxiv.org/abs/1402.0520v2",
+          "http://arxiv.org/abs/1405.7949v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1404.4418v2",
+          "http://arxiv.org/abs/1407.7322v1",
+          "http://arxiv.org/abs/1401.5029v4",
+          "http://arxiv.org/abs/1401.4906v2",
+          "http://arxiv.org/abs/1403.7743v1",
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1406.4747v1",
+          "http://arxiv.org/abs/1404.6522v5",
+          "http://arxiv.org/abs/1404.6205v1",
+          "http://arxiv.org/abs/1405.6935v2",
+          "http://arxiv.org/abs/1407.2958v4"
+        ],
+        "id": "hubble's law",
+        "strength": 0.013470545411109924,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.2743v2",
+          "http://arxiv.org/abs/1412.1583v1",
+          "http://arxiv.org/abs/1407.6602v1",
+          "http://arxiv.org/abs/1402.5104v3",
+          "http://arxiv.org/abs/1405.6959v1"
+        ],
+        "id": "cosmology",
+        "strength": 0.011478028260171413,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 406.6940002441406,
+    "gravity": 0.44202756881713867,
+    "x": 286.4444274902344
+  },
+  {
+    "term": "gravitational wave",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0504v1",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1404.2199v4",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1407.6080v1",
+          "http://arxiv.org/abs/1405.6731v3",
+          "http://arxiv.org/abs/1410.8503v2",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1403.7754v1"
+        ],
+        "id": "neutron star",
+        "strength": 0.01416450459510088,
+        "length": 154.42623901367188
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.2151v1",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1404.2199v4",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1412.1803v1",
+          "http://arxiv.org/abs/1405.6731v3",
+          "http://arxiv.org/abs/1401.0939v1",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1403.7754v1"
+        ],
+        "id": "white dwarf",
+        "strength": 0.012073979713022709,
+        "length": 151.03448486328125
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.0634v3",
+          "http://arxiv.org/abs/1401.3296v2"
+        ],
+        "id": "cosmic microwave background radiation",
+        "strength": 0.01589667983353138,
+        "length": 194.19354248046875
+      }
+    ],
+    "hardLock": false,
+    "y": 614.8277587890625,
+    "gravity": 0.4571245312690735,
+    "x": 130.96380615234375
+  },
+  {
+    "term": "symmetry",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.1402v2",
+          "http://arxiv.org/abs/1407.8002v2",
+          "http://arxiv.org/abs/1403.4388v2",
+          "http://arxiv.org/abs/1405.6668v3",
+          "http://arxiv.org/abs/1404.3937v2",
+          "http://arxiv.org/abs/1409.4115v2",
+          "http://arxiv.org/abs/1403.2885v2",
+          "http://arxiv.org/abs/1407.6364v1",
+          "http://arxiv.org/abs/1406.0572v1",
+          "http://arxiv.org/abs/1407.3086v2",
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1405.6821v2",
+          "http://arxiv.org/abs/1407.8545v3",
+          "http://arxiv.org/abs/1407.4875v2",
+          "http://arxiv.org/abs/1405.0363v1",
+          "http://arxiv.org/abs/1406.3096v1"
+        ],
+        "id": "string theory",
+        "strength": 0.013990652747452259,
+        "length": 142.89157104492188
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1410.6675v3"],
+        "id": "physical cosmology",
+        "strength": 0.01872166432440281,
+        "length": 215.18072509765625
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1409.0527v2",
+          "http://arxiv.org/abs/1403.7930v1"
+        ],
+        "id": "gravitation",
+        "strength": 0.013023528270423412,
+        "length": 210.3614501953125
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.6491v2",
+          "http://arxiv.org/abs/1401.1402v2",
+          "http://arxiv.org/abs/1412.5045v1",
+          "http://arxiv.org/abs/1403.4388v2",
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1407.6465v3",
+          "http://arxiv.org/abs/1412.0900v1",
+          "http://arxiv.org/abs/1406.4303v1",
+          "http://arxiv.org/abs/1404.2475v1",
+          "http://arxiv.org/abs/1402.3976v1",
+          "http://arxiv.org/abs/1401.3652v1",
+          "http://arxiv.org/abs/1408.5259v1",
+          "http://arxiv.org/abs/1412.3424v3",
+          "http://arxiv.org/abs/1405.7627v1",
+          "http://arxiv.org/abs/1408.0516v1",
+          "http://arxiv.org/abs/1403.1725v1",
+          "http://arxiv.org/abs/1406.0572v1",
+          "http://arxiv.org/abs/1402.4355v2",
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1404.3696v2",
+          "http://arxiv.org/abs/1411.1843v1",
+          "http://arxiv.org/abs/1407.4875v2",
+          "http://arxiv.org/abs/1407.2268v3",
+          "http://arxiv.org/abs/1406.3096v1",
+          "http://arxiv.org/abs/1401.2057v1"
+        ],
+        "id": "spacetime",
+        "strength": 0.011600402183830738,
+        "length": 94.69879150390625
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.1846v1",
+          "http://arxiv.org/abs/1403.7930v1"
+        ],
+        "id": "dark matter",
+        "strength": 0.011778098531067371,
+        "length": 210.3614501953125
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.1026v1"],
+        "id": "big bang",
+        "strength": 0.01219731941819191,
+        "length": 215.18072509765625
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1410.6675v3",
+          "http://arxiv.org/abs/1404.0898v2",
+          "http://arxiv.org/abs/1402.3977v1",
+          "http://arxiv.org/abs/1410.7599v1"
+        ],
+        "id": "standard model",
+        "strength": 0.014454822055995464,
+        "length": 200.722900390625
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.7627v1"],
+        "id": "euclidean space",
+        "strength": 0.015342016704380512,
+        "length": 212.72727966308594
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.4270v2",
+          "http://arxiv.org/abs/1411.1843v1",
+          "http://arxiv.org/abs/1401.2136v2",
+          "http://arxiv.org/abs/1407.6364v1",
+          "http://arxiv.org/abs/1404.0898v2",
+          "http://arxiv.org/abs/1402.3977v1",
+          "http://arxiv.org/abs/1412.6728v1",
+          "http://arxiv.org/abs/1405.0363v1",
+          "http://arxiv.org/abs/1404.4016v2",
+          "http://arxiv.org/abs/1410.7599v1",
+          "http://arxiv.org/abs/1406.7153v1"
+        ],
+        "id": "noether's theorem",
+        "strength": 0.015390059910714626,
+        "length": 107.17948150634766
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1405.4049v3"
+        ],
+        "id": "de sitter space",
+        "strength": 0.013604617677628994,
+        "length": 186.66665649414062
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.8143v1"],
+        "id": "riemannian manifold",
+        "strength": 0.016301145777106285,
+        "length": 170
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1404.5750v1"
+        ],
+        "id": "wormhole",
+        "strength": 0.0172842126339674,
+        "length": 147.27273559570312
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1404.5750v1"
+        ],
+        "id": "exotic matter",
+        "strength": 0.019650373607873917,
+        "length": 120
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1404.5750v1"
+        ],
+        "id": "time travel",
+        "strength": 0.01758216880261898,
+        "length": 60
+      }
+    ],
+    "hardLock": false,
+    "y": 184.9402313232422,
+    "gravity": 0.4813201427459717,
+    "x": 735.7183227539062
+  },
+  {
+    "term": "hawking radiation",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.4039v1",
+          "http://arxiv.org/abs/1407.7295v3",
+          "http://arxiv.org/abs/1401.5761v1",
+          "http://arxiv.org/abs/1403.1921v1",
+          "http://arxiv.org/abs/1404.7489v1",
+          "http://arxiv.org/abs/1405.4243v4",
+          "http://arxiv.org/abs/1401.7740v1",
+          "http://arxiv.org/abs/1407.7796v2",
+          "http://arxiv.org/abs/1406.1658v1",
+          "http://arxiv.org/abs/1401.3560v2",
+          "http://arxiv.org/abs/1402.1998v3",
+          "http://arxiv.org/abs/1401.1599v2",
+          "http://arxiv.org/abs/1401.0288v1",
+          "http://arxiv.org/abs/1402.5514v2",
+          "http://arxiv.org/abs/1401.3480v1",
+          "http://arxiv.org/abs/1402.2084v1",
+          "http://arxiv.org/abs/1403.7215v1",
+          "http://arxiv.org/abs/1410.1486v1",
+          "http://arxiv.org/abs/1404.7783v1",
+          "http://arxiv.org/abs/1407.5971v2",
+          "http://arxiv.org/abs/1404.5215v2",
+          "http://arxiv.org/abs/1411.5778v2",
+          "http://arxiv.org/abs/1406.0290v2",
+          "http://arxiv.org/abs/1406.3809v3",
+          "http://arxiv.org/abs/1401.4097v1",
+          "http://arxiv.org/abs/1406.2012v2",
+          "http://arxiv.org/abs/1406.0841v1",
+          "http://arxiv.org/abs/1401.4227v1",
+          "http://arxiv.org/abs/1410.7909v1",
+          "http://arxiv.org/abs/1402.1427v1",
+          "http://arxiv.org/abs/1401.4838v1",
+          "http://arxiv.org/abs/1405.7846v2",
+          "http://arxiv.org/abs/1407.6292v1",
+          "http://arxiv.org/abs/1402.5127v3",
+          "http://arxiv.org/abs/1403.3986v1",
+          "http://arxiv.org/abs/1406.4098v1",
+          "http://arxiv.org/abs/1407.7119v2",
+          "http://arxiv.org/abs/1405.7922v1",
+          "http://arxiv.org/abs/1401.5804v3",
+          "http://arxiv.org/abs/1408.4531v4",
+          "http://arxiv.org/abs/1406.6551v3",
+          "http://arxiv.org/abs/1401.5397v4",
+          "http://arxiv.org/abs/1410.5065v1",
+          "http://arxiv.org/abs/1401.7820v1",
+          "http://arxiv.org/abs/1402.1343v2",
+          "http://arxiv.org/abs/1403.7314v1",
+          "http://arxiv.org/abs/1405.1246v1",
+          "http://arxiv.org/abs/1404.1845v2",
+          "http://arxiv.org/abs/1409.5941v1",
+          "http://arxiv.org/abs/1406.6043v2",
+          "http://arxiv.org/abs/1407.7367v3",
+          "http://arxiv.org/abs/1403.7213v1",
+          "http://arxiv.org/abs/1406.0330v2",
+          "http://arxiv.org/abs/1403.7279v2",
+          "http://arxiv.org/abs/1406.0677v2",
+          "http://arxiv.org/abs/1405.4038v1",
+          "http://arxiv.org/abs/1405.4229v2",
+          "http://arxiv.org/abs/1409.7872v1",
+          "http://arxiv.org/abs/1401.2133v2",
+          "http://arxiv.org/abs/1402.1524v1",
+          "http://arxiv.org/abs/1409.5988v2",
+          "http://arxiv.org/abs/1407.3577v3",
+          "http://arxiv.org/abs/1405.5392v2",
+          "http://arxiv.org/abs/1410.8281v2",
+          "http://arxiv.org/abs/1401.5075v2",
+          "http://arxiv.org/abs/1404.4472v2",
+          "http://arxiv.org/abs/1406.2011v2",
+          "http://arxiv.org/abs/1402.2514v2",
+          "http://arxiv.org/abs/1406.0807v1",
+          "http://arxiv.org/abs/1410.2993v3",
+          "http://arxiv.org/abs/1402.6378v1",
+          "http://arxiv.org/abs/1401.1337v1",
+          "http://arxiv.org/abs/1410.4758v1",
+          "http://arxiv.org/abs/1403.7728v2",
+          "http://arxiv.org/abs/1401.6612v1",
+          "http://arxiv.org/abs/1407.6983v3",
+          "http://arxiv.org/abs/1406.6884v1",
+          "http://arxiv.org/abs/1405.3466v1",
+          "http://arxiv.org/abs/1402.5446v3",
+          "http://arxiv.org/abs/1407.7656v1",
+          "http://arxiv.org/abs/1405.4898v1"
+        ],
+        "id": "black hole",
+        "strength": 0.01394815742969513,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.7740v1",
+          "http://arxiv.org/abs/1407.3577v3",
+          "http://arxiv.org/abs/1403.6690v2",
+          "http://arxiv.org/abs/1405.3624v1"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.014576323330402374,
+        "length": 202.7957000732422
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.2084v1",
+          "http://arxiv.org/abs/1402.1343v2"
+        ],
+        "id": "loop quantum gravity",
+        "strength": 0.011838776059448719,
+        "length": 190.37037658691406
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1401.7740v1"],
+        "id": "cosmology",
+        "strength": 0.013117015361785889,
+        "length": 204
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1402.3975v2"],
+        "id": "minkowski space",
+        "strength": 0.014936800114810467,
+        "length": 195
+      }
+    ],
+    "hardLock": false,
+    "y": 289.1048583984375,
+    "gravity": 0.4679672122001648,
+    "x": 264.81329345703125
+  },
+  {
+    "term": "standard model",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.1948v2",
+          "http://arxiv.org/abs/1406.7304v1",
+          "http://arxiv.org/abs/1412.4795v1",
+          "http://arxiv.org/abs/1409.7726v1",
+          "http://arxiv.org/abs/1409.0836v1",
+          "http://arxiv.org/abs/1404.3231v2",
+          "http://arxiv.org/abs/1403.3164v2",
+          "http://arxiv.org/abs/1403.7217v2",
+          "http://arxiv.org/abs/1404.1919v1",
+          "http://arxiv.org/abs/1402.3650v3",
+          "http://arxiv.org/abs/1404.0382v2",
+          "http://arxiv.org/abs/1402.6406v1",
+          "http://arxiv.org/abs/1407.5848v2"
+        ],
+        "id": "string theory",
+        "strength": 0.01197047159075737,
+        "length": 159.53488159179688
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.6316v1",
+          "http://arxiv.org/abs/1404.1948v2",
+          "http://arxiv.org/abs/1409.7726v1",
+          "http://arxiv.org/abs/1407.5848v2",
+          "http://arxiv.org/abs/1409.0836v1",
+          "http://arxiv.org/abs/1412.7981v1"
+        ],
+        "id": "quantum gravity",
+        "strength": 0.013017994351685047,
+        "length": 192.093017578125
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1410.6675v3",
+          "http://arxiv.org/abs/1404.0898v2",
+          "http://arxiv.org/abs/1402.3977v1",
+          "http://arxiv.org/abs/1410.7599v1"
+        ],
+        "id": "symmetry",
+        "strength": 0.014454822055995464,
+        "length": 200.722900390625
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1401.2585v4"],
+        "id": "cosmological constant",
+        "strength": 0.015902886167168617,
+        "length": 213.5483856201172
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1404.1919v1"],
+        "id": "euclidean space",
+        "strength": 0.0159129835665226,
+        "length": 212.72727966308594
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1409.0836v1"],
+        "id": "loop quantum gravity",
+        "strength": 0.014791003428399563,
+        "length": 205.1851806640625
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1411.4811v1"],
+        "id": "accretion disc",
+        "strength": 0.011542274616658688,
+        "length": 180
+      }
+    ],
+    "hardLock": false,
+    "y": 87.44239044189453,
+    "gravity": 0.47715240716934204,
+    "x": 646.9168701171875
+  },
+  {
+    "term": "neutron star",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1403.6917v2",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1403.8066v2",
+          "http://arxiv.org/abs/1410.8866v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1403.5746v1",
+          "http://arxiv.org/abs/1406.1581v2",
+          "http://arxiv.org/abs/1405.0504v1",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1402.3581v2",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.7038v2",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1407.3426v2",
+          "http://arxiv.org/abs/1408.0013v1",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1410.0199v1",
+          "http://arxiv.org/abs/1404.2199v4",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1410.8503v2",
+          "http://arxiv.org/abs/1407.2180v1",
+          "http://arxiv.org/abs/1412.5499v2",
+          "http://arxiv.org/abs/1405.6976v1",
+          "http://arxiv.org/abs/1408.2412v3",
+          "http://arxiv.org/abs/1404.6023v2",
+          "http://arxiv.org/abs/1407.6080v1",
+          "http://arxiv.org/abs/1412.3251v2",
+          "http://arxiv.org/abs/1411.3073v2",
+          "http://arxiv.org/abs/1405.6731v3",
+          "http://arxiv.org/abs/1401.1282v3",
+          "http://arxiv.org/abs/1401.4546v3",
+          "http://arxiv.org/abs/1412.8368v3",
+          "http://arxiv.org/abs/1411.1963v1"
+        ],
+        "id": "black hole",
+        "strength": 0.01473370473831892,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1412.8368v3"],
+        "id": "quantum gravity",
+        "strength": 0.013294453732669353,
+        "length": 213.442626953125
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.6976v1",
+          "http://arxiv.org/abs/1406.6938v1"
+        ],
+        "id": "time",
+        "strength": 0.016132930293679237,
+        "length": 206.88525390625
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0504v1",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1404.2199v4",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1407.6080v1",
+          "http://arxiv.org/abs/1405.6731v3",
+          "http://arxiv.org/abs/1410.8503v2",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1403.7754v1"
+        ],
+        "id": "gravitational wave",
+        "strength": 0.01416450459510088,
+        "length": 154.42623901367188
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.3581v2",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1405.6207v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.2180v1",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1408.2412v3",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1406.3775v1",
+          "http://arxiv.org/abs/1402.6345v2",
+          "http://arxiv.org/abs/1402.6244v2",
+          "http://arxiv.org/abs/1410.0199v1",
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1404.2199v4",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1403.6917v2",
+          "http://arxiv.org/abs/1411.1963v1",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1410.8866v1",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1407.3277v1",
+          "http://arxiv.org/abs/1412.3251v2",
+          "http://arxiv.org/abs/1412.5499v2",
+          "http://arxiv.org/abs/1405.6731v3",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1406.7587v2",
+          "http://arxiv.org/abs/1403.5746v1"
+        ],
+        "id": "white dwarf",
+        "strength": 0.014243163168430328,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.1581v2",
+          "http://arxiv.org/abs/1405.2144v1",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1404.7036v1",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1401.4546v3",
+          "http://arxiv.org/abs/1406.6938v1",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.7038v2",
+          "http://arxiv.org/abs/1405.0504v1",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1406.3775v1",
+          "http://arxiv.org/abs/1412.8368v3",
+          "http://arxiv.org/abs/1402.6244v2",
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1406.3318v2",
+          "http://arxiv.org/abs/1402.5412v3",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1403.1484v1",
+          "http://arxiv.org/abs/1407.3277v1",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1402.6108v2",
+          "http://arxiv.org/abs/1407.3426v2",
+          "http://arxiv.org/abs/1406.7587v2",
+          "http://arxiv.org/abs/1401.1282v3",
+          "http://arxiv.org/abs/1403.5746v1"
+        ],
+        "id": "supernova",
+        "strength": 0.013707642443478107,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1403.7147v2"
+        ],
+        "id": "binary star",
+        "strength": 0.014048797078430653,
+        "length": 120
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.7038v2",
+          "http://arxiv.org/abs/1402.5412v3",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1403.1484v1",
+          "http://arxiv.org/abs/1407.3426v2"
+        ],
+        "id": "pulsar",
+        "strength": 0.01514323242008686,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.4546v3",
+          "http://arxiv.org/abs/1407.2180v1"
+        ],
+        "id": "exotic matter",
+        "strength": 0.015172779560089111,
+        "length": 120
+      }
+    ],
+    "hardLock": false,
+    "y": 432.7107849121094,
+    "gravity": 0.517469048500061,
+    "x": 212.2818145751953
+  },
+  {
+    "term": "dark energy",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.6630v4",
+          "http://arxiv.org/abs/1405.7419v1",
+          "http://arxiv.org/abs/1407.4079v1",
+          "http://arxiv.org/abs/1403.5706v1",
+          "http://arxiv.org/abs/1502.01929v1",
+          "http://arxiv.org/abs/1403.5009v2",
+          "http://arxiv.org/abs/1407.7791v1",
+          "http://arxiv.org/abs/1411.3580v1",
+          "http://arxiv.org/abs/1407.1821v2",
+          "http://arxiv.org/abs/1401.8113v1",
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1401.5768v1",
+          "http://arxiv.org/abs/1408.6436v1",
+          "http://arxiv.org/abs/1407.0951v2",
+          "http://arxiv.org/abs/1406.5142v1",
+          "http://arxiv.org/abs/1401.7549v2",
+          "http://arxiv.org/abs/1401.3155v1",
+          "http://arxiv.org/abs/1405.1291v2",
+          "http://arxiv.org/abs/1406.3040v1",
+          "http://arxiv.org/abs/1411.7479v2",
+          "http://arxiv.org/abs/1407.1632v2",
+          "http://arxiv.org/abs/1405.0729v1",
+          "http://arxiv.org/abs/1402.2592v4",
+          "http://arxiv.org/abs/1403.5420v2",
+          "http://arxiv.org/abs/1411.0941v1",
+          "http://arxiv.org/abs/1405.4769v3",
+          "http://arxiv.org/abs/1404.1681v1",
+          "http://arxiv.org/abs/1401.6649v1",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1404.1887v1",
+          "http://arxiv.org/abs/1404.3860v1",
+          "http://arxiv.org/abs/1407.7792v2",
+          "http://arxiv.org/abs/1404.7124v1",
+          "http://arxiv.org/abs/1404.1910v2",
+          "http://arxiv.org/abs/1408.0633v2",
+          "http://arxiv.org/abs/1407.6602v1",
+          "http://arxiv.org/abs/1407.2958v4",
+          "http://arxiv.org/abs/1409.3163v1",
+          "http://arxiv.org/abs/1403.7452v1",
+          "http://arxiv.org/abs/1406.4526v1",
+          "http://arxiv.org/abs/1403.3768v3",
+          "http://arxiv.org/abs/1402.4291v1",
+          "http://arxiv.org/abs/1405.7949v1",
+          "http://arxiv.org/abs/1401.4846v2",
+          "http://arxiv.org/abs/1403.0913v4",
+          "http://arxiv.org/abs/1406.6943v1",
+          "http://arxiv.org/abs/1411.3583v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1405.0282v1",
+          "http://arxiv.org/abs/1408.5483v1",
+          "http://arxiv.org/abs/1401.2128v3",
+          "http://arxiv.org/abs/1401.8208v4",
+          "http://arxiv.org/abs/1407.5405v1",
+          "http://arxiv.org/abs/1410.2750v1",
+          "http://arxiv.org/abs/1407.3420v2",
+          "http://arxiv.org/abs/1402.5678v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1412.0743v1",
+          "http://arxiv.org/abs/1411.5154v2",
+          "http://arxiv.org/abs/1404.2273v2",
+          "http://arxiv.org/abs/1407.7812v2",
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1402.6821v1",
+          "http://arxiv.org/abs/1409.3115v1",
+          "http://arxiv.org/abs/1404.6522v5",
+          "http://arxiv.org/abs/1403.8095v1",
+          "http://arxiv.org/abs/1403.0081v2",
+          "http://arxiv.org/abs/1408.6997v4",
+          "http://arxiv.org/abs/1403.7287v3",
+          "http://arxiv.org/abs/1405.6959v1"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.014073480851948261,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.7812v2"],
+        "id": "white dwarf",
+        "strength": 0.014747035689651966,
+        "length": 213.10345458984375
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1411.3580v1"],
+        "id": "noether's theorem",
+        "strength": 0.012230453081429005,
+        "length": 209.74359130859375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1405.7949v1",
+          "http://arxiv.org/abs/1405.0729v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1404.3860v1",
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1404.6522v5",
+          "http://arxiv.org/abs/1407.2958v4",
+          "http://arxiv.org/abs/1401.7549v2"
+        ],
+        "id": "hubble's law",
+        "strength": 0.016109488904476166,
+        "length": 76
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.4079v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1404.2273v2"
+        ],
+        "id": "lambda-cdm model",
+        "strength": 0.012477720156311989,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 480.77862548828125,
+    "gravity": 0.49166208505630493,
+    "x": 304.1704406738281
+  },
+  {
+    "term": "schwarzschild radius",
+    "connections": [],
+    "hardLock": false,
+    "y": 1024.268310546875,
+    "gravity": 0.4705190658569336,
+    "x": -361.1873474121094
+  },
+  {
+    "term": "cosmological constant",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.7419v1",
+          "http://arxiv.org/abs/1403.5706v1",
+          "http://arxiv.org/abs/1411.7326v2",
+          "http://arxiv.org/abs/1405.2743v2",
+          "http://arxiv.org/abs/1407.7791v1",
+          "http://arxiv.org/abs/1403.3749v1",
+          "http://arxiv.org/abs/1401.8113v1",
+          "http://arxiv.org/abs/1411.6294v2",
+          "http://arxiv.org/abs/1404.0561v2",
+          "http://arxiv.org/abs/1412.5417v1",
+          "http://arxiv.org/abs/1401.4906v2",
+          "http://arxiv.org/abs/1405.3640v2",
+          "http://arxiv.org/abs/1401.3155v1",
+          "http://arxiv.org/abs/1407.8101v1",
+          "http://arxiv.org/abs/1401.2585v4",
+          "http://arxiv.org/abs/1402.2592v4",
+          "http://arxiv.org/abs/1405.4769v3",
+          "http://arxiv.org/abs/1406.3992v1",
+          "http://arxiv.org/abs/1404.7124v1",
+          "http://arxiv.org/abs/1410.1849v1",
+          "http://arxiv.org/abs/1407.8139v1",
+          "http://arxiv.org/abs/1408.0633v2",
+          "http://arxiv.org/abs/1410.6757v5",
+          "http://arxiv.org/abs/1407.4005v2",
+          "http://arxiv.org/abs/1411.7969v1",
+          "http://arxiv.org/abs/1403.0913v4",
+          "http://arxiv.org/abs/1406.6943v1",
+          "http://arxiv.org/abs/1412.0005v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1404.3518v1",
+          "http://arxiv.org/abs/1402.5678v1",
+          "http://arxiv.org/abs/1403.4529v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1412.0743v1",
+          "http://arxiv.org/abs/1404.2142v3",
+          "http://arxiv.org/abs/1406.7636v1",
+          "http://arxiv.org/abs/1408.0276v1",
+          "http://arxiv.org/abs/1403.8095v1",
+          "http://arxiv.org/abs/1405.7952v3",
+          "http://arxiv.org/abs/1405.6959v1"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.011347458697855473,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1401.2585v4"],
+        "id": "standard model",
+        "strength": 0.015902886167168617,
+        "length": 213.5483856201172
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.2743v2",
+          "http://arxiv.org/abs/1406.3992v1",
+          "http://arxiv.org/abs/1405.6959v1"
+        ],
+        "id": "cosmology",
+        "strength": 0.015478421933948994,
+        "length": 172
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.5706v1",
+          "http://arxiv.org/abs/1407.2086v1",
+          "http://arxiv.org/abs/1405.7818v2",
+          "http://arxiv.org/abs/1403.3749v1",
+          "http://arxiv.org/abs/1408.4410v4",
+          "http://arxiv.org/abs/1405.7952v3"
+        ],
+        "id": "vacuum energy",
+        "strength": 0.014429165981709957,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1404.6096v3"],
+        "id": "cosmic inflation",
+        "strength": 0.01621209643781185,
+        "length": 175.55555725097656
+      }
+    ],
+    "hardLock": false,
+    "y": 360.90789794921875,
+    "gravity": 0.5155603885650635,
+    "x": 501.67816162109375
+  },
+  {
+    "term": "white dwarf",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1411.7326v2",
+          "http://arxiv.org/abs/1403.6917v2",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1410.8866v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1408.6929v1",
+          "http://arxiv.org/abs/1403.5746v1",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1404.1543v2",
+          "http://arxiv.org/abs/1406.0152v1",
+          "http://arxiv.org/abs/1402.3581v2",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1406.0417v2",
+          "http://arxiv.org/abs/1406.2181v2",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1406.2317v1",
+          "http://arxiv.org/abs/1406.2151v1",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1410.0199v1",
+          "http://arxiv.org/abs/1405.1508v2",
+          "http://arxiv.org/abs/1404.2199v4",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1401.0939v1",
+          "http://arxiv.org/abs/1407.2180v1",
+          "http://arxiv.org/abs/1412.5499v2",
+          "http://arxiv.org/abs/1405.1146v1",
+          "http://arxiv.org/abs/1408.2412v3",
+          "http://arxiv.org/abs/1406.5677v3",
+          "http://arxiv.org/abs/1408.1810v2",
+          "http://arxiv.org/abs/1412.3251v2",
+          "http://arxiv.org/abs/1412.1803v1",
+          "http://arxiv.org/abs/1405.6731v3",
+          "http://arxiv.org/abs/1403.4136v2",
+          "http://arxiv.org/abs/1407.7656v1",
+          "http://arxiv.org/abs/1403.0512v1",
+          "http://arxiv.org/abs/1405.3774v2",
+          "http://arxiv.org/abs/1411.1963v1",
+          "http://arxiv.org/abs/1402.2748v3"
+        ],
+        "id": "black hole",
+        "strength": 0.013022017665207386,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1411.7326v2",
+          "http://arxiv.org/abs/1405.7016v1",
+          "http://arxiv.org/abs/1407.7812v2"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.011267168447375298,
+        "length": 199.3103485107422
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.2498v1"],
+        "id": "time",
+        "strength": 0.013372259214520454,
+        "length": 213.10345458984375
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.7812v2"],
+        "id": "big bang",
+        "strength": 0.01852511242032051,
+        "length": 213.10345458984375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.2151v1",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1404.2199v4",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1412.1803v1",
+          "http://arxiv.org/abs/1405.6731v3",
+          "http://arxiv.org/abs/1401.0939v1",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1403.7754v1"
+        ],
+        "id": "gravitational wave",
+        "strength": 0.012073979713022709,
+        "length": 151.03448486328125
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.3581v2",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1405.6207v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.2180v1",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1408.2412v3",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1406.3775v1",
+          "http://arxiv.org/abs/1402.6345v2",
+          "http://arxiv.org/abs/1402.6244v2",
+          "http://arxiv.org/abs/1410.0199v1",
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1404.2199v4",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1403.6917v2",
+          "http://arxiv.org/abs/1411.1963v1",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1410.8866v1",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1407.3277v1",
+          "http://arxiv.org/abs/1412.3251v2",
+          "http://arxiv.org/abs/1412.5499v2",
+          "http://arxiv.org/abs/1405.6731v3",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1406.7587v2",
+          "http://arxiv.org/abs/1403.5746v1"
+        ],
+        "id": "neutron star",
+        "strength": 0.014243163168430328,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.7812v2"],
+        "id": "dark energy",
+        "strength": 0.014747035689651966,
+        "length": 213.10345458984375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.5116v1",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1405.3673v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1406.3775v1",
+          "http://arxiv.org/abs/1407.7656v1",
+          "http://arxiv.org/abs/1404.7693v1",
+          "http://arxiv.org/abs/1402.6244v2",
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1403.2070v1",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1405.3774v2",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1402.2748v3",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1407.3277v1",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1401.0939v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1406.7587v2",
+          "http://arxiv.org/abs/1407.7812v2",
+          "http://arxiv.org/abs/1403.5746v1"
+        ],
+        "id": "supernova",
+        "strength": 0.014778899028897285,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1406.2317v1",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1407.2498v1",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1407.7656v1",
+          "http://arxiv.org/abs/1404.7693v1",
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1403.0512v1",
+          "http://arxiv.org/abs/1405.3774v2",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1412.1803v1",
+          "http://arxiv.org/abs/1401.0939v1"
+        ],
+        "id": "binary star",
+        "strength": 0.014010705053806305,
+        "length": 20
+      }
+    ],
+    "hardLock": true,
+    "y": 649.7918090820312,
+    "gravity": 0.5233886241912842,
+    "x": -94.13119506835938
+  },
+  {
+    "term": "euclidean space",
+    "connections": [
+      {
+        "shared": ["http://arxiv.org/abs/1405.7627v1"],
+        "id": "symmetry",
+        "strength": 0.015342016704380512,
+        "length": 212.72727966308594
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1404.1919v1"],
+        "id": "standard model",
+        "strength": 0.0159129835665226,
+        "length": 212.72727966308594
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.4275v1"],
+        "id": "supersymmetry",
+        "strength": 0.011898313648998737,
+        "length": 193.3333282470703
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.8529v2",
+          "http://arxiv.org/abs/1401.6192v1",
+          "http://arxiv.org/abs/1405.0640v2"
+        ],
+        "id": "non-euclidean geometry",
+        "strength": 0.01338308583945036,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 187.063720703125,
+    "gravity": 0.5296225547790527,
+    "x": 927.44775390625
+  },
+  {
+    "term": "event horizon",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.4039v1",
+          "http://arxiv.org/abs/1407.7295v3",
+          "http://arxiv.org/abs/1401.5761v1",
+          "http://arxiv.org/abs/1406.5798v2",
+          "http://arxiv.org/abs/1401.0511v1",
+          "http://arxiv.org/abs/1405.4243v4",
+          "http://arxiv.org/abs/1401.3560v2",
+          "http://arxiv.org/abs/1401.1599v2",
+          "http://arxiv.org/abs/1405.2133v4",
+          "http://arxiv.org/abs/1410.4248v2",
+          "http://arxiv.org/abs/1402.5514v2",
+          "http://arxiv.org/abs/1403.7215v1",
+          "http://arxiv.org/abs/1404.7783v1",
+          "http://arxiv.org/abs/1406.6107v1",
+          "http://arxiv.org/abs/1407.5971v2",
+          "http://arxiv.org/abs/1411.5778v2",
+          "http://arxiv.org/abs/1406.2012v2",
+          "http://arxiv.org/abs/1406.0841v1",
+          "http://arxiv.org/abs/1401.4227v1",
+          "http://arxiv.org/abs/1410.7909v1",
+          "http://arxiv.org/abs/1402.1427v1",
+          "http://arxiv.org/abs/1401.4838v1",
+          "http://arxiv.org/abs/1405.7846v2",
+          "http://arxiv.org/abs/1407.6292v1",
+          "http://arxiv.org/abs/1406.4189v2",
+          "http://arxiv.org/abs/1406.4098v1",
+          "http://arxiv.org/abs/1407.7119v2",
+          "http://arxiv.org/abs/1408.4531v4",
+          "http://arxiv.org/abs/1401.7820v1",
+          "http://arxiv.org/abs/1412.0105v1",
+          "http://arxiv.org/abs/1404.1845v2",
+          "http://arxiv.org/abs/1409.5941v1",
+          "http://arxiv.org/abs/1406.6043v2",
+          "http://arxiv.org/abs/1407.7367v3",
+          "http://arxiv.org/abs/1403.7213v1",
+          "http://arxiv.org/abs/1403.7279v2",
+          "http://arxiv.org/abs/1406.0677v2",
+          "http://arxiv.org/abs/1405.4038v1",
+          "http://arxiv.org/abs/1409.7872v1",
+          "http://arxiv.org/abs/1402.1524v1",
+          "http://arxiv.org/abs/1402.0906v1",
+          "http://arxiv.org/abs/1410.1737v2",
+          "http://arxiv.org/abs/1401.4452v1",
+          "http://arxiv.org/abs/1405.5392v2",
+          "http://arxiv.org/abs/1401.5075v2",
+          "http://arxiv.org/abs/1404.4472v2",
+          "http://arxiv.org/abs/1401.1337v1",
+          "http://arxiv.org/abs/1403.7728v2",
+          "http://arxiv.org/abs/1401.6612v1",
+          "http://arxiv.org/abs/1406.6884v1",
+          "http://arxiv.org/abs/1405.3466v1",
+          "http://arxiv.org/abs/1402.5446v3",
+          "http://arxiv.org/abs/1404.0791v1",
+          "http://arxiv.org/abs/1408.1779v2",
+          "http://arxiv.org/abs/1404.3421v2",
+          "http://arxiv.org/abs/1405.4898v1",
+          "http://arxiv.org/abs/1411.2193v2"
+        ],
+        "id": "black hole",
+        "strength": 0.011385456658899784,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1406.7480v1"],
+        "id": "hilbert space",
+        "strength": 0.01283016987144947,
+        "length": 208.88888549804688
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1409.5941v1",
+          "http://arxiv.org/abs/1401.7820v1"
+        ],
+        "id": "black hole information paradox",
+        "strength": 0.012075631879270077,
+        "length": 60
+      }
+    ],
+    "hardLock": false,
+    "y": 419.87994384765625,
+    "gravity": 0.5194092392921448,
+    "x": 30.312673568725586
+  },
+  {
+    "term": "supernova",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1412.8123v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1403.5746v1",
+          "http://arxiv.org/abs/1406.1581v2",
+          "http://arxiv.org/abs/1405.0504v1",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.7038v2",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1407.3426v2",
+          "http://arxiv.org/abs/1407.7088v1",
+          "http://arxiv.org/abs/1408.0860v1",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1401.0939v1",
+          "http://arxiv.org/abs/1402.7088v2",
+          "http://arxiv.org/abs/1401.1282v3",
+          "http://arxiv.org/abs/1401.4546v3",
+          "http://arxiv.org/abs/1407.7656v1",
+          "http://arxiv.org/abs/1412.8368v3",
+          "http://arxiv.org/abs/1405.3774v2",
+          "http://arxiv.org/abs/1402.2748v3"
+        ],
+        "id": "black hole",
+        "strength": 0.013423043303191662,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.6066v2",
+          "http://arxiv.org/abs/1403.6493v1",
+          "http://arxiv.org/abs/1407.5405v1",
+          "http://arxiv.org/abs/1407.7812v2"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.011677494272589684,
+        "length": 186.66665649414062
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1406.6938v1"],
+        "id": "time",
+        "strength": 0.01296231895685196,
+        "length": 211.6666717529297
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.5405v1",
+          "http://arxiv.org/abs/1407.7812v2",
+          "http://arxiv.org/abs/1402.7088v2",
+          "http://arxiv.org/abs/1405.6066v2"
+        ],
+        "id": "big bang",
+        "strength": 0.011366676539182663,
+        "length": 186.66665649414062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.1581v2",
+          "http://arxiv.org/abs/1405.2144v1",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1404.7036v1",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1401.4546v3",
+          "http://arxiv.org/abs/1406.6938v1",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.7038v2",
+          "http://arxiv.org/abs/1405.0504v1",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1406.3775v1",
+          "http://arxiv.org/abs/1412.8368v3",
+          "http://arxiv.org/abs/1402.6244v2",
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1406.3318v2",
+          "http://arxiv.org/abs/1402.5412v3",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1403.1484v1",
+          "http://arxiv.org/abs/1407.3277v1",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1402.6108v2",
+          "http://arxiv.org/abs/1407.3426v2",
+          "http://arxiv.org/abs/1406.7587v2",
+          "http://arxiv.org/abs/1401.1282v3",
+          "http://arxiv.org/abs/1403.5746v1"
+        ],
+        "id": "neutron star",
+        "strength": 0.013707642443478107,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.5116v1",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1405.3673v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.6884v1",
+          "http://arxiv.org/abs/1406.3775v1",
+          "http://arxiv.org/abs/1407.7656v1",
+          "http://arxiv.org/abs/1404.7693v1",
+          "http://arxiv.org/abs/1402.6244v2",
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1403.2070v1",
+          "http://arxiv.org/abs/1404.4025v3",
+          "http://arxiv.org/abs/1405.3774v2",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1405.1121v2",
+          "http://arxiv.org/abs/1402.2748v3",
+          "http://arxiv.org/abs/1402.0251v1",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1407.3277v1",
+          "http://arxiv.org/abs/1406.5444v1",
+          "http://arxiv.org/abs/1401.0939v1",
+          "http://arxiv.org/abs/1403.7754v1",
+          "http://arxiv.org/abs/1406.7587v2",
+          "http://arxiv.org/abs/1407.7812v2",
+          "http://arxiv.org/abs/1403.5746v1"
+        ],
+        "id": "white dwarf",
+        "strength": 0.014778899028897285,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1405.3774v2",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1401.0939v1",
+          "http://arxiv.org/abs/1404.7693v1",
+          "http://arxiv.org/abs/1407.7656v1"
+        ],
+        "id": "binary star",
+        "strength": 0.01602916233241558,
+        "length": 60
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1402.2748v3"],
+        "id": "accretion disc",
+        "strength": 0.014900597743690014,
+        "length": 180
+      }
+    ],
+    "hardLock": false,
+    "y": 515.921630859375,
+    "gravity": 0.5456016063690186,
+    "x": 78.24971008300781
+  },
+  {
+    "term": "schwarzschild metric",
+    "connections": [],
+    "hardLock": false,
+    "y": 1216.34814453125,
+    "gravity": 0.5213820338249207,
+    "x": 64.1747817993164
+  },
+  {
+    "term": "cosmic microwave background radiation",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.0083v2",
+          "http://arxiv.org/abs/1404.3665v2",
+          "http://arxiv.org/abs/1402.5993v2",
+          "http://arxiv.org/abs/1407.1265v2",
+          "http://arxiv.org/abs/1405.1291v2",
+          "http://arxiv.org/abs/1403.5407v2",
+          "http://arxiv.org/abs/1407.1632v2",
+          "http://arxiv.org/abs/1404.5310v1",
+          "http://arxiv.org/abs/1406.0857v2",
+          "http://arxiv.org/abs/1406.2308v1",
+          "http://arxiv.org/abs/1408.2689v1",
+          "http://arxiv.org/abs/1401.3296v2",
+          "http://arxiv.org/abs/1406.7297v2",
+          "http://arxiv.org/abs/1401.5627v3",
+          "http://arxiv.org/abs/1403.7287v3"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.014331839047372341,
+        "length": 26.451614379882812
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1410.8643v1"],
+        "id": "time",
+        "strength": 0.019315028563141823,
+        "length": 207.09677124023438
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.0083v2",
+          "http://arxiv.org/abs/1404.3665v2",
+          "http://arxiv.org/abs/1406.2981v1",
+          "http://arxiv.org/abs/1407.6293v1",
+          "http://arxiv.org/abs/1411.4531v2",
+          "http://arxiv.org/abs/1401.5898v3",
+          "http://arxiv.org/abs/1402.5993v2",
+          "http://arxiv.org/abs/1407.1265v2",
+          "http://arxiv.org/abs/1406.4664v2",
+          "http://arxiv.org/abs/1401.5737v1",
+          "http://arxiv.org/abs/1405.1291v2",
+          "http://arxiv.org/abs/1407.1632v2",
+          "http://arxiv.org/abs/1404.6347v3",
+          "http://arxiv.org/abs/1401.3296v2",
+          "http://arxiv.org/abs/1406.7297v2",
+          "http://arxiv.org/abs/1406.0857v2",
+          "http://arxiv.org/abs/1401.5627v3",
+          "http://arxiv.org/abs/1406.2308v1",
+          "http://arxiv.org/abs/1403.7287v3"
+        ],
+        "id": "big bang",
+        "strength": 0.013172643259167671,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.0634v3",
+          "http://arxiv.org/abs/1401.3296v2"
+        ],
+        "id": "gravitational wave",
+        "strength": 0.01589667983353138,
+        "length": 194.19354248046875
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.1632v2"],
+        "id": "accelerating universe",
+        "strength": 0.014873720705509186,
+        "length": 189.23077392578125
+      }
+    ],
+    "hardLock": false,
+    "y": 409.94415283203125,
+    "gravity": 0.596921443939209,
+    "x": 248.74200439453125
+  },
+  {
+    "term": "noether's theorem",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1408.4945v1",
+          "http://arxiv.org/abs/1405.3185v1",
+          "http://arxiv.org/abs/1411.1843v1"
+        ],
+        "id": "spacetime",
+        "strength": 0.01125805638730526,
+        "length": 189.23077392578125
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1406.6334v1"],
+        "id": "special relativity",
+        "strength": 0.017917245626449585,
+        "length": 209.74359130859375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1411.1843v1",
+          "http://arxiv.org/abs/1402.2953v2"
+        ],
+        "id": "time",
+        "strength": 0.013707648031413555,
+        "length": 199.4871826171875
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1411.3580v1"],
+        "id": "big bang",
+        "strength": 0.01601068675518036,
+        "length": 209.74359130859375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.4270v2",
+          "http://arxiv.org/abs/1411.1843v1",
+          "http://arxiv.org/abs/1401.2136v2",
+          "http://arxiv.org/abs/1407.6364v1",
+          "http://arxiv.org/abs/1404.0898v2",
+          "http://arxiv.org/abs/1402.3977v1",
+          "http://arxiv.org/abs/1412.6728v1",
+          "http://arxiv.org/abs/1405.0363v1",
+          "http://arxiv.org/abs/1404.4016v2",
+          "http://arxiv.org/abs/1410.7599v1",
+          "http://arxiv.org/abs/1406.7153v1"
+        ],
+        "id": "symmetry",
+        "strength": 0.015390059910714626,
+        "length": 107.17948150634766
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1411.3580v1"],
+        "id": "dark energy",
+        "strength": 0.012230453081429005,
+        "length": 209.74359130859375
+      }
+    ],
+    "hardLock": false,
+    "y": 239.8813018798828,
+    "gravity": 0.5699741840362549,
+    "x": 469.56756591796875
+  },
+  {
+    "term": "black hole thermodynamics",
+    "connections": [{
+      "shared": [
+        "http://arxiv.org/abs/1406.4039v1",
+        "http://arxiv.org/abs/1407.7295v3",
+        "http://arxiv.org/abs/1405.4243v4",
+        "http://arxiv.org/abs/1401.3560v2",
+        "http://arxiv.org/abs/1401.2967v2",
+        "http://arxiv.org/abs/1410.4248v2",
+        "http://arxiv.org/abs/1402.5514v2",
+        "http://arxiv.org/abs/1401.3480v1",
+        "http://arxiv.org/abs/1402.2084v1",
+        "http://arxiv.org/abs/1410.1486v1",
+        "http://arxiv.org/abs/1407.5971v2",
+        "http://arxiv.org/abs/1407.1698v2",
+        "http://arxiv.org/abs/1411.5778v2",
+        "http://arxiv.org/abs/1401.4097v1",
+        "http://arxiv.org/abs/1406.0841v1",
+        "http://arxiv.org/abs/1410.7909v1",
+        "http://arxiv.org/abs/1402.1427v1",
+        "http://arxiv.org/abs/1405.7846v2",
+        "http://arxiv.org/abs/1402.5127v3",
+        "http://arxiv.org/abs/1401.3054v1",
+        "http://arxiv.org/abs/1401.3107v2",
+        "http://arxiv.org/abs/1401.5804v3",
+        "http://arxiv.org/abs/1408.4531v4",
+        "http://arxiv.org/abs/1401.7820v1",
+        "http://arxiv.org/abs/1402.1343v2",
+        "http://arxiv.org/abs/1406.2357v2",
+        "http://arxiv.org/abs/1409.5941v1",
+        "http://arxiv.org/abs/1404.2126v1",
+        "http://arxiv.org/abs/1403.7279v2",
+        "http://arxiv.org/abs/1405.4038v1",
+        "http://arxiv.org/abs/1410.1737v2",
+        "http://arxiv.org/abs/1406.5524v1",
+        "http://arxiv.org/abs/1410.5950v1",
+        "http://arxiv.org/abs/1401.5075v2",
+        "http://arxiv.org/abs/1404.4472v2",
+        "http://arxiv.org/abs/1402.1465v2",
+        "http://arxiv.org/abs/1410.2993v3",
+        "http://arxiv.org/abs/1407.1992v1",
+        "http://arxiv.org/abs/1406.6884v1",
+        "http://arxiv.org/abs/1404.0791v1",
+        "http://arxiv.org/abs/1404.3421v2",
+        "http://arxiv.org/abs/1406.7153v1"
+      ],
+      "id": "black hole",
+      "strength": 0.012425664812326431,
+      "length": 20
+    }],
+    "hardLock": false,
+    "y": 558.4617919921875,
+    "gravity": 0.5612754225730896,
+    "x": -139.9016876220703
+  },
+  {
+    "term": "black holes",
+    "connections": [],
+    "hardLock": false,
+    "y": 367.6050720214844,
+    "gravity": 0.5585134029388428,
+    "x": 1439.12890625
+  },
+  {
+    "term": "hilbert space",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.7080v3",
+          "http://arxiv.org/abs/1402.5658v6"
+        ],
+        "id": "string theory",
+        "strength": 0.01261643972247839,
+        "length": 197.77777099609375
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.6695v2"],
+        "id": "black hole",
+        "strength": 0.016895150765776634,
+        "length": 208.88888549804688
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1412.3604v1",
+          "http://arxiv.org/abs/1403.7121v1",
+          "http://arxiv.org/abs/1402.3155v1",
+          "http://arxiv.org/abs/1401.0931v1",
+          "http://arxiv.org/abs/1410.5276v2"
+        ],
+        "id": "quantum gravity",
+        "strength": 0.012304218485951424,
+        "length": 164.44444274902344
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1409.3770v1",
+          "http://arxiv.org/abs/1403.6252v1",
+          "http://arxiv.org/abs/1406.3829v3",
+          "http://arxiv.org/abs/1406.7528v1"
+        ],
+        "id": "time",
+        "strength": 0.01247345469892025,
+        "length": 175.55555725097656
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1406.7480v1"],
+        "id": "event horizon",
+        "strength": 0.01283016987144947,
+        "length": 208.88888549804688
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.2611v1",
+          "http://arxiv.org/abs/1401.0931v1",
+          "http://arxiv.org/abs/1403.7121v1"
+        ],
+        "id": "loop quantum gravity",
+        "strength": 0.013272779062390327,
+        "length": 175.55555725097656
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1406.2934v1"],
+        "id": "equivalence principle",
+        "strength": 0.016550851985812187,
+        "length": 162.85714721679688
+      }
+    ],
+    "hardLock": false,
+    "y": 258.3646545410156,
+    "gravity": 0.5793695449829102,
+    "x": 366.96954345703125
+  },
+  {
+    "term": "gravitational singularity",
+    "connections": [{
+      "shared": ["http://arxiv.org/abs/1406.5635v2"],
+      "id": "gravitation",
+      "strength": 0.013522502966225147,
+      "length": 210.243896484375
+    }],
+    "hardLock": false,
+    "y": 679.7798461914062,
+    "gravity": 0.5641039609909058,
+    "x": 824.00390625
+  },
+  {
+    "term": "de sitter space",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.5112v3",
+          "http://arxiv.org/abs/1403.3335v2",
+          "http://arxiv.org/abs/1404.1565v2",
+          "http://arxiv.org/abs/1402.3592v1",
+          "http://arxiv.org/abs/1402.2912v2",
+          "http://arxiv.org/abs/1405.6629v2",
+          "http://arxiv.org/abs/1405.3827v2",
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1402.7080v3",
+          "http://arxiv.org/abs/1406.3360v2"
+        ],
+        "id": "string theory",
+        "strength": 0.01407571043819189,
+        "length": 53.333343505859375
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1402.3592v1"
+        ],
+        "id": "black hole",
+        "strength": 0.013479490764439106,
+        "length": 186.66665649414062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.2912v2",
+          "http://arxiv.org/abs/1405.3135v2",
+          "http://arxiv.org/abs/1405.6629v2",
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1408.2799v2"
+        ],
+        "id": "spacetime",
+        "strength": 0.011844037100672722,
+        "length": 136.6666717529297
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.6629v2"],
+        "id": "special relativity",
+        "strength": 0.017582789063453674,
+        "length": 203.3333282470703
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.3827v2"],
+        "id": "quantum gravity",
+        "strength": 0.01516768615692854,
+        "length": 203.3333282470703
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.2621v2",
+          "http://arxiv.org/abs/1405.3135v2"
+        ],
+        "id": "time",
+        "strength": 0.015715548768639565,
+        "length": 186.66665649414062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.1024v2",
+          "http://arxiv.org/abs/1405.4049v3"
+        ],
+        "id": "symmetry",
+        "strength": 0.013604617677628994,
+        "length": 186.66665649414062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.1565v2",
+          "http://arxiv.org/abs/1403.0675v1",
+          "http://arxiv.org/abs/1408.2799v2",
+          "http://arxiv.org/abs/1402.4557v1",
+          "http://arxiv.org/abs/1405.3827v2",
+          "http://arxiv.org/abs/1404.6815v2",
+          "http://arxiv.org/abs/1404.2309v3"
+        ],
+        "id": "de sitter universe",
+        "strength": 0.013395324349403381,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 161.92587280273438,
+    "gravity": 0.6269626617431641,
+    "x": 480.9239807128906
+  },
+  {
+    "term": "loop quantum gravity",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1409.3751v2",
+          "http://arxiv.org/abs/1402.2384v3",
+          "http://arxiv.org/abs/1410.4788v1",
+          "http://arxiv.org/abs/1412.7435v1",
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1409.0836v1",
+          "http://arxiv.org/abs/1406.5524v1",
+          "http://arxiv.org/abs/1405.5552v1",
+          "http://arxiv.org/abs/1405.7287v2",
+          "http://arxiv.org/abs/1407.4444v1",
+          "http://arxiv.org/abs/1401.5256v1",
+          "http://arxiv.org/abs/1407.2909v1",
+          "http://arxiv.org/abs/1412.4362v1",
+          "http://arxiv.org/abs/1402.1343v2"
+        ],
+        "id": "string theory",
+        "strength": 0.011931787244975567,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1402.2084v1",
+          "http://arxiv.org/abs/1402.1343v2",
+          "http://arxiv.org/abs/1406.5524v1",
+          "http://arxiv.org/abs/1405.7287v2"
+        ],
+        "id": "black hole",
+        "strength": 0.012506362982094288,
+        "length": 145.92593383789062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1409.7455v1",
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1407.4444v1"
+        ],
+        "id": "spacetime",
+        "strength": 0.011365994811058044,
+        "length": 175.55555725097656
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.7287v2",
+          "http://arxiv.org/abs/1407.2428v2",
+          "http://arxiv.org/abs/1407.4444v1",
+          "http://arxiv.org/abs/1403.7121v1",
+          "http://arxiv.org/abs/1402.2384v3",
+          "http://arxiv.org/abs/1410.4788v1",
+          "http://arxiv.org/abs/1401.0931v1",
+          "http://arxiv.org/abs/1412.7435v1",
+          "http://arxiv.org/abs/1409.7455v1",
+          "http://arxiv.org/abs/1401.2967v2",
+          "http://arxiv.org/abs/1409.0836v1",
+          "http://arxiv.org/abs/1407.8167v2",
+          "http://arxiv.org/abs/1406.5524v1",
+          "http://arxiv.org/abs/1412.4362v1",
+          "http://arxiv.org/abs/1405.5552v1",
+          "http://arxiv.org/abs/1411.4316v1",
+          "http://arxiv.org/abs/1402.1343v2"
+        ],
+        "id": "quantum gravity",
+        "strength": 0.014052094891667366,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.2084v1",
+          "http://arxiv.org/abs/1402.1343v2"
+        ],
+        "id": "hawking radiation",
+        "strength": 0.011838776059448719,
+        "length": 190.37037658691406
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1409.0836v1"],
+        "id": "standard model",
+        "strength": 0.014791003428399563,
+        "length": 205.1851806640625
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.2611v1",
+          "http://arxiv.org/abs/1401.0931v1",
+          "http://arxiv.org/abs/1403.7121v1"
+        ],
+        "id": "hilbert space",
+        "strength": 0.013272779062390327,
+        "length": 175.55555725097656
+      }
+    ],
+    "hardLock": false,
+    "y": 212.17376708984375,
+    "gravity": 0.6131373643875122,
+    "x": 586.801025390625
+  },
+  {
+    "term": "frame-dragging",
+    "connections": [],
+    "hardLock": false,
+    "y": -290.25897216796875,
+    "gravity": 0.5826761722564697,
+    "x": -189.77813720703125
+  },
+  {
+    "term": "hubble's law",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0399v2",
+          "http://arxiv.org/abs/1404.4418v2",
+          "http://arxiv.org/abs/1403.1718v2",
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1401.4906v2",
+          "http://arxiv.org/abs/1401.7549v2",
+          "http://arxiv.org/abs/1403.7743v1",
+          "http://arxiv.org/abs/1405.0729v1",
+          "http://arxiv.org/abs/1406.4747v1",
+          "http://arxiv.org/abs/1404.3860v1",
+          "http://arxiv.org/abs/1404.6205v1",
+          "http://arxiv.org/abs/1405.6935v2",
+          "http://arxiv.org/abs/1407.2958v4",
+          "http://arxiv.org/abs/1402.0520v2",
+          "http://arxiv.org/abs/1405.7949v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1402.4350v1",
+          "http://arxiv.org/abs/1406.7636v1",
+          "http://arxiv.org/abs/1402.1933v2",
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1404.6522v5"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.016246583312749863,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0399v2",
+          "http://arxiv.org/abs/1403.1718v2",
+          "http://arxiv.org/abs/1401.7549v2",
+          "http://arxiv.org/abs/1403.7743v1",
+          "http://arxiv.org/abs/1406.4747v1",
+          "http://arxiv.org/abs/1402.0520v2",
+          "http://arxiv.org/abs/1403.0926v1",
+          "http://arxiv.org/abs/1407.7322v1",
+          "http://arxiv.org/abs/1402.4350v1",
+          "http://arxiv.org/abs/1412.8454v1"
+        ],
+        "id": "dark matter",
+        "strength": 0.013402734883129597,
+        "length": 60
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.0399v2",
+          "http://arxiv.org/abs/1402.0520v2",
+          "http://arxiv.org/abs/1405.7949v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1404.4418v2",
+          "http://arxiv.org/abs/1407.7322v1",
+          "http://arxiv.org/abs/1401.5029v4",
+          "http://arxiv.org/abs/1401.4906v2",
+          "http://arxiv.org/abs/1403.7743v1",
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1406.4747v1",
+          "http://arxiv.org/abs/1404.6522v5",
+          "http://arxiv.org/abs/1404.6205v1",
+          "http://arxiv.org/abs/1405.6935v2",
+          "http://arxiv.org/abs/1407.2958v4"
+        ],
+        "id": "big bang",
+        "strength": 0.013470545411109924,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1412.8454v1",
+          "http://arxiv.org/abs/1405.7949v1",
+          "http://arxiv.org/abs/1405.0729v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1404.3860v1",
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1404.6522v5",
+          "http://arxiv.org/abs/1407.2958v4",
+          "http://arxiv.org/abs/1401.7549v2"
+        ],
+        "id": "dark energy",
+        "strength": 0.016109488904476166,
+        "length": 76
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1405.5714v1"
+        ],
+        "id": "lambda-cdm model",
+        "strength": 0.014368426986038685,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 398.9549255371094,
+    "gravity": 0.6221710443496704,
+    "x": 347.6571350097656
+  },
+  {
+    "term": "cosmology",
+    "connections": [
+      {
+        "shared": ["http://arxiv.org/abs/1402.3071v2"],
+        "id": "spacetime",
+        "strength": 0.015801727771759033,
+        "length": 204
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.2743v2",
+          "http://arxiv.org/abs/1412.1583v1",
+          "http://arxiv.org/abs/1407.6602v1",
+          "http://arxiv.org/abs/1402.5104v3",
+          "http://arxiv.org/abs/1405.6959v1"
+        ],
+        "id": "big bang",
+        "strength": 0.011478028260171413,
+        "length": 140
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1401.7740v1"],
+        "id": "hawking radiation",
+        "strength": 0.013117015361785889,
+        "length": 204
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.2743v2",
+          "http://arxiv.org/abs/1406.3992v1",
+          "http://arxiv.org/abs/1405.6959v1"
+        ],
+        "id": "cosmological constant",
+        "strength": 0.015478421933948994,
+        "length": 172
+      }
+    ],
+    "hardLock": false,
+    "y": 192.25697326660156,
+    "gravity": 0.6221710443496704,
+    "x": 548.8265991210938
+  },
+  {
+    "term": "multiverse",
+    "connections": [{
+      "shared": [
+        "http://arxiv.org/abs/1501.00488v3",
+        "http://arxiv.org/abs/1403.7275v1",
+        "http://arxiv.org/abs/1403.1599v1",
+        "http://arxiv.org/abs/1412.3749v2"
+      ],
+      "id": "time",
+      "strength": 0.01687522977590561,
+      "length": 135.7894744873047
+    }],
+    "hardLock": false,
+    "y": 213.95083618164062,
+    "gravity": 0.654384195804596,
+    "x": -121.7929916381836
+  },
+  {
+    "term": "minkowski space",
+    "connections": [
+      {
+        "shared": ["http://arxiv.org/abs/1408.4598v1"],
+        "id": "string theory",
+        "strength": 0.014349798671901226,
+        "length": 195
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1408.4601v1",
+          "http://arxiv.org/abs/1402.3975v2",
+          "http://arxiv.org/abs/1401.6948v1",
+          "http://arxiv.org/abs/1404.4166v3",
+          "http://arxiv.org/abs/1406.6107v1",
+          "http://arxiv.org/abs/1408.5487v1",
+          "http://arxiv.org/abs/1407.8085v2",
+          "http://arxiv.org/abs/1408.4947v1",
+          "http://arxiv.org/abs/1412.3424v3",
+          "http://arxiv.org/abs/1403.7615v2",
+          "http://arxiv.org/abs/1412.7403v1",
+          "http://arxiv.org/abs/1408.4277v1",
+          "http://arxiv.org/abs/1401.1060v2",
+          "http://arxiv.org/abs/1408.4598v1"
+        ],
+        "id": "spacetime",
+        "strength": 0.011690229177474976,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1408.4601v1",
+          "http://arxiv.org/abs/1408.5487v1",
+          "http://arxiv.org/abs/1407.8085v2",
+          "http://arxiv.org/abs/1408.4947v1",
+          "http://arxiv.org/abs/1401.6948v1",
+          "http://arxiv.org/abs/1412.3424v3",
+          "http://arxiv.org/abs/1404.4166v3",
+          "http://arxiv.org/abs/1403.7615v2",
+          "http://arxiv.org/abs/1406.6107v1",
+          "http://arxiv.org/abs/1408.4277v1",
+          "http://arxiv.org/abs/1408.4598v1",
+          "http://arxiv.org/abs/1401.0597v2"
+        ],
+        "id": "special relativity",
+        "strength": 0.013016777113080025,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.3975v2",
+          "http://arxiv.org/abs/1404.4166v3"
+        ],
+        "id": "time",
+        "strength": 0.016919223591685295,
+        "length": 170
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1402.3975v2"],
+        "id": "hawking radiation",
+        "strength": 0.014936800114810467,
+        "length": 195
+      }
+    ],
+    "hardLock": false,
+    "y": 120.16077423095703,
+    "gravity": 0.6745558381080627,
+    "x": 560.6273803710938
+  },
+  {
+    "term": "supersymmetry",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1412.7827v1",
+          "http://arxiv.org/abs/1407.8002v2",
+          "http://arxiv.org/abs/1412.7435v1",
+          "http://arxiv.org/abs/1409.7726v1",
+          "http://arxiv.org/abs/1407.3355v2",
+          "http://arxiv.org/abs/1401.6974v2",
+          "http://arxiv.org/abs/1404.4167v1",
+          "http://arxiv.org/abs/1402.0627v5",
+          "http://arxiv.org/abs/1407.4275v1",
+          "http://arxiv.org/abs/1401.3664v2",
+          "http://arxiv.org/abs/1402.2835v2",
+          "http://arxiv.org/abs/1407.5377v1",
+          "http://arxiv.org/abs/1406.3096v1"
+        ],
+        "id": "string theory",
+        "strength": 0.012758016586303711,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.4275v1"],
+        "id": "euclidean space",
+        "strength": 0.011898313648998737,
+        "length": 193.3333282470703
+      }
+    ],
+    "hardLock": false,
+    "y": 23.747846603393555,
+    "gravity": 0.682131290435791,
+    "x": 1108.469970703125
+  },
+  {
+    "term": "binary star",
+    "connections": [
+      {
+        "shared": ["http://arxiv.org/abs/1407.2498v1"],
+        "id": "time",
+        "strength": 0.01983792893588543,
+        "length": 200
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1403.7147v2"
+        ],
+        "id": "neutron star",
+        "strength": 0.014048797078430653,
+        "length": 120
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1406.2317v1",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1407.2498v1",
+          "http://arxiv.org/abs/1403.0129v2",
+          "http://arxiv.org/abs/1407.7656v1",
+          "http://arxiv.org/abs/1404.7693v1",
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1403.0512v1",
+          "http://arxiv.org/abs/1405.3774v2",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1412.1803v1",
+          "http://arxiv.org/abs/1401.0939v1"
+        ],
+        "id": "white dwarf",
+        "strength": 0.014010705053806305,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.3680v2",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1405.3774v2",
+          "http://arxiv.org/abs/1407.3266v2",
+          "http://arxiv.org/abs/1403.7147v2",
+          "http://arxiv.org/abs/1401.0939v1",
+          "http://arxiv.org/abs/1404.7693v1",
+          "http://arxiv.org/abs/1407.7656v1"
+        ],
+        "id": "supernova",
+        "strength": 0.01602916233241558,
+        "length": 60
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.3838v2"],
+        "id": "pulsar",
+        "strength": 0.017313983291387558,
+        "length": 170
+      }
+    ],
+    "hardLock": false,
+    "y": 551.1131591796875,
+    "gravity": 0.6483634114265442,
+    "x": 36.8167724609375
+  },
+  {
+    "term": "kerr metric",
+    "connections": [],
+    "hardLock": false,
+    "y": 1211.100341796875,
+    "gravity": 0.6607306003570557,
+    "x": 524.13720703125
+  },
+  {
+    "term": "vacuum energy",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.5706v1",
+          "http://arxiv.org/abs/1403.3749v1",
+          "http://arxiv.org/abs/1405.0282v1",
+          "http://arxiv.org/abs/1405.7952v3"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.01165511179715395,
+        "length": 86.66665649414062
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.5706v1",
+          "http://arxiv.org/abs/1407.2086v1",
+          "http://arxiv.org/abs/1405.7818v2",
+          "http://arxiv.org/abs/1403.3749v1",
+          "http://arxiv.org/abs/1408.4410v4",
+          "http://arxiv.org/abs/1405.7952v3"
+        ],
+        "id": "cosmological constant",
+        "strength": 0.014429165981709957,
+        "length": 20
+      }
+    ],
+    "hardLock": false,
+    "y": 414.1242370605469,
+    "gravity": 0.7083237171173096,
+    "x": 511.49835205078125
+  },
+  {
+    "term": "accelerating universe",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1408.6436v1",
+          "http://arxiv.org/abs/1402.6821v1"
+        ],
+        "id": "time",
+        "strength": 0.014732654206454754,
+        "length": 158.46153259277344
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1407.1632v2"],
+        "id": "cosmic microwave background radiation",
+        "strength": 0.014873720705509186,
+        "length": 189.23077392578125
+      }
+    ],
+    "hardLock": false,
+    "y": 218.65740966796875,
+    "gravity": 0.6989283561706543,
+    "x": 120.3603286743164
+  },
+  {
+    "term": "cosmic inflation",
+    "connections": [
+      {
+        "shared": ["http://arxiv.org/abs/1407.7692v2"],
+        "id": "physical cosmology",
+        "strength": 0.021005013957619667,
+        "length": 175.55555725097656
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1404.6096v3"],
+        "id": "cosmological constant",
+        "strength": 0.01621209643781185,
+        "length": 175.55555725097656
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1402.0626v2"],
+        "id": "theory of everything",
+        "strength": 0.018052926287055016,
+        "length": 175.55555725097656
+      }
+    ],
+    "hardLock": false,
+    "y": 292.6484069824219,
+    "gravity": 0.7420915961265564,
+    "x": 637.5581665039062
+  },
+  {
+    "term": "de sitter universe",
+    "connections": [{
+      "shared": [
+        "http://arxiv.org/abs/1404.1565v2",
+        "http://arxiv.org/abs/1403.0675v1",
+        "http://arxiv.org/abs/1408.2799v2",
+        "http://arxiv.org/abs/1402.4557v1",
+        "http://arxiv.org/abs/1405.3827v2",
+        "http://arxiv.org/abs/1404.6815v2",
+        "http://arxiv.org/abs/1404.2309v3"
+      ],
+      "id": "de sitter space",
+      "strength": 0.013395324349403381,
+      "length": 20
+    }],
+    "hardLock": false,
+    "y": 85.10216522216797,
+    "gravity": 0.7420915961265564,
+    "x": 455.3238525390625
+  },
+  {
+    "term": "riemannian manifold",
+    "connections": [
+      {
+        "shared": ["http://arxiv.org/abs/1407.8143v1"],
+        "id": "symmetry",
+        "strength": 0.016301145777106285,
+        "length": 170
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.0640v2"],
+        "id": "non-euclidean geometry",
+        "strength": 0.01667393557727337,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 339.7091064453125,
+    "gravity": 0.7559168934822083,
+    "x": 849.2528076171875
+  },
+  {
+    "term": "wormhole",
+    "connections": [
+      {
+        "shared": ["http://arxiv.org/abs/1406.0976v2"],
+        "id": "string theory",
+        "strength": 0.014639592729508877,
+        "length": 183.63636779785156
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2"
+        ],
+        "id": "spacetime",
+        "strength": 0.017110593616962433,
+        "length": 147.27273559570312
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1404.5750v1"
+        ],
+        "id": "symmetry",
+        "strength": 0.0172842126339674,
+        "length": 147.27273559570312
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1411.6052v2",
+          "http://arxiv.org/abs/1501.00487v1",
+          "http://arxiv.org/abs/1405.1283v1"
+        ],
+        "id": "exotic matter",
+        "strength": 0.018364813178777695,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1411.6052v2",
+          "http://arxiv.org/abs/1409.2179v1"
+        ],
+        "id": "time travel",
+        "strength": 0.0122426962479949,
+        "length": 20
+      }
+    ],
+    "hardLock": true,
+    "y": 44.725379943847656,
+    "gravity": 0.7185370326042175,
+    "x": 915.1221923828125
+  },
+  {
+    "term": "lambda-cdm model",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.4079v1",
+          "http://arxiv.org/abs/1406.7555v2",
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1405.7288v2",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1404.2273v2"
+        ],
+        "id": "physical cosmology",
+        "strength": 0.015004280023276806,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.4079v1",
+          "http://arxiv.org/abs/1405.7288v2",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1412.4000v1",
+          "http://arxiv.org/abs/1404.2273v2",
+          "http://arxiv.org/abs/1403.2424v1"
+        ],
+        "id": "dark matter",
+        "strength": 0.013520647771656513,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.4079v1",
+          "http://arxiv.org/abs/1405.5714v1",
+          "http://arxiv.org/abs/1407.4773v1",
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1402.0118v1",
+          "http://arxiv.org/abs/1404.2273v2"
+        ],
+        "id": "dark energy",
+        "strength": 0.012477720156311989,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.5227v1",
+          "http://arxiv.org/abs/1405.5714v1"
+        ],
+        "id": "hubble's law",
+        "strength": 0.014368426986038685,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 466.9013366699219,
+    "gravity": 0.7297244668006897,
+    "x": 398.6511535644531
+  },
+  {
+    "term": "pulsar",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.7038v2",
+          "http://arxiv.org/abs/1407.3426v2"
+        ],
+        "id": "black hole",
+        "strength": 0.011634196154773235,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1412.1142v2"],
+        "id": "special relativity",
+        "strength": 0.014021421782672405,
+        "length": 170
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.3838v2",
+          "http://arxiv.org/abs/1402.4469v2",
+          "http://arxiv.org/abs/1407.7038v2",
+          "http://arxiv.org/abs/1402.5412v3",
+          "http://arxiv.org/abs/1402.5463v3",
+          "http://arxiv.org/abs/1403.1484v1",
+          "http://arxiv.org/abs/1407.3426v2"
+        ],
+        "id": "neutron star",
+        "strength": 0.01514323242008686,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.3838v2"],
+        "id": "binary star",
+        "strength": 0.017313983291387558,
+        "length": 170
+      }
+    ],
+    "hardLock": false,
+    "y": 402.15740966796875,
+    "gravity": 0.7559168934822083,
+    "x": 194.0867156982422
+  },
+  {
+    "term": "accretion disc",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1406.0417v2",
+          "http://arxiv.org/abs/1406.2181v2",
+          "http://arxiv.org/abs/1406.2317v1",
+          "http://arxiv.org/abs/1405.1508v2",
+          "http://arxiv.org/abs/1412.1803v1",
+          "http://arxiv.org/abs/1403.4136v2",
+          "http://arxiv.org/abs/1402.2748v3",
+          "http://arxiv.org/abs/1408.1779v2"
+        ],
+        "id": "black hole",
+        "strength": 0.011765209957957268,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1411.4811v1"],
+        "id": "standard model",
+        "strength": 0.011542274616658688,
+        "length": 180
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1402.2748v3"],
+        "id": "supernova",
+        "strength": 0.014900597743690014,
+        "length": 180
+      }
+    ],
+    "hardLock": false,
+    "y": 338.2292175292969,
+    "gravity": 0.7297244668006897,
+    "x": 194.66026306152344
+  },
+  {
+    "term": "exotic matter",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2"
+        ],
+        "id": "spacetime",
+        "strength": 0.019487807527184486,
+        "length": 120
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1404.5750v1"
+        ],
+        "id": "symmetry",
+        "strength": 0.019650373607873917,
+        "length": 120
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.4546v3",
+          "http://arxiv.org/abs/1407.2180v1"
+        ],
+        "id": "neutron star",
+        "strength": 0.015172779560089111,
+        "length": 120
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1411.6052v2",
+          "http://arxiv.org/abs/1501.00487v1",
+          "http://arxiv.org/abs/1405.1283v1"
+        ],
+        "id": "wormhole",
+        "strength": 0.018364813178777695,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1411.6052v2"
+        ],
+        "id": "time travel",
+        "strength": 0.01705867424607277,
+        "length": 20
+      }
+    ],
+    "hardLock": true,
+    "y": 73.61088562011719,
+    "gravity": 0.7559168934822083,
+    "x": 826.0825805664062
+  },
+  {
+    "term": "theory of everything",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.0276v1",
+          "http://arxiv.org/abs/1402.2757v1",
+          "http://arxiv.org/abs/1404.5529v1",
+          "http://arxiv.org/abs/1407.6023v2",
+          "http://arxiv.org/abs/1403.6166v1",
+          "http://arxiv.org/abs/1407.3002v2",
+          "http://arxiv.org/abs/1401.7014v2",
+          "http://arxiv.org/abs/1401.4933v3"
+        ],
+        "id": "string theory",
+        "strength": 0.014123635366559029,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1403.6166v1",
+          "http://arxiv.org/abs/1401.0276v1",
+          "http://arxiv.org/abs/1402.2757v1",
+          "http://arxiv.org/abs/1408.2691v1",
+          "http://arxiv.org/abs/1407.3002v2",
+          "http://arxiv.org/abs/1401.7014v2",
+          "http://arxiv.org/abs/1404.5529v1",
+          "http://arxiv.org/abs/1401.4933v3"
+        ],
+        "id": "quantum gravity",
+        "strength": 0.01271482091397047,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1402.0626v2"],
+        "id": "cosmic inflation",
+        "strength": 0.018052926287055016,
+        "length": 175.55555725097656
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1401.4933v3"],
+        "id": "time travel",
+        "strength": 0.019208315759897232,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 112.07652282714844,
+    "gravity": 0.7185370326042175,
+    "x": 849.4537353515625
+  },
+  {
+    "term": "gravitational constant",
+    "connections": [{
+      "shared": ["http://arxiv.org/abs/1403.2470v2"],
+      "id": "string theory",
+      "strength": 0.013776011765003204,
+      "length": 120
+    }],
+    "hardLock": false,
+    "y": -186.60691833496094,
+    "gravity": 0.837277889251709,
+    "x": 985.9404907226562
+  },
+  {
+    "term": "equivalence principle",
+    "connections": [{
+      "shared": ["http://arxiv.org/abs/1406.2934v1"],
+      "id": "hilbert space",
+      "strength": 0.016550851985812187,
+      "length": 162.85714721679688
+    }],
+    "hardLock": false,
+    "y": 88.41889190673828,
+    "gravity": 0.7715907096862793,
+    "x": 285.3340759277344
+  },
+  {
+    "term": "black hole information paradox",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1401.4097v1",
+          "http://arxiv.org/abs/1401.7820v1",
+          "http://arxiv.org/abs/1409.5941v1",
+          "http://arxiv.org/abs/1406.2011v2",
+          "http://arxiv.org/abs/1406.0807v1"
+        ],
+        "id": "black hole",
+        "strength": 0.015642978250980377,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1409.5941v1",
+          "http://arxiv.org/abs/1401.7820v1"
+        ],
+        "id": "event horizon",
+        "strength": 0.012075631879270077,
+        "length": 60
+      }
+    ],
+    "hardLock": false,
+    "y": 476.7041931152344,
+    "gravity": 0.8110855221748352,
+    "x": -47.68190002441406
+  },
+  {
+    "term": "closed timelike curve",
+    "connections": [],
+    "hardLock": false,
+    "y": -324.2864074707031,
+    "gravity": 0.837277889251709,
+    "x": 1477.47802734375
+  },
+  {
+    "term": "time travel",
+    "connections": [
+      {
+        "shared": ["http://arxiv.org/abs/1401.4933v3"],
+        "id": "string theory",
+        "strength": 0.01817559450864792,
+        "length": 140
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2"
+        ],
+        "id": "spacetime",
+        "strength": 0.01740998588502407,
+        "length": 60
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1401.4933v3"],
+        "id": "quantum gravity",
+        "strength": 0.01976204290986061,
+        "length": 140
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1404.5750v1"
+        ],
+        "id": "symmetry",
+        "strength": 0.01758216880261898,
+        "length": 60
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1411.6052v2",
+          "http://arxiv.org/abs/1409.2179v1"
+        ],
+        "id": "wormhole",
+        "strength": 0.0122426962479949,
+        "length": 20
+      },
+      {
+        "shared": [
+          "http://arxiv.org/abs/1404.5750v1",
+          "http://arxiv.org/abs/1405.7670v2",
+          "http://arxiv.org/abs/1411.6052v2"
+        ],
+        "id": "exotic matter",
+        "strength": 0.01705867424607277,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1401.4933v3"],
+        "id": "theory of everything",
+        "strength": 0.019208315759897232,
+        "length": 140
+      }
+    ],
+    "hardLock": true,
+    "y": 50.007164001464844,
+    "gravity": 0.8110855221748352,
+    "x": 1033.131591796875
+  },
+  {
+    "term": "m-theory",
+    "connections": [{
+      "shared": [
+        "http://arxiv.org/abs/1410.4190v2",
+        "http://arxiv.org/abs/1402.3376v1",
+        "http://arxiv.org/abs/1412.5618v1",
+        "http://arxiv.org/abs/1406.6688v1"
+      ],
+      "id": "string theory",
+      "strength": 0.015520519576966763,
+      "length": 20
+    }],
+    "hardLock": false,
+    "y": -72.94712829589844,
+    "gravity": 0.837277889251709,
+    "x": 1092.1932373046875
+  },
+  {
+    "term": "non-euclidean geometry",
+    "connections": [
+      {
+        "shared": [
+          "http://arxiv.org/abs/1407.8529v2",
+          "http://arxiv.org/abs/1401.6192v1",
+          "http://arxiv.org/abs/1405.0640v2"
+        ],
+        "id": "euclidean space",
+        "strength": 0.01338308583945036,
+        "length": 20
+      },
+      {
+        "shared": ["http://arxiv.org/abs/1405.0640v2"],
+        "id": "riemannian manifold",
+        "strength": 0.01667393557727337,
+        "length": 140
+      }
+    ],
+    "hardLock": false,
+    "y": 238.91766357421875,
+    "gravity": 0.8110855221748352,
+    "x": 947.496337890625
+  }
+]}

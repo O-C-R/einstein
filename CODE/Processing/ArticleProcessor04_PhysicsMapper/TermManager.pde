@@ -23,18 +23,17 @@ class TermManager {
 
 
   //
-  void loadDefaultTermPositions(String dirName) {
+  void loadDefaultTermPositions(String dirName, HashMap<String, Article> articlesHMIn) {
     println("\n\n in loadDefaultTermPositions");
     String[] options = OCRUtils.getFileNames(dirName, false);
     String fileName = "";
     println("options.size(): "+ options.length + " for dirName: " + dirName);
     for (String s : options) {
-
       if (s.contains("defaultPositions.json")) {
         fileName = s;
       }
     }
-    if (fileName.length() > 0) readInTermPositions(fileName);
+    if (fileName.length() > 0) readInTermPositions(fileName, articlesHMIn);
   } // end loadDefaultTermPositions
 
   //
@@ -49,7 +48,7 @@ class TermManager {
   // use the counts of terms to assign gravities...
   // make a sort of calculation that rewards those terms which are more specific and don't have as many..
   public void assignGravities(HashMap<String, Article> articlesHMIn) {
-    float minGravity = .1;
+    float minGravity = .3;
     float maxGravity = 1f;
     float maxAverageCount = .7; // this will be the upper bound for determining gravity/pull;
 
@@ -83,12 +82,24 @@ class TermManager {
         //println("log(minCount): " + log(minCount));
         //println("log(maxCount): " + log(maxCount));
       }
-      println("gravity for: " + t.term + " -- " + gravity);
+      //println("gravity for: " + t.term + " -- " + gravity);
       t.gravity = gravity;
 
       //println("term: " + t.term + " -- articleCount: " + articleCount + "  docCount: "  + docCount + "   gravity: " + gravity);
     }
   } // end assignGravities
+
+  //
+  public void setZs() {
+    
+    float maxZ = 300f; // max height above baseZ
+    float maxCount = 0;
+    for (Term t : terms) maxCount = (maxCount > t.articles.length ? maxCount : t.articles.length);
+    for (Term t : terms) {
+      float newZ = map(t.articles.length, 0, maxCount, 0, maxZ);
+      t.setZ(newZ);
+    }
+  } // end setZs
 
 
   // set the positions of all article to the exact positions
@@ -273,6 +284,27 @@ class TermManager {
   } // end display
 
   //
+  void display(PGraphics pg, float termBaseZIn) {
+    for (Term t : terms) t.display(pg, termBaseZIn);
+    // draw the network map 
+    float minAlpha = 30f;
+    float maxAlpha = 250f;
+    float maxCountToUse = 300; // max articles to use for the alpha map.  any more than this will still result in maxAlpha
+    for (int i = 0; i < terms.size (); i++) {
+      Term t1 = terms.get(i);
+      for (int j = i + 1; j < terms.size (); j++) {
+        Term t2 = terms.get(j);
+        if (t1.sharedArticles.containsKey(t2)) {
+          int sharedCount = ((ArrayList<Article>)t1.sharedArticles.get(t2)).size();
+          float thisAlpha = constrain(map(sharedCount, 0, maxCountToUse, minAlpha, maxAlpha), minAlpha, maxAlpha);
+          pg.stroke(colorTermNetwork, thisAlpha);
+          pg.line(t1.pos.x, t1.pos.y, termBaseZIn, t2.pos.x, t2.pos.y, termBaseZIn);
+        }
+      }
+    }
+  } // end display
+
+  //
   void showPhysics(PGraphics pg) {
     for (Term t : terms) {
       t.showPhysics(pg);
@@ -359,6 +391,14 @@ class TermManager {
         con.setFloat("strength", t.connectionStrengths.get(i));
         con.setFloat("length", t.connectionLengths.get(i));
         conJar.setJSONObject(conJar.size(), con);
+
+        JSONArray shared = new JSONArray();
+        ArrayList<Article> sharedArticles = (ArrayList<Article>)t.sharedArticles.get(t.connections.get(i));
+        for (Article a : sharedArticles) {
+          shared.setString(shared.size(), a.id);
+        }
+
+        con.setJSONArray("shared", shared);
       }
       jj.setJSONArray("connections", conJar);
 
@@ -372,7 +412,7 @@ class TermManager {
   } // end writeOutTermPositions
 
   //
-  void readInTermPositions(String fileName) {
+  void readInTermPositions(String fileName, HashMap<String, Article> articlesHMIn) {
     println("in readInTermPositions for TermManager");
     try {
       JSONObject json = loadJSONObject(fileName);
@@ -402,7 +442,18 @@ class TermManager {
           float conStrength = con.getFloat("strength");
           float conLength = con.getFloat("length");
           Term otherTerm = (Term)termsHM.get(conTerm);
-          t.addConnection(otherTerm, conStrength, conLength);
+
+
+          ArrayList<Article> sharedArticles = new ArrayList();
+          JSONArray sharedArticlesAr = con.getJSONArray("shared");
+          for (int k = 0; k < sharedArticlesAr.size (); k++) {
+            String articleId = sharedArticlesAr.getString(k);
+            if (articlesHMIn.containsKey(articleId)) {
+              sharedArticles.add((Article)articlesHMIn.get(articleId));
+            }
+          }
+
+          t.addConnection(otherTerm, conStrength, conLength, sharedArticles);
         }
       }
     } 
@@ -426,9 +477,9 @@ class TermManager {
 
 
 // some variables used for repulsion -- since used to makeTermNetwork and also rebuildTermNetwork
-float repulseLengthMax = 460;
-float repulseLengthMin = 10;
-float repulseStrength = .003;
+float repulseLengthMax = 860; // 460
+float repulseLengthMin = 100; // 10
+float repulseStrength = .001;
 
 
 // 
@@ -443,6 +494,17 @@ float repulseStrength = .003;
 //     by taking the highest percent of articles shared and then mapping it on a constrained scale between a min and max length
 //   
 public void makeTermNetwork() {
+  // ****** CHANGE TOLERANCE HERE ****** //
+  // ****** CHANGE TOLERANCE HERE ****** //
+  // ****** CHANGE TOLERANCE HERE ****** //
+  // ****** CHANGE TOLERANCE HERE ****** //
+  float tolerance = .55; // .55 seems to work well.  HIGHER number will make for a more connected network
+  // ****** CHANGE TOLERANCE HERE ****** //
+  // ****** CHANGE TOLERANCE HERE ****** //
+  // ****** CHANGE TOLERANCE HERE ****** //
+  // ****** CHANGE TOLERANCE HERE ****** //
+
+
   physics.clear();
   for (Term t : termManager.terms) {
     t.connections.clear();
@@ -466,10 +528,10 @@ public void makeTermNetwork() {
   int maxNumberOfConnections = 0;
   float scoreDivider = 1f; // to weaken it a bit?
   float attractLength = 0f;
-  float minAttractLength = 20f;
-  float maxAttractLength = 220f;
+  float minAttractLength = 20f; // 20
+  float maxAttractLength = 220f; // 220
   float attractStrength = 0f;
-  float maxAttractStrength = .01;
+  float maxAttractStrength = .025;
   for (int i = 0; i < termManager.terms.size (); i++) {
     Term t1 = termManager.terms.get(i);
     for (int j = i + 1; j < termManager.terms.size (); j++) {
@@ -477,6 +539,7 @@ public void makeTermNetwork() {
       int similarArticleCount = 0;
       float totalArticleScore = 0f;
       int totalArticles = t1.articleIndex.size() + t2.articleIndex.size();
+      ArrayList<Article> sharedArticles = new ArrayList();
       for (Map.Entry t1Me : t1.articleIndex.entrySet ()) {
         Article art = (Article)t1Me.getKey();
         float t1Score = t1.articleScores[(Integer)t1.articleIndex.get(art)];
@@ -484,6 +547,7 @@ public void makeTermNetwork() {
           float t2Score = t2.articleScores[(Integer)t2.articleIndex.get(art)];
           totalArticleScore += t2Score + t1Score;
           similarArticleCount++;
+          sharedArticles.add(art);
         }
       }
       if (similarArticleCount > 0) {
@@ -493,16 +557,22 @@ public void makeTermNetwork() {
         float highestSharedPercent = max((float)similarArticleCount / t1.articleIndex.size(), (float)similarArticleCount / t2.articleIndex.size());
         attractLength = constrain(map(highestSharedPercent, 0, .5, maxAttractLength, minAttractLength), minAttractLength, maxAttractLength);
 
-        // ****** CHANGE TOLERANCE HERE ****** //
-        if (attractStrength < .45 * maxAttractStrength) continue;
+        // ******* //
+        // ******* //
+        // ******* //
+        if (attractStrength < (1 - tolerance) * maxAttractStrength) continue;
+        // ******* //
+        // ******* //
+        // ******* //
+
         println("similar: " + similarArticleCount + " attractStrength: " + attractStrength + " highestSharedPercent: " + highestSharedPercent);
         VerletParticle2D a = t1.particle;
         VerletParticle2D b = t2.particle;
         VerletSpring2D spring = new VerletSpring2D(a, b, attractLength, attractStrength);
         physics.addSpring(spring);
         //allSprings.add(spring);
-        t1.addConnection(t2, attractStrength, attractLength);
-        t2.addConnection(t1, attractStrength, attractLength);
+        t1.addConnection(t2, attractStrength, attractLength, sharedArticles);
+        t2.addConnection(t1, attractStrength, attractLength, sharedArticles);
         maxNumberOfConnections = (maxNumberOfConnections > t1.connections.size() ? maxNumberOfConnections : t1.connections.size());
       }
     }

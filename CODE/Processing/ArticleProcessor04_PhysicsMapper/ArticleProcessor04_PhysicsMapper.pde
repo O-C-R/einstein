@@ -66,13 +66,19 @@ HashMap<String, Article> articlesHM = new HashMap();
 int[] targetYears = {
   2014,
 }; // years to choose from
-boolean articlesOn = false; // whether or not show the articles and do the box2d stuff
+boolean articlesOn = true; // whether or not show the articles and do the box2d stuff
+boolean useArticleZ = true; // will eitehr use the z factor in displaying the Articles or not
+boolean drawConnectingLines = false; // will draw lines from the articles to their concepts
 
 // TERMS
 TermManager termManager = new TermManager();
 // setting up the term network via box2d
-boolean showPhysics = true;
+boolean showPhysics = false; // if true will show the 'physics' lines between the terms
 boolean physicsOn = false; // leave as false
+// basez level of the terms
+float termBaseZ = -1400f; // where the base is for all Terms
+
+
 
 // ****** //
 // note that this will make it so that it will load up whatever the defaultPositions.json file is .. .which should include all physics stuff and positions regarless of how many articles are loaded
@@ -80,6 +86,8 @@ boolean physicsOn = false; // leave as false
 // then after the default positions have been set and saved -- press 's', set this boolean to true and then relaunch the program
 // that will auto load the defaults and make it so that the space can't be modified.  
 boolean lockDefaultTermPositions = false; // if set to true will not save or overwrite the default nor will it do the physics stuff
+
+boolean lockDefaultArticlePositions = false; // if set to true will not save or overwrite the article positions.  nor will it do box2d stuff
 
 
 
@@ -95,7 +103,7 @@ boolean useAngles = false;
 
 // box2d
 Box2DProcessing box2d;
-boolean box2dOn = true;
+boolean box2dOn = false;
 
 
 
@@ -118,7 +126,7 @@ void setup() {
   importTerms(sketchPath("") + termDirectory);
   println("loaded: " + termManager.terms.size() + " terms");
 
-  termManager.loadDefaultTermPositions(sketchPath("") + termDirectory);
+
 
 
   // make box2d
@@ -134,6 +142,9 @@ void setup() {
 
   // load up the simplified set within the pre-sorted years
   importArticles(sketchPath("") + arxivDirectory2014, new int[0]);
+
+  // this needs to happen after articles are imported
+  termManager.loadDefaultTermPositions(sketchPath("") + termDirectory, articlesHM);
 
   //HashMap<String, ArrayList<Term>> articleTerms = importArticleTerms();
   // this will read in the category scores for the articles as assigned by alchemy
@@ -153,12 +164,23 @@ void setup() {
   dealWithTermless(articlesHM, termManager.terms);
 
 
+  // setup the term z's
+  termManager.setZs();
+
+
   // temp check
   //for (int i = 0; i < 10; i++) println(articles.get(i).toSimplifiedString() + " \n\n\n____");
 
+  // setup the sizes of each article based on something
+  if (articlesOn) setupArticleSizes(articles); // note that this requires the citers to be set
+
+  // setup the color factors and inner circles and all that
+  if (articlesOn) setupArticleColorsAndStuff(articles);
+
+
   // setup the bodies for the articles
   //for (Article a : articles) a.setupBody(10f);
-  if (articlesOn) for (Article a : articles) a.setupBody(a.radius);
+  if (articlesOn) for (Article a : articles) a.setupBody();
 
 
   // make the 'gravity' for each term
@@ -167,6 +189,13 @@ void setup() {
   // set the initial positions
   if (articlesOn) termManager.setArticlesToExactPositions(articles);
   if (articlesOn) termManager.updateArticleTargets(articles);
+
+  if (articlesOn) {
+    loadDefaultArticlePositions(sketchPath("") + articlePositionsDirectory);
+  }
+
+  // do the height check
+  if (articlesOn) setupArticleZs(articles); 
 
 
 
@@ -177,14 +206,17 @@ void setup() {
 void draw() {
   zpt.use();
   if (useAngles) {
-    ortho();
+    ortho(0, width, 0, height, -23400, 3000); // overmanage the clipping plane
     rotateX(xAngle); // angles it to the side
     rotateZ(zAngle); // rotates it around z axis
   }
 
 
+  if (lockDefaultArticlePositions) box2dOn = false;
   if (box2dOn) box2d.step();  
 
+
+  if (lockDefaultTermPositions) physicsOn = false;
   if (physicsOn) {
     physics.update();
   }
@@ -199,24 +231,29 @@ void draw() {
 
 
 
-  noFill();
-  stroke(255, 0, 0, 150);
-  rect(0, 0, width, height);
+  //noFill();
+  //stroke(255, 0, 0, 150);
+  //rect(0, 0, width, height);
 
   termManager.update(worldLoc, articles, !articlesOn);
-  termManager.debugDisplay(g);
+  //termManager.debugDisplay(g);
+  termManager.display(g, termBaseZ);
 
   float sc = zpt.sc.value();
 
 
   if (articlesOn) {
+    if (drawConnectingLines) drawLinesFromArticlesToConcepts(g, articles, useArticleZ);
+
+
     for (Article a : articles) {
       a.update();
-      a.debugDisplayTarget(g);
+      //a.debugDisplayTarget(g);
     }
     boolean doShowMouseOver = true;
     for (Article a : articles) {
-      if (a.debugDisplay(g, sc, worldLoc, doShowMouseOver)) doShowMouseOver = false;
+      //if (a.debugDisplay(g, sc, worldLoc, doShowMouseOver)) doShowMouseOver = false;
+      a.display(g, useArticleZ);
     }
   }
 
@@ -239,6 +276,7 @@ void draw() {
     text("xAngle: " + xAngle, 20, 20);
     text("zAngle: " + zAngle, 20, 40);
   }
+  text("termBaseZ: "+ termBaseZ, 20, 60);
 } // end draw
 
 //

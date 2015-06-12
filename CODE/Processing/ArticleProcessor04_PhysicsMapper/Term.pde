@@ -13,6 +13,7 @@ class Term {
 
   // and a z
   float z = 0f;
+  
 
 
   boolean mouseIsOver = false;
@@ -29,15 +30,16 @@ class Term {
   // physics stuff
   VerletParticle2D particle;
   ArrayList<Term> connections = new ArrayList(); // for which other Terms this is connected to 
+  HashMap<Term, ArrayList<Article>> sharedArticles = new HashMap(); // same as connections, but just a list of the articles they share within a HashMap
   ArrayList<Float> connectionStrengths = new ArrayList();  // the strength of the connection
   ArrayList<Float> connectionLengths = new ArrayList();  // the length of the connection
   boolean hardLock = false; // if manually locking a thing this gets set to true
   float relativeConnectionPercentile = 0; // based on how many connections this Term has relative to the term with max no of connections
 
   boolean connectionSelected = false;
-  
-  
-  
+
+
+
 
 
 
@@ -57,13 +59,19 @@ class Term {
   } // end addArticle
 
     //
-  public void addConnection(Term t, float str, float len) {
+  public void addConnection(Term t, float str, float len, ArrayList<Article> sharedArticlesIn) {
     connections.add(t);
     connectionStrengths.add(str);
     connectionLengths.add(len);
+    sharedArticles.put(t, sharedArticlesIn);
   } // end addConnection
 
   //
+  public void setZ(float z) {
+    this.z = z;
+  } // end setZ
+
+    //
   public void update(PVector pt) {
     // always record if mouse is over
     lastPos.set(pos.x, pos.y);
@@ -172,6 +180,23 @@ class Term {
       }
     }
   } // end debugDisplay
+
+  //
+  public void display(PGraphics pg, float baseZIn) {
+    pg.pushMatrix();
+    pg.pushStyle();
+    pg.fill(colorArticleBackgroundMin);
+    pg.translate(pos.x, pos.y, baseZIn + z);
+    //pg.stroke(colorArticleBackgroundMin);
+    noStroke();
+    pg.ellipse(0, 0, 2 * rad, 2 * rad);
+    pg.textAlign(CENTER, CENTER);
+    pg.text(term + "-" + articles.length, 0, 0);
+    pg.popStyle();
+    pg.stroke(colorArticleBackgroundMin, 150);
+    pg.line(0, 0, 0, 0, 0, -z);
+    pg.popMatrix();
+  } // end display
 
   //
   public void showPhysics(PGraphics pg) {

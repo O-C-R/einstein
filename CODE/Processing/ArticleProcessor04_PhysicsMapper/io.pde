@@ -98,6 +98,14 @@ public Article makeArticleFromXML(XML a) {
   XML titleXML = a.getChild("title");
   String title = titleXML.getContent();
 
+  boolean published = false;
+  try {
+    XML publishedComment = a.getChild("arxiv:journal_ref");
+    if (publishedComment != null) published = true;
+  } 
+  catch (Exception e) {
+  }
+
 
   XML[] categories = a.getChildren("category");
   String[] cats = new String[0];
@@ -114,6 +122,8 @@ public Article makeArticleFromXML(XML a) {
   newArticle.title = newArticle.title.replace("  ", " ");
   newArticle.abstractString = abstractString.replace("\n", " ");
   newArticle.abstractString = newArticle.abstractString.replace("\r", " ");
+  
+  newArticle.published = published;
 
   // split into sentences
   newArticle.abstractSentences = RiTa.splitSentences(newArticle.abstractString);
@@ -375,7 +385,7 @@ String getFileName(String s) {
 public void inputTermLocations(File selection) {
   println("in inputDirectionLocations");
   try {
-    termManager.readInTermPositions(selection.getAbsolutePath());
+    termManager.readInTermPositions(selection.getAbsolutePath(), articlesHM);
   } 
   catch (Exception e) {
     println("problem loading up file: " + selection.getAbsolutePath());
@@ -396,9 +406,16 @@ public void outputTermLocations(File selection) {
 
 //
 // save the default Article positions
-public void saveDefaultArticlePositions(){
-  
+public void saveDefaultArticlePositions(String dirName) {
+  saveArticlePositions(dirName + "defaultArticlePositions");
 } // end saveDefaultArticlePositions 
+
+// save the raw direction locations
+public void outputArticlePositions(File selection) {
+  println("in outputArticlePositions");
+  println("selection.abs path: " + selection.getAbsolutePath());
+  saveArticlePositions(selection.getAbsolutePath());
+} // end outputArticlePositions
 
 // 
 // save the Article positions
@@ -410,21 +427,38 @@ public void saveArticlePositions(String fileName) {
     for (Article a : articles) {
       JSONObject jj = new JSONObject();
       jj.setString("id", a.id);
-      jj.setFloat("x", a.regPos.x);
-      jj.setFloat("y", a.regPos.y);
+      PVector bodyPos = a.getBox2dPosition();
+      jj.setFloat("x", bodyPos.x);
+      jj.setFloat("y", bodyPos.y);
+      jj.setFloat("z", a.z);
       jar.setJSONObject(jar.size(), jj);
     }
     json.setJSONArray("articles", jar);
+    saveJSONObject(json, fileName + ".json");
+    println("wrote out article position file");
   } 
   catch (Exception e) {
     println("problem saving out article positions");
   }
 } // end saveArticlePositions
 
+
+
 //
+// save the default Article positions
+public void loadDefaultArticlePositions(String dirName) {
+  loadArticlePositions(dirName + "defaultArticlePositions.json");
+} // end loadDefaultArticlePositions
+//
+// save the raw direction locations
+public void inputArticlePositions(File selection) {
+  println("in inputArticlePositions");
+  println("selection.abs path: " + selection.getAbsolutePath());
+  loadArticlePositions(selection.getAbsolutePath());
+} // end outputArticlePositions
 // load up the Article positions
 public void loadArticlePositions(String fileName) {
-  println("in saveArticlePositions to fileName: " + fileName);
+  println("in loadArticlePositions to fileName: " + fileName);
   try {
     JSONObject json = loadJSONObject(fileName);
     JSONArray jar = json.getJSONArray("articles");
@@ -433,6 +467,7 @@ public void loadArticlePositions(String fileName) {
       String id = jj.getString("id");
       float x = jj.getFloat("x");
       float y = jj.getFloat("y");
+      float z = jj.getFloat("z");
       if (articlesHM.containsKey(id)) {
         Vec2 newPos = new Vec2(x, y);
         Article a = (Article)articlesHM.get(id);
