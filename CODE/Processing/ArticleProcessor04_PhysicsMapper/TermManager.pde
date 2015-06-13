@@ -91,7 +91,7 @@ class TermManager {
 
   //
   public void setZs() {
-    
+
     float maxZ = 300f; // max height above baseZ
     float maxCount = 0;
     for (Term t : terms) maxCount = (maxCount > t.articles.length ? maxCount : t.articles.length);
@@ -288,9 +288,15 @@ class TermManager {
     for (Term t : terms) t.displayLines(pg, termBaseZIn);
   } // end displayLines
   //
-  void displayText(PGraphics pg, float termBaseZIn) {
+  public void displayText(PGraphics pg, float termBaseZIn) {
     for (Term t : terms) t.displayText(pg, termBaseZIn);
   } // end displayText
+  //
+  public ArrayList<SVGText> getSVGTexts() {
+    ArrayList<SVGText> svgTexts = new ArrayList();
+    for (Term t : terms) svgTexts.add(t.svgText);
+    return svgTexts;
+  } // end getSVGTexts
   //
   void displayNetwork(PGraphics pg, float termBaseZIn) {
     // draw the network map 

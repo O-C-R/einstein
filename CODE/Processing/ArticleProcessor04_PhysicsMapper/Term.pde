@@ -38,6 +38,8 @@ class Term {
 
   boolean connectionSelected = false;
 
+  SVGText svgText = null; // keep this in the background.  this is used when saving out the text positions in editable format
+  PVector svgScreenPos = new PVector();
 
 
 
@@ -196,6 +198,12 @@ class Term {
   } // end displayLines
   //
   public void displayText(PGraphics pg, float baseZIn) {
+    // save out the svgText
+    svgScreenPos.set(screenX(pos.x, pos.y, baseZIn + z), screenY(pos.x, pos.y, baseZIn + z));
+    if (svgText == null) {
+      svgText = new SVGText(term, new PVector());
+    }
+    svgText.updatePos(svgScreenPos);
     pg.pushMatrix();
     pg.pushStyle();
     pg.fill(colorArticleBackgroundMin);
@@ -204,6 +212,7 @@ class Term {
     pg.text(term + "-" + articles.length, 0, 0);
     pg.popStyle();
     pg.popMatrix();
+    
   } // end displayText
 
   //

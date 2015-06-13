@@ -38,3 +38,49 @@ public void drawRegistration(PGraphics pg) {
 //
 //
 
+
+
+
+// SVG STUFF SVG STUFF
+// 
+// see http://tutorials.jenkov.com/svg/text-element.html
+public void saveSVGText(ArrayList<SVGText> txtIn, String writeTo) {
+  if (!writeTo.contains(".svg")) writeTo += ".svg";
+  PrintWriter output = createWriter(writeTo);
+  output.println("<svg height=\"" + height +"\" width=\""+ width + "\">");
+  for (SVGText ss : txtIn) output.println(ss.getSVGOutput());
+  output.println("</svg>");
+  output.flush();
+  output.close();
+  println("wrote out svg to " + writeTo);
+} // end saveSVGText
+
+//
+public class SVGText {
+  String txt = "";
+  PVector pos = new PVector();
+
+  // 
+  public SVGText(String txt, PVector pos) {
+    this.txt = txt;
+    this.pos = pos;
+  } // end constructor
+  //
+  public void updatePos(PVector pos) {
+    this.pos.set(pos.x, pos.y);
+  } // end updatePos
+  //
+  public String getSVGOutput() {
+    String builder = "";
+    builder += "<text x=\"" + pos.x + "\" y=\"" + pos.y + "\" fill=\"black\">" + txt + "</text>";
+    return builder;
+  } //end getSVGOutput
+} // end class SVGText
+
+//
+//
+//
+//
+//
+//
+

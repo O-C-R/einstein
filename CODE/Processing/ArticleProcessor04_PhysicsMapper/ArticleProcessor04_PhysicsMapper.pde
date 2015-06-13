@@ -382,7 +382,13 @@ void draw() {
   termManager.update(worldLoc, articles, !articlesOn);
   if (termDebug) termManager.debugDisplay(g);
   if ((termDisplay && renderIndex >= renderSteps.length) || (renderIndex < renderSteps.length && renderSteps[renderIndex].equals("termText"))) {
+    boolean getSVGTexts = (renderIndex < renderSteps.length && renderSteps[renderIndex].equals("termText"));
     termManager.displayText(g, termBaseZ);
+    if (getSVGTexts) {
+      // save it out
+      ArrayList<SVGText> svgTexts = termManager.getSVGTexts();
+      saveSVGText(svgTexts, renderDirectory + renderSteps[renderIndex] + ".svg");
+    }
   }
   if ((termDisplay && renderIndex >= renderSteps.length) || (renderIndex < renderSteps.length && renderSteps[renderIndex].equals("termLines"))) {
     termManager.displayLines(g, termBaseZ);
