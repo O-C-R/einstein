@@ -5,7 +5,7 @@ void mousePressed() {
     termManager.dealWithMousePressed(worldLoc, isRight);
   } else if (mouseButton == RIGHT) {
     isRight = true;
-    termManager.dealWithMousePressed(worldLoc, isRight);
+    if (termDebug) termManager.dealWithMousePressed(worldLoc, isRight);
   }
 } // end mousePressed
 
@@ -15,7 +15,7 @@ void mouseReleased() {
   if (mouseButton == RIGHT) {
     zpt.dealWithMouseReleased();
   } else if (mouseButton == LEFT) {
-    termManager.dealWithMouseReleased(worldLoc, articles);
+    if (termDebug) termManager.dealWithMouseReleased(worldLoc, articles);
   }
 } // end mouseReleased
 
@@ -26,7 +26,7 @@ void mouseDragged() {
     zpt.dealWithMouseDragged(mouseLoc, mouseOffset);
   } else if (mouseButton == LEFT) {
     if (lockDefaultTermPositions) return;
-    termManager.dealWithMouseDragged(worldLoc);
+    if (termDebug) termManager.dealWithMouseDragged(worldLoc);
   }
 } // end mouseDragged
 
@@ -48,6 +48,15 @@ void keyReleased() {
     }
   }
 
+  if (key == 'd') {
+    termDebug = !termDebug;
+    println("termDebug set to: " + termDebug);
+  }
+  if (key == 't') {
+    termDisplay = !termDisplay;
+    println("termDisplay set to: " + termDisplay);
+  }
+
   if (key == 'a') {
     useAngles = !useAngles;
     println("toggled useAngles to: " + useAngles);
@@ -57,8 +66,13 @@ void keyReleased() {
     println("drawConnectingLines set to: " + drawConnectingLines);
   }
 
+  if (key == 'g') {
+    gridOn = !gridOn;
+  } 
+
 
   if (key == 'r') {
+    if (physicsOn) physicsOn = false;
     println("inputting the term locations");
     selectInput("Choose term location file:", "inputTermLocations");
   }
@@ -68,11 +82,12 @@ void keyReleased() {
     selectOutput("Write out the term locations to file:", "outputTermLocations");
   }
 
-  if (key == 'q') {
+  if (key == 'q') {    
     if (lockDefaultTermPositions) return;
     termManager.saveDefaultTermPositions(sketchPath("") + termDirectory);
   }
   if (key == 'w') {
+    if (physicsOn) physicsOn = false;
     if (lockDefaultTermPositions) return;
     termManager.loadDefaultTermPositions(sketchPath("") + termDirectory, articlesHM);
   }
@@ -96,10 +111,12 @@ void keyReleased() {
   }
   if (key == '3') {
     if (lockDefaultArticlePositions) return;
+    if (box2dOn) box2dOn = false;
     println("saving specific article positions");
     selectOutput("Write out the article positions to file:", "outputArticlePositions");
   }
   if (key == '4') {
+    if (box2dOn) box2dOn = false;
     println("saving specific article positions");
     selectInput("Choose an article position file to input:", "inputArticlePositions");
   }
@@ -109,6 +126,7 @@ void keyReleased() {
   }
 
   if (key == '-') {
+    if (lockDefaultArticlePositions) return;
     //termManager.setTermPositionsLeft();
     termManager.setArticlesToExactPositions(articles);
     termManager.updateArticleTargets(articles); // update all article targets
@@ -154,14 +172,43 @@ void keyReleased() {
       if (t.selected) t.setHardLock();
     }
   } 
+  
+  
+  // output
   if (key == '`') {
-    saveFrame("frames/" + OCRUtils.getTimeStampWithDate() + ".jpg"); 
+    //saveFrame("frames/" + OCRUtils.getTimeStampWithDate() + ".tif"); 
+    saveFrame("frames/" + OCRUtils.getTimeStampWithDate() + ".jpg");
     println("saved frame");
+  }
+
+  if (key == 'm') {
+    if (!movieSave) {
+      movieSaveDirectory = "movieFrames/" + OCRUtils.getTimeStampWithDate() + "/";
+      println("saving movie to " + movieSaveDirectory);
+      movieSave = true;
+    } else {
+      println("done saving out movie");
+      movieSave = false;
+    }
+  }
+  if (key == '6') {
+    renderThings();
+  } 
+  
+  // panning stuff
+  if (key == '\'') {
+   zpt.centerScreenOn(new PVector(84, -46), zpt.sc.value(), 100); 
+  }
+  if (key == ';') {
+   zpt.centerScreenOn(new PVector(1150, 1346), zpt.sc.value(), 1100); 
   }
 } // end keyReleased
 
 //
 //
+////
 //
+//
+////
 //
 

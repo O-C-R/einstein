@@ -28,7 +28,7 @@ public void setupArticleColorsAndStuff(ArrayList<Article> articlesIn) {
   // ****** //
   float maxAuthorsToUse = 20;
   float maxAuthorsActual = 0;
-  float maxTotalAuthorCountsRatioToUse = 18; // as in total papers by all authors divided by author count
+  float maxTotalAuthorCountsRatioToUse = 45; // as in total papers by all authors divided by author count
   // ****** //
   // ****** //
   for (Article a : articles) maxAuthorsActual = (a.authorCounts.size() > maxAuthorsActual ? a.authorCounts.size() : maxAuthorsActual);

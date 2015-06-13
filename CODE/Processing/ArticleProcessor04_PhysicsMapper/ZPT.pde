@@ -179,7 +179,7 @@ class ZoomPanTilt {
     screenLocation.x -= screenDims.x / 2;
     screenLocation.y -= screenDims.y / 2;
     // fix up the zoom here to make it zoom to the right spot when angled
-    float scaleAmt = .33;
+    float scaleAmt = .13;
     float newScale = sc.value();
     switch(whereTo) {
     case ZOOM_IN:

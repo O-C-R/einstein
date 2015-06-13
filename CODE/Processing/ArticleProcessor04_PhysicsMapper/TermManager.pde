@@ -284,8 +284,15 @@ class TermManager {
   } // end display
 
   //
-  void display(PGraphics pg, float termBaseZIn) {
-    for (Term t : terms) t.display(pg, termBaseZIn);
+  void displayLines(PGraphics pg, float termBaseZIn) {
+    for (Term t : terms) t.displayLines(pg, termBaseZIn);
+  } // end displayLines
+  //
+  void displayText(PGraphics pg, float termBaseZIn) {
+    for (Term t : terms) t.displayText(pg, termBaseZIn);
+  } // end displayText
+  //
+  void displayNetwork(PGraphics pg, float termBaseZIn) {
     // draw the network map 
     float minAlpha = 30f;
     float maxAlpha = 250f;
@@ -302,7 +309,7 @@ class TermManager {
         }
       }
     }
-  } // end display
+  } // end displayNetwork
 
   //
   void showPhysics(PGraphics pg) {
@@ -477,8 +484,8 @@ class TermManager {
 
 
 // some variables used for repulsion -- since used to makeTermNetwork and also rebuildTermNetwork
-float repulseLengthMax = 860; // 460
-float repulseLengthMin = 100; // 10
+float repulseLengthMax = 900; // 460
+float repulseLengthMin = 20; // 10
 float repulseStrength = .001;
 
 
@@ -498,7 +505,7 @@ public void makeTermNetwork() {
   // ****** CHANGE TOLERANCE HERE ****** //
   // ****** CHANGE TOLERANCE HERE ****** //
   // ****** CHANGE TOLERANCE HERE ****** //
-  float tolerance = .55; // .55 seems to work well.  HIGHER number will make for a more connected network
+  float tolerance = .5; // .55 seems to work well.  HIGHER number will make for a more connected network
   // ****** CHANGE TOLERANCE HERE ****** //
   // ****** CHANGE TOLERANCE HERE ****** //
   // ****** CHANGE TOLERANCE HERE ****** //
@@ -528,8 +535,8 @@ public void makeTermNetwork() {
   int maxNumberOfConnections = 0;
   float scoreDivider = 1f; // to weaken it a bit?
   float attractLength = 0f;
-  float minAttractLength = 20f; // 20
-  float maxAttractLength = 220f; // 220
+  float minAttractLength = 50f; // 20
+  float maxAttractLength = 350f; // 220
   float attractStrength = 0f;
   float maxAttractStrength = .025;
   for (int i = 0; i < termManager.terms.size (); i++) {

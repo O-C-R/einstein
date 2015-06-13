@@ -1,11 +1,11 @@
 // all the colors used in the sketch
 // author colors
 color colorAuthorStroke = color(255); // stroke color for author circle
-color colorAuthorMin = #ae4182; // or #ef847f fill color for the minimum number of authors metric
-color colorAuthorMax = #2eb5ab; // or #93cb9a fill color for the max number of authors metric
+color colorAuthorMin = #00aa00; // #6E99DE; //#005555; // #6bc1b0;  // #eaa200; // or #ef847f fill color for the minimum number of authors metric
+color colorAuthorMax = #FFD736; //#9375F7; // #00ffff; //#e3903a; // #fce579; // or #93cb9a fill color for the max number of authors metric
 
 // article circle fills
-color colorArticleBackgroundMin =  #4656a0;
+color colorArticleBackgroundMin =  #00ffff;
 color colorArticleBackgroundMax =  #4656a0;
 
 
@@ -24,5 +24,13 @@ color categoryFontColor = #a6bef4; //
 
 
 // published stuff
-color colorPublished = #eaa200;
-color colorUnpublished = #fce579;
+color colorPublished = #FFD736; //#9895FF; //#fe31f2;
+color colorUnpublished = #D8C267; //#908EC4; //#770077;// #2672f9; // #2eb5ab;
+
+
+// grid
+color gridColor = color(255, 0, 0, 150);
+
+
+// render
+color colorRegistration = color(100, 100, 220);

@@ -182,21 +182,29 @@ class Term {
   } // end debugDisplay
 
   //
-  public void display(PGraphics pg, float baseZIn) {
+  public void displayLines(PGraphics pg, float baseZIn) {
     pg.pushMatrix();
     pg.pushStyle();
     pg.fill(colorArticleBackgroundMin);
     pg.translate(pos.x, pos.y, baseZIn + z);
     //pg.stroke(colorArticleBackgroundMin);
     noStroke();
-    pg.ellipse(0, 0, 2 * rad, 2 * rad);
-    pg.textAlign(CENTER, CENTER);
-    pg.text(term + "-" + articles.length, 0, 0);
     pg.popStyle();
     pg.stroke(colorArticleBackgroundMin, 150);
     pg.line(0, 0, 0, 0, 0, -z);
     pg.popMatrix();
-  } // end display
+  } // end displayLines
+  //
+  public void displayText(PGraphics pg, float baseZIn) {
+    pg.pushMatrix();
+    pg.pushStyle();
+    pg.fill(colorArticleBackgroundMin);
+    pg.translate(pos.x, pos.y, baseZIn + z);
+    pg.textAlign(CENTER, CENTER);
+    pg.text(term + "-" + articles.length, 0, 0);
+    pg.popStyle();
+    pg.popMatrix();
+  } // end displayText
 
   //
   public void showPhysics(PGraphics pg) {

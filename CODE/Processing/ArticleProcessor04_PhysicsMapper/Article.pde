@@ -16,10 +16,10 @@ class Article {
   float[] termScores = new float[0]; // the score of times this term occurs... alchemy scores
   //boolean[] termInTitle = new boolean[0]; // if the term is in the title
   HashMap<Term, Integer> termIndex = new HashMap(); // Term, index for above arrays where the term lives
-  
-  
-  
-  
+
+
+
+
 
   // wos characteristics  
   public String abstractString = "";
@@ -306,11 +306,13 @@ class Article {
     pg.translate(regPos.x, regPos.y, (useArticleZIn ? 1 : 0) * z);
     // draw the main circle
     // figure the color using colorArticleBackgroundMin and colorArticleBackgroundMax
-    color colorToUse = colorArticleBackgroundMin; 
-    pg.fill(colorToUse, 100);
+    color colorToUse = colorArticleBackgroundMin;
+    float alphaToUse = constrain(map(radius, 3, 10, 50, 255), 50, 255); 
+    pg.fill(colorToUse, alphaToUse);
     // determine the stroke here
     color strokeToUse = colorUnpublished;
     if (published) strokeToUse = colorPublished;
+    noFill();
     pg.stroke(strokeToUse);
     float strokeWeightToUse = 1f;
     pg.strokeWeight(strokeWeightToUse);
@@ -319,10 +321,13 @@ class Article {
 
     // draw the author bubble
     pg.translate(0, 0, .5f);
-    //pg.fill(innerColor);
-    pg.noStroke();
+    //pg.fill(innerColor, alphaToUse);
+    pg.fill(innerColor);
+    //pg.noStroke();
+    //pg.noFill();
     pg.strokeWeight(strokeWeightToUse);
-    pg.stroke(innerStroke);
+    //pg.stroke(innerStroke);
+    pg.noStroke();
     pg.ellipse(0, 0, innerRadius * 2, innerRadius * 2);
     pg.popStyle();
     pg.popMatrix();
