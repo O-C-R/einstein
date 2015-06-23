@@ -147,20 +147,27 @@ class Term {
   public void debugDisplay(PGraphics pg) {
     pg.pushMatrix();
     pg.translate(pos.x, pos.y);
-    pg.fill(255, 0, 0, map(relativeConnectionPercentile, 0, 1f, 0, 255));
+    pg.fill(termOutline, map(relativeConnectionPercentile, 0, 1f, 0, 255));
+    //pg.fill(255, 0, 0, map(relativeConnectionPercentile, 0, 1f, 0, 255));
     if (connectionSelected) {
       pg.fill(0, 255, 0, constrain(2 * map(relativeConnectionPercentile, 0, 1f, 0, 255), 0, 255));
     }
-    pg.stroke(255, 0, 0);
+    //pg.stroke(255, 0, 0);
+    pg.stroke(termOutline);
     if (particle.isLocked()) {
       pg.stroke(0, 255, 255);
     }
-
-    pg.ellipse(0, 0, 2 * rad, 2 * rad);
-
+    pg.pushMatrix();
+    pg.rectMode(CENTER);
+    pg.rotate(PI/4);
+    pg.rect(0, 0, 2 * rad, 2 * rad);
+    //pg.ellipse(0, 0, 2 * rad, 2 * rad);
+    pg.popMatrix();
+    
     if (mouseIsOver) {
       pg.stroke(255);
-      pg.ellipse(0, 0, 2 * rad + 2, 2 * rad + 2);
+      //pg.ellipse(0, 0, 2 * rad + 2, 2 * rad + 2);
+      pg.rect(0, 0, 2* rad + 2, 2* rad + 2);
     }
     pg.fill(255, 0, 0);
     pg.textAlign(CENTER, CENTER);

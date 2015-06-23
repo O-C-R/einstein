@@ -308,17 +308,18 @@ class Article {
     // figure the color using colorArticleBackgroundMin and colorArticleBackgroundMax
     color colorToUse = colorArticleBackgroundMin;
     float alphaToUse = constrain(map(radius, 3, 10, 50, 255), 50, 255); 
-    pg.fill(colorToUse, alphaToUse);
+    //pg.fill(colorToUse, alphaToUse);
+    pg.fill(innerColor);
     // determine the stroke here
     color strokeToUse = colorUnpublished;
     if (published) strokeToUse = colorPublished;
     //noFill();
     pg.stroke(strokeToUse);
-    float strokeWeightToUse = 1f;
+    float strokeWeightToUse = 2.5f;
     pg.strokeWeight(strokeWeightToUse);
     pg.ellipse(0, 0, radius * 2, radius * 2);
 
-
+/*
     // draw the author bubble
     pg.translate(0, 0, .5f);
     //pg.fill(innerColor, alphaToUse);
@@ -329,8 +330,10 @@ class Article {
     //pg.stroke(innerStroke);
     pg.noStroke();
     pg.ellipse(0, 0, innerRadius * 2, innerRadius * 2);
+    */
     pg.popStyle();
     pg.popMatrix();
+    
   } // end display
 
 
