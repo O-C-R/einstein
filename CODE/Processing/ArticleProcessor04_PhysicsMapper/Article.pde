@@ -312,7 +312,7 @@ class Article {
     // determine the stroke here
     color strokeToUse = colorUnpublished;
     if (published) strokeToUse = colorPublished;
-    noFill();
+    //noFill();
     pg.stroke(strokeToUse);
     float strokeWeightToUse = 1f;
     pg.strokeWeight(strokeWeightToUse);

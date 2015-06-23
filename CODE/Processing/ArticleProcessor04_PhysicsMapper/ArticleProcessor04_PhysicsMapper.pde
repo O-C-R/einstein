@@ -227,7 +227,8 @@ void setup() {
   //size(1200, 800, P3D);
   //size(1200, 800, OPENGL);
   //size(1625, 1075, P3D); // page ratio titlted
-  size(1075, 1625, P3D); // page ratio
+  size(585, 774, P3D);
+  //size(1075, 1625, P3D); // page ratio
   OCRUtils.begin(this);
   SimpleTween.begin(this);
   zpt = new ZoomPanTilt(this);

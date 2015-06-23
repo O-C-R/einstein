@@ -1,0 +1,62 @@
+Concept: String theory Score: 366.315188
+Concept: Black hole Score: 366.048606
+Concept: Physical cosmology Score: 281.740454
+Concept: Gravitation Score: 193.275764
+Concept: Spacetime Score: 189.45043
+Concept: Dark matter Score: 184.878875
+Concept: Special relativity Score: 152.047441
+Concept: Quantum gravity Score: 135.954552
+Concept: Time Score: 134.984696
+Concept: Big Bang Score: 108.226019
+Concept: Gravitational wave Score: 92.045998
+Concept: Symmetry Score: 81.123056
+Concept: Hawking radiation Score: 79.385785
+Concept: Standard Model Score: 77.003298
+Concept: Neutron star Score: 64.222966
+Concept: Dark energy Score: 64.02477
+Concept: Schwarzschild radius Score: 62.141376
+Concept: Cosmological constant Score: 52.873618
+Concept: White dwarf Score: 52.308934
+Concept: Euclidean space Score: 51.763494
+Concept: Event horizon Score: 46.4129
+Concept: Supernova Score: 45.593118
+Concept: Schwarzschild metric Score: 42.079028
+Concept: Cosmic microwave background radiation Score: 41.185282
+Concept: Noether's theorem Score: 35.833022
+Concept: Black hole thermodynamics Score: 34.981544
+Concept: Black holes Score: 33.333232
+Concept: Hilbert space Score: 29.799477
+Concept: Gravitational singularity Score: 27.128374
+Concept: De Sitter space Score: 26.839969
+Concept: Loop quantum gravity Score: 25.061176
+Concept: Frame-dragging Score: 23.072569
+Concept: Hubble's law Score: 22.212745
+Concept: Cosmology Score: 17.516949
+Concept: Multiverse Score: 15.903125
+Concept: Minkowski space Score: 15.182892
+Concept: Supersymmetry Score: 14.39485
+Concept: Binary star Score: 13.070966
+Concept: Kerr metric Score: 11.522924
+Concept: Vacuum energy Score: 11.192275
+Concept: Accelerating universe Score: 10.487516
+Concept: Cosmic inflation Score: 10.363448
+Concept: De Sitter universe Score: 8.953236
+Concept: Riemannian manifold Score: 8.719907
+Concept: Wormhole Score: 8.469737
+Concept: Lambda-CDM model Score: 8.455529
+Concept: Pulsar Score: 8.012527
+Concept: Accretion disc Score: 8.010402
+Concept: Exotic matter Score: 7.750524
+Concept: Theory of everything Score: 7.476664
+Concept: Gravitational constant Score: 5.588751
+Concept: Equivalence principle Score: 4.702067
+Concept: Black hole information paradox Score: 4.601494
+Concept: Closed timelike curve Score: 4.590188
+Concept: Time travel Score: 4.353017
+Concept: M-theory Score: 4.226126
+Concept: Non-Euclidean geometry Score: 4.036201
+Concept: Knot theory Score: 0.906358
+Concept: Antimatter Score: 0.832237
+
+
+

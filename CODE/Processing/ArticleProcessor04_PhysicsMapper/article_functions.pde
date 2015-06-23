@@ -9,6 +9,7 @@ public void setupArticleSizes(ArrayList<Article> articlesIn) {
   float maxCitersToUse = 100;
   float maxCitersActual = 0;
   for (Article a : articles) maxCitersActual = (a.citerIds.size() > maxCitersActual ? a.citerIds.size() : maxCitersActual);
+  println("maxCitersActual: " + maxCitersActual);
   for (Article a : articles) {
     float targetArea = constrain(map(a.citerIds.size(), 0, maxCitersToUse, minArea, maxArea), minArea, maxArea);
     float newRadius = sqrt(targetArea / PI);
@@ -32,6 +33,8 @@ public void setupArticleColorsAndStuff(ArrayList<Article> articlesIn) {
   // ****** //
   // ****** //
   for (Article a : articles) maxAuthorsActual = (a.authorCounts.size() > maxAuthorsActual ? a.authorCounts.size() : maxAuthorsActual);
+  println("maxAuthorsActual: " + maxAuthorsActual);
+  
   for (Article a : articles) {
 
     float targetArea = constrain(map(a.authorCounts.size(), 0, maxAuthorsToUse, minArea, maxArea), minArea, maxArea);
@@ -41,7 +44,10 @@ public void setupArticleColorsAndStuff(ArrayList<Article> articlesIn) {
     // figure the color
 
     float totalAuthorCount = a.authorCountsSum; // the total papers by all authors
+    //println("totalAuthorCount: " + totalAuthorCount);
     float average = totalAuthorCount / a.authorCounts.size();
+    //print("id: " + a.id + " ");
+    //println("average: " + average);
     //float newHue = constrain(map(average, 0, maxTotalAuthorCountsRatioToUse, hue(colorAuthorMin), hue(colorAuthorMax)), hue(colorAuthorMin), hue(colorAuthorMax));
     color innerColor = lerpColor(colorAuthorMin, colorAuthorMax, map(average, 0, maxTotalAuthorCountsRatioToUse, 0, 1));
 
@@ -71,7 +77,7 @@ public void setupArticleZs(ArrayList<Article>articlesIn) {
         count++;
       }
     }
-    println("total counts for article: " + articlesIn.get(i).id + " is: " + count + " with newZ of: " + newZ);
+    //println("total counts for article: " + articlesIn.get(i).id + " is: " + count + " with newZ of: " + newZ);
     articlesIn.get(i).setZ(newZ);
   }
 

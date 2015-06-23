@@ -92,7 +92,7 @@ class TermManager {
   //
   public void setZs() {
 
-    float maxZ = 300f; // max height above baseZ
+    float maxZ = 2000f; // max height above baseZ
     float maxCount = 0;
     for (Term t : terms) maxCount = (maxCount > t.articles.length ? maxCount : t.articles.length);
     for (Term t : terms) {
@@ -342,6 +342,7 @@ class TermManager {
       }
       if (selectedTerm != null) {
         println("selected term: " + selectedTerm.term);
+        println("articles: " + selectedTerm.articles.length);
         selectedTerm.select(mouse);
       }
     } else {
