@@ -622,7 +622,7 @@ void rebuildExistingTermNetwork() {
   for (Term t1 : termManager.terms) {
     for (int i = 0; i < t1.connections.size (); i++) {
       Term t2 = t1.connections.get(i);
-      println("looking at t1.term: " + t1.term + " and i: " + i);
+      //println("looking at t1.term: " + t1.term + " and i: " + i);
       float attractStrength = t1.connectionStrengths.get(i);
       float attractLength = t1.connectionLengths.get(i);
       VerletParticle2D a = t1.particle;

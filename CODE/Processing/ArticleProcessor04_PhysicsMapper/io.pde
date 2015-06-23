@@ -107,12 +107,25 @@ public Article makeArticleFromXML(XML a) {
   }
 
 
+
+  // arxiv category stuff
+  String arxivCategoryPrimaryString = "";
+  try {
+    XML arxivCategoryPrimaryXML = a.getChild("arxiv:primary_category");
+    if (arxivCategoryPrimaryXML != null) arxivCategoryPrimaryString = arxivCategoryPrimaryXML.getString("term");
+  } 
+  catch(Exception e) {
+  }
+  //println("arxivCategoryPrimaryString: " + arxivCategoryPrimaryString);
+
+
   XML[] categories = a.getChildren("category");
   String[] cats = new String[0];
   for (XML cat : categories) {
     String catName = cat.getString("term");
-    cats = (String[])append(cats, catName);
+    if (!catName.equals(arxivCategoryPrimaryString)) cats = (String[])append(cats, catName);
   }
+  //println(cats);
 
   Article newArticle = new Article(id);
 
@@ -122,7 +135,7 @@ public Article makeArticleFromXML(XML a) {
   newArticle.title = newArticle.title.replace("  ", " ");
   newArticle.abstractString = abstractString.replace("\n", " ");
   newArticle.abstractString = newArticle.abstractString.replace("\r", " ");
-  
+
   newArticle.published = published;
 
   // split into sentences
@@ -132,6 +145,10 @@ public Article makeArticleFromXML(XML a) {
 
   // save the raw xml
   newArticle.xml = a;
+
+  // save the arxiv category stuff
+  newArticle.arxivCategoryPrimaryString = arxivCategoryPrimaryString;
+  newArticle.arxiveCategorySecondaryStrings = cats;
 
   // check the year
   XML publishedStringXML = a.getChild("published");
@@ -147,6 +164,26 @@ public Article makeArticleFromXML(XML a) {
 
 
 
+//
+public void loadValidArxivCategories(String dir) {
+  println("in loadValidArxivCategories");
+  validArxivCategories = new String[0][2];
+  String[] fileNames = OCRUtils.getFileNames(dir, false);
+  for (String fileName : fileNames) {
+    if (!fileName.contains(".txt")) continue;
+    String[] validCategories = loadStrings(fileName);
+    for (String line : validCategories) {
+      String[] broken = splitTokens(line, "*");
+      String cat = broken[0].trim();
+      String name = broken[1].trim();
+      String[] ln = {
+        cat, name
+      };
+      validArxivCategories = (String[][])append(validArxivCategories, ln);
+    }
+  }
+  println(" end of loadValidArxivCategories.  loaded " + validArxivCategories.length + " category strings");
+} // end loadValidArxivCategories
 
 
 
@@ -192,10 +229,12 @@ public void dealOutTerms(String dir, HashMap<String, Article> articlesHMIn, Hash
         }
       } 
       catch (Exception e) {
-        println("serious problem.  could not find articleId of: " + articleId);
+        //println("serious problem.  could not find articleId of: " + articleId);
+        print("º");
       }
     }
   }
+  println("_done");
   termCounts.sortValuesReverse();
   for (String key : termCounts.keys ()) {
     println(key + " -- " + termCounts.get(key));

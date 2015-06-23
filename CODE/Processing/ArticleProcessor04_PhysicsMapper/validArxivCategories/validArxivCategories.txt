@@ -1,0 +1,11 @@
+physics.optics* Optical Physics
+quant-ph* Quantum Physics
+gr-qc* General Relativity, Quantum Cosmology
+physics.space-ph* Physics of Space
+General Relativity* General Relativity
+astro-ph.SR* AstroPhysics 2
+astro-ph.IM* AstroPhysics
+cond-mat.other* Condensed Matter
+physics.hist-ph* History of Physics
+nlin.SI* NonLinear Stuff
+math.NA* Math

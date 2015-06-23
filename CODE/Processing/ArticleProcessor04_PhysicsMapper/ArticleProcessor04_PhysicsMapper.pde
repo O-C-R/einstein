@@ -132,6 +132,8 @@ VerletPhysics2D physics;
 // the arxivDirectory for the articles that are from 2014
 String arxivDirectory2014 = "x_2014/";
 
+
+
 // termDirectory
 String termDirectory = "data/";
 
@@ -183,6 +185,14 @@ boolean termDisplay = true; // for displaying or not displaying the terms
 boolean lockDefaultTermPositions = false; // if set to true will not save or overwrite the default nor will it do the physics stuff
 
 boolean lockDefaultArticlePositions = false; // if set to true will not save or overwrite the article positions.  nor will it do box2d stuff
+
+
+
+
+// ARXIV CATEGORIES
+String validArxivCategoriesDir = "validArxivCategories/";
+HashMap<String, ArxivCategory> arxivCategoriesHM = new HashMap(); // keeps all arxiv categories
+String[][] validArxivCategories = new String[0][2];
 
 
 
@@ -260,6 +270,16 @@ void setup() {
 
   // load up the simplified set within the pre-sorted years
   importArticles(sketchPath("") + arxivDirectory2014, new int[0]);
+  
+  
+
+  // do something about the arxiv categories
+  // load up the valid ones
+  loadValidArxivCategories(sketchPath("") + validArxivCategoriesDir);
+  // since the category strings should have been set when the articles were imported, now we can make them
+  makeArxivCategories(articlesHM);
+  // then finally deal out the categories
+  dealOutArxivCategories(articlesHM, arxivCategoriesHM, validArxivCategories);
 
   // this needs to happen after articles are imported
   termManager.loadDefaultTermPositions(sketchPath("") + termDirectory, articlesHM);

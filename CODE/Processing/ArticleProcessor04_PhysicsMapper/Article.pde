@@ -53,6 +53,16 @@ class Article {
   HashMap<String, ArrayList<Article>> referenceBuddies = new HashMap(); // <reference id, ArrayList of other Articles that also have this referenceId> for each referenceId here is a list of other current Articles that reference the same thing.  if no other articles reference it then it will just be a blank ArrayList
 
 
+  // arxiv categories
+  // temp keep a string record of the categories
+  String arxivCategoryPrimaryString = "";
+  String[] arxiveCategorySecondaryStrings = new String[0];
+  // actually keep the ArxivCateogry objects with this Article object
+  ArxivCategory arxivCategoryPrimary = null; // the primary category of this article
+  HashMap<String, ArxivCategory> arxivCategoriesSecondary = new HashMap(); // all other categories that this Article has
+
+
+
   // temporary variables
   int temp = 0; // used for temporarily assigning values
   ArrayList<Object> objs = new ArrayList();
