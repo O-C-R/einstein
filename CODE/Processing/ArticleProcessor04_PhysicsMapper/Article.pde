@@ -44,8 +44,9 @@ class Article {
   int authorCountsSum = 0; // sum of all papers listed for the authors
   // this is a list of the authors listed for this article 
   // and the integer is the number of other Articles they are linked to via Arxiv
-
+  
   // cites vars
+  int citerIdsCount = 0;
   HashMap<String, Integer> citerIds = new HashMap(); // <Citer id, nothing> a list of all of the id's of things that cite this Article
   HashMap<String, ArrayList<Article>> citerBuddies = new HashMap(); // <citer id, ArrayList of other Articles that also have this citerId> for each citerID here is a list of other current Articles that cite the same thing.  if no other articles cite it then it will just be a blank ArrayList
   // reference vars
@@ -87,7 +88,9 @@ class Article {
   boolean isTermless = true; 
 
 
-
+  //SVG vars
+  SVGText svgText = null; // keep this in the background.  this is used when saving out the text positions in editable format
+  PVector svgScreenPos = new PVector();
 
 
   //
@@ -308,7 +311,33 @@ class Article {
     return isOver;
   } // end debugDisplay
 
+  public void displayCategoryView(PGraphics pg, boolean useArticleZIn, boolean isPrimary, color catColor) {
+    pg.pushMatrix();
+    pg.pushStyle();
+    //pg.translate(regPos.x, regPos.y, (useArticleZIn ? 1 : 0) * z);
+    
+    if(isPrimary) {
+      pg.translate(regPos.x, regPos.y, ((useArticleZIn ? 1 : 0) * z) - 3);
+      //noFill();
+    } else {
+      pg.translate(regPos.x, regPos.y, ((useArticleZIn ? 1 : 0) * z));
+      //pg.fill(catColor);
+    }
+    // draw the main circle
+    // figure the color using colorArticleBackgroundMin and colorArticleBackgroundMax
 
+    //pg.fill(colorToUse, alphaToUse);
+    
+    pg.fill(catColor);
+    // determine the stroke here
+    //noFill();
+    pg.stroke(catColor);
+    float strokeWeightToUse = 1.5f;
+    pg.strokeWeight(strokeWeightToUse);
+    pg.ellipse(0, 0, radius * 2, radius * 2);
+    pg.popStyle();
+    pg.popMatrix();
+  }
   //
   public void display(PGraphics pg, boolean useArticleZIn) {
     pg.pushMatrix();
@@ -325,28 +354,43 @@ class Article {
     if (published) strokeToUse = colorPublished;
     //noFill();
     pg.stroke(strokeToUse);
-    float strokeWeightToUse = 2.5f;
+    float strokeWeightToUse = 1.5f;
     pg.strokeWeight(strokeWeightToUse);
     pg.ellipse(0, 0, radius * 2, radius * 2);
 
-/*
+    /*
     // draw the author bubble
-    pg.translate(0, 0, .5f);
-    //pg.fill(innerColor, alphaToUse);
-    pg.fill(innerColor);
-    //pg.noStroke();
-    //pg.noFill();
-    pg.strokeWeight(strokeWeightToUse);
-    //pg.stroke(innerStroke);
-    pg.noStroke();
-    pg.ellipse(0, 0, innerRadius * 2, innerRadius * 2);
-    */
+     pg.translate(0, 0, .5f);
+     //pg.fill(innerColor, alphaToUse);
+     pg.fill(innerColor);
+     //pg.noStroke();
+     //pg.noFill();
+     pg.strokeWeight(strokeWeightToUse);
+     //pg.stroke(innerStroke);
+     pg.noStroke();
+     pg.ellipse(0, 0, innerRadius * 2, innerRadius * 2);
+     */
+    pg.popStyle();
+    pg.popMatrix();
+  } // end display
+
+  public void displayText(PGraphics pg) {
+    // save out the svgText
+    svgScreenPos.set(screenX(regPos.x, regPos.y, z), screenY(regPos.x, regPos.y, z));
+    if (svgText == null) {
+      svgText = new SVGText(title, new PVector());
+    }
+    svgText.updatePos(svgScreenPos);
+    pg.pushMatrix();
+    pg.pushStyle();
+    pg.fill(255, 255, 255);
+    pg.translate(regPos.x, regPos.y, z);
+    //pg.textAlign(LEFT, CENTER);
+    pg.text(title, 0, 0);
     pg.popStyle();
     pg.popMatrix();
     
-  } // end display
-
-
+  } // end displayText
 
   //
   String toString() {
@@ -355,7 +399,12 @@ class Article {
     return builder;
   } // end toString
 
-
+  String toCiteString() {
+    String builder = "";
+    builder += "Article " + id + ": " + title;
+    builder += "\n total CITERS: " + citerIds.size() + " and cite total: " + citerIdsCount;
+    return builder;
+  }//end toCiteString
   //
   String toSimplifiedString() {
     String builder = "";

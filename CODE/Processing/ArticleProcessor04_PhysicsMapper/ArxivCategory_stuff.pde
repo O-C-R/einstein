@@ -4,6 +4,7 @@ class ArxivCategory {
   String name = ""; // the long name, eg. General Relativity, Quantum Cosmology
   HashMap<String, Article> primaryArticles = new HashMap(); // a hashmap of all articles that have this category as their primary 
   HashMap<String, Article> secondaryArticles = new HashMap(); // a hashmap of all articles that have this not as their primary category
+  HashMap<String, Article> noSecondaryArticles = new HashMap(); // a hashmap of all articles that don't get sorted into secondaryArticles
   boolean isUsed = false; // triggered to true when an article is assigned to it
 
   //
@@ -14,11 +15,30 @@ class ArxivCategory {
   //
   String toString() {
     String builder = "";
-    builder += "ArxivCategory: " + term + (name.length() > 0 ? " -- name: " + name : "") + "\n  primaryCount: " + primaryArticles.size() + " -- secondaryCount: " + secondaryArticles.size();
+    builder += "ArxivCategory: " + term + (name.length() > 0 ? " -- name: " + name : "") + "\n  primaryCount: " + primaryArticles.size() + " -- secondaryCount: " + secondaryArticles.size() + " -- noSecondaryCount: " + noSecondaryArticles.size();
     return builder;
   } // end toString
-} // end class ArxivCategory
 
+
+
+
+  //display Article objects colored by their secondary categories (all have the primary category of gr-qc)
+  void displaySecondaryArxivCategories(PGraphics pg, boolean useArticleZIn, color catColor) {
+    for (Map.Entry me : secondaryArticles.entrySet ()) {
+      Article a = (Article)me.getValue();
+      a.displayCategoryView(pg, useArticleZIn, false, catColor);
+      //println(term + " article: " + a.title);
+    }
+  }
+  
+  void displayPrimaryArxivCategories(PGraphics pg, boolean useArticleZIn, color catColor) {
+    for (Map.Entry prime : primaryArticles.entrySet ()) {
+      Article b = (Article)prime.getValue();
+      b.displayCategoryView(pg, useArticleZIn, true, catColor);
+    }
+  }
+  
+} // end class ArxivCategory
 
 
 
@@ -99,7 +119,9 @@ public void dealOutArxivCategories(HashMap<String, Article> articlesHMIn, HashMa
             ac.secondaryArticles.put(a.id, a);
             ac.isUsed = true;
           } else {
-            continue;
+            //ArxivCategory ac2 = (ArxivCategory)arxivCategoriesHMIn.get(acSecondaryString.trim());
+            //ac2.noSecondaryArticles.put(a.id, a);
+            //continue;
           }
         } 
         catch (Exception e) {

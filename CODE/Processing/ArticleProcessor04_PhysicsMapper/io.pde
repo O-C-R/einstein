@@ -123,7 +123,11 @@ public Article makeArticleFromXML(XML a) {
   String[] cats = new String[0];
   for (XML cat : categories) {
     String catName = cat.getString("term");
-    if (!catName.equals(arxivCategoryPrimaryString)) cats = (String[])append(cats, catName);
+    //if (!catName.equals(arxivCategoryPrimaryString)) cats = (String[])append(cats, catName);
+    if (!catName.equals(arxivCategoryPrimaryString)) {
+      catName = cheatCatName(catName);
+      cats = (String[])append(cats, catName);
+    }
   }
   //println(cats);
 
@@ -162,6 +166,15 @@ public Article makeArticleFromXML(XML a) {
   return newArticle;
 } // end makeArticleFromXML
 
+//
+String cheatCatName(String nameIn) {
+  if (nameIn.contains("astro-ph.")) {
+    nameIn = "astro-ph";
+  } else if (nameIn.contains("physics.")) {
+    nameIn = "physics";
+  }
+  return nameIn;
+} // end 
 
 
 //
@@ -333,6 +346,7 @@ public void dealOutCites(String dir, HashMap<String, Article> articlesHMIn) {
             //if (citerId.equals("arXiv:1412.4674")) println("_______ found arXiv:1412.4674 for article: " + thisArticle.id + " .. size: " + listOfTheCited.size());
           }
           thisArticle.citerIds = citerIds;
+          thisArticle.citerIdsCount = citerIds.size();
         }
       }
     }

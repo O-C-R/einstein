@@ -149,6 +149,16 @@ void keyReleased() {
     useArticleZ = !useArticleZ;
     println("useArticleZ set to: " + useArticleZ);
   }
+  
+  if (key == 'v') {
+    displayArticles = !displayArticles;
+    println("displayArticles set to: " + displayArticles);
+  }
+  
+  if (key == 'n') {
+    displayCategories = !displayCategories;
+    println("displayCategories set to: " + displayCategories);
+  }
 
 
   if (key == '\\') {

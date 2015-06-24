@@ -57,6 +57,3 @@ Concept: M-theory Score: 4.226126
 Concept: Non-Euclidean geometry Score: 4.036201
 Concept: Knot theory Score: 0.906358
 Concept: Antimatter Score: 0.832237
-
-
-

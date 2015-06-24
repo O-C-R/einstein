@@ -176,7 +176,8 @@ float termBaseZ = -1900f; // where the base is for all Terms
 boolean termDebug = false; // if true will allow you to manually drag around the term positions.  toggle with 'd'
 boolean termDisplay = true; // for displaying or not displaying the terms
 
-
+boolean displayCategories = false;
+boolean displayArticles = false;
 // ****** //
 // note that this will make it so that it will load up whatever the defaultPositions.json file is .. .which should include all physics stuff and positions regarless of how many articles are loaded
 // ideally the positions of the Terms should be made when all of the Articles have been loaded -- this sets the springs correctly
@@ -204,7 +205,8 @@ PVector worldLoc = new PVector();
 float xAngle = 9 * PI/32;
 float zAngle = -11 * PI/32;
 boolean useAngles = false;
-
+PVector startingOffset = new PVector(-100, -120, 0);
+float startingScale = 0.15;
 
 // box2d
 Box2DProcessing box2d;
@@ -219,17 +221,20 @@ String movieSaveDirectory = "";
 String renderDirectory = "";
 String[] renderSteps = {
   "articles", 
+  "primaryCategories",
+  "secondaryCategories", 
   "gridLower", 
   "gridUpper", 
   "connectingLines", 
   "termLines", 
   "termText", 
+  "citations", 
   "termNetwork"
 };
 int renderIndex = renderSteps.length; // increments when rendering
 
-
-
+color[] categoryColors;
+ArrayList<Article> highCitedArticles;
 
 //
 void setup() {
@@ -242,10 +247,14 @@ void setup() {
   OCRUtils.begin(this);
   SimpleTween.begin(this);
   zpt = new ZoomPanTilt(this);
+  startingOffset.div(startingScale); // whoops
+  startingOffset.mult(-1); // double whoops
+  zpt.moveWorld(startingOffset, startingScale);
   randomSeed(1862);
   //smooth(3);
 
 
+  highCitedArticles = new ArrayList();
   // Initialize the physics
   physics=new VerletPhysics2D();
   physics.setWorldBounds(new Rect(10, 10, width-20, height-20));
@@ -270,8 +279,8 @@ void setup() {
 
   // load up the simplified set within the pre-sorted years
   importArticles(sketchPath("") + arxivDirectory2014, new int[0]);
-  
-  
+
+
 
   // do something about the arxiv categories
   // load up the valid ones
@@ -293,6 +302,13 @@ void setup() {
 
   // read in the cites
   dealOutCites(sketchPath("") + articleCitesDirectory, articlesHM);
+
+  articles = OCRUtils.sortObjectArrayListSimple(articles, "citerIdsCount");
+  articles = OCRUtils.reverseArrayList(articles);
+  for (int i = 0; i < 5; i++) {
+    println("article citations: " + articles.get(i).toCiteString());
+    highCitedArticles.add(articles.get(i));
+  }
 
   // and the references
   dealOutReferences(sketchPath("") + articleReferencesDirectory, articlesHM);
@@ -334,8 +350,8 @@ void setup() {
 
   // do the height check
   if (articlesOn) setupArticleZs(articles); 
-
-
+  color c1 = color(46, 191, 173);
+  categoryColors = getCategoryColors(c1, 8, 345);
 
   println("total startup time: " + (((float)(millis() - startTime)) / 1000) + " seconds");
 } // end setup
@@ -345,9 +361,6 @@ void draw() {
   if (renderIndex < renderSteps.length) {
     beginRaw(PDF, renderDirectory + renderSteps[renderIndex] + ".pdf");
   }
-
-
-
 
   zpt.use();
 
@@ -411,6 +424,9 @@ void draw() {
       saveSVGText(svgTexts, renderDirectory + renderSteps[renderIndex] + ".svg");
     }
   }
+
+
+
   if ((termDisplay && renderIndex >= renderSteps.length) || (renderIndex < renderSteps.length && renderSteps[renderIndex].equals("termLines"))) {
     termManager.displayLines(g, termBaseZ);
   }
@@ -426,8 +442,6 @@ void draw() {
       drawLinesFromArticlesToConcepts(g, articles, useArticleZ);
     }
 
-
-
     for (Article a : articles) {
       a.update();
       //a.debugDisplayTarget(g);
@@ -435,12 +449,89 @@ void draw() {
     boolean doShowMouseOver = true;
 
     if (renderIndex >= renderSteps.length || (renderIndex < renderSteps.length && renderSteps[renderIndex].equals("articles"))) {
-      for (Article a : articles) {
-        //if (a.debugDisplay(g, sc, worldLoc, doShowMouseOver)) doShowMouseOver = false;
-        a.display(g, useArticleZ);
+      if (displayArticles) {
+        for (Article a : articles) {
+          //if (a.debugDisplay(g, sc, worldLoc, doShowMouseOver)) doShowMouseOver = false;
+          a.display(g, useArticleZ);
+        }
+      }
+    }
+
+    if (renderIndex >= renderSteps.length || (renderIndex < renderSteps.length && renderSteps[renderIndex].equals("citations"))) {
+      ArrayList<SVGText> topCited = new ArrayList();
+      for (Article a : highCitedArticles) {
+        a.displayText(g);
+        topCited.add(a.svgText);
+      }  
+      boolean getSVGTexts = (renderIndex < renderSteps.length && renderSteps[renderIndex].equals("citations"));
+      if (getSVGTexts) {
+        // save it out
+        saveSVGText(topCited, renderDirectory + renderSteps[renderIndex] + ".svg");
+      }
+    }
+
+    if (renderIndex >= renderSteps.length || (renderIndex < renderSteps.length && renderSteps[renderIndex].equals("primaryCategories"))) {
+      if (displayCategories) {
+        for (Map.Entry me : arxivCategoriesHM.entrySet ()) {
+          ArxivCategory cat = (ArxivCategory)me.getValue();
+          color c1 = color(150);
+          cat.displayPrimaryArxivCategories(g, useArticleZ, c1);
+        }
+      }
+    }
+
+    if (renderIndex >= renderSteps.length || (renderIndex < renderSteps.length && renderSteps[renderIndex].equals("secondaryCategories"))) {
+      if (displayCategories) {
+        for (Map.Entry me : arxivCategoriesHM.entrySet ()) {
+          ArxivCategory cat = (ArxivCategory)me.getValue();
+          if (cat.isUsed) {
+            //println(cat.term);
+            color secondaryCatColor = color(255, 255, 255);
+
+            if (cat.term.equals("astro-ph")) {
+              secondaryCatColor = #5123bf;//categoryColors[0];
+            }
+
+            if (cat.term.equals("quant-ph")) {
+              secondaryCatColor = #87285b;//categoryColors[1];
+            }
+
+            if (cat.term.equals("hep-ex")) {
+              secondaryCatColor = #e7ae40;//categoryColors[2];
+            }
+
+            if (cat.term.equals("hep-lat")) {
+              secondaryCatColor = #dd911f;//categoryColors[3];
+            }
+
+            if (cat.term.equals("hep-ph")) {
+              secondaryCatColor = #cc5126;//categoryColors[4];
+            }
+
+            if (cat.term.equals("hep-th")) {
+              secondaryCatColor = #c9382f;//categoryColors[5];
+            }
+
+            if (cat.term.equals("math-ph")) {
+              secondaryCatColor = #456fb1;//categoryColors[6];
+            }
+
+            if (cat.term.equals("physics")) {
+              secondaryCatColor = #56a097;//categoryColors[7];
+            }
+
+            if (cat.term.equals("gr-qc")) {
+              secondaryCatColor = (255);
+            }  
+
+            cat.displaySecondaryArxivCategories(g, useArticleZ, secondaryCatColor );
+          }
+        }
       }
     }
   }
+
+
 
 
 
@@ -468,6 +559,7 @@ void draw() {
     }
     text("termBaseZ: "+ termBaseZ, 20, 60);
     text("offset: " + zpt.offset.value().x+ ", " + zpt.offset.value().y, 20, 80);
+    text("scale: " + zpt.sc.value(), 20, 100);
   }
 
   if (movieSave) {

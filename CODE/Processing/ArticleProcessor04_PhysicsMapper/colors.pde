@@ -36,4 +36,9 @@ color gridColor = #d9f7ad;//color(255, 0, 0, 150);
 color colorRegistration = color(100, 100, 220);
 
 //term circle
-color termOutline = #91e205; //color(0, 255, 0);
+color termOutline = #00cddd;//#91e205; //color(0, 255, 0);
+
+color[] getCategoryColors(color startColor, int divisions, float colorAngle) {
+  color[] colors = Colors.getEvenDivisions(startColor, divisions, colorAngle);
+  return colors;
+}

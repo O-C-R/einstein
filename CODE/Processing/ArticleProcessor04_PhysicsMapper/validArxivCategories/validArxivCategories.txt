@@ -1,11 +1,9 @@
-physics.optics* Optical Physics
+astro-ph* Astrophysics
+gr-qc* General Relativity and Quantum Cosmology
+hep-ex* High Energy Physics - Experiment
+hep-lat* High Energy Physics - Lattice
+hep-ph* High Energy Physics - Phenomenology
+hep-th* High Energy Physics - Theory
+math-ph* Mathematical Physics
+physics* Physics
 quant-ph* Quantum Physics
-gr-qc* General Relativity, Quantum Cosmology
-physics.space-ph* Physics of Space
-General Relativity* General Relativity
-astro-ph.SR* AstroPhysics 2
-astro-ph.IM* AstroPhysics
-cond-mat.other* Condensed Matter
-physics.hist-ph* History of Physics
-nlin.SI* NonLinear Stuff
-math.NA* Math

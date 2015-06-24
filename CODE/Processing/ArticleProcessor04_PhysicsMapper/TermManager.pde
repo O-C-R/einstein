@@ -300,7 +300,7 @@ class TermManager {
   //
   void displayNetwork(PGraphics pg, float termBaseZIn) {
     // draw the network map 
-    float minAlpha = 30f;
+    float minAlpha = 100f;
     float maxAlpha = 250f;
     float maxCountToUse = 300; // max articles to use for the alpha map.  any more than this will still result in maxAlpha
     for (int i = 0; i < terms.size (); i++) {
@@ -512,7 +512,7 @@ public void makeTermNetwork() {
   // ****** CHANGE TOLERANCE HERE ****** //
   // ****** CHANGE TOLERANCE HERE ****** //
   // ****** CHANGE TOLERANCE HERE ****** //
-  float tolerance = .5; // .55 seems to work well.  HIGHER number will make for a more connected network
+  float tolerance = .45; // .55 seems to work well.  HIGHER number will make for a more connected network
   // ****** CHANGE TOLERANCE HERE ****** //
   // ****** CHANGE TOLERANCE HERE ****** //
   // ****** CHANGE TOLERANCE HERE ****** //

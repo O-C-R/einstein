@@ -160,14 +160,14 @@ class Term {
     pg.pushMatrix();
     pg.rectMode(CENTER);
     pg.rotate(PI/4);
-    pg.rect(0, 0, 2 * rad, 2 * rad);
+    pg.rect(0, 0, rad, rad);
     //pg.ellipse(0, 0, 2 * rad, 2 * rad);
     pg.popMatrix();
     
     if (mouseIsOver) {
       pg.stroke(255);
       //pg.ellipse(0, 0, 2 * rad + 2, 2 * rad + 2);
-      pg.rect(0, 0, 2* rad + 2, 2* rad + 2);
+      pg.rect(0, 0, rad + 2, rad + 2);
     }
     pg.fill(255, 0, 0);
     pg.textAlign(CENTER, CENTER);
