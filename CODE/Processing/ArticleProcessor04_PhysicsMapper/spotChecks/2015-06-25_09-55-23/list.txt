@@ -1,0 +1,5 @@
+Kerr black holes with scalar hair
+Tensor calculus with open-source software: the SageManifolds project
+Strains and axial outflows in the field of a rotating black hole
+Self-force from reconstructed metric perturbations: numerical implementation in Schwarzschild spacetime
+A characterization of 3+1 spacetimes via the Simon-Mars tensor

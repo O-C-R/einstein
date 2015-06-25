@@ -3,6 +3,12 @@ void mousePressed() {
   boolean isRight = false;
   if (mouseButton == LEFT) {
     termManager.dealWithMousePressed(worldLoc, isRight);
+    // deal with spotCheck
+    if (spotCheck != null) {
+      if (!spotCheck.isSelecting) {
+        spotCheck.setStart(mouseLoc);
+      }
+    }
   } else if (mouseButton == RIGHT) {
     isRight = true;
     if (termDebug) termManager.dealWithMousePressed(worldLoc, isRight);
@@ -16,6 +22,11 @@ void mouseReleased() {
     zpt.dealWithMouseReleased();
   } else if (mouseButton == LEFT) {
     if (termDebug) termManager.dealWithMouseReleased(worldLoc, articles);
+    if (spotCheck != null) {
+      if (spotCheck.isSelecting) {
+        spotCheck.setIsDone();
+      }
+    }
   }
 } // end mouseReleased
 
@@ -149,12 +160,12 @@ void keyReleased() {
     useArticleZ = !useArticleZ;
     println("useArticleZ set to: " + useArticleZ);
   }
-  
+
   if (key == 'v') {
     displayArticles = !displayArticles;
     println("displayArticles set to: " + displayArticles);
   }
-  
+
   if (key == 'n') {
     displayCategories = !displayCategories;
     println("displayCategories set to: " + displayCategories);
@@ -182,8 +193,8 @@ void keyReleased() {
       if (t.selected) t.setHardLock();
     }
   } 
-  
-  
+
+
   // output
   if (key == '`') {
     //saveFrame("frames/" + OCRUtils.getTimeStampWithDate() + ".tif"); 
@@ -191,26 +202,38 @@ void keyReleased() {
     println("saved frame");
   }
 
-  if (key == 'm') {
-    if (!movieSave) {
-      movieSaveDirectory = "movieFrames/" + OCRUtils.getTimeStampWithDate() + "/";
-      println("saving movie to " + movieSaveDirectory);
-      movieSave = true;
-    } else {
-      println("done saving out movie");
-      movieSave = false;
-    }
-  }
+  /*
+// took this out because not really needed now/ to prevent accidental movie making
+   if (key == 'm') {
+   if (!movieSave) {
+   movieSaveDirectory = "movieFrames/" + OCRUtils.getTimeStampWithDate() + "/";
+   println("saving movie to " + movieSaveDirectory);
+   movieSave = true;
+   } else {
+   println("done saving out movie");
+   movieSave = false;
+   }
+   }
+   */
   if (key == '6') {
     renderThings();
   } 
-  
+  if (key == 'x') {
+    if (spotCheck == null) {
+      spotCheck = new SpotCheck(); 
+      println("making new SpotCheck");
+    } else {
+      println("cancelling out of the spot check");
+      spotCheck = null;
+    }
+  }
+
   // panning stuff
   if (key == '\'') {
-   zpt.centerScreenOn(new PVector(84, -46), zpt.sc.value(), 100); 
+    zpt.centerScreenOn(new PVector(84, -46), zpt.sc.value(), 100);
   }
   if (key == ';') {
-   zpt.centerScreenOn(new PVector(1150, 1346), zpt.sc.value(), 1100); 
+    zpt.centerScreenOn(new PVector(1150, 1346), zpt.sc.value(), 1100);
   }
 } // end keyReleased
 

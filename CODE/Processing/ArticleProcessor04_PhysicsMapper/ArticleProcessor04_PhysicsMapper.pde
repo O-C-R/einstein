@@ -59,6 +59,7 @@
  ºººº '-' to make the Articles jump to around where they are trying to go.  do this after Term positions are set.  this way they get really close to where they want to be.
  ºººº '8' calculate the heights.  this is done a the end [and via a keystroke] because it has to calculate it based off of its neighbors, etc.
  ºººº 'z' toggle whether or not to use the z height of the Articles
+ ºººº 'v' toggle whether or not to display the articles
  
  ºº OTHER
  ºººº 'c' toggle on/off the connecting curves that go from the Articles to the Terms
@@ -66,6 +67,11 @@
  ºººº '`' -- the weird accent key -- use to save out a frame
  ºººº 'g' gridOn toggler
  ºººº '6' to save out the different images in pdf format.  this will save the layers to the renders/[todays date and time]/fileName.pdf
+ ºººº 'x' to start a spotCheck object.  or, if it is already in play will cancel out of it.   
+ .         click and drag to define the focus area
+ .         press and hold SPACE to refocus the start of the area
+ .         when released will save out an image of the area for reference as well as a list of all article titles within the area organized by distance from the center of that area [ascending]   
+ 
  
  
  ºº VIEW
@@ -217,11 +223,14 @@ boolean gridOn = true;
 boolean movieSave = false;
 String movieSaveDirectory = "";
 
+// SpotCheck
+SpotCheck spotCheck = null; // object used to spot check articles
+
 // rendering vars
 String renderDirectory = "";
 String[] renderSteps = {
   "articles", 
-  "primaryCategories",
+  "primaryCategories", 
   "secondaryCategories", 
   "gridLower", 
   "gridUpper", 
@@ -543,10 +552,30 @@ void draw() {
 
 
 
+  // spot check stuff.  must be done before zpt is paused
+  if (spotCheck != null) {
+    spotCheck.setEnd(mouseLoc);
+    if (keyPressed && key == ' ' && spotCheck.isSelecting) {
+      PVector tempOffset = new PVector(mouseX - pmouseX, mouseY - pmouseY);
+      spotCheck.start.add(tempOffset);
+    }
+    spotCheck.update(articlesHM);
+  }
+
 
   zpt.pause();
 
 
+
+  // spot check stuff to be done at the very end
+  if (spotCheck != null) {
+    spotCheck.display(g);
+    // kill it if it's done
+    if (spotCheck.endOfCycle()) {
+      spotCheck.saveOutSpot(g);
+      spotCheck = null;
+    }
+  }
 
 
   // 
@@ -565,6 +594,8 @@ void draw() {
   if (movieSave) {
     saveFrame(movieSaveDirectory + "#####.tif");
   }
+
+
 
 
   // end any render

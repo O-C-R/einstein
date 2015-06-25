@@ -123,10 +123,7 @@ public Article makeArticleFromXML(XML a) {
   String[] cats = new String[0];
   for (XML cat : categories) {
     String catName = cat.getString("term");
-<<<<<<< HEAD
-    //if (!catName.equals(arxivCategoryPrimaryString)) cats = (String[])append(cats, catName);
-=======
->>>>>>> 2c220eaea1621b84065cab27ea8bc44886ca0f26
+
     if (!catName.equals(arxivCategoryPrimaryString)) {
       catName = cheatCatName(catName);
       cats = (String[])append(cats, catName);
@@ -178,10 +175,6 @@ String cheatCatName(String nameIn) {
   }
   return nameIn;
 } // end 
-<<<<<<< HEAD
-=======
-
->>>>>>> 2c220eaea1621b84065cab27ea8bc44886ca0f26
 
 
 //
