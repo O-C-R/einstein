@@ -743,9 +743,9 @@
                     // console.log(INTERSECTED.userData);
                     // console.log(INTERSECTED.position);
 
-                    $("#articleInfo").css({'top':mouseY,'left':mouseX , 'display': 'visible'})
-                    .stop(true,true);
-                    //.fadeIn('fast');
+                    $("#articleInfo").css({'top':mouseY,'left':mouseX })
+                    .stop(true,true)
+                    .fadeIn('fast');
                     
                     //update article info
                     $("#title").text(INTERSECTED.userData.title);
