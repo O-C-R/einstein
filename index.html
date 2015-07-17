@@ -135,6 +135,8 @@
 
         var spriteTooltip, tooltipTexture, tooltipCanvas, tooltipContext;
 
+        var tourActive = false;
+
         init();
 
  // postprocessing
@@ -181,6 +183,7 @@
                         position: 'right'
                     }
                 ],
+                skipLabel: 'Exit',
                 showStepNumbers: false,
                 overlayOpacity: 0.1
             });
@@ -190,6 +193,7 @@
 
                 
                 if (intro._currentStep === 0) { //INTRO SCREEN
+                    tourActive = true;
                     //intro view
                     var str = "http://arxiv.org/abs/1403.7377v1";
                     //var str = "http://arxiv.org/abs/1410.7764v2";
@@ -261,8 +265,15 @@
 
             });
 
+            intro.onexit(function() {
+                //console.log("Intro completed");
+                tourActive = false;
+                topView();
+            });
+
             intro.oncomplete(function() {
                 //console.log("Intro completed");
+                tourActive = false;
                 topView();
             });
 
@@ -402,7 +413,8 @@
             scene.add(gridXZ_2);
 
             document.addEventListener('mousemove', onMouseMove, false);
-            document.addEventListener('click', onMouseClick, false);
+            document.addEventListener('mouseup', onMouseClick, false);
+            document.addEventListener('mousedown', onMouseDown, false);
         }
 
         function topView() {
@@ -505,8 +517,9 @@
             //console.log("camera pos: " + controls.target.x + ", " + controls.target.y + ", " + controls.target.z);
         }
 
-        function onMouseClick( event ) {
-
+        function onMouseDown( event ) {
+            console.log("MOUSE DOWN");
+            console.log("tourActive is: " + tourActive);
             // console.log("camera rotation: " );
             // console.log(camera.getWorldDirection());
 
@@ -538,14 +551,17 @@
             raycaster.setFromCamera( mouse, camera );
             var intersects = raycaster.intersectObjects( articleObjects );
             
-            if (intersects.length > 0) {
+            if (intersects.length > 0 && !tourActive ) {
                 //opens new tab with article page
                 window.open(intersects[0].object.userData.id);
                 
                 //disabled camera movement to point on click - but could be a good interface?
                 //moveAndLookAt(camera, new THREE.Vector3(intersects[0].object.position.x, intersects[0].object.position.y + 50, intersects[0].object.position.z + 100), intersects[0].object.position, {duration: 1000});
             }
-            
+        }
+
+        function onMouseClick( event ) {
+            console.log("MOUSE UP");
 
             //SELECT TERMS FROM SIDE NAVIGATION
             $( "#selectable" ).selectable({
