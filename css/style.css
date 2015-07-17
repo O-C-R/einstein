@@ -8,7 +8,7 @@
 
   h2 {
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
   }
 
@@ -27,17 +27,10 @@
       text-transform: uppercase;
   }
 
-  #nav {
-      position: absolute;
-      bottom: 150px;
-      height: 100px;
-      width: 260px;
-  }
-
   #UI {
     z-index: 15;
     display: block;
-    width: 260px;
+    width: 150px;
     height: auto;
     position: absolute;
     top: 100px;
@@ -101,9 +94,9 @@
   #feedback { font-size: 1.2em; }
   #selectable .ui-selecting { background: #FFF586; }
   #selectable .ui-selected { background: #FFFCC7; color: gray; }
-  #selectable { list-style-type: none; margin: 0; padding: 0; width: 70%; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
   #selectable li { margin: 3px; padding: 0.4em; font-size: 1.2em; height: 14px; }
-  .ui-widget-content {background: rgba(255, 255, 255, 0.2) ; color: white; border: 1px solid #6B6B6B;}
+  .ui-widget-content {background: rgba(55, 55, 55, 0.9) ; color: white; border: 1px solid #6B6B6B;}
 
   button {
     margin: 3px;
@@ -113,6 +106,7 @@
   #navButtons {
     position: relative;
     top: 40px;
+    width: 90px;
   }
 
 
