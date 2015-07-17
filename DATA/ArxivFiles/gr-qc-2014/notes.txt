@@ -1,6 +1,0 @@
-The 02727.xml is a search via the api for papers with the category gr-qc [general relativity - quantum cosmology].  Only papers from 2014 were taken.  This resulted in 2,727 papers.  Note that the arxiv api stopped at 50k papers.
-
-
-The references.json contains the ids of the references for each of those 2727 papers.  
-
-The citations.json contains any papers that happen to cite this one.  Note that there are relatively few because they should all be 2014 papers.

@@ -1,9 +1,0 @@
-astro-ph* Astrophysics
-gr-qc* General Relativity and Quantum Cosmology
-hep-ex* High Energy Physics - Experiment
-hep-lat* High Energy Physics - Lattice
-hep-ph* High Energy Physics - Phenomenology
-hep-th* High Energy Physics - Theory
-math-ph* Mathematical Physics
-physics* Physics
-quant-ph* Quantum Physics

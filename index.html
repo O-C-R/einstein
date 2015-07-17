@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Relativity&#39;s Reach</title> 
+        <link href="css/jquery-ui.v1.11.4.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="css/introjs.css" rel="stylesheet">  
+        <link href="css/style.css" rel="stylesheet">
+      
+    </head> 
+    <body> 
+        <div id="canvas-align">
+            <div id="ThreeJS"></div>
+            
+            <div id="hud" class="visible">
+                <div id="header">Relativity&#39;s Reach</div>
+                <div id="UI">
+                    <h2>Concept Keywords</h2>
+                    <ol id="selectable">
+                        <li class="ui-widget-content">Black hole</li>
+<!--                         <li class="ui-widget-content">Black holes</li>
+                        <li class="ui-widget-content">Black hole information paradox</li>
+                        <li class="ui-widget-content">Black hole thermodynamics</li> -->
+                        <li class="ui-widget-content">Event horizon</li>
+                        <li class="ui-widget-content">Schwarzschild metric</li>
+                        <li class="ui-widget-content">Kerr metric</li>
+                        <li class="ui-widget-content">Physical cosmology</li>
+                        <li class="ui-widget-content">String theory</li>
+                        <li class="ui-widget-content">Gravitation</li>
+                        <li class="ui-widget-content">Dark matter</li>
+                        <li class="ui-widget-content">Spacetime</li>
+                        <li class="ui-widget-content">Special relativity</li>
+                        <li class="ui-widget-content">Time</li>
+                        <li class="ui-widget-content">Quantum gravity</li>
+                        <li class="ui-widget-content">Gravitational wave</li>
+                        <li class="ui-widget-content">Big bang</li>
+                        <li class="ui-widget-content">Standard model</li>
+                        <li class="ui-widget-content">Hawking radiation</li>
+                        <li class="ui-widget-content">Symmetry</li>
+                        
+
+                    </ol>
+                    <div id="navButtons">
+                        <h2>Views</h2>
+                        <div><button id="topView" onclick="topView();">TOP VIEW</button></div>
+                        <div><button id="introTour" onclick="startIntro();">TOUR</button></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="articleInfo" class="visible">
+                <div><span id="title" ></span></div>
+                <div><span id="authors" ></span></div>
+                <div><span id="articleUrl"><a href="" target="_blank"></a></span></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.v1.11.4.min.js"></script>
+        <script type="text/javascript" src="js/tween.min.js"></script>
+        <script type="text/javascript" src="js/three.v71dev.min.js"></script>
+        <script type="text/javascript" src="js/OrbitControls2.js"></script>
+        <script type="text/javascript" src="js/Detector.js"></script>
+        <script type="text/javascript" src="js/intro.js"></script>
+        <script type="text/javascript" src="js/jquery.scrollto.min.js"></script>
+
+
+        <!-- 
+        <script src="js/shaders/CopyShader.js"></script>
+        <script src="js/shaders/DotScreenShader.js"></script>
+        <script src="js/shaders/RGBShiftShader.js"></script>
+        <script src="js/shaders/FilmShader.js"></script> 
+        <script src="js/shaders/ConvolutionShader.js"></script>
+        <script src="js/postprocessing/EffectComposer.js"></script>
+        <script src="js/postprocessing/RenderPass.js"></script>
+        <script src="js/postprocessing/BloomPass.js"></script>
+        <script src="js/postprocessing/FilmPass.js"></script>
+        <script src="js/postprocessing/MaskPass.js"></script>
+        <script src="js/postprocessing/ShaderPass.js"></script>
+         -->
+
+
+        <script type="x-shader/x-vertex" id="vertexshader">
+            attribute vec3 customColor;
+            attribute float customOpacity;
+
+            varying vec3 vColor;
+            varying float vOpacity;
+
+            void main() {
+                vColor = customColor;
+                vOpacity = customOpacity;
+                gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+            }
+        </script>
+
+        <script type="x-shader/x-fragment" id="fragmentshader">
+            varying vec3 vColor;
+            varying float vOpacity;
+
+            void main() {
+                gl_FragColor = vec4( vColor, vOpacity);
+            }
+        </script>
+
+        <script>
+
+        //standard global variables
+        var container, scene, camera, renderer, controls, raycaster, mouse, composer;
+        var cameraOrtho, sceneOrtho;
+        var mouse = { x: 0, y: 0 };
+        var INTERSECTED, INTERSECTED_TERMS;
+        var SCREEN_WIDTH, SCREEN_HEIGHT;
+
+
+        //custom global variables
+        var mesh;
+
+        //data global variables
+        var articles = [];
+        var terms = [];
+
+        var articleObjects = [];
+        var termObjects = [];
+        var termObj;
+        var articleObj;
+        var splineObj;
+
+        //shader variables
+        var attributes;
+
+        var selectedArticles = [];
+
+        var spriteTooltip, tooltipTexture, tooltipCanvas, tooltipContext;
+
+        init();
+
+ // postprocessing
+
+     
+
+        animate();
+        //startIntro();
+        
+        function startIntro(){
+            var intro = introJs();
+
+                intro.setOptions({
+                    steps: [
+                        {
+                            
+                            intro: "<h2>Relativity's Reach</h2><br><br>This interactive graphic visualizes the impact of the General Theory of Relativity on current physics research a hundred years after Einstein first described how gravity emerges from the bending of space and time.<br><br>Data on the current physics research trends comes from arXiv.org, an online database of scientific papers." 
+                        },
+                        {
+                            //element: '#step2',
+                            intro: "<h2>Data Source</h2><br><br>Each colored dot represents a paper uploaded to arXiv.org's database in 2014, and tagged with 'General Relativity - Quantum Cosmology' as their primary category (2,435 total).<br><br>Use your mouse to highlight an article and reveal its title, authors and URL on arXiv.org. Clicking on the article dot when highlighted opens a new window to the article's page on arXiv.org.",
+                            position: 'right'
+                        },
+                        {
+                            element: '#selectable',
+                            intro: "<h2>Concept Keywords</h2><br><br>A powerful text analysis tool, which is now part of IBM's Watson AI system, examined the abstracts of all 2,435 papers in the General Relativity - Quantum Cosmology category and returned concept keywords it believed the papers addressed. These keywords were edited for relevancy down to 61 (not all are displayed).<br><br>You may select a keyword to see which articles reference it. Select multiple keywords by dragging over multiple buttons or selecting while pressing the CTRL key.",
+                            position: 'right'
+                        },
+                        {
+                            intro: "<h2>Article and Keyword Layout</h2><br><br>Article dots are positioned near keywords (diamonds). If the text has multiple keywords, the dot is placed between terms, such as the article with special relativity and Noether's theorem.<br><br> NOTE: This section and keywords in general need some thought / layout decisions."
+                        },
+                        {
+                            intro: "<h2>Citations</h2><br><br>The size of the dot is based on how often the 2014 article has been cited since publication through the middle of this year. No citations corresponds to the minimum sized dot, while 85 citations corresponds to the largest size."
+                        },
+                        {
+                            intro: "<h2>Publication Status</h2><br><br>The dot outline indicates publication status. Many physicists put their papers in arXiv before they are published. <br><br>Articles with a bright blue outline have been published, while articles with a dark purple oultline are awaiting peer review.<br><br>NOTE: The outlines are not currently working but will be working for the final piece."
+                        },
+                        {
+                            intro: '<h2>Authors</h2><br><br>The color of the dot indicates number of authors.<br><br><span style="font-size:12px; padding-left:8px; background:#3B3183;">&nbsp;</span>  1 author<br><span style="font-size:12px; padding-left:8px; background:#64426D;">&nbsp;</span>  2 authors<br><span style="font-size:12px; padding-left:8px; background:#8F5358;">&nbsp;</span>  3 authors<br><span style="font-size:12px; padding-left:8px; background:#B96443;">&nbsp;</span>  4 authors<br><span style="font-size:12px; padding-left:8px; background:#E6782E;">&nbsp;</span>  5 - 849 authors<br><span style="font-size:12px; padding-left:8px; background:#D8301E;">&nbsp;</span>  850+ authors'
+                        },
+                        {
+                            element: '#navButtons',
+                            intro: '<h2>Views and Navigation</h2><br><br>You may explore the visualization by using your mouse to orbit around the scene.<br><br>Orbit: left mouse / touch: one finger move<br>Zoom: mousewheel / touch: two finger spread or squish<br>Pan: right mouse, or arrow keys / touch: two finger drag<br><br>You can also select various views to focus on the top, bottom, or sides of the graphic. Select the tour to replay this introduction<br><br>NOTE: Need to work on camera views.',
+                            position: 'right'
+                        }
+                        // {
+                        //     //element: '#step3',
+                        //     intro: 'More features, more <span style="color: red;">f</span><span style="color: green;">u</span><span style="color: blue;">n</span>.',
+                        //     position: 'left'
+                        // },
+                        // {
+                        //     //element: '#step4',
+                        //     intro: "<span style='font-family: Tahoma'>Another step with new font!</span>",
+                        //     position: 'bottom'
+                        // },
+                        // {
+                        //     //element: '#step5',
+                        //     intro: '<strong>Get</strong> it, <strong>use</strong> it.'
+                        // }
+                    ],
+                    showStepNumbers: false,
+                    overlayOpacity: 0.1
+                });
+            intro.onchange(function(targetElement, currentStep) {
+                    console.log("Current Scene: " + intro._currentStep);
+
+                    if (intro._currentStep === 0) {
+                        //intro view
+                        var str = "http://arxiv.org/abs/1403.7377v1";
+                        //var str = "http://arxiv.org/abs/1410.7764v2";
+                        //var str = "http://arxiv.org/abs/1410.5071v1";
+                        var objlookAt = articleObj.getObjectByName(str);
+                        console.log(objlookAt);
+                       
+                        
+                        // camera.position.set(objlookAt.position.x + 50, objlookAt.position.y + 500, objlookAt.position.z + 50);
+                        // camera.lookAt (objlookAt.position);
+                        //camera.setLens(60);
+                        
+                        //camera.updateMatrixWorld();
+
+                        moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x, objlookAt.position.y, objlookAt.position.z + 200), objlookAt.position, {duration: 1000});
+                        camera.updateProjectionMatrix();
+                    } else if (intro._currentStep === 1) {
+                        var str = "http://arxiv.org/abs/1403.7377v1";
+                        //var str = "http://arxiv.org/abs/1410.7764v2";
+                        //var str = "http://arxiv.org/abs/1410.5071v1";
+                        var objlookAt = articleObj.getObjectByName(str);
+                        console.log(objlookAt);
+                        moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x, objlookAt.position.y + 500, objlookAt.position.z + 500), objlookAt.position, {duration: 1000});
+                        
+                        // camera.position.set(objlookAt.position.x, objlookAt.position.y + 500, objlookAt.position.z + 50);
+                        // camera.lookAt (objlookAt.position);
+                        //camera.setLens(60);
+                        camera.updateProjectionMatrix();
+                    }
+
+                });
+
+            intro.start();
+        }
+        
+
+        function init() {
+            //SCENE
+            scene = new THREE.Scene();
+            sceneOrtho = new THREE.Scene();
+
+            termObj = new THREE.Object3D();
+            splineObj = new THREE.Object3D();
+            articleObj = new THREE.Object3D();
+
+            scene.add( termObj );
+            scene.add( splineObj );
+            scene.add( articleObj );
+            //CAMERA
+            SCREEN_WIDTH = window.innerWidth;
+            SCREEN_HEIGHT = window.innerHeight;
+
+            //LOADING DATA
+            loadArticles();
+            // var SCREEN_WIDTH = $("#canvas-align").width();
+            // var SCREEN_HEIGHT = $("#canvas-align").height();
+            //var SCREEN_WIDTH = 800, SCREEN_HEIGHT = 600;
+            var VIEW_ANGLE = 40, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 10000;
+            
+            camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
+
+            // camera = new THREE.CombinedCamera( window.innerWidth / 2, window.innerHeight / 2, 70, 1, 1000, - 500, 1000 );
+
+            // camera.position.x = 200;
+            // camera.position.y = 100;
+            // camera.position.z = 200;
+            //camera.position.y = 1500;
+
+            // cameraOrtho = new THREE.OrthographicCamera( - SCREEN_WIDTH / 2, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, - SCREEN_HEIGHT / 2, 1, 10 );
+            // cameraOrtho.position.z = 10;
+            // cameraOrtho.position.x = 700;
+            // cameraOrtho.position.y = 400;
+            // cameraOrtho.position.z = 700;
+            //sceneOrtho = new THREE.Scene();
+            
+            camera.position.set (700, 2000, 1800);
+            var lookAtVec = new THREE.Vector3(1700, 0, 1700);
+            camera.lookAt (lookAtVec);
+
+
+            //camera.lookAt(686, 124, 808);
+            scene.add(camera);
+
+            //RENDERER
+            if (Detector.webgl) {
+                renderer = new THREE.WebGLRenderer( {antialias: true} );
+            } else {
+                renderer = new THREE.CanvasRenderer();
+            }
+
+            
+            renderer.setPixelRatio( window.devicePixelRatio );
+            renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+            //renderer.autoClear = false; //to allow render overlay on top of sprited sphere
+
+            //renderer.setClearColor( 0xdddddd, 1); //sets background to grey
+            container = document.getElementById( 'ThreeJS' );
+            //container.appendChild( renderer.domElement );
+            document.body.appendChild(container);
+            container.appendChild( renderer.domElement );
+
+            //EVENTS
+            controls = new THREE.OrbitControls( camera,  renderer.domElement );
+            controls.addEventListener( 'change', render );
+            //controls.target.set( scene.position );
+            
+            raycaster = new THREE.Raycaster();
+            mouse = new THREE.Vector2();
+
+            //LIGHT
+            var light = new THREE.PointLight( 0xFFFFFF );
+            light.position.set(100, 250, 100);
+            scene.add(light);
+
+
+
+            //SHADERS
+            /*
+            var renderModel = new THREE.RenderPass( scene, camera );
+            //var effectBloom = new THREE.BloomPass( .25 );
+            var effectFilm = new THREE.FilmPass( 0,0,0, false );
+            effectFilm.renderToScreen = true;
+
+
+            composer = new THREE.EffectComposer( renderer );
+            composer.addPass( renderModel );
+            //composer.addPass( effectBloom );
+            composer.addPass( effectFilm );
+
+
+            composer.addPass( new THREE.RenderPass( scene, camera ) );
+            composer.addPass( new THREE.BloomPass( 1.25 ));
+
+            renderer.autoClear = false;
+            */
+
+               
+
+            // SKYBOX
+            // var skyBoxGeometry = new THREE.CubeGeometry( 10000, 10000, 10000 );
+            // var skyBoxMaterial = new THREE.MeshBasicMaterial( { color: 0x9999ff, side: THREE.BackSide } );
+            // var skyBox = new THREE.Mesh( skyBoxGeometry, skyBoxMaterial );
+            // scene.add(skyBox);
+
+
+            //loadTerms();
+          
+
+            ////////////
+            // CUSTOM //
+            ////////////
+            
+            var gridColor = new THREE.Color(0xd9f7ad);
+            var blackColor = new THREE.Color(0x000000);
+            var gridColorAlpha = gridColor.lerp(blackColor, 0.66);
+
+            var gridXZ_1 = new THREE.GridHelper(1000, 100);
+            gridXZ_1.setColors( gridColorAlpha, gridColorAlpha );
+            gridXZ_1.position.set(340, 0, 760);
+            //scene.add(gridXZ_1);
+
+            var gridXZ_2 = new THREE.GridHelper(1000, 100);
+            gridXZ_2.name = "lowerGrid";
+            gridXZ_2.setColors( gridColorAlpha, gridColorAlpha );
+            gridXZ_2.position.set(340, -1500, 760);
+            scene.add(gridXZ_2);
+
+            document.addEventListener('mousemove', onMouseMove, false);
+            document.addEventListener('click', onMouseClick, false);
+            
+            $("#topView").on('click', function() {
+                console.log('topview clicked');
+                console.log(scene.getObjectByName("lowerGrid"));
+
+                // scene.updateMatrixWorld(true);
+                // var position = new THREE.Vector3();
+                // position.getPositionFromMatrix( scene.getObjectByName("lowerGrid").matrixWorld );
+                // console.log(position.x + ',' + position.y + ',' + position.z);
+
+                //get centroid of lower grid, to look at
+                var grid = scene.getObjectByName("lowerGrid");
+                grid.geometry.computeBoundingBox();
+
+                var boundingBox = grid.geometry.boundingBox;
+
+                var position = new THREE.Vector3();
+                position.subVectors( boundingBox.max, boundingBox.min );
+                position.multiplyScalar( 1 );
+                position.add( boundingBox.min );
+
+                position.applyMatrix4( grid.matrixWorld );
+                console.log("grid centroid: ");
+                console.log(position.x + ',' + position.y + ',' + position.z);
+
+                //moveAndLookAt(camera, new THREE.Vector3( 462.4822692871094, 1024.80419921875, 674.246337890625), position, {duration: 1000});
+                //moveAndLookAt(camera, new THREE.Vector3( 649.216796875, 1223.69921875, 832.387939453125), position, {duration: 1000});
+                //camera.rotation.set(new THREE.Vector3(0, -1, 0));
+                camera.rotation.set(new THREE.Vector3(-6.5472317628198495e-9, -1.0000000073380846,-9.926388548353593e-7));
+                moveAndLookAt(camera, new THREE.Vector3(position.x, 1500, position.z), position, {duration : 1000});
+
+            });
+
+
+        }
+
+        function cameraLookDir (camera) {
+            var vector = new THREE.Vector3(0, 0, -1);
+            vector.applyEuler(camera.rotation, camera.eulerOrder);
+            return vector;
+        }
+
+        function moveAndLookAt(camera, dstpos, dstlookat, options) {
+            options || (options = {duration: 300});
+
+            var origpos = new THREE.Vector3().copy(camera.position); // original position
+            var origrot = new THREE.Euler().copy(camera.rotation); // original rotation
+
+            camera.position.set(dstpos.x, dstpos.y, dstpos.z);
+            camera.lookAt(dstlookat);
+            //controls.target.set(dstlookat);
+            var dstrot = new THREE.Euler().copy(camera.rotation)
+            //var dstrot = new THREE.Euler().copy(new THREE.Vector3(0, -1, 0));
+            // reset original position and rotation
+            camera.position.set(origpos.x, origpos.y, origpos.z);
+            camera.rotation.set(origrot.x, origrot.y, origrot.z);
+
+            //
+            // Tweening
+            //
+
+            // position
+            new TWEEN.Tween(camera.position).to({
+                x: dstpos.x,
+                y: dstpos.y,
+                z: dstpos.z
+            }, options.duration).start();;
+
+            // rotation (using slerp)
+            (function () {
+                var qa = qa = new THREE.Quaternion().copy(camera.quaternion); // src quaternion
+                var qb = new THREE.Quaternion().setFromEuler(dstrot); // dst quaternion
+                var qm = new THREE.Quaternion();
+                camera.quaternion = qm;
+
+                var o = {t: 0};
+                new TWEEN.Tween(o).to({t: 1}, options.duration).onUpdate(function () {
+                    THREE.Quaternion.slerp(qa, qb, qm, o.t);
+                    camera.quaternion.set(qm.x, qm.y, qm.z, qm.w);
+                }).start();
+            }).call(this);
+
+            //controls.update();
+            camera.updateProjectionMatrix();
+            //camera.updateMatrixWorld();
+        }
+
+
+        function animate() {
+
+            requestAnimationFrame(animate);
+            TWEEN.update();
+            controls.update();
+
+            //composer.render();
+            render();
+
+        }
+
+        function render() {
+
+            // renderer.render( scene, camera );
+            // var vector = new THREE.Vector3( 0, 0, -1);
+            // vector.applyQuaternion( camera.quaternion );
+            //console.log(vector);
+
+            //renderer.clear();
+            //requestAnimationFrame( render );
+            renderer.render( scene, camera );
+            
+
+            // renderer.clearDepth();
+            // renderer.render( sceneOrtho, cameraOrtho );
+
+            //console.log("camera pos: " + camera.position.x + ", " + camera.position.y + ", " + camera.position.z);
+            //console.log("camera pos: " + controls.target.x + ", " + controls.target.y + ", " + controls.target.z);
+        }
+
+        function topView() {
+            //controls.target.set( x, y, z );
+        }
+
+        function onMouseClick( event ) {
+
+            console.log("camera rotation: " );
+            console.log(camera.getWorldDirection());
+
+            console.log("camera position: ");
+            var position = new THREE.Vector3();
+                // position
+            position.setFromMatrixPosition(camera.matrixWorld);
+
+            console.log(position);
+
+            //getPositionFromMatrix( scene.getObjectByName("lowerGrid").matrixWorld );
+
+            console.log("scene pos: ");
+            // scene.position.x = (Math.sin( t/1000) * 300);
+            // scene.position.y = 0;
+            // scene.position.z = (Math.cos( t/1000) * 300);
+            
+            console.log(scene.position);
+
+            console.log("zoom scale: ");
+            var zoomScale = controls.zoom;
+            console.log(console);
+            //get rollover object to open link to article page on arxiv.org
+            //event.preventDefault();
+            mouse.x = (event.clientX / renderer.domElement.width) * window.devicePixelRatio * 2 - 1;
+            mouse.y = ((event.clientY / renderer.domElement.height) * window.devicePixelRatio * 2 - 1) * -1;
+
+            raycaster.setFromCamera( mouse, camera );
+            var intersects = raycaster.intersectObjects( articleObjects );
+            
+            if (intersects.length > 0) {
+                //opens new tab with article page
+                //window.open(intersects[0].object.userData.id);
+                //camera.lookAt(intersects[0].object.position);
+                 moveAndLookAt(camera, new THREE.Vector3(intersects[0].object.position.x, intersects[0].object.position.y + 50, intersects[0].object.position.z + 100), intersects[0].object.position, {duration: 1000});
+
+                //moveAndLookAt(camera, camera.position, intersects[0].object.position, {duration: 1000});
+                //controls.target.set(intersects[0].object.position);
+                //controls.update();
+            }
+            
+
+            //SELECT TERMS FROM SIDE NAVIGATION
+            $( "#selectable" ).selectable({
+                selected: function(event, ui) {
+
+
+                    if ($(ui.selected).hasClass('click-selected')) {
+                        //if clicking on previously selected term
+                        $(ui.selected).removeClass('ui-selected click-selected');
+
+                        console.log('same topic clicked');
+                        var lc = ui.selected.innerText.toLowerCase();
+                        console.log(lc);
+
+                        console.log("selectedArticles has: " + selectedArticles.length);
+                        if (selectedArticles.length > 0) {
+                            for (var n = 0; n < selectedArticles.length; n++) {
+                                var articleArray = selectedArticles[n].tempArray;
+                                
+                                for (var m = 0; m < articleArray.length; m++) {
+                                    var index = articleArray[m];
+                                    articleObjects[index].material.color.setRGB( 
+                                    articleObjects[index].userData.colour.r, 
+                                    articleObjects[index].userData.colour.g, 
+                                    articleObjects[index].userData.colour.b );
+                                }
+
+                                var splineHolder = splineObj.getObjectByName(selectedArticles[n].tempName);
+                                if (splineHolder != undefined) {
+                                    //remove splines that were previously created
+                                    for (var i = splineHolder.children.length - 1; i >= 0; i--) {
+                                        //console.log(splineHolder.children[i]);
+                                        splineObj.remove(splineHolder.children[i]);
+                                    }
+                                    scene.remove(splineObj);
+                                }
+                            }
+                        }
+
+                        //clear selectedArticles array
+                        //selectedArticles.length = 0;
+                        for(var m = 0; m < selectedArticles.length; m++) {
+                            if(selectedArticles[m].tempName == lc) {
+                                selectedArticles.splice(m, 1);
+                                break;
+                            }
+                        }
+
+                        console.log(selectedArticles);
+
+                    } else {
+                        //if clicking on new term
+                        console.log("new topic clicked");
+                        
+                        $(ui.selected).addClass('click-selected'); 
+                        var lc = ui.selected.innerText.toLowerCase();
+                        console.log(lc);
+
+                        var splineHolder = splineObj.getObjectByName(lc);
+                        console.log("splineHolder: ");
+                        console.log(splineHolder);
+                        
+                        console.log("termObj: ");
+                        console.log(termObj);
+
+                        //console.log(scene.getObjectByName(lc));
+                        var selected = termObj.getObjectByName(lc);
+                        console.log(selected);
+                        //var termPos = selected.position;
+                        console.log("selected name: " + selected.name);
+
+                        var tempSelectedObj = {};
+                        tempSelectedObj.tempName = selected.name;
+                        tempSelectedObj.tempArray = selected.userData.articleIndices.slice();
+                        //console.log(tempSelectedObj);
+                        selectedArticles.push(tempSelectedObj);
+                        console.log(selectedArticles);
+                        console.log(selectedArticles.length);
+
+                        //scene.remove(splineObj.getObjectByName(tempName));
+                        var splineHolder = splineObj.getObjectByName(selected.name);
+                        console.log("splineHolder: ");
+                        console.log(splineHolder);
+
+                        //set highlight of selected articles and draw splines to selected terms
+                        for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                            var index = selected.userData.articleIndices[k];
+                            //console.log(articleObjects[index].userData.id);
+
+                            articleObjects[index].material.color.setHex( 0xFFFCC7); //0xFEFFA9); //0xFFF586); //0xFECA40); //0xF3CE00 );
+
+                            drawSplines2 ( articleObjects[index].position, selected.position, lc );
+
+                            //articleObjects[index].geometry.colorsNeedUpdate = true;
+
+                            // var newMat = articleObjects[index].material.clone();
+                            // newMat.color.setHex( 0xffffff );
+                            // console.log(newMat);
+                            
+                            //dealing with children if there are some
+                            // for (var j = 0; j < articleObjects[index].children; j++) {
+                            //     //console.log(articleObjects[index].children[j]);
+                            //     articleObjects[index].children[j].material.color.setHex( 0xffffff );
+                            // }
+                            
+                        }
+
+                        splineObj.name = lc;
+                        scene.add( splineObj );
+
+
+
+                        render();
+                    }
+                },
+                unselected: function( event, ui ) {
+                    $(ui.unselected).removeClass('click-selected');
+                    console.log("unselected " + ui.unselected.innerText.toLowerCase());
+
+                    //if the array for what was selected on last click is populated, then change color of those articles back to original color
+                    
+                    console.log("selectedArticles has: " + selectedArticles.length);
+                    if (selectedArticles.length > 0) {
+                        for (var n = 0; n < selectedArticles.length; n++) {
+                            var articleArray = selectedArticles[n].tempArray;
+                            console.log("selectedArticles name: " + selectedArticles[n].tempName);
+                            for (var m = 0; m < articleArray.length; m++) {
+                                var index = articleArray[m];
+                                articleObjects[index].material.color.setRGB( 
+                                articleObjects[index].userData.colour.r, 
+                                articleObjects[index].userData.colour.g, 
+                                articleObjects[index].userData.colour.b );
+                            }
+                            var splineHolder = splineObj.getObjectByName(selectedArticles[n].tempName);
+                            if (splineHolder != undefined) {
+                                //remove splines that were previously created
+                                for (var i = splineHolder.children.length - 1; i >= 0; i--) {
+                                    //console.log(splineHolder.children[i]);
+                                    splineObj.remove(splineHolder.children[i]);
+                                }
+                                scene.remove(splineObj);
+                            }
+                        }
+                    }
+
+                    //clear selectedArticles array
+                    for(var m = 0; m < selectedArticles.length; m++) {
+                        if(selectedArticles[m].tempName == ui.unselected.innerText.toLowerCase()) {
+                            selectedArticles.splice(m, 1);
+                            break;
+                        }
+                    }
+                    console.log(selectedArticles);
+
+                }
+
+            });
+        }
+
+        function onMouseMove( event ) {
+            //event.preventDefault();
+            var mouseX = event.pageX; 
+            var mouseY = event.pageY;
+
+            mouse.x = (event.clientX / renderer.domElement.width) * window.devicePixelRatio * 2 - 1;
+            mouse.y = ((event.clientY / renderer.domElement.height) * window.devicePixelRatio * 2 - 1) * -1;
+
+            //console.log("mouse: " + mouse.x + ", " + mouse.y);
+
+            //scale the mouse normalized coordinates for the orthoCamera scene, center is (0, 0, 1)
+            // var w = SCREEN_WIDTH / 2;
+            // var h = SCREEN_HEIGHT / 2;
+
+            // var spritePos = new THREE.Vector3(mouse.x * w, mouse.y * h, 1);
+
+            // spriteTooltip.position.set(spritePos);
+            // console.log(spritePos);
+
+            raycaster.setFromCamera( mouse, camera );
+
+            var intersects = raycaster.intersectObjects( articleObjects );
+
+            var intersectsTerms = raycaster.intersectObjects( termObjects );
+
+            if ( intersects.length > 0 ) {
+
+                if ( INTERSECTED != intersects[ 0 ].object ) {
+
+                    if ( INTERSECTED ) INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
+
+                    INTERSECTED = intersects[ 0 ].object;
+                    INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
+                    INTERSECTED.material.color.setHex( 0xccff00 );
+                    console.log(INTERSECTED.name);
+                    console.log(INTERSECTED.userData);
+                    console.log(INTERSECTED.position);
+
+                    $("#articleInfo").css({'top':mouseY,'left':mouseX })
+                    .stop(true,true)
+                    .fadeIn('fast');
+
+                    /*
+                    if ( INTERSECTED.userData ) {
+                        
+                        tooltipContext.clearRect(0, 0, 640, 480);
+                        var message = INTERSECTED.userData.title;
+                        var metrics = tooltipContext.measureText( message );
+
+                        var width = metrics.width;
+                        console.log("text width: " + width);
+                        tooltipContext.fillStyle = "rgba(0,0,0,0.95)"; //black border
+                        tooltipContext.fillRect(0, 0, width + 8, 20 + 8);
+                        tooltipContext.fillStyle = "rgba(255, 255, 255, 0.95)"; //white fill
+                        tooltipContext.fillRect(2, 2, width + 4, 20 + 4 );
+                        tooltipContext.fillStyle = "rgba(0, 0, 0, 1)"; //text color
+                        tooltipContext.fillText( message, 4, 20);
+                        tooltipTexture.needsUpdate = true;
+                    } else {
+                        tooltipContext.clearRect( 0, 0, 300, 300);
+                        tooltipTexture.needsUpdate = true;
+                    }
+                    */
+                    
+                    //update article info
+                    $("#title").text(INTERSECTED.userData.title);
+                    $("#authors").text(INTERSECTED.userData.authors);
+                    var url = INTERSECTED.userData.id;
+                    $("#articleUrl a").prop('href', url);
+                    $("#articleUrl a").text(url);
+
+                    console.log(INTERSECTED.position);
+                    
+                }
+
+            } else {
+
+                if ( INTERSECTED )  {
+                    INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
+                    $("#articleInfo").stop(true,true).fadeOut('fast');
+                }
+                
+                INTERSECTED = null;
+                // tooltipContext.clearRect( 0, 0, 300, 300);
+                // tooltipTexture.needsUpdate = true;
+                   
+            }
+
+            if ( intersectsTerms.length > 0 ) {
+                //console.log(intersectsTerms);
+                if ( INTERSECTED_TERMS != intersectsTerms[ 0 ].object ) {
+
+                    if ( INTERSECTED_TERMS ) INTERSECTED_TERMS.material.color.setHex( INTERSECTED_TERMS.currentHex );
+
+                    INTERSECTED_TERMS = intersectsTerms[ 0 ].object;
+                    INTERSECTED_TERMS.currentHex = INTERSECTED_TERMS.material.color.getHex();
+                    INTERSECTED_TERMS.material.color.setHex( 0xff0000 );
+                    //console.log(INTERSECTED_TERMS.userData);
+
+                }
+            } else {
+                if ( INTERSECTED_TERMS ) INTERSECTED_TERMS.material.color.setHex( INTERSECTED_TERMS.currentHex );
+
+                INTERSECTED_TERMS = null;
+            }
+
+            render();
+
+        }
+
+        // function createHUDTooltip( texture , metrics ) {
+        //     var material = new THREE.SpriteMaterial( { map: texture } );
+        //     var width = metrics.width;
+        //     spriteTooltip = new THREE.Sprite( material );
+        //     spriteTooltip.scale.set(width*2, 100, 1);
+        //     sceneOrtho.add( spriteTooltip );
+        // }
+
+
+        function drawCircle (x, y, z, radius, segments, fillColor, strokeColor, id, title, authors) {
+            //draw top circle
+            //var articleObj = new THREE.Object3D();
+            var circleGeometry = new THREE.CircleGeometry( radius, segments );
+            var material = new THREE.LineBasicMaterial( { color: fillColor });           
+            var topCircle = new THREE.Mesh( circleGeometry, material );
+            //make backside of circle visible
+            topCircle.material.side = THREE.DoubleSide;
+            
+            topCircle.userData = { id: id, title: title, authors: authors, colour: fillColor };
+            topCircle.position.set(x, y, z);
+            topCircle.name = id;
+            topCircle.rotation.set(Math.PI/2,0,0);
+            
+            //scene.add( topCircle );
+            articleObj.add( topCircle );
+            articleObjects.push( topCircle );
+
+            //draw stroke circle
+            var outlineMaterial = new THREE.MeshBasicMaterial( { color: strokeColor, side: THREE.BackSide });
+            var outlineMesh = new THREE.Mesh( circleGeometry, outlineMaterial );
+            outlineMesh.material.side = THREE.DoubleSide;
+            outlineMesh.userData = { id: id, title: title, authors: authors, colour: strokeColor };
+            outlineMesh.position.set(x, y - 0.1, z);
+            outlineMesh.rotation.set(Math.PI/2,0,0);
+            outlineMesh.scale.multiplyScalar(1.2);
+            //articleObj.add( outlineMesh );
+
+            //draw bottomCircle
+            var bottomCircle = new THREE.Mesh( circleGeometry, material );
+            //make backside of circle visible
+            bottomCircle.material.side = THREE.DoubleSide;
+            bottomCircle.userData = { id: id, title: title, authors: authors, colour: fillColor };
+            bottomCircle.position.set(x, y - 0.2, z);
+            bottomCircle.rotation.set(Math.PI/2,0,0);
+            articleObj.add( bottomCircle );
+
+            //scene.add( articleObj );
+
+            
+            //articleObjects.push( outlineMesh );
+            //articleObjects.push( bottomCircle );
+        }
+
+        function drawTetrahedron(x, y, z, radius, fillColor, term, articleIndices ) {
+
+            var material = new THREE.LineBasicMaterial( { color: fillColor }); 
+            var tetra = new THREE.Mesh( new THREE.TetrahedronGeometry( radius, 0 ), material );
+            tetra.material.side = THREE.DoubleSide;
+            tetra.name = term;
+            tetra.userData = { id: term, articleIndices: articleIndices }
+            tetra.position.set( x, y, z );
+            scene.add( tetra );
+            termObj.add( tetra );
+            termObjects.push( tetra );
+
+            console.log("DRAW TETRA");
+        }
+
+        function loadArticles() {
+            var request = $.ajax({
+                type: "GET",
+                url: "data/articlesNewInfo4.json",
+                dataType: 'JSON',
+                contentType: 'application/json' 
+            })
+            .done(function(data) {
+                console.log( "success loading articles" );         
+                //console.log(data);
+
+                parseArticle(data);
+                   
+                console.log(articles.length);
+                loadTerms(articles);
+                
+            })
+            .fail(function() {
+                console.log( "error" );
+            });
+
+            //
+            
+        }
+
+        function parseArticle(data) {
+            for (d in data.articles) {
+                var item = data.articles[d];
+        
+                tempArticle = {};
+                tempArticle.id = item.id;
+                tempArticle.x = item.x;
+                tempArticle.y = item.y;
+                tempArticle.z = item.z;
+                tempArticle.radius = item.radius;
+                tempArticle.title = item.title;
+                tempArticle.published = item.published;
+                tempArticle.authors = item.authors;
+                tempArticle.numAuthors = item.numAuthors;
+                tempArticle.numCites = item.numCites;
+                tempArticle.numRefs = item.numRefs;
+
+                articles.push(tempArticle);
+            }
+
+            console.log(articles);
+
+            drawArticles(articles);
+        }
+
+        function drawArticles( array ) {
+            for (var i = 0; i < array.length; i++) {
+                // var x = Math.floor((Math.random() * 500));
+                // var y = Math.floor((Math.random() * 100));
+                // var z = Math.floor((Math.random() * 500));
+
+                // var size = Math.floor((Math.random() * 10) + 1);
+
+                // drawCircle(x, y, z, size, 64, 0xF0C400, 0xff0000)
+                var strokeColor;
+                if (array[i].published) {
+                    strokeColor = new THREE.Color(0x00dbbb);
+                } else {
+                    strokeColor = new THREE.Color(0x5309aa);
+                }
+
+                var colorAuthorMin = new THREE.Color(0x3f348c);
+                var colorAuthorMax2 = new THREE.Color(0xf47f31);
+                var colorAuthorMax3 = new THREE.Color(0xd8301e);
+
+                var mappedAuthor = map_range(array[i].numAuthors, 1, 5, 0, 1);
+                var fillColor = colorAuthorMin.lerp(colorAuthorMax2, mappedAuthor);
+
+                var authorStr;
+
+                if (array[i].numAuthors > 5 ) {
+                    fillColor = colorAuthorMax2;
+
+                    for (var j = 0; j < 5; j++ ) {
+                        authorStr += array[i].authors[j] + ", ";
+                    }
+
+                    authorStr += " ...";
+
+                    //authorStr = array[i].authors[0] + ", " + array[i].authors[1] + ", " + array[i].authors[2] + " ...";
+                } else {
+                    authorStr = array[i].authors.join(", ");
+                }
+
+                if (array[i].numAuthors > 800) {
+                    fillColor = colorAuthorMax3;
+                }
+
+                
+
+                //innerColor = lerpColor(colorAuthorMin, colorAuthorMax2, map(a.authorCounts.size(), 1, maxAuthorsToUse, 0, 1));
+
+                //drawCircle(array[i].x * -2, array[i].z * 0.25, array[i].y * 2, array[i].radius * 0.2, 64, fillColor, strokeColor);
+                drawCircle(array[i].x, array[i].z, array[i].y , array[i].radius, 24, fillColor, strokeColor, array[i].id, array[i].title, authorStr);
+
+            }
+            console.log("size of articleObjects array: " + articleObjects.length);
+        }
+
+        function loadTerms(articleArray) {
+            var request = $.ajax({
+                type: "GET",
+                url: "data/termNewInfo2.json",
+                dataType: 'JSON',
+                contentType: 'application/json' 
+            })
+            .done(function(data) {
+                console.log( "success loading terms" );         
+                //console.log(data);
+
+                parseTerm(data, articleArray);
+                
+
+                //drawSplines(articles, terms);
+                
+            })
+            .fail(function() {
+                console.log( "error" );
+            });
+
+            //
+        }
+
+        function parseTerm( data, articleArray ) {
+            
+            for (d in data.terms) {
+                var item = data.terms[d];
+                var articleIndexArray = [];
+                tempTerm = {};
+                tempTerm.term = item.term;
+                tempTerm.x = item.x;
+                tempTerm.y = item.y;
+                tempTerm.z = item.z;
+                tempTerm.articles = item.articles;
+                tempTerm.connections = item.connections;
+
+
+                for (var i = 0; i < item.articles.length; i++) {
+                    //console.log("term article: " + item.articles[i]);
+                    for (var j = 0; j < articleArray.length; j++) {
+                        if(item.articles[i] === articleArray[j].id) {
+                            //console.log("article id: " + articleArray[j].id);
+                            articleIndexArray.push(j);
+                            break;
+                        }
+                    }
+                    
+                }
+
+                tempTerm.articleIndex = articleIndexArray;
+
+                terms.push(tempTerm);
+
+                
+            }
+
+            console.log(terms);
+            console.log(terms.length);
+            drawTerms(terms);
+
+            startIntro(); //TOUR STARTS AFTER EVERYTHING LOADS
+
+        }
+
+        function drawTerms ( termArray, articleArray ) {  
+            for (var i = 0; i < termArray.length; i++) {
+                var t1 = termArray[i];
+                //console.log("t1: " + t1.connections.length);
+
+                var fillColor = new THREE.Color ( 0xea4f1c );
+                //drawCircle(t1.x * -0.1,  t1.z * 0.1, t1.y * 0.1, 1, 64, fillColor, fillColor);
+                //drawCircle(t1.x,  -1500, t1.y , 10, 64, fillColor, fillColor);
+                drawTetrahedron(t1.x, -1500 + 2*t1.z, t1.y , 10, fillColor , t1.term, t1.articleIndex);
+                //console.log("DRAW CIRCLE");
+                //console.log(t1.term + " - x: " + t1.x + " z: " + t1.y  + " y: " + t1.z);
+                console.log(termObj);
+
+                var spritey = makeTextSprite(" " + t1.term, 
+                    { fontsize: 60, fontface: "Georgia", borderColor: {r:255, g:255, b:0, a:1.0} } );
+                //spritey.position.set(t1.x * -0.1, t1.z * 0.1, t1.y * 0.1);
+                spritey.position.set(t1.x, -1520 + 2*t1.z , t1.y);
+                scene.add( spritey );
+
+                //for network lines between terms (seem like there are too many being drawn, or not transparent enough)
+                for (t in t1.connections) {
+                    var connect1 = t1.connections[t];
+                    var connect1Id = t1.connections[t].id;
+                    //console.log("t1 id: " + connect1Id);
+
+                    for (var j = i + 1; j < terms.length; j++) {
+                        var t2 = terms[j];
+                        //console.log("t2: " + t2.connections.length);
+
+                        for(n in t2.connections) {
+                            var connect2 = t2.connections[n];
+                            var connect2Id = t2.connections[n].id;
+                            //console.log("t2 id: " + connect2Id);
+                        }
+                        if (connect1Id === connect2Id) {
+                            //console.log("DRAW LINE");
+                            //drawLine(t1.x * 0.1, t1.z * 0.1, t1.y * 0.1, t2.x * 0.1, t2.z * 0.1, t2.y * 0.1, 0xff0000);
+                          // int sharedCount = ((ArrayList<Article>)t1.sharedArticles.get(t2)).size();
+                          // float thisAlpha = constrain(map(sharedCount, 0, maxCountToUse, minAlpha, maxAlpha), minAlpha, maxAlpha);
+                          // pg.stroke(colorTermNetwork, thisAlpha);
+                          // pg.line(t1.pos.x, t1.pos.y, termBaseZIn, t2.pos.x, t2.pos.y, termBaseZIn);
+                        }
+                    }
+                }
+               // console.log("____________________");
+                
+            }
+        }
+
+        function drawSplines2( article, term, name ) {
+
+            //shader stuff
+
+            attributes = {
+                customColor: {    type: 'c', value: [] },
+                customOpacity: { type: 'f', value: []}   
+            };
+
+            var shaderMaterial = new THREE.ShaderMaterial( {
+                attributes:     attributes,
+                vertexShader:   document.getElementById( 'vertexshader' ).textContent,
+                fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
+                blending:       THREE.NormalBlending,
+                depthTest:      true,
+                transparent:    true,
+                side:           THREE.DoubleSide,
+                linewidth:      2
+            });
+
+                var slideA = 0.8;
+                var slideB = 1 - slideA;
+
+                var start = new THREE.Vector3(article.x, article.y, article.z);
+                var end = new THREE.Vector3(term.x, term.y, term.z);
+                var startMid = new THREE.Vector3(slideA * start.x + slideB * end.x, slideA * start.y + slideB * end.y, start.z -.25 * Math.abs(end.z - start.z));
+                var endMid = new THREE.Vector3(slideA * end.x + slideB * start.x, slideA * end.y + slideB * start.y, end.z + .35 * Math.abs(end.z - start.z));
+
+                //Create a closed bent a sine-like wave
+                var curve = new THREE.SplineCurve3( [
+                    // new THREE.Vector3(start.x, start.y - 20, start.z),
+                    start,
+                    startMid,
+                    endMid,
+                    end
+                    // new THREE.Vector3(end.x, end.y + 20, end.z)
+                ] );
+
+                var geometry = new THREE.Geometry();
+                geometry.vertices = curve.getPoints( 30 );
+                
+
+                var splineColor = new THREE.Color(0xea4f1c);
+                var blackColor = new THREE.Color(0x000000);
+                var lerpedSplineColor = splineColor.lerp(blackColor, 0.66);
+
+                var material = new THREE.LineBasicMaterial( { color : lerpedSplineColor } );
+
+                //shader stuff
+                var values_color = attributes.customColor.value;
+                for ( var v = 0; v < geometry.vertices.length; v++ ) {
+                    values_color[ v ] = new THREE.Color(THREE.ColorKeywords.black);
+                    values_color[ v ].set( 0xea4f1c );
+                    attributes.customOpacity.value[ v ] = 0.1;
+                   
+                }
+
+                //Create the final Object3d to add to the scene
+                var splineObject = new THREE.Line( geometry, shaderMaterial );
+                
+                splineObj.add( splineObject );
+
+                //scene.add( splineObject );
+        }
+
+        function drawSplines(articles, terms) {
+
+            //shader stuff
+
+            attributes = {
+                customColor: {    type: 'c', value: [] },
+                customOpacity: { type: 'f', value: []}   
+            };
+
+            var shaderMaterial = new THREE.ShaderMaterial( {
+                attributes:     attributes,
+                vertexShader:   document.getElementById( 'vertexshader' ).textContent,
+                fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
+                blending:       THREE.NormalBlending,
+                depthTest:      true,
+                transparent:    true,
+                side:           THREE.DoubleSide,
+                linewidth:      2
+            });
+
+
+            for (var i = 0; i < terms.length; i++) {
+                var t1 = terms[i];
+                for (var j = 0; j < t1.articles.length; j++) {
+                    //var id = t1.articles[j];
+                    for (var k = 0; k < articles.length; k++) {
+                        if(t1.articles[j] === articles[k].id ) {
+                            //console.log("DRAW SPLINE");
+                            var slideA = 0.8;
+                            var slideB = 1 - slideA;
+                            // var start = new THREE.Vector3(articles[k].x, articles[k].z, articles[k].y);
+                            // var end = new THREE.Vector3(t1.x, t1.z, t1.y);
+                            // var startMid = new THREE.Vector3(slideA * start.x + slideB * end.x, slideA * start.z + slideB * end.z, start.y -.25 * Math.abs(end.y - start.y));
+                            // var endMid = new THREE.Vector3(slideA * end.x + slideB * start.x, slideA * end.z + slideB * start.z, end.y + .35 * Math.abs(end.y - start.y));
+                            var start = new THREE.Vector3(articles[k].x, articles[k].z, articles[k].y);
+                            var end = new THREE.Vector3(t1.x, -1500 + 2*t1.z, t1.y);
+                            var startMid = new THREE.Vector3(slideA * start.x + slideB * end.x, slideA * start.y + slideB * end.y, start.z -.25 * Math.abs(end.z - start.z));
+                            var endMid = new THREE.Vector3(slideA * end.x + slideB * start.x, slideA * end.y + slideB * start.y, end.z + .35 * Math.abs(end.z - start.z));
+
+                            //Create a closed bent a sine-like wave
+                            var curve = new THREE.SplineCurve3( [
+                                // new THREE.Vector3(start.x, start.y - 20, start.z),
+                                start,
+                                startMid,
+                                endMid,
+                                end
+                                // new THREE.Vector3(end.x, end.y + 20, end.z)
+                            ] );
+
+                            var geometry = new THREE.Geometry();
+                            geometry.vertices = curve.getPoints( 50 );
+
+                            var splineColor = new THREE.Color(0xea4f1c);
+                            var blackColor = new THREE.Color(0x000000);
+                            var lerpedSplineColor = splineColor.lerp(blackColor, 0.66);
+
+                            var material = new THREE.LineBasicMaterial( { color : lerpedSplineColor } );
+
+                            
+
+                            //shader stuff
+                            var values_color = attributes.customColor.value;
+                            for ( var v = 0; v < geometry.vertices.length; v++ ) {
+                                values_color[ v ] = new THREE.Color(THREE.ColorKeywords.black);
+                                values_color[ v ].set( 0xea4f1c );
+                                attributes.customOpacity.value[ v ] = 0.1;
+                               
+                            }
+
+                            //Create the final Object3d to add to the scene
+                            var splineObject = new THREE.Line( geometry, shaderMaterial );
+
+                            scene.add( splineObject );
+                        }
+                    } 
+                }
+            }
+        }
+
+        function drawLine(x1, y1, z1, x2, y2, z2, strokeColor) {
+            var material = new THREE.LineBasicMaterial({
+                color: strokeColor
+            });
+
+            var geometry = new THREE.Geometry();
+            geometry.vertices.push(
+                new THREE.Vector3( x1, y1, z1 ),
+                new THREE.Vector3( x2, y2, z2 )
+            );
+
+            var line = new THREE.Line( geometry, material );
+            scene.add( line );
+        }
+
+        //UTIL FUNCTIONS
+        function map_range(value, low1, high1, low2, high2) {
+            return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+        }
+
+        // function for drawing rounded rectangles
+        function roundRect(ctx, x, y, w, h, r) 
+        {
+            ctx.beginPath();
+            ctx.moveTo(x+r, y);
+            ctx.lineTo(x+w-r, y);
+            ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+            ctx.lineTo(x+w, y+h-r);
+            ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+            ctx.lineTo(x+r, y+h);
+            ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+            ctx.lineTo(x, y+r);
+            ctx.quadraticCurveTo(x, y, x+r, y);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();   
+        }
+
+        function makeTextSprite( message, parameters ) {
+            if ( parameters === undefined ) parameters = {};
+
+            var fontface = parameters.hasOwnProperty("fontface") ? parameters["fontface"] : "Georgia";
+            var fontsize = parameters.hasOwnProperty("fontsize") ? parameters["fontsize"] : 18;
+            var borderThickness = parameters.hasOwnProperty("borderThickness") ? parameters["borderThickness"] : 4;
+            var borderColor = parameters.hasOwnProperty("borderColor") ?parameters["borderColor"] : { r:255, g:255, b:255, a:1.0 };
+            var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?parameters["backgroundColor"] : { r:0, g:0, b:0, a:1.0 };
+            var textColor = parameters.hasOwnProperty("textColor") ?parameters["textColor"] : { r:255, g:255, b:255, a:1.0 };
+
+            var canvas = document.createElement('canvas');
+            canvas.width = 1000;
+            canvas.height = 200;
+            var context = canvas.getContext('2d');
+            context.font = "Bold " + fontsize + "px " + fontface;
+            var metrics = context.measureText( message );
+            //console.log("metrics: " + metrics.width);
+            var textWidth = metrics.width;
+
+
+            /*
+            var larger = textWidth > fontsize ? textWidth : fontsize;
+            canvas.width = larger * 4; 
+            canvas.height = larger * 2; 
+            // need to re-fetch and refresh the context after resizing the canvas 
+            context = canvas.getContext('2d'); 
+            context.font = fontsize + "px " + fontface; 
+            context.textBaseline = "alphabetic"; 
+            //context.textAlign = "left"; 
+            metrics = context.measureText( message ); 
+            textWidth = metrics.width; 
+            */
+            //console.log("canvas: " + canvas.width + ", " + canvas.height + ", texW: " + textWidth);
+
+
+            //var textWidth = 500;
+            context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + "," + backgroundColor.b + "," + backgroundColor.a + ")";
+            context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + "," + borderColor.b + "," + borderColor.a + ")";
+
+            context.lineWidth = borderThickness;
+            roundRect(context, borderThickness/2, borderThickness/2, (textWidth + borderThickness) * 1.05, fontsize * 1.4 + borderThickness, 8);
+
+            context.fillStyle = "rgba("+textColor.r+", "+textColor.g+", "+textColor.b+", 1.0)";
+            context.fillText( message, borderThickness, fontsize + borderThickness);
+
+            var texture = new THREE.Texture(canvas) 
+            texture.needsUpdate = true;
+
+            var spriteMaterial = new THREE.SpriteMaterial( { map: texture, useScreenCoordinates: false } );
+            var sprite = new THREE.Sprite( spriteMaterial );
+            //sprite.scale.set(0.6 * fontsize, 0.25 * fontsize, 0.75 * fontsize);
+            //sprite.scale.set(fontsize * 0.5, fontsize * 0.3, 0.5 * fontsize);
+            sprite.scale.set(fontsize*4, fontsize, fontsize);
+            return sprite;  
+        }
+
+        function makeTextSprite2( message, parameters ) {
+            if ( parameters === undefined ) parameters = {};
+            
+            var fontface = parameters.hasOwnProperty("fontface") ? 
+                parameters["fontface"] : "Georgia";
+            
+            var fontsize = parameters.hasOwnProperty("fontsize") ? 
+                parameters["fontsize"] : 14;
+            
+            var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
+                parameters["borderThickness"] : 2;
+            
+            var borderColor = parameters.hasOwnProperty("borderColor") ?
+                parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
+            
+            var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
+                parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
+            //var spriteAlignment = THREE.SpriteAlignment.topLeft;
+                
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+            context.font = "Bold " + fontsize + "px " + fontface;
+            
+            // get size data (height depends only on font size)
+            var metrics = context.measureText( message );
+            var textWidth = metrics.width;
+            
+            // background color
+            context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
+                                          + backgroundColor.b + "," + backgroundColor.a + ")";
+            // border color
+            context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
+                                          + borderColor.b + "," + borderColor.a + ")";
+            context.lineWidth = borderThickness;
+            roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
+            // 1.4 is extra height factor for text below baseline: g,j,p,q.
+            
+            // text color
+            context.fillStyle = "rgba(0, 0, 0, 1.0)";
+            context.fillText( message, borderThickness, fontsize + borderThickness);
+            
+            // canvas contents will be used for a texture
+            var texture = new THREE.Texture(canvas) 
+            texture.needsUpdate = true;
+            var spriteMaterial = new THREE.SpriteMaterial( 
+                { map: texture, useScreenCoordinates: false } );
+            var sprite = new THREE.Sprite( spriteMaterial );
+            sprite.scale.set(100,50,1.0);
+            return sprite;  
+        }
+
+
+        </script>
+
+
+        
+    </body>
+    </html>

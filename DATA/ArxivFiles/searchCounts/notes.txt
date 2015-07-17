@@ -1,3 +1,0 @@
-This is a result of the search of the arXiv database using the filtered concept list [filtered by Clara at SciAm] run over a few select categories of the Arxiv database.  The result is a listing of all of the ids of the articles that returned from this query from within each category.
-
-Note that the results listed are those for the article’s ‘primary category’ - which was a field returned within the xml file from the api

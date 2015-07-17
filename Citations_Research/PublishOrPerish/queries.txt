@@ -1,9 +1,0 @@
-FieldEquations.csv - searched for "Field Equations" in "The phrase" field. Additional query of Einstein in "All of the words" field.
-
-Einstein_FieldEquations.csv - searched for "Einstein" in "Author" field. Additional query of "Field Equations" in "All of the words" field.
-
-GeneralRelativity.csv - searched for "General Relativity" in the "The phrase" field. No additional queries.
-
-GeneralRelativity_FieldEquations_Einstein.csv - searched for "General Relativity" in the "The phrase" field. Additional query of Einstein the "The phrase" field. Additional query of "Field Equations" in the "All of the words" field
-
-EinsteinCSV and EinsteinCSV2 were done by Jer for initial visualizations.
