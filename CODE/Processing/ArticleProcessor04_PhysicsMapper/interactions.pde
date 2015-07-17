@@ -227,6 +227,10 @@ void keyReleased() {
       spotCheck = null;
     }
   }
+  
+  if (key == 'o') {
+    toggleOrtho = !toggleOrtho;
+  }
 
   // panning stuff
   if (key == '\'') {

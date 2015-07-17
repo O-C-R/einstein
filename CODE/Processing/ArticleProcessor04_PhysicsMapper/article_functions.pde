@@ -27,9 +27,9 @@ public void setupArticleColorsAndStuff(ArrayList<Article> articlesIn) {
   float maxArea = maxSize * maxSize * PI;
   // ****** //
   // ****** //
-  float maxAuthorsToUse = 20;
-  float maxAuthorsActual = 0;
-  float maxTotalAuthorCountsRatioToUse = 45; // as in total papers by all authors divided by author count
+  float maxAuthorsToUse = 5;
+  float maxAuthorsActual = 0; //becomes 894
+  //float maxTotalAuthorCountsRatioToUse = 45; // as in total papers by all authors divided by author count
   // ****** //
   // ****** //
   for (Article a : articles) maxAuthorsActual = (a.authorCounts.size() > maxAuthorsActual ? a.authorCounts.size() : maxAuthorsActual);
@@ -43,13 +43,28 @@ public void setupArticleColorsAndStuff(ArrayList<Article> articlesIn) {
     //println(" author count: " + a.authors.length + " innerRadius: " + innerRadius);
     // figure the color
 
-    float totalAuthorCount = a.authorCountsSum; // the total papers by all authors
+    //float totalAuthorCount = a.authorCountsSum; // the total papers by all authors - not using anymore for final graphic. color just based on number of authors, not previously published papers
     //println("totalAuthorCount: " + totalAuthorCount);
-    float average = totalAuthorCount / a.authorCounts.size();
+    //float average = totalAuthorCount / a.authorCounts.size(); //not doing this anymore for final graphic. color just based on number of authors
     //print("id: " + a.id + " ");
     //println("average: " + average);
     //float newHue = constrain(map(average, 0, maxTotalAuthorCountsRatioToUse, hue(colorAuthorMin), hue(colorAuthorMax)), hue(colorAuthorMin), hue(colorAuthorMax));
-    color innerColor = lerpColor(colorAuthorMin, colorAuthorMax, map(average, 0, maxTotalAuthorCountsRatioToUse, 0, 1));
+    color innerColor;
+    
+    innerColor = lerpColor(colorAuthorMin, colorAuthorMax2, map(a.authorCounts.size(), 1, maxAuthorsToUse, 0, 1));
+    
+    if(a.authorCounts.size() >= 800) {
+      //println(a.title + ", " + a.authorCounts.size() + " authors");
+      innerColor =  colorAuthorMax3; //#cc2b61; magenta
+      //innerColor = lerpColor(colorAuthorMax2, colorAuthorMax3, map(a.authorCounts.size(), 849, maxAuthorsActual, 0, 1));
+    } 
+//else if (a.authorCounts.size() >= maxAuthorsToUse && a.authorCounts.size() < 800) {
+//      println(a.authorCounts.size() + " authors: " + a.title);
+//      //innerColor = color(0, 255, 0);
+//      innerColor = lerpColor(colorAuthorMax, colorAuthorMax2, map(a.authorCounts.size(), maxAuthorsToUse, 200, 0, 1));
+//    } else {
+//      innerColor = lerpColor(colorAuthorMin, colorAuthorMax, map(a.authorCounts.size(), 1, maxAuthorsToUse, 0, 1));
+//    }
 
     color innerStroke = innerColor;
     a.setInner(innerRadius, innerColor, innerStroke);

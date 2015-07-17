@@ -189,9 +189,9 @@ boolean displayArticles = false;
 // ideally the positions of the Terms should be made when all of the Articles have been loaded -- this sets the springs correctly
 // then after the default positions have been set and saved -- press 's', set this boolean to true and then relaunch the program
 // that will auto load the defaults and make it so that the space can't be modified.  
-boolean lockDefaultTermPositions = false; // if set to true will not save or overwrite the default nor will it do the physics stuff
+boolean lockDefaultTermPositions = true; // if set to true will not save or overwrite the default nor will it do the physics stuff
 
-boolean lockDefaultArticlePositions = false; // if set to true will not save or overwrite the article positions.  nor will it do box2d stuff
+boolean lockDefaultArticlePositions = true; // if set to true will not save or overwrite the article positions.  nor will it do box2d stuff
 
 
 
@@ -213,6 +213,7 @@ float zAngle = -11 * PI/32;
 boolean useAngles = false;
 PVector startingOffset = new PVector(-100, -120, 0);
 float startingScale = 0.15;
+boolean toggleOrtho = true;
 
 // box2d
 Box2DProcessing box2d;
@@ -251,7 +252,8 @@ void setup() {
   //size(1200, 800, P3D);
   //size(1200, 800, OPENGL);
   //size(1625, 1075, P3D); // page ratio titlted
-  size(585, 774, P3D);
+  //size(585, 774, P3D);
+  size(1170, 774, P3D);
   //size(1075, 1625, P3D); // page ratio
   OCRUtils.begin(this);
   SimpleTween.begin(this);
@@ -374,7 +376,13 @@ void draw() {
   zpt.use();
 
   if (useAngles) {
-    ortho(0, width, 0, height, -23400, 3000); // overmanage the clipping plane
+    if (toggleOrtho) {
+      ortho(0, width, 0, height, -23400, 3000); // overmanage the clipping plane
+    } else {
+      float fov = PI/6.0;
+      float cameraZ = (height/2.0) / tan(fov/2.0);
+      perspective(fov, float(width)/float(height), cameraZ/10.0, cameraZ*10.0);
+    }
     rotateX(xAngle); // angles it to the side
     rotateZ(zAngle); // rotates it around z axis
   }

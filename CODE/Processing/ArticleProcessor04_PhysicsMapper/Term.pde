@@ -155,7 +155,7 @@ class Term {
     //pg.stroke(255, 0, 0);
     pg.stroke(termOutline);
     if (particle.isLocked()) {
-      pg.stroke(0, 255, 255);
+      //pg.stroke(0, 255, 255); //turning this off so it doesn't export with a cyan stroke
     }
     pg.pushMatrix();
     pg.rectMode(CENTER);
