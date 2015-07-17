@@ -186,7 +186,7 @@
             });
 
             intro.onchange(function(targetElement, currentStep) {
-                console.log("Current Scene: " + intro._currentStep);
+                //console.log("Current Scene: " + intro._currentStep);
 
                 
                 if (intro._currentStep === 0) { //INTRO SCREEN
@@ -195,7 +195,7 @@
                     //var str = "http://arxiv.org/abs/1410.7764v2";
                     //var str = "http://arxiv.org/abs/1410.5071v1";
                     var objlookAt = articleObj.getObjectByName(str);
-                    console.log(objlookAt);
+                    //console.log(objlookAt);
                    
                     
                     // camera.position.set(objlookAt.position.x + 50, objlookAt.position.y + 500, objlookAt.position.z + 50);
@@ -262,7 +262,7 @@
             });
 
             intro.oncomplete(function() {
-                console.log("Intro completed");
+                //console.log("Intro completed");
                 topView();
             });
 
@@ -418,8 +418,8 @@
             position.add( boundingBox.min );
 
             position.applyMatrix4( grid.matrixWorld );
-            console.log("grid centroid: ");
-            console.log(position.x + ',' + position.y + ',' + position.z);
+            // console.log("grid centroid: ");
+            // console.log(position.x + ',' + position.y + ',' + position.z);
 
             //moveAndLookAt(camera, new THREE.Vector3( 462.4822692871094, 1024.80419921875, 674.246337890625), position, {duration: 1000});
             //moveAndLookAt(camera, new THREE.Vector3( 649.216796875, 1223.69921875, 832.387939453125), position, {duration: 1000});
@@ -556,11 +556,11 @@
                         //if clicking on previously selected term
                         $(ui.selected).removeClass('ui-selected click-selected');
 
-                        console.log('same topic clicked');
+                        //console.log('same topic clicked');
                         var lc = ui.selected.innerText.toLowerCase();
-                        console.log(lc);
+                        //console.log(lc);
 
-                        console.log("selectedArticles has: " + selectedArticles.length);
+                        //console.log("selectedArticles has: " + selectedArticles.length);
                         if (selectedArticles.length > 0) {
                             for (var n = 0; n < selectedArticles.length; n++) {
                                 var articleArray = selectedArticles[n].tempArray;
@@ -594,41 +594,41 @@
                             }
                         }
 
-                        console.log(selectedArticles);
+                        //console.log(selectedArticles);
 
                     } else {
                         //if clicking on new term
-                        console.log("new topic clicked");
+                        //console.log("new topic clicked");
                         
                         $(ui.selected).addClass('click-selected'); 
                         var lc = ui.selected.innerText.toLowerCase();
-                        console.log(lc);
+                        //console.log(lc);
 
                         var splineHolder = splineObj.getObjectByName(lc);
-                        console.log("splineHolder: ");
-                        console.log(splineHolder);
+                        // console.log("splineHolder: ");
+                        // console.log(splineHolder);
                         
-                        console.log("termObj: ");
-                        console.log(termObj);
+                        // console.log("termObj: ");
+                        // console.log(termObj);
 
                         //console.log(scene.getObjectByName(lc));
                         var selected = termObj.getObjectByName(lc);
-                        console.log(selected);
+                        //console.log(selected);
                         //var termPos = selected.position;
-                        console.log("selected name: " + selected.name);
+                        //console.log("selected name: " + selected.name);
 
                         var tempSelectedObj = {};
                         tempSelectedObj.tempName = selected.name;
                         tempSelectedObj.tempArray = selected.userData.articleIndices.slice();
                         //console.log(tempSelectedObj);
                         selectedArticles.push(tempSelectedObj);
-                        console.log(selectedArticles);
-                        console.log(selectedArticles.length);
+                        // console.log(selectedArticles);
+                        // console.log(selectedArticles.length);
 
                         //scene.remove(splineObj.getObjectByName(tempName));
                         var splineHolder = splineObj.getObjectByName(selected.name);
-                        console.log("splineHolder: ");
-                        console.log(splineHolder);
+                        // console.log("splineHolder: ");
+                        // console.log(splineHolder);
 
                         //set highlight of selected articles and draw splines to selected terms
                         for (var k = 0; k < selected.userData.articleIndices.length; k++) {
@@ -663,15 +663,15 @@
                 },
                 unselected: function( event, ui ) {
                     $(ui.unselected).removeClass('click-selected');
-                    console.log("unselected " + ui.unselected.innerText.toLowerCase());
+                    //console.log("unselected " + ui.unselected.innerText.toLowerCase());
 
                     //if the array for what was selected on last click is populated, then change color of those articles back to original color
                     
-                    console.log("selectedArticles has: " + selectedArticles.length);
+                    //console.log("selectedArticles has: " + selectedArticles.length);
                     if (selectedArticles.length > 0) {
                         for (var n = 0; n < selectedArticles.length; n++) {
                             var articleArray = selectedArticles[n].tempArray;
-                            console.log("selectedArticles name: " + selectedArticles[n].tempName);
+                            //console.log("selectedArticles name: " + selectedArticles[n].tempName);
                             for (var m = 0; m < articleArray.length; m++) {
                                 var index = articleArray[m];
                                 articleObjects[index].material.color.setRGB( 
@@ -698,7 +698,7 @@
                             break;
                         }
                     }
-                    console.log(selectedArticles);
+                    //console.log(selectedArticles);
 
                 }
 
@@ -739,13 +739,13 @@
                     INTERSECTED = intersects[ 0 ].object;
                     INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
                     INTERSECTED.material.color.setHex( 0xccff00 );
-                    console.log(INTERSECTED.name);
-                    console.log(INTERSECTED.userData);
-                    console.log(INTERSECTED.position);
+                    // console.log(INTERSECTED.name);
+                    // console.log(INTERSECTED.userData);
+                    // console.log(INTERSECTED.position);
 
-                    $("#articleInfo").css({'top':mouseY,'left':mouseX })
-                    .stop(true,true)
-                    .fadeIn('fast');
+                    $("#articleInfo").css({'top':mouseY,'left':mouseX , 'display': 'visible'})
+                    .stop(true,true);
+                    //.fadeIn('fast');
                     
                     //update article info
                     $("#title").text(INTERSECTED.userData.title);
@@ -753,8 +753,6 @@
                     var url = INTERSECTED.userData.id;
                     $("#articleUrl a").prop('href', url);
                     $("#articleUrl a").text(url);
-
-                    console.log(INTERSECTED.position);
                     
                 }
 
@@ -847,7 +845,7 @@
             termObj.add( tetra );
             termObjects.push( tetra );
 
-            console.log("DRAW TETRA");
+            //console.log("DRAW TETRA");
         }
 
         function loadArticles() {
@@ -1000,8 +998,8 @@
                 
             }
 
-            console.log(terms);
-            console.log(terms.length);
+            // console.log(terms);
+            // console.log(terms.length);
             drawTerms(terms);
 
             startIntro(); //TOUR STARTS AFTER EVERYTHING LOADS
