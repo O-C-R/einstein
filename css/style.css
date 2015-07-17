@@ -19,8 +19,8 @@
   }
 
   #header {
-      height: 164px;
-      width: 393px;
+      height: 100px;
+      width: 300px;
       padding-left: 10px;
       padding-top: 30px;
       font-size: 60px;
@@ -29,6 +29,7 @@
       text-transform: uppercase;
       background-image: url(../img/title.png);
       background-repeat: no-repeat;
+      background-size: 100% 100%;
   }
 
   #UI {
@@ -37,7 +38,7 @@
     width: 150px;
     height: auto;
     position: absolute;
-    top: 180px;
+    top: 140px;
     padding: 10px;
     overflow: visible;
   }
