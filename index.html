@@ -15,33 +15,33 @@
             <div id="ThreeJS"></div>
             
             <div id="hud" class="visible">
-                <div id="header">Relativity&#39;s Reach</div>
+                <div id="header" alt="Relativity's Reach"></div>
                 <div id="UI">
-                    <h2 style="text-align: center;">Concept Keywords</h2>
-                    <ol id="selectable">
-                        <li class="ui-widget-content">Black hole</li>
-<!--                         <li class="ui-widget-content">Black holes</li>
-                        <li class="ui-widget-content">Black hole information paradox</li>
-                        <li class="ui-widget-content">Black hole thermodynamics</li> -->
-                        <li class="ui-widget-content">Event horizon</li>
-                        <li class="ui-widget-content">Schwarzschild metric</li>
-                        <li class="ui-widget-content">Kerr metric</li>
-                        <li class="ui-widget-content">Physical cosmology</li>
-                        <li class="ui-widget-content">String theory</li>
-                        <li class="ui-widget-content">Gravitation</li>
-                        <li class="ui-widget-content">Dark matter</li>
-                        <li class="ui-widget-content">Spacetime</li>
-                        <li class="ui-widget-content">Special relativity</li>
-                        <li class="ui-widget-content">Time</li>
-                        <li class="ui-widget-content">Quantum gravity</li>
-                        <li class="ui-widget-content">Gravitational wave</li>
-                        <li class="ui-widget-content">Big bang</li>
-                        <li class="ui-widget-content">Standard model</li>
-                        <li class="ui-widget-content">Hawking radiation</li>
-                        <li class="ui-widget-content">Symmetry</li>
-                        
-
-                    </ol>
+                    <div id="keyword-container">
+                        <h2 style="padding-left: 5px;">Concept Keywords</h2>
+                        <ol id="selectable">
+                            <li class="ui-widget-content">Black hole</li>
+    <!--                         <li class="ui-widget-content">Black holes</li>
+                            <li class="ui-widget-content">Black hole information paradox</li>
+                            <li class="ui-widget-content">Black hole thermodynamics</li> -->
+                            <li class="ui-widget-content">Event horizon</li>
+                            <li class="ui-widget-content">Schwarzschild metric</li>
+                            <li class="ui-widget-content">Kerr metric</li>
+                            <li class="ui-widget-content">Physical cosmology</li>
+                            <li class="ui-widget-content">String theory</li>
+                            <li class="ui-widget-content">Gravitation</li>
+                            <li class="ui-widget-content">Dark matter</li>
+                            <li class="ui-widget-content">Spacetime</li>
+                            <li class="ui-widget-content">Special relativity</li>
+                            <li class="ui-widget-content">Time</li>
+                            <li class="ui-widget-content">Quantum gravity</li>
+                            <li class="ui-widget-content">Gravitational wave</li>
+                            <li class="ui-widget-content">Big bang</li>
+                            <li class="ui-widget-content">Standard model</li>
+                            <li class="ui-widget-content">Hawking radiation</li>
+                            <li class="ui-widget-content">Symmetry</li>    
+                        </ol>
+                    </div>
                     <div id="navButtons">
                         <h2 style="padding-left: 5px;">Views</h2>
                         <div><button id="topView" onclick="topView();">TOP VIEW</button></div>
@@ -159,7 +159,7 @@
                         position: 'right'
                     },
                     {
-                        element: '#selectable',
+                        element: '#keyword-container',
                         intro: "<h2>Concept Keywords</h2><br><br>A powerful text analysis tool, which is now part of IBM's Watson AI system, examined the abstracts of all 2,435 papers in the General Relativity - Quantum Cosmology category and returned concept keywords it believed the papers addressed. These keywords were edited for relevancy down to 61 (not all are displayed).<br><br>You may select a keyword to see which articles reference it. Select multiple keywords by dragging over multiple buttons or selecting while pressing the CTRL key.",
                         position: 'right'
                     },

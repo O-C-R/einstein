@@ -2,8 +2,9 @@
   @import url(reset.css);
 
   body {
-      font-family: 'MS Sans Serif4', 'Geneva', sans-serif;
-      font-size: 62.5%;
+      /*font-family: 'MS Sans Serif4', 'Geneva', sans-serif;*/
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      font-size: 60.5%;
   }
 
   h2 {
@@ -18,13 +19,16 @@
   }
 
   #header {
-      height: 100px;
+      height: 164px;
+      width: 393px;
       padding-left: 10px;
       padding-top: 30px;
       font-size: 60px;
       position: absolute;
       color: white;
       text-transform: uppercase;
+      background-image: url(../img/title.png);
+      background-repeat: no-repeat;
   }
 
   #UI {
@@ -33,7 +37,7 @@
     width: 150px;
     height: auto;
     position: absolute;
-    top: 100px;
+    top: 180px;
     padding: 10px;
     overflow: visible;
   }
@@ -99,8 +103,10 @@
   .ui-widget-content {background: rgba(55, 55, 55, 0.9) ; color: white; border: 1px solid #6B6B6B;}
 
   button {
-    margin: 3px;
+    margin: 3px 3px 0px 0px;
     font-style: uppercase;
+    background: rgba(55, 55, 55, 0.9); color: white; border: 1px solid #6B6B6B; 
+    font-size: 12px;
   }
 
   #navButtons {
