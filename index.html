@@ -468,6 +468,7 @@
             document.addEventListener('mousemove', onMouseMove, false);
             document.addEventListener('mouseup', onMouseUp, false);
             document.addEventListener('mousedown', onMouseDown, false);
+
         }
 
         function topView() {
@@ -606,8 +607,14 @@
             var intersects = raycaster.intersectObjects( articleObjects );
             
             if (intersects.length > 0 && !tourActive ) {
-                //opens new tab with article page
-                window.open(intersects[0].object.userData.id);
+
+                if($('#selectable').is(':hover')) {
+                    console.log("over the term menu");
+                } else {
+                    //opens new tab with article page
+                    window.open(intersects[0].object.userData.id);
+                }
+                
                 
                 //disabled camera movement to point on click - but could be a good interface?
                 //moveAndLookAt(camera, new THREE.Vector3(intersects[0].object.position.x, intersects[0].object.position.y + 50, intersects[0].object.position.z + 100), intersects[0].object.position, {duration: 1000});
