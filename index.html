@@ -63,6 +63,7 @@
         <script type="text/javascript" src="js/three.v71dev.min.js"></script>
         <script type="text/javascript" src="js/OrbitControls2.js"></script>
         <script type="text/javascript" src="js/Detector.js"></script>
+        <script type="text/javascript" src="js/stats.min.js"></script>
         <script type="text/javascript" src="js/intro.js"></script>
         <script type="text/javascript" src="js/jquery.scrollto.min.js"></script>
 
@@ -83,6 +84,7 @@
 
 
         <script type="x-shader/x-vertex" id="vertexshader">
+            //for spline object - have transparency
             attribute vec3 customColor;
             attribute float customOpacity;
 
@@ -97,6 +99,8 @@
         </script>
 
         <script type="x-shader/x-fragment" id="fragmentshader">
+            //for spline object - have transparency
+            //attribute vec3 customColor;
             varying vec3 vColor;
             varying float vOpacity;
 
@@ -105,15 +109,58 @@
             }
         </script>
 
+        <script type="x-shader/x-vertex" id="circleVertexShader">
+            // void main() { 
+            //     gl_Position = vec3(aVertexPos, 1.);
+            // }
+            varying vec2 vUV;
+            void main() {
+                vUV = position.xy;
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+            }
+        </script>
+
+        <script type="x-shader/x-fragment" id="circleFragmentShader">
+            uniform vec3 innerCol;
+            uniform vec3 strokeCol;
+            uniform float radius;
+            uniform float stroke;
+
+            varying vec2 vUV;
+
+            void main() {
+
+                // rad ~5
+                // stroke 2...
+                //float border = (radius - stroke/2.) / (stroke/2.+ radius);
+                float dist = distance(vUV, vec2(radius / 2.0, radius / 2.0));
+                float circleRadius = radius / 2.0;
+                float borderRadius = circleRadius - stroke / 2.0;
+
+                if (dist < circleRadius && dist > borderRadius) {
+                    gl_FragColor = vec4(strokeCol, 1.0);
+                }
+                else if (dist < circleRadius) {
+                    gl_FragColor = vec4(innerCol, 1.0);                                        
+                }
+                else {
+                    discard;
+                }
+
+                //if(d <= border) gl_FragColor = vec4(innerCol, 1.);
+                //else if(d > border && d < 1.) gl_FragColor = vec4(strokeCol, 1.);
+                //else gl_FragColor = vec4(1);
+            }
+        </script>
+
         <script>
 
         //standard global variables
-        var container, scene, camera, renderer, controls, raycaster, mouse, composer;
+        var container, scene, camera, renderer, controls, raycaster, mouse, composer, stats;
         var cameraOrtho, sceneOrtho;
         var mouse = { x: 0, y: 0 };
         var INTERSECTED, INTERSECTED_TERMS;
         var SCREEN_WIDTH, SCREEN_HEIGHT;
-
 
         //custom global variables
         var mesh;
@@ -137,11 +184,11 @@
 
         var tourActive = false;
 
+        var termOffset = -1000;
+
         init();
 
  // postprocessing
-
-     
 
         animate();
         //startIntro();
@@ -409,11 +456,17 @@
             var gridXZ_2 = new THREE.GridHelper(1000, 100);
             gridXZ_2.name = "lowerGrid";
             gridXZ_2.setColors( gridColorAlpha, gridColorAlpha );
-            gridXZ_2.position.set(340, -1500, 760);
+            gridXZ_2.position.set(340, termOffset, 760);
             scene.add(gridXZ_2);
 
+            stats = new Stats();
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.top = '0px';
+            stats.domElement.style.right = '0px';
+            container.appendChild( stats.domElement );
+
             document.addEventListener('mousemove', onMouseMove, false);
-            document.addEventListener('mouseup', onMouseClick, false);
+            document.addEventListener('mouseup', onMouseUp, false);
             document.addEventListener('mousedown', onMouseDown, false);
         }
 
@@ -501,6 +554,7 @@
 
             //composer.render();
             render();
+            stats.update();
 
         }
 
@@ -560,7 +614,7 @@
             }
         }
 
-        function onMouseClick( event ) {
+        function onMouseUp( event ) {
             console.log("MOUSE UP");
 
             //SELECT TERMS FROM SIDE NAVIGATION
@@ -582,11 +636,14 @@
                                 var articleArray = selectedArticles[n].tempArray;
                                 
                                 for (var m = 0; m < articleArray.length; m++) {
+                                    // var index = articleArray[m];
+                                    // articleObjects[index].material.color.setRGB( 
+                                    // articleObjects[index].userData.colour.r, 
+                                    // articleObjects[index].userData.colour.g, 
+                                    // articleObjects[index].userData.colour.b );
+
                                     var index = articleArray[m];
-                                    articleObjects[index].material.color.setRGB( 
-                                    articleObjects[index].userData.colour.r, 
-                                    articleObjects[index].userData.colour.g, 
-                                    articleObjects[index].userData.colour.b );
+                                    articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
                                 }
 
                                 var splineHolder = splineObj.getObjectByName(selectedArticles[n].tempName);
@@ -651,9 +708,14 @@
                             var index = selected.userData.articleIndices[k];
                             //console.log(articleObjects[index].userData.id);
 
-                            articleObjects[index].material.color.setHex( 0xFFFCC7); //0xFEFFA9); //0xFFF586); //0xFECA40); //0xF3CE00 );
+                            //articleObjects[index].material.color.setHex( 0xFFFCC7); //0xFEFFA9); //0xFFF586); //0xFECA40); //0xF3CE00 );
+                            articleObjects[index].material.uniforms.innerCol.value = new THREE.Color ( 0xFFFCC7 );
 
-                            drawSplines2 ( articleObjects[index].position, selected.position, lc );
+                            if (k % 2 === 0) {
+                                drawSplines2 ( articleObjects[index].position, selected.position, lc );
+                            }
+
+                            
 
                             //articleObjects[index].geometry.colorsNeedUpdate = true;
 
@@ -689,12 +751,18 @@
                             var articleArray = selectedArticles[n].tempArray;
                             //console.log("selectedArticles name: " + selectedArticles[n].tempName);
                             for (var m = 0; m < articleArray.length; m++) {
+                                // var index = articleArray[m];
+                                // articleObjects[index].material.color.setRGB( 
+                                // articleObjects[index].userData.colour.r, 
+                                // articleObjects[index].userData.colour.g, 
+                                // articleObjects[index].userData.colour.b );
+
                                 var index = articleArray[m];
-                                articleObjects[index].material.color.setRGB( 
-                                articleObjects[index].userData.colour.r, 
-                                articleObjects[index].userData.colour.g, 
-                                articleObjects[index].userData.colour.b );
+                                articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
                             }
+
+                            articleObjects[index].material.uniforms.innerCol.value = new THREE.Color( 0xccff00 );
+
                             var splineHolder = splineObj.getObjectByName(selectedArticles[n].tempName);
                             if (splineHolder != undefined) {
                                 //remove splines that were previously created
@@ -750,11 +818,17 @@
 
                 if ( INTERSECTED != intersects[ 0 ].object ) {
 
-                    if ( INTERSECTED ) INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
+                    if ( INTERSECTED )  { 
+
+                        //INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
+                        INTERSECTED.material.uniforms.innerCol.value = INTERSECTED.userData.colour;
+                        
+                    }
 
                     INTERSECTED = intersects[ 0 ].object;
-                    INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
-                    INTERSECTED.material.color.setHex( 0xccff00 );
+                    INTERSECTED.material.uniforms.innerCol.value = new THREE.Color( 0xccff00 );
+                    //INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
+                    //INTERSECTED.material.color.setHex( 0xccff00 );
                     // console.log(INTERSECTED.name);
                     // console.log(INTERSECTED.userData);
                     // console.log(INTERSECTED.position);
@@ -775,7 +849,8 @@
             } else {
 
                 if ( INTERSECTED )  {
-                    INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
+                    //INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
+                    INTERSECTED.material.uniforms.innerCol.value = INTERSECTED.userData.colour;
                     $("#articleInfo").stop(true,true).fadeOut('fast');
                 }
                 
@@ -805,11 +880,144 @@
 
         }
 
+
+        var maxrad = 0;
+
+        function drawShaderCircle(fillColor, strokeColor, radius, strokeWeight, x, y, z, rotx, roty, rotz, scalar, id, title, authors) {
+
+            //shader stuff
+
+                maxrad = Math.max(maxrad, radius);
+
+        
+            
+
+            var uniforms = {
+                    innerCol: {
+                        type: 'c', // a color
+                        value: fillColor
+                        }, 
+                    strokeCol: {
+                        type: 'c', // a color
+                        value: strokeColor
+                        },
+                    radius: {
+                        type: 'f', // a float
+                        value: radius
+                        },
+                    stroke: {
+                        type: 'f', //a float
+                        value: strokeWeight
+                    } 
+                };
+
+
+            var shaderMaterial = new THREE.ShaderMaterial( {
+                uniforms:       uniforms,
+                vertexShader:   document.getElementById( 'circleVertexShader' ).textContent,
+                fragmentShader: document.getElementById( 'circleFragmentShader' ).textContent,
+                blending:       THREE.NormalBlending,
+                depthTest:      true,
+                transparent:    true,
+                side:           THREE.DoubleSide,
+                linewidth:      2
+            });
+            
+            var square = new THREE.Shape();
+            square.moveTo( 0, 0 );
+            square.lineTo( 0, radius );
+            square.lineTo( radius, radius );
+            square.lineTo( radius, 0 );
+            square.lineTo( 0, 0 );
+
+            // square.moveTo( -1 * radius, -1 * radius );
+            // square.lineTo( -1 * radius, 0 );
+            // square.lineTo( 0, 0 );
+            // square.lineTo( 0, -1 * radius );
+            // square.lineTo( -1 * radius, -1 * radius );
+
+            
+
+            var squareGeom = new THREE.ShapeGeometry( square );
+
+            //shader stuff
+            // var values_color = attributes.customColor.value;
+            // for ( var v = 0; v < squareGeom.vertices.length; v++ ) {
+            //     values_color[ v ] = new THREE.Color(THREE.ColorKeywords.black);
+            //     values_color[ v ].set( 0xea4f1c );
+            //     attributes.customOpacity.value[ v ] = 0.1;
+            // }
+
+            var squareMesh = new THREE.Mesh( squareGeom, shaderMaterial ); 
+
+            squareMesh.position.set( x - radius/2, y, z - radius/2);
+            squareMesh.rotation.set( rotx, roty, rotz );
+            squareMesh.scale.set( scalar, scalar, scalar ); 
+
+            squareMesh.userData = { id: id, title: title, authors: authors, colour: fillColor };
+            squareMesh.name = id;
+
+            articleObj.add( squareMesh );
+            articleObjects.push( squareMesh );
+        }
+
+        function drawCirclePoints ( fillColor, strokeColor, radius, x, y, z, rotx, roty, rotz, scalar ) {
+
+            // var circleRadius = radius;
+            
+            // var circleShape = new THREE.Shape();
+            // circleShape.moveTo( 0, circleRadius );
+            // circleShape.quadraticCurveTo( circleRadius, circleRadius, circleRadius, 0 );
+            // circleShape.quadraticCurveTo( circleRadius, -circleRadius, 0, -circleRadius );
+            // circleShape.quadraticCurveTo( -circleRadius, -circleRadius, -circleRadius, 0 );
+            // circleShape.quadraticCurveTo( -circleRadius, circleRadius, 0, circleRadius );
+
+            // var arcShape = new THREE.Shape();
+            // var origin = 10;
+            // arcShape.moveTo( radius * 2, radius );
+            // arcShape.absarc( radius, radius, radius, 0, Math.PI*2, false );
+
+            var shape = new THREE.Shape();
+            shape.moveTo(radius, 0);
+            shape.absarc(0, 0, radius, 0, Math.PI*2, false);
+            // arcShape.moveTo( radius, origin );
+            // arcShape.absarc( origin, origin, radius - origin, 0, Math.PI*2, false );
+
+            var points = shape.createSpacedPointsGeometry(24);
+            //var points = shape.createPointsGeometry();
+
+            var outline = new THREE.Line( points, new THREE.LineBasicMaterial( { color: strokeColor, linewidth: 1 } ) );
+            outline.position.set( x, y, z);
+            outline.rotation.set( rotx, roty, rotz );
+            outline.scale.set( scalar, scalar, scalar );
+            scene.add( outline );
+        }
+
+        // function addShape( shape, extrudeSettings, color, x, y, z, rx, ry, rz, scalar )
+        // addShape( circleShape,      extrudeSettings, 0x00f000,  120,  250, 0, 0, 0, 0, 1 );
+
         function drawCircle (x, y, z, radius, segments, fillColor, strokeColor, id, title, authors) {
             //draw top circle
             //var articleObj = new THREE.Object3D();
             var circleGeometry = new THREE.CircleGeometry( radius, segments );
-            var material = new THREE.LineBasicMaterial( { color: fillColor });           
+            var material = new THREE.LineBasicMaterial( { color: fillColor, linewidth: 3 });  
+
+            var fillMaterial = new THREE.LineBasicMaterial( { color: fillColor } );
+            var strokeMaterial = new THREE.LineBasicMaterial( { color: strokeColor, linewidth: 3 } ); 
+
+            // var multiCircle = new THREE.SceneUtils.createMultiMaterialObject( circleGeometry, [fillMaterial, strokeMaterial] );
+
+            // multiCircle.userData = { id: id, title: title, authors: authors, colour: fillColor };
+            // multiCircle.position.set(x, y, z);
+            // multiCircle.name = id;
+            // multiCircle.rotation.set(Math.PI/2,0,0);
+
+            //drawCirclePoints(fillColor, strokeColor, radius, x, y, z, Math.PI/2, 0, 0, 1);
+            drawShaderCircle(fillColor, strokeColor, radius * 2, 2.0, x, y, z, Math.PI/2, 0, 0, 1, id, title, authors);
+
+            //scene.add(multiCircle);
+            //articleObj.add(multiCircle);
+
             var topCircle = new THREE.Mesh( circleGeometry, material );
             //make backside of circle visible
             topCircle.material.side = THREE.DoubleSide;
@@ -820,27 +1028,27 @@
             topCircle.rotation.set(Math.PI/2,0,0);
             
             //scene.add( topCircle );
-            articleObj.add( topCircle );
-            articleObjects.push( topCircle );
+            // articleObj.add( topCircle );
+            // articleObjects.push( topCircle );
 
             //draw stroke circle
-            var outlineMaterial = new THREE.MeshBasicMaterial( { color: strokeColor, side: THREE.BackSide });
-            var outlineMesh = new THREE.Mesh( circleGeometry, outlineMaterial );
-            outlineMesh.material.side = THREE.DoubleSide;
-            outlineMesh.userData = { id: id, title: title, authors: authors, colour: strokeColor };
-            outlineMesh.position.set(x, y - 0.1, z);
-            outlineMesh.rotation.set(Math.PI/2,0,0);
-            outlineMesh.scale.multiplyScalar(1.2);
+            // var outlineMaterial = new THREE.MeshBasicMaterial( { color: strokeColor, side: THREE.BackSide });
+            // var outlineMesh = new THREE.Mesh( circleGeometry, outlineMaterial );
+            // outlineMesh.material.side = THREE.DoubleSide;
+            // outlineMesh.userData = { id: id, title: title, authors: authors, colour: strokeColor };
+            // outlineMesh.position.set(x, y - 0.1, z);
+            // outlineMesh.rotation.set(Math.PI/2,0,0);
+            // outlineMesh.scale.multiplyScalar(1.2);
             //articleObj.add( outlineMesh );
 
             //draw bottomCircle
-            var bottomCircle = new THREE.Mesh( circleGeometry, material );
-            //make backside of circle visible
-            bottomCircle.material.side = THREE.DoubleSide;
-            bottomCircle.userData = { id: id, title: title, authors: authors, colour: fillColor };
-            bottomCircle.position.set(x, y - 0.2, z);
-            bottomCircle.rotation.set(Math.PI/2,0,0);
-            articleObj.add( bottomCircle );
+            // var bottomCircle = new THREE.Mesh( circleGeometry, material );
+            // //make backside of circle visible
+            // bottomCircle.material.side = THREE.DoubleSide;
+            // bottomCircle.userData = { id: id, title: title, authors: authors, colour: fillColor };
+            // bottomCircle.position.set(x, y - 0.2, z);
+            // bottomCircle.rotation.set(Math.PI/2,0,0);
+            //articleObj.add( bottomCircle );
 
             //scene.add( articleObj );
 
@@ -1030,16 +1238,16 @@
                 var fillColor = new THREE.Color ( 0xea4f1c );
                 //drawCircle(t1.x * -0.1,  t1.z * 0.1, t1.y * 0.1, 1, 64, fillColor, fillColor);
                 //drawCircle(t1.x,  -1500, t1.y , 10, 64, fillColor, fillColor);
-                drawTetrahedron(t1.x, -1500 + 2*t1.z, t1.y , 10, fillColor , t1.term, t1.articleIndex);
+                drawTetrahedron(t1.x, termOffset + 2*t1.z, t1.y , 10, fillColor , t1.term, t1.articleIndex);
                 //console.log("DRAW CIRCLE");
                 //console.log(t1.term + " - x: " + t1.x + " z: " + t1.y  + " y: " + t1.z);
                 //console.log(termObj);
 
-                var spritey = makeTextSprite(" " + t1.term, 
-                    { fontsize: 60, fontface: "Georgia", borderColor: {r:255, g:255, b:0, a:1.0} } );
+                //var spritey = makeTextSprite(" " + t1.term, 
+                //    { fontsize: 60, fontface: "Georgia", borderColor: {r:255, g:255, b:0, a:1.0} } );
                 //spritey.position.set(t1.x * -0.1, t1.z * 0.1, t1.y * 0.1);
-                spritey.position.set(t1.x, -1520 + 2*t1.z , t1.y);
-                scene.add( spritey );
+                //spritey.position.set(t1.x, termOffset + 20 + 2*t1.z , t1.y);
+                //scene.add( spritey );
 
                 //for network lines between terms (seem like there are too many being drawn, or not transparent enough)
                 //this is currently disabled for legibility
@@ -1112,11 +1320,11 @@
                 geometry.vertices = curve.getPoints( 30 );
                 
 
-                var splineColor = new THREE.Color(0xea4f1c);
-                var blackColor = new THREE.Color(0x000000);
-                var lerpedSplineColor = splineColor.lerp(blackColor, 0.66);
+                // var splineColor = new THREE.Color(0xea4f1c);
+                // var blackColor = new THREE.Color(0x000000);
+                // var lerpedSplineColor = splineColor.lerp(blackColor, 0.66);
 
-                var material = new THREE.LineBasicMaterial( { color : lerpedSplineColor } );
+                // var material = new THREE.LineBasicMaterial( { color : lerpedSplineColor } );
 
                 //shader stuff
                 var values_color = attributes.customColor.value;
@@ -1124,7 +1332,6 @@
                     values_color[ v ] = new THREE.Color(THREE.ColorKeywords.black);
                     values_color[ v ].set( 0xea4f1c );
                     attributes.customOpacity.value[ v ] = 0.1;
-                   
                 }
 
                 //Create the final Object3d to add to the scene
