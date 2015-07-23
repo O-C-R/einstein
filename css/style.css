@@ -110,19 +110,42 @@
     font-size: 12px;
   }
 
-  #navButtons {
+  #keyInfo {
     position: absolute;
     top: 5px;
     right: 5px;
     width: auto;
+    float: right;
+  }
+
+  #navButtons {
+    position: relative;
+  }
+
+  #navInstructions {
+    width: 250px;
+    height: auto;
+    padding: 5px 5px 10px 5px;
+    /*margin: 6px 3px 0px 0px;*/
+    margin-left: auto;
+    margin-top: 6px;
+    margin-right: 3px;
+    position: relative;
+    background: rgba(55, 55, 55, 0.9); 
+    color: white; 
+    border: 1px solid #6B6B6B;
+    line-height: 1.6em;
   }
 
   #authorKey {
-    width: 100px;
+    position: relative;
+    width: 120px;
     height: auto;
     padding: 5px;
-    margin: 6px 3px 0px 0px;
-    float: right;
+    /*margin: 6px 3px 0px 0px;*/
+    margin-left: auto;
+    margin-top: 6px;
+    margin-right: 3px;
     background: rgba(55, 55, 55, 0.9); 
     color: white; 
     border: 1px solid #6B6B6B;
@@ -140,8 +163,10 @@
 
   .circle_info {
     position: relative;
-    top: -5px;
-  }
+    top: -4px;
+    line-height: 1.1em;
+/*    float: right;
+*/  }
 
   #circle_author1 {
     background: #3B3183;
@@ -170,11 +195,29 @@
   #circle_pub {
     background: gray;
     border: 1px solid #00dbbb;
+    width: 14px;
+    height: 14px;
   }
 
   #circle_unpub {
     background: gray;
-    border: 2px solid #5309aa;
+    border: 1px solid #5309aa;
+    width: 14px;
+    height: 14px;
+  }
+
+  #circle_noCites {
+    background: gray;
+    width: 8px;
+    height: 8px;
+    position: relative;
+    left: 8px;
+  }
+
+  #circle_85cites {
+    background: gray;
+    width: 28px;
+    height: 28px;
   }
   /*           #tourbtn {
     position: fixed;

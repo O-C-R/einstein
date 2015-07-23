@@ -16,14 +16,19 @@
             
             <div id="hud" class="visible">
                 <div id="header" alt="Relativity's Reach"></div>
-                <div id="navButtons">
-                    <div>
-                        <h2 style="padding-left: 5px;">Views
+                <div id="keyInfo">
+                    <div id="navButtons">
                         <button id="topView" onclick="topView();">TOP VIEW</button>
                         <button id="bottomView" onclick="bottomView();">BOTTOM VIEW</button>
                         <button id="sideView" onclick="sideView();">SIDE VIEW</button>
                         <button id="introTour" onclick="startIntro();">TOUR</button>
-                        </h2>
+                        
+                    </div>
+                    <div id="navInstructions">
+                        <h2>Navigation Info</h2>
+                        <br>Orbit: left mouse / touch: one finger move
+                        <br>Zoom: mousewheel / touch: two finger spread or squish
+                        <br>Pan: right mouse, or arrow keys / touch: two finger drag
                     </div>
                     <div id="authorKey">
                         <h2>Key</h2>
@@ -48,10 +53,17 @@
                         </div>
                         <br>
                         <div>
-                            <div id="circle_pub" class="circle"></div><span class="circle_info">&nbsp; published</span>
+                            <div id="circle_pub" class="circle"></div><span class="circle_info">&nbsp; Currently published</span>
                         </div>
                         <div>
-                            <div id="circle_unpub" class="circle"></div><span class="circle_info">&nbsp; unpublished</span>
+                            <div id="circle_unpub" class="circle"></div><span class="circle_info">&nbsp; Awaiting peer review</span>
+                        </div>
+                        <br>
+                        <div>
+                            <div id="circle_noCites" class="circle"></div><span class="circle_info">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No citations</span>
+                        </div>
+                        <div>
+                            <div id="circle_85cites" class="circle"></div><span class="circle_info">&nbsp; 85 citations</span>
                         </div>
                     </div>
                 </div>
