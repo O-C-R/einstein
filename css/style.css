@@ -111,12 +111,71 @@
   }
 
   #navButtons {
-    position: relative;
-    top: 40px;
-    width: 90px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: auto;
   }
 
+  #authorKey {
+    width: 100px;
+    height: auto;
+    padding: 5px;
+    margin: 6px 3px 0px 0px;
+    float: right;
+    background: rgba(55, 55, 55, 0.9); 
+    color: white; 
+    border: 1px solid #6B6B6B;
+    line-height: 1.1em;
+  }
 
+  .circle {
+    border-radius: 50%;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 2px;
+   /* margin-right: 20px;*/
+  }
+
+  .circle_info {
+    position: relative;
+    top: -5px;
+  }
+
+  #circle_author1 {
+    background: #3B3183;
+  }
+
+  #circle_author2 {
+    background: #64426D;
+  }
+
+  #circle_author3 {
+    background: #8F5358;
+  }
+
+  #circle_author4 {
+    background: #B96443;
+  }
+
+  #circle_author5 {
+    background: #E6782E;
+  }
+
+  #circle_author6 {
+    background: #D8301E;
+  }
+
+  #circle_pub {
+    background: gray;
+    border: 1px solid #00dbbb;
+  }
+
+  #circle_unpub {
+    background: gray;
+    border: 2px solid #5309aa;
+  }
   /*           #tourbtn {
     position: fixed;
     right: 15px;

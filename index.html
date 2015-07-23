@@ -16,6 +16,45 @@
             
             <div id="hud" class="visible">
                 <div id="header" alt="Relativity's Reach"></div>
+                <div id="navButtons">
+                    <div>
+                        <h2 style="padding-left: 5px;">Views
+                        <button id="topView" onclick="topView();">TOP VIEW</button>
+                        <button id="bottomView" onclick="bottomView();">BOTTOM VIEW</button>
+                        <button id="sideView" onclick="sideView();">SIDE VIEW</button>
+                        <button id="introTour" onclick="startIntro();">TOUR</button>
+                        </h2>
+                    </div>
+                    <div id="authorKey">
+                        <h2>Key</h2>
+                        <br>
+                        <div>
+                            <div id="circle_author1" class="circle"></div><span class="circle_info">&nbsp; 1 author</span>
+                        </div>
+                        <div>
+                            <div id="circle_author2" class="circle"></div><span class="circle_info">&nbsp; 2 authors</span>
+                        </div>
+                        <div>
+                            <div id="circle_author3" class="circle"></div><span class="circle_info">&nbsp; 3 authors</span>
+                        </div>
+                        <div>
+                            <div id="circle_author4" class="circle"></div><span class="circle_info">&nbsp; 4 authors</span>
+                        </div>
+                        <div>
+                            <div id="circle_author5" class="circle"></div><span class="circle_info">&nbsp; 5 - 849 authors</span>
+                        </div>
+                        <div>
+                            <div id="circle_author6" class="circle"></div><span class="circle_info">&nbsp; 850+ authors</span>
+                        </div>
+                        <br>
+                        <div>
+                            <div id="circle_pub" class="circle"></div><span class="circle_info">&nbsp; published</span>
+                        </div>
+                        <div>
+                            <div id="circle_unpub" class="circle"></div><span class="circle_info">&nbsp; unpublished</span>
+                        </div>
+                    </div>
+                </div>
                 <div id="UI">
                     <div id="keyword-container">
                         <h2 style="padding-left: 5px;">Concept Keywords</h2>
@@ -41,11 +80,6 @@
                             <li class="ui-widget-content">Hawking radiation</li>
                             <li class="ui-widget-content">Symmetry</li>    
                         </ol>
-                    </div>
-                    <div id="navButtons">
-                        <h2 style="padding-left: 5px;">Views</h2>
-                        <div><button id="topView" onclick="topView();">TOP VIEW</button></div>
-                        <div><button id="introTour" onclick="startIntro();">TOUR</button></div>
                     </div>
                 </div>
 
@@ -185,6 +219,7 @@
         var tourActive = false;
 
         var termOffset = -1000;
+        var eyeTargetScale;
 
         init();
 
@@ -200,26 +235,25 @@
                 steps: [
                     {
                         
-                        intro: "<h2>Relativity's Reach</h2><br><br>This interactive graphic visualizes the impact of the General Theory of Relativity on current physics research a hundred years after Einstein first described how gravity emerges from the bending of space and time.<br><br>Data on the current physics research trends comes from arXiv.org, an online database of scientific papers." 
+                        intro: "<h2>Relativity's Reach</h2><br><br>This interactive graphic visualizes the impact of the general theory of relativity on current physics research a hundred years after Albert Einstein first described how gravity emerges from the bending of space and time.<br><br>Data on the modern research trends comes from arXiv.org, an online database of scientific papers." 
                     },
                     {
                         //element: '#step2',
-                        intro: "<h2>Data Source</h2><br><br>Each colored dot represents a paper uploaded to arXiv.org's database in 2014, and tagged with 'General Relativity - Quantum Cosmology' as their primary category (2,435 total).<br><br>Use your mouse to highlight an article and reveal its title, authors and URL on arXiv.org. Clicking on the article dot when highlighted opens a new window to the article's page on arXiv.org.",
-                        position: 'right'
+                        intro: "<h2>Data Source</h2><br><br>Each colored dot represents a paper uploaded in 2014 to the well-known online database arXiv.org. Each paper has been classified as having 'General Relativity - Quantum Cosmology' as its main category - a total of 2,435 papers.<br><br>Use your mouse to roll over an article and reveal its title, authors and URL on arXiv.org. Clicking on the article dot when highlighted opens a new window to the article's page on arXiv.org."
                     },
                     {
                         element: '#keyword-container',
-                        intro: "<h2>Concept Keywords</h2><br><br>A powerful text analysis tool, which is now part of IBM's Watson AI system, examined the abstracts of all 2,435 papers in the General Relativity - Quantum Cosmology category and returned concept keywords it believed the papers addressed. These keywords were edited for relevancy down to 61 (not all are displayed).<br><br>You may select a keyword to see which articles reference it. Select multiple keywords by dragging over multiple buttons or selecting while pressing the CTRL key.",
+                        intro: "<h2>Concept Keywords</h2><br><br>A powerful text analysis tool, which is now part of IBM's Watson AI system, examined the abstracts of all 2,435 papers in the General Relativity - Quantum Cosmology category and identified keywords for critical concepts within those papers. These keywords were edited for relevancy by <i>Scientific American</i> down to 61, a subset which are highlighted here. [This may need to change in response to the logic behind showing a select number of selectable keywords on the page as buttons. It would be good to include a nod as to why those keywords have been selected. It may make sense to simply show the most-often used keywords, in order of number of times they appeared] .<br><br>You may select a keyword to see which articles reference it. Select multiple keywords by dragging over multiple buttons or selecting while pressing the CTRL key.",
                         position: 'right'
                     },
                     {
                         intro: "<h2>Article and Keyword Layout</h2><br><br>Article dots are positioned near keywords (diamonds). If the text has multiple keywords, the dot is placed between terms, such as the article with special relativity and Noether's theorem.<br><br> NOTE: This section and keywords in general need some thought / layout decisions."
                     },
                     {
-                        intro: "<h2>Citations</h2><br><br>The size of the dot is based on how often the 2014 article has been cited since publication through the middle of this year. No citations corresponds to the minimum sized dot, while 85 citations corresponds to the largest size."
+                        intro: "<h2>Citations</h2><br><br>The size of the dot is based on how often the 2014 article has been cited since publication through the middle of this year. The minimum sized dot corresponds to a paper with no citations, whereas the largest dot has 85 citations."
                     },
                     {
-                        intro: "<h2>Publication Status</h2><br><br>The dot outline indicates publication status. Many physicists put their papers in arXiv before they are published. <br><br>Articles with a bright blue outline have been published, while articles with a dark purple oultline are awaiting peer review.<br><br>NOTE: The outlines are not currently working but will be working for the final piece."
+                        intro: "<h2>Publication Status</h2><br><br>The colored circle around each dot indicates publication status. Many physicists put their papers on arXiv before they are published.<br><br>Articles with a bright blue outline have been published, while articles circled in dark purple are awaiting peer review."
                     },
                     {
                         intro: '<h2>Authors</h2><br><br>The color of the dot indicates number of authors.<br><br><span style="font-size:12px; padding-left:8px; background:#3B3183;">&nbsp;</span>  1 author<br><span style="font-size:12px; padding-left:8px; background:#64426D;">&nbsp;</span>  2 authors<br><span style="font-size:12px; padding-left:8px; background:#8F5358;">&nbsp;</span>  3 authors<br><span style="font-size:12px; padding-left:8px; background:#B96443;">&nbsp;</span>  4 authors<br><span style="font-size:12px; padding-left:8px; background:#E6782E;">&nbsp;</span>  5 - 849 authors<br><span style="font-size:12px; padding-left:8px; background:#D8301E;">&nbsp;</span>  850+ authors'
@@ -227,7 +261,7 @@
                     {
                         element: '#navButtons',
                         intro: '<h2>Views and Navigation</h2><br><br>You may explore the visualization by using your mouse to orbit around the scene.<br><br>Orbit: left mouse / touch: one finger move<br>Zoom: mousewheel / touch: two finger spread or squish<br>Pan: right mouse, or arrow keys / touch: two finger drag<br><br>You can also select various views to focus on the top, bottom, or sides of the graphic. Select the tour to replay this introduction<br><br>NOTE: Need to work on camera views.',
-                        position: 'right'
+                        position: 'bottom-right-aligned'
                     }
                 ],
                 skipLabel: 'Exit',
@@ -349,7 +383,7 @@
             // var SCREEN_WIDTH = $("#canvas-align").width();
             // var SCREEN_HEIGHT = $("#canvas-align").height();
             //var SCREEN_WIDTH = 800, SCREEN_HEIGHT = 600;
-            var VIEW_ANGLE = 40, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 10000;
+            var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 10, FAR = 10000;
             
             camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
 
@@ -367,9 +401,9 @@
             // cameraOrtho.position.z = 700;
             //sceneOrtho = new THREE.Scene();
             
-            camera.position.set (700, 2000, 1800);
-            var lookAtVec = new THREE.Vector3(1700, 0, 1700);
-            camera.lookAt (lookAtVec);
+            camera.position.set (-1500, 1150, 2850);
+            //var lookAtVec = new THREE.Vector3(1700, 0, 1700);
+            //camera.lookAt (lookAtVec);
 
 
             //camera.lookAt(686, 124, 808);
@@ -396,8 +430,12 @@
             //EVENTS
             controls = new THREE.OrbitControls( camera,  renderer.domElement );
             controls.addEventListener( 'change', render );
-            //controls.target.set( scene.position );
+            controls.target.set( 220, -500, 760 );
             
+            var startdir = new THREE.Vector3();
+            startdir.subVectors( camera.position, controls.target );
+            eyeTargetScale = Math.tan(camera.fov * (Math.PI/180) / 2) * startdir.length();
+
             raycaster = new THREE.Raycaster();
             mouse = new THREE.Vector2();
 
@@ -461,7 +499,7 @@
 
             stats = new Stats();
             stats.domElement.style.position = 'absolute';
-            stats.domElement.style.top = '0px';
+            stats.domElement.style.bottom = '0px';
             stats.domElement.style.right = '0px';
             container.appendChild( stats.domElement );
 
@@ -471,7 +509,15 @@
 
         }
 
+        function bottomView() {
+            console.log("bottomView");
+
+            controls.target.set(250, -500, 760);
+            camera.position.set( controls.target.x, -3445, controls.target.z);
+        }
+
         function topView() {
+            console.log("topView");
             //get centroid of lower grid, to look at
             var grid = scene.getObjectByName("lowerGrid");
             grid.geometry.computeBoundingBox();
@@ -487,12 +533,26 @@
             // console.log("grid centroid: ");
             // console.log(position.x + ',' + position.y + ',' + position.z);
 
+            camera.position.set( controls.target.x, 2300, controls.target.z);
+
+
+            //moveAndLookAt(camera, new THREE.Vector3( controls.target.x, 2300, controls.target.z), new THREE.Vector3(controls.target.x, controls.target.y, controls.target.z), { duration: 1000 });
+
+            // var eyedir = new THREE.Vector3();
+            // eyedir.subVectors( camera.position, cameraControls.target );
+            //camera.fov = (180/Math.PI)*2*Math.atan(eyeTargetScale/eyedir.length());
+            //camera.fov = 1;
+            //camera.near = eyedir.length()/100;
+            //camera.far = eyedir.length() + 10000;
+
+            //camera.updateProjectionMatrix(); 
+
             //moveAndLookAt(camera, new THREE.Vector3( 462.4822692871094, 1024.80419921875, 674.246337890625), position, {duration: 1000});
             //moveAndLookAt(camera, new THREE.Vector3( 649.216796875, 1223.69921875, 832.387939453125), position, {duration: 1000});
             //camera.rotation.set(new THREE.Vector3(0, -1, 0));
-            camera.rotation.set(new THREE.Vector3(-6.5472317628198495e-9, -1.0000000073380846,-9.926388548353593e-7));
-            moveAndLookAt(camera, new THREE.Vector3(position.x, 1500, position.z), position, {duration : 1000});
-            camera.updateProjectionMatrix();
+            // camera.rotation.set(new THREE.Vector3(-6.5472317628198495e-9, -1.0000000073380846,-9.926388548353593e-7));
+            // moveAndLookAt(camera, new THREE.Vector3(position.x, 1500, position.z), position, {duration : 1000});
+            //camera.updateProjectionMatrix();
         }
 
         function cameraLookDir (camera) {
@@ -508,7 +568,7 @@
             var origrot = new THREE.Euler().copy(camera.rotation); // original rotation
 
             camera.position.set(dstpos.x, dstpos.y, dstpos.z);
-            camera.lookAt(dstlookat);
+            //camera.lookAt(dstlookat);
             //controls.target.set(dstlookat);
             var dstrot = new THREE.Euler().copy(camera.rotation)
             //var dstrot = new THREE.Euler().copy(new THREE.Vector3(0, -1, 0));
@@ -525,24 +585,24 @@
                 x: dstpos.x,
                 y: dstpos.y,
                 z: dstpos.z
-            }, options.duration).start();;
+            }, options.duration).start();
 
             // rotation (using slerp)
-            (function () {
-                var qa = qa = new THREE.Quaternion().copy(camera.quaternion); // src quaternion
-                var qb = new THREE.Quaternion().setFromEuler(dstrot); // dst quaternion
-                var qm = new THREE.Quaternion();
-                camera.quaternion = qm;
+            // (function () {
+            //     var qa = qa = new THREE.Quaternion().copy(camera.quaternion); // src quaternion
+            //     var qb = new THREE.Quaternion().setFromEuler(dstrot); // dst quaternion
+            //     var qm = new THREE.Quaternion();
+            //     camera.quaternion = qm;
 
-                var o = {t: 0};
-                new TWEEN.Tween(o).to({t: 1}, options.duration).onUpdate(function () {
-                    THREE.Quaternion.slerp(qa, qb, qm, o.t);
-                    camera.quaternion.set(qm.x, qm.y, qm.z, qm.w);
-                }).start();
-            }).call(this);
+            //     var o = {t: 0};
+            //     new TWEEN.Tween(o).to({t: 1}, options.duration).onUpdate(function () {
+            //         THREE.Quaternion.slerp(qa, qb, qm, o.t);
+            //         camera.quaternion.set(qm.x, qm.y, qm.z, qm.w);
+            //     }).start();
+            // }).call(this);
 
             //controls.update();
-            camera.updateProjectionMatrix();
+            //camera.updateProjectionMatrix();
             //camera.updateMatrixWorld();
         }
 
@@ -560,6 +620,18 @@
         }
 
         function render() {
+
+            // var eyedir = new THREE.Vector3();
+            // eyedir.subVectors( camera.position, controls.target );
+            // camera.fov = (180/Math.PI)*2*Math.atan(eyeTargetScale/eyedir.length());
+            // camera.near = eyedir.length()/100;
+            // camera.far = eyedir.length() + 10000;
+            console.log("fov: " + camera.fov + ", near: " + camera.near + ", far: " + camera.far);
+            console.log("camera pos: ");
+            console.log( camera.position );
+            console.log("controls target: ");
+            console.log( controls.target );
+            camera.updateProjectionMatrix();
 
             //renderer.clear();
             //requestAnimationFrame( render );
@@ -1233,7 +1305,7 @@
             // console.log(terms.length);
             drawTerms(terms);
 
-            startIntro(); //TOUR STARTS AFTER EVERYTHING LOADS
+            //startIntro(); //TOUR STARTS AFTER EVERYTHING LOADS
 
         }
 
@@ -1250,11 +1322,11 @@
                 //console.log(t1.term + " - x: " + t1.x + " z: " + t1.y  + " y: " + t1.z);
                 //console.log(termObj);
 
-                //var spritey = makeTextSprite(" " + t1.term, 
-                //    { fontsize: 60, fontface: "Georgia", borderColor: {r:255, g:255, b:0, a:1.0} } );
-                //spritey.position.set(t1.x * -0.1, t1.z * 0.1, t1.y * 0.1);
-                //spritey.position.set(t1.x, termOffset + 20 + 2*t1.z , t1.y);
-                //scene.add( spritey );
+                var spritey = makeTextSprite(" " + t1.term, 
+                   { fontsize: 60, fontface: "Georgia", borderColor: {r:255, g:255, b:0, a:1.0} } );
+                spritey.position.set(t1.x * -0.1, t1.z * 0.1, t1.y * 0.1);
+                spritey.position.set(t1.x, termOffset + 20 + 2*t1.z , t1.y);
+                scene.add( spritey );
 
                 //for network lines between terms (seem like there are too many being drawn, or not transparent enough)
                 //this is currently disabled for legibility
