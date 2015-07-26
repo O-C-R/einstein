@@ -66,7 +66,7 @@
             </div>
         </div>
         <div id="UI">
-            <div id="keyword-container">
+            <div id="keyword-container" class="noselect">
                 <h2 style="padding-left: 5px;">Concept Keywords</h2>
                 <ol id="selectable">
                     <li class="ui-widget-content">Black hole</li>
@@ -547,8 +547,8 @@
     }
 
     function onMouseDown( event ) {
-        console.log("MOUSE DOWN");
-        console.log("tourActive is: " + tourActive);
+        //console.log("MOUSE DOWN");
+        //console.log("tourActive is: " + tourActive);
 
         mouse.x = (event.clientX / renderer.domElement.width) * window.devicePixelRatio * 2 - 1;
         mouse.y = ((event.clientY / renderer.domElement.height) * window.devicePixelRatio * 2 - 1) * -1;
@@ -559,7 +559,7 @@
         if (intersects.length > 0 && !tourActive ) {
             //don't open article new window if clicking on UI elements
             if($('#selectable').is(':hover') || $('#navButtons').is(':hover') || $('#navInstructions').is(':hover') || $('#authorKey').is(':hover') || $('#header').is(':hover')) {
-                console.log("over the term menu");
+                //console.log("over the term menu");
             } else {
                 //opens new tab with article page
                 if(event.which === 3) { //only opens on right click
@@ -573,7 +573,7 @@
     }
 
     function onMouseUp( event ) {
-        console.log("MOUSE UP");
+        //console.log("MOUSE UP");
 
         //SELECT TERMS FROM SIDE NAVIGATION
         $( "#selectable" ).selectable({
@@ -773,7 +773,7 @@
                     //INTERSECTED.material.color.setHex( INTERSECTED.currentHex );
                     INTERSECTED.material.uniforms.innerCol.value = INTERSECTED.userData.colour;
 
-                    console.log(INTERSECTED.userData.clicked);
+                    //console.log(INTERSECTED.userData.clicked);
 
                 } else {
                     INTERSECTED = intersects[ 0 ].object;
@@ -1433,7 +1433,7 @@
         context.fillStyle = "rgba("+textColor.r+", "+textColor.g+", "+textColor.b+", 1.0)";
         context.fillText( message, borderThickness + (canvas.width/2) - (textWidth/2), (fontsize + borderThickness));
 
-        console.log('textWidth: ' + textWidth);
+        //console.log('textWidth: ' + textWidth);
 
         var labelTexture = new THREE.Texture(canvas); //label texture
         labelTexture.needsUpdate = true;
