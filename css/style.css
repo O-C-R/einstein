@@ -3,11 +3,13 @@
 
   body {
       /*font-family: 'MS Sans Serif4', 'Geneva', sans-serif;*/
-      font-family: "Trebuchet MS", Helvetica, sans-serif;
+      /*font-family: "Trebuchet MS", Helvetica, sans-serif;*/
+      font-family: "Georgia";
       font-size: 60.5%;
   }
 
   h2 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     color: white;
     font-size: 1.5em;
     font-weight: bold;
@@ -21,13 +23,15 @@
   #header {
       height: 100px;
       width: 300px;
+      top: 5px;
+      left: 10px;
       padding-left: 10px;
       padding-top: 30px;
       font-size: 60px;
       position: absolute;
       color: white;
       text-transform: uppercase;
-      background-image: url(../img/title.png);
+      background-image: url(../img/title_sa2.png);
       background-repeat: no-repeat;
       background-size: 100% 100%;
   }
@@ -218,6 +222,15 @@
     background: gray;
     width: 28px;
     height: 28px;
+  }
+
+  .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   /*           #tourbtn {
     position: fixed;
