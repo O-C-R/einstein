@@ -325,7 +325,7 @@
                         articleObjects[index].userData.clicked = false;
                     }
                 }
-                console.log(splineObj);
+                //console.log(splineObj);
                 
             } else if (intro._currentStep === 2) { //Concept Keywords - shows how to highlight articles, should it be top down, or a view of the terms??
                 
@@ -375,10 +375,10 @@
             } else if (intro._currentStep === 3) { //Article and Keyword Layout
                
                 if(splineObj.children.length > 0) {
-                    console.log(splineObj.children.length);
+                    //console.log(splineObj.children.length);
                     for ( var i = 0; i < splineObj.children.length; i++) {
                         var child = splineObj.children[i];
-                        console.log(child);
+                        //console.log(child);
                         splineObj.remove(child);
                     }
                     scene.remove(splineObj);
