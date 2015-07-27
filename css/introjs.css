@@ -199,8 +199,8 @@ tr.introjs-showElement > th {
   padding: 15px;
 /*  background-color: white;
 */  background-color: rgba(55, 55, 55, 0.9);
-  min-width: 400px;
-  max-width: 600px;
+  min-width: 300px;
+  max-width: 400px;
   border-radius: 3px;
   box-shadow: 0 1px 10px rgba(0,0,0,.4);
   -webkit-transition: opacity 0.1s ease-out;
@@ -217,8 +217,8 @@ tr.introjs-showElement > th {
 
 .introjs-tooltiptext {
   color: white;
-  font-size: 1.2em;
-  line-height: 16px;
+  font-size: 1.3em;
+  line-height: 1.6em;
 }
 
 /*
@@ -376,9 +376,9 @@ tr.introjs-showElement > th {
 }
 
 .introjsFloatingElement {
-  position: absolute;
+  position: fixed;
   height: 0;
   width: 0;
-  left: 50%;
-  top: 50%;
+  right: 20%;
+  top: 80%;
 }
