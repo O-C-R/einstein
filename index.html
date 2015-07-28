@@ -219,6 +219,7 @@
     var termObj;
     var articleObj;
     var splineObj;
+    var spriteObj;
 
     //shader variables
     var attributes;
@@ -456,10 +457,12 @@
         termObj = new THREE.Object3D();
         splineObj = new THREE.Object3D();
         articleObj = new THREE.Object3D();
+        spriteObj = new THREE.Object3D();
 
         scene.add( termObj );
         scene.add( splineObj );
         scene.add( articleObj );
+        scene.add( spriteObj );
 
         //CAMERA
         SCREEN_WIDTH = window.innerWidth;
@@ -482,7 +485,7 @@
         
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-        renderer.shadowMapType = THREE.PCFSoftShadowMap;
+        //renderer.shadowMapType = THREE.PCFSoftShadowMap;
 
         container = document.getElementById( 'ThreeJS' );
         document.body.appendChild(container);
@@ -502,8 +505,8 @@
 
         //LIGHT
         var light = new THREE.PointLight( 0xFFFFFF );
-        light.shadowMapWidth = 1024; // default is 512
-        light.shadowMapHeight = 1024; // default is 512
+        // light.shadowMapWidth = 1024; // default is 512
+        // light.shadowMapHeight = 1024; // default is 512
         light.position.set(100, 250, 100);
 
         var bottomLight = new THREE.PointLight( 0xFFFFFF );
@@ -591,8 +594,12 @@
         console.log("Saving Camera");
         console.log(camera.position);
         console.log(camera.rotation);
+        console.log(camera.quaternion);
+        //console.log(controls.center);
+        console.log("articles");
         console.log(articleObjects[0].rotation);
-        console.log(controls.center);
+        console.log(articleObjects[0].quaternion);
+
         var grid = scene.getObjectByName("lowerGrid");
         console.log(grid.position);
     }
@@ -683,36 +690,47 @@
         TWEEN.update();
 
 
-        if (articleObjects[0]) {
-        var testPoint = articleObjects[0];
+        if (articleObjects.length > 0) {
+            for (var i = 0; i < articleObjects.length; i++) {
+                var testPoint = articleObjects[i];
+                
+                //testPoint.setRotationFromQuaternion( camera.quaternion );
+                
+                testPoint.matrixWorldNeedsUpdate = true;
+                camera.matrixWorldNeedsUpdate = true;
 
-        testPoint.matrixWorldNeedsUpdate = true;
-        camera.matrixWorldNeedsUpdate = true;
+                if (testPoint.matrixWorld) {
 
-        if (testPoint.matrixWorld) {
+                    var finalMatrix = new THREE.Matrix4();
 
-            var finalMatrix = new THREE.Matrix4();
+                    camera.matrixWorld
 
-            camera.matrixWorld
-
-            finalMatrix.multiplyMatrices(camera.projectionMatrix, testPoint.matrixWorld);
-
-
-
-            //console.log(finalMatrix);
-
+                    finalMatrix.multiplyMatrices(camera.projectionMatrix, testPoint.matrixWorld);
 
 
 
-
+                    //console.log(finalMatrix);
+                }
+            }
         }
-    }
 
         //console.log()
+        var grid = scene.getObjectByName("lowerGrid");
+
+        var dist;
+        dist = camera.position.distanceTo( grid.position );
+
+        if (spriteObj != undefined && spriteObj.children.length > 60) {
+            var spr = scene.getObjectByName("sprites");
+            if (dist > 4000) {
+                //turn off labels
+                //console.log(spr);
+                spr.visible = false;
+            } else {
+                spr.visible = true;
+            }
+        }
         
-
-
-
         //composer.render();
         renderer.render( scene, camera );
         stats.end();
@@ -1116,7 +1134,7 @@
 
     }
 
-    function drawCirclePoints ( fillColor, strokeColor, radius, x, y, z, rotx, roty, rotz, scalar ) {
+    function drawCirclePoints ( mergedGeom, fillColor, strokeColor, radius, x, y, z, rotx, roty, rotz, scalar ) {
 
         // var circleRadius = radius;
 
@@ -1127,38 +1145,51 @@
         // circleShape.quadraticCurveTo( -circleRadius, -circleRadius, -circleRadius, 0 );
         // circleShape.quadraticCurveTo( -circleRadius, circleRadius, 0, circleRadius );
 
-        // var arcShape = new THREE.Shape();
+        //== var arcShape = new THREE.Shape();
         // var origin = 10;
         // arcShape.moveTo( radius * 2, radius );
         // arcShape.absarc( radius, radius, radius, 0, Math.PI*2, false );
+        //radius = 20;
+        var circShape = new THREE.Shape();
+        circShape.moveTo(radius, 0);
+        circShape.absarc(0, 0, radius, 0, Math.PI*2, false);
 
-        var shape = new THREE.Shape();
-        shape.moveTo(radius, 0);
-        shape.absarc(0, 0, radius, 0, Math.PI*2, false);
-        // arcShape.moveTo( radius, origin );
-        // arcShape.absarc( origin, origin, radius - origin, 0, Math.PI*2, false );
+        var circPath = new THREE.Path();
+        circPath.moveTo(radius - 0.1, 0);
+        circPath.absarc(0, 0, radius - 0.2, 0, Math.PI*2, true); 
+        
+        circShape.holes.push( circPath );
 
-        var points = shape.createSpacedPointsGeometry(24);
-        //var points = shape.createPointsGeometry();
+        //var points = circShape.createSpacedPointsGeometry(12);
+        //var points2 = circShape.createPointsGeometry();
 
-        var outline = new THREE.Line( points, new THREE.LineBasicMaterial( { color: strokeColor, linewidth: 1 } ) );
+        var extrudeSettings = { amount: 1, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 0.01, bevelThickness: 0.01 };
+
+        var geometry = new THREE.ExtrudeGeometry( circShape, extrudeSettings );
+
+
+        var outline = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: strokeColor, side: THREE.DoubleSide } ) );
         outline.position.set( x, y, z);
         outline.rotation.set( rotx, roty, rotz );
         outline.scale.set( scalar, scalar, scalar );
-        scene.add( outline );
+        //THREE.GeometryUtils.merge(geometry, outline);
+        //scene.add( outline );
+        outline.updateMatrix();
+        mergedGeom.merge( outline.geometry, outline.matrix );
+        return mergedGeom;
     }
 
     // function addShape( shape, extrudeSettings, color, x, y, z, rx, ry, rz, scalar )
     // addShape( circleShape,      extrudeSettings, 0x00f000,  120,  250, 0, 0, 0, 0, 1 );
 
-    function drawCircle (x, y, z, radius, segments, fillColor, strokeColor, id, title, authors) {
+    function drawCircle (mergedGeom, x, y, z, radius, segments, fillColor, strokeColor, id, title, authors) {
         //draw top circle
         //var articleObj = new THREE.Object3D();
-        var circleGeometry = new THREE.CircleGeometry( radius, segments );
-        var material = new THREE.LineBasicMaterial( { color: fillColor, linewidth: 3 });
+        
+        //var material = new THREE.LineBasicMaterial( { color: fillColor, linewidth: 3 });
 
-        var fillMaterial = new THREE.LineBasicMaterial( { color: fillColor } );
-        var strokeMaterial = new THREE.LineBasicMaterial( { color: strokeColor, linewidth: 3 } );
+        // var fillMaterial = new THREE.LineBasicMaterial( { color: fillColor } );
+        // var strokeMaterial = new THREE.LineBasicMaterial( { color: strokeColor, linewidth: 3 } );
 
         // var multiCircle = new THREE.SceneUtils.createMultiMaterialObject( circleGeometry, [fillMaterial, strokeMaterial] );
 
@@ -1168,25 +1199,31 @@
         // multiCircle.rotation.set(Math.PI/2,0,0);
 
         //drawCirclePoints(fillColor, strokeColor, radius, x, y, z, Math.PI/2, 0, 0, 1);
-        drawShaderCircle(fillColor, strokeColor, radius * 2, 2.0, x, y, z, Math.PI/2, 0, 0, 1, id, title, authors);
+        //drawShaderCircle(fillColor, strokeColor, radius * 2, 2.0, x, y, z, Math.PI/2, 0, 0, 1, id, title, authors);
+
+        drawCirclePoints ( mergedGeom, fillColor, strokeColor, radius, x, y, z, Math.PI/2, 0, 0, 1 );
 
         //scene.add(multiCircle);
         //articleObj.add(multiCircle);
 
-        var topCircle = new THREE.Mesh( circleGeometry, material );
-        //make backside of circle visible
-        topCircle.material.side = THREE.DoubleSide;
+        // var topCircle = new THREE.Mesh( circleGeometry, material );
+        // //make backside of circle visible
+        // topCircle.material.side = THREE.DoubleSide;
 
-        topCircle.userData = { id: id, title: title, authors: authors, colour: fillColor, clicked: false };
-        topCircle.position.set(x, y, z);
-        topCircle.name = id;
-        topCircle.rotation.set(Math.PI/2,0,0);
+        // topCircle.userData = { id: id, title: title, authors: authors, colour: fillColor, clicked: false };
+        // topCircle.position.set(x, y, z);
+        // topCircle.name = id;
+        // topCircle.rotation.set(Math.PI/2,0,0);
 
         //scene.add( topCircle );
         //articleObj.add( topCircle );
         //articleObjects.push( topCircle );
 
         //draw stroke circle
+        // var outlineShape = new THREE.Shape();
+
+
+        // var circleGeometry = new THREE.CircleGeometry( radius, segments );
         // var outlineMaterial = new THREE.MeshBasicMaterial( { color: strokeColor, side: THREE.BackSide });
         // var outlineMesh = new THREE.Mesh( circleGeometry, outlineMaterial );
         // outlineMesh.material.side = THREE.DoubleSide;
@@ -1194,7 +1231,7 @@
         // outlineMesh.position.set(x, y - 0.1, z);
         // outlineMesh.rotation.set(Math.PI/2,0,0);
         // outlineMesh.scale.multiplyScalar(1.2);
-        //articleObj.add( outlineMesh );
+        // articleObj.add( outlineMesh );
 
         //articleObjects.push( outlineMesh );
     }
@@ -1265,14 +1302,10 @@
     }
 
     function drawArticles( array ) {
-        for (var i = 0; i < array.length; i++) {
+        var mergedGeomPub = new THREE.Geometry();
+        var mergedGeomUnPub = new THREE.Geometry();
 
-            var strokeColor;
-            if (array[i].published) {
-                strokeColor = new THREE.Color(0x00dbbb);
-            } else {
-                strokeColor = new THREE.Color(0x5309aa);
-            }
+        for (var i = 0; i < array.length; i++) {
 
             var colorAuthorMin = new THREE.Color(0x3f348c);
             var colorAuthorMax2 = new THREE.Color(0xf47f31);
@@ -1300,10 +1333,27 @@
                 fillColor = colorAuthorMax3;
             }
 
+            var strokeColor;
+            if (array[i].published) {
+                strokeColor = new THREE.Color(0x00dbbb);
+                //drawCircle(mergedGeomPub, array[i].x, array[i].z, array[i].y , array[i].radius, 24, fillColor, strokeColor, array[i].id, array[i].title, authorStr);
+                drawCirclePoints ( mergedGeomPub, fillColor, strokeColor, array[i].radius, array[i].x, array[i].z, array[i].y, Math.PI/2, 0, 0, 1 );
+            } else {
+                strokeColor = new THREE.Color(0x5309aa);
+                //drawCircle(mergedGeomUnPub, array[i].x, array[i].z, array[i].y , array[i].radius, 24, fillColor, strokeColor, array[i].id, array[i].title, authorStr);
+                drawCirclePoints ( mergedGeomUnPub, fillColor, strokeColor, array[i].radius, array[i].x, array[i].z, array[i].y, Math.PI/2, 0, 0, 1 );
+            }
+            drawShaderCircle(fillColor, strokeColor, array[i].radius * 2, 2.0, array[i].x, array[i].z, array[i].y, Math.PI/2, 0, 0, 1, array[i].id, array[i].title, authorStr);
             //drawCircle(array[i].x * -2, array[i].z * 0.25, array[i].y * 2, array[i].radius * 0.2, 64, fillColor, strokeColor);
-            drawCircle(array[i].x, array[i].z, array[i].y , array[i].radius, 24, fillColor, strokeColor, array[i].id, array[i].title, authorStr);
+            
 
         }
+
+        var totalCirclePub = new THREE.Mesh(mergedGeomPub, new THREE.MeshBasicMaterial( { color: 0x00dbbb , side: THREE.DoubleSide } ));
+        var totalCircleUnPub = new THREE.Mesh(mergedGeomUnPub, new THREE.MeshBasicMaterial( { color: 0x5309aa , side: THREE.DoubleSide } ));
+        
+        scene.add( totalCirclePub );
+        scene.add( totalCircleUnPub );
         //console.log("size of articleObjects array: " + articleObjects.length);
     }
 
@@ -1395,7 +1445,7 @@
                         backgroundColor: {r: 55, g:55, b:55, a:0.9} } );
             //spritey.position.set(t1.x * -0.1, t1.z * 0.1, t1.y * 0.1);
             spritey.position.set(t1.x , termOffset + 2*t1.z - 50 , t1.y);
-            scene.add( spritey );
+            spriteObj.add( spritey );
 
             //for network lines between terms (seem like there are too many being drawn, or not transparent enough)
             //this is currently disabled for legibility
@@ -1425,6 +1475,7 @@
              console.log("____________________");
             */
         }
+        spriteObj.name = "sprites";
     }
 
     function drawSplines( article, term, name ) {
@@ -1588,9 +1639,6 @@
         // console.log("metrics: " + metrics.width);
         var textWidth = metrics.width;
 
-        var group = new THREE.Object3D();
-
-
         //var textWidth = 500;
         context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + "," + backgroundColor.b + "," + backgroundColor.a + ")";
         context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + "," + borderColor.b + "," + borderColor.a + ")";
@@ -1612,10 +1660,11 @@
         var labelsprite = new THREE.Sprite( spriteMaterial2);
         labelsprite.scale.set(460, fontsize, fontsize);
 
-        group.userData = { width: textWidth };
+        labelsprite.userData = { width: textWidth };
+        //group.name = "labelSprite";
 
-        group.add(labelsprite);
-        return group;
+        //group.add(labelsprite);
+        return labelsprite;
     }
 
     //UTIL FUNCTIONS
