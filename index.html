@@ -226,11 +226,13 @@
 
     var selectedArticles = [];
 
-    var spriteTooltip, tooltipTexture, tooltipCanvas, tooltipContext;
+    //var spriteTooltip, tooltipTexture, tooltipCanvas, tooltipContext;
 
     var tourActive = false;
 
     var termOffset = -1500;
+    var labelDistThreshold = 4000;
+
     var eyeTargetScale;
 
     init();
@@ -551,23 +553,6 @@
         // CUSTOM //
         ////////////
 
-        var gridColor = new THREE.Color(0xd9f7ad);
-        var blackColor = new THREE.Color(0x000000);
-        var gridColorAlpha = gridColor.lerp(blackColor, 0.75);
-
-        var gridXZ_1 = new THREE.GridHelper(1500, 200);
-        gridXZ_1.setColors( gridColorAlpha, gridColorAlpha );
-        //gridXZ_1.position.set(340, 0, 760);
-        //gridXZ_1.position.set(0, 0, 0);
-        //scene.add(gridXZ_1);
-
-        var gridXZ_2 = new THREE.GridHelper(1500, 200);
-        gridXZ_2.name = "lowerGrid";
-        gridXZ_2.setColors( gridColorAlpha, gridColorAlpha );
-        gridXZ_2.position.set(500, termOffset, 800);
-        //gridXZ_2.position.set(500, 0, 800);
-        scene.add(gridXZ_2);
-
         stats = new Stats();
         stats.domElement.style.position = 'absolute';
         stats.domElement.style.bottom = '0px';
@@ -689,45 +674,45 @@
         stats.begin();
         TWEEN.update();
 
-
+        /*
         if (articleObjects.length > 0) {
             for (var i = 0; i < articleObjects.length; i++) {
                 var testPoint = articleObjects[i];
                 
+                //billboards articles towards camera (look like spheres)
                 //testPoint.setRotationFromQuaternion( camera.quaternion );
                 
                 testPoint.matrixWorldNeedsUpdate = true;
                 camera.matrixWorldNeedsUpdate = true;
 
+                //trying to figure out how to angle specific ones, don't need to anymore...
                 if (testPoint.matrixWorld) {
 
                     var finalMatrix = new THREE.Matrix4();
-
-                    camera.matrixWorld
-
+                    camera.matrixWorld;
                     finalMatrix.multiplyMatrices(camera.projectionMatrix, testPoint.matrixWorld);
-
-
-
                     //console.log(finalMatrix);
                 }
             }
         }
+        */
+        //if we've drawn the grid
+        if (scene.getObjectByName("lowerGrid")) {
+            var grid = scene.getObjectByName("lowerGrid");
 
-        //console.log()
-        var grid = scene.getObjectByName("lowerGrid");
+            var dist;
+            dist = camera.position.distanceTo( grid.position );
 
-        var dist;
-        dist = camera.position.distanceTo( grid.position );
-
-        if (spriteObj != undefined && spriteObj.children.length > 60) {
-            var spr = scene.getObjectByName("sprites");
-            if (dist > 4000) {
-                //turn off labels
-                //console.log(spr);
-                spr.visible = false;
-            } else {
-                spr.visible = true;
+            //sprite labels should only appear when close enough to read
+            if (spriteObj != undefined && spriteObj.children.length > 60) {
+                var spr = scene.getObjectByName("sprites");
+                if (dist > labelDistThreshold) {
+                    //turn off labels
+                    //console.log(spr);
+                    spr.visible = false;
+                } else {
+                    spr.visible = true;
+                }
             }
         }
         
@@ -1136,20 +1121,6 @@
 
     function drawCirclePoints ( mergedGeom, fillColor, strokeColor, radius, x, y, z, rotx, roty, rotz, scalar ) {
 
-        // var circleRadius = radius;
-
-        // var circleShape = new THREE.Shape();
-        // circleShape.moveTo( 0, circleRadius );
-        // circleShape.quadraticCurveTo( circleRadius, circleRadius, circleRadius, 0 );
-        // circleShape.quadraticCurveTo( circleRadius, -circleRadius, 0, -circleRadius );
-        // circleShape.quadraticCurveTo( -circleRadius, -circleRadius, -circleRadius, 0 );
-        // circleShape.quadraticCurveTo( -circleRadius, circleRadius, 0, circleRadius );
-
-        //== var arcShape = new THREE.Shape();
-        // var origin = 10;
-        // arcShape.moveTo( radius * 2, radius );
-        // arcShape.absarc( radius, radius, radius, 0, Math.PI*2, false );
-        //radius = 20;
         var circShape = new THREE.Shape();
         circShape.moveTo(radius, 0);
         circShape.absarc(0, 0, radius, 0, Math.PI*2, false);
@@ -1178,9 +1149,6 @@
         mergedGeom.merge( outline.geometry, outline.matrix );
         return mergedGeom;
     }
-
-    // function addShape( shape, extrudeSettings, color, x, y, z, rx, ry, rz, scalar )
-    // addShape( circleShape,      extrudeSettings, 0x00f000,  120,  250, 0, 0, 0, 0, 1 );
 
     function drawCircle (mergedGeom, x, y, z, radius, segments, fillColor, strokeColor, id, title, authors) {
         //draw top circle
@@ -1249,6 +1217,25 @@
         termObjects.push( tetra );
 
         //console.log("DRAW TETRA");
+    }
+
+    function drawGrid() {
+        var gridColor = new THREE.Color(0xd9f7ad);
+        var blackColor = new THREE.Color(0x000000);
+        var gridColorAlpha = gridColor.lerp(blackColor, 0.75);
+
+        var gridXZ_1 = new THREE.GridHelper(1500, 200);
+        gridXZ_1.setColors( gridColorAlpha, gridColorAlpha );
+        //gridXZ_1.position.set(340, 0, 760);
+        //gridXZ_1.position.set(0, 0, 0);
+        //scene.add(gridXZ_1);
+
+        var gridXZ_2 = new THREE.GridHelper(1500, 200);
+        gridXZ_2.name = "lowerGrid";
+        gridXZ_2.setColors( gridColorAlpha, gridColorAlpha );
+        gridXZ_2.position.set(500, termOffset, 800);
+        //gridXZ_2.position.set(500, 0, 800);
+        scene.add(gridXZ_2);
     }
 
     function loadArticles() {
@@ -1355,6 +1342,7 @@
         scene.add( totalCirclePub );
         scene.add( totalCircleUnPub );
         //console.log("size of articleObjects array: " + articleObjects.length);
+        drawGrid();
     }
 
     function loadTerms(articleArray) {
@@ -1364,21 +1352,19 @@
             dataType: 'JSON',
             contentType: 'application/json'
         })
-                .done(function(data) {
-                    console.log( "success loading terms" );         
-                    //console.log(data);
+        .done(function(data) {
+            console.log( "success loading terms" );         
+            //console.log(data);
 
-                    parseTerm(data, articleArray);
+            parseTerm(data, articleArray);
 
 
-                    //drawSplines(articles, terms);
-         
-                })
-                .fail(function() {
-                    console.log( "error" );
-                });
-
-        //
+            //drawSplines(articles, terms);
+ 
+        })
+        .fail(function() {
+            console.log( "error" );
+        });
     }
 
     function parseTerm( data, articleArray ) {
