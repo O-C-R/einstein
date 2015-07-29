@@ -14,6 +14,7 @@
     <div id="ThreeJS"></div>
 
     <div id="hud" class="visible">
+        <div id = "loader"></div>
         <div id="header" alt="Relativity's Reach"></div>
         <div id="keyInfo" class="noselect">
             <div id="navButtons" class="noselect">
@@ -255,9 +256,9 @@
                     intro: "<h2>Data Source</h2><br>Each colored dot represents a paper uploaded in 2014 to the well-known online database arXiv.org. Each paper has been classified as having 'General Relativity - Quantum Cosmology' as its main category - a total of 2,435 papers.<br><br>Use your mouse to roll over an article and reveal its title, authors and URL on arXiv.org. Right (or CTRL) clicking on the article dot when highlighted opens a new window to the article's page on arXiv.org."
                 },
                 {
-                    element: '#keyword-container',
+                    //element: '#keyword-container',
                     intro: "<h2>Concept Keywords</h2><br>A powerful text analysis tool, which is now part of IBM's Watson AI system, examined the abstracts of all 2,435 papers in the General Relativity - Quantum Cosmology category and identified keywords for critical concepts within those papers. These keywords were edited for relevancy by <i>Scientific American</i> down to 61. The 15 most used keywords are visible here in order of frequency.<br><br>You may select a keyword to see which articles reference it. Select multiple keywords by dragging over multiple buttons or selecting while pressing the CTRL key.",
-                    position: 'right'
+                    //position: 'right'
                 },
                 {
                     intro: "<h2>Article and Keyword Layout</h2><br>Article dots are positioned near keywords (diamonds). If the article has multiple keywords, the dot is placed between terms, such as the article with special relativity and Noether's theorem.<br><br> NOTE: This section and keywords in general need some thought / layout decisions."
@@ -272,19 +273,19 @@
                     intro: "<h2>Authors</h2><br>The number of authors per article generally varies between 1 and 5. In some cases, like the LIGO research, there are over 850 authors per article."
                 },
                 {
-                    element:'#authorKey',
+                    //element:'#authorKey',
                     intro: "<h2>Key</h2><br>The color of the dot indicates number of authors.<br>The color of the dot's outline indicates the publication status.<br>The size of the dot indicates the number of citations.",
-                    position: 'left'
+                    //position: 'left'
                 },
                 {
-                    element: '#navInstructions',
+                    //element: '#navInstructions',
                     intro: '<h2>Navigation</h2><br>You may explore the visualization by using your mouse to orbit around the scene.<br><br>Orbit: left mouse / touch: one finger move<br>Zoom: mousewheel / touch: two finger spread or squish<br>Pan: right mouse, or arrow keys / touch: two finger drag<br><br>You can also select various views to focus on the top, bottom, or sides of the graphic. Select the tour to replay this introduction<br><br>NOTE: Need to work on camera views.',
-                    position: 'bottom-aligned-right'
+                    //position: 'left'
                 },
                 {
-                    element: '#navButtons',
+                    //element: '#navButtons',
                     intro: '<h2>Views</h2><br>You can select various views to focus on the top, bottom, or sides of the graphic. Select the tour to replay this introduction.',
-                    position: 'bottom-aligned-right'
+                    //position: 'left'
                 }
             ],
             skipLabel: 'Exit',
@@ -296,6 +297,18 @@
         intro.onchange(function(targetElement, currentStep) {
             //console.log("Current Scene: " + intro._currentStep);
             var introTweenOptions = {duration: 1000, easing: TWEEN.Easing.Quadratic.InOut};
+
+
+//             switch(intro._currentStep) {
+//             case 0:
+//         code block
+//         break;
+//     case 1:
+//         code block
+//         break;
+//     default:
+//         default code block
+// }
 
             if (intro._currentStep === 0) { //INTRO SCREEN
                 tourActive = true;
@@ -1146,7 +1159,9 @@
         //THREE.GeometryUtils.merge(geometry, outline);
         //scene.add( outline );
         outline.updateMatrix();
-        mergedGeom.merge( outline.geometry, outline.matrix );
+
+//  
+        //mergedGeom.merge( outline.geometry, outline.matrix );
         return mergedGeom;
     }
 
@@ -1358,7 +1373,7 @@
 
             parseTerm(data, articleArray);
 
-
+            $("#loader").fadeOut();
             //drawSplines(articles, terms);
  
         })
