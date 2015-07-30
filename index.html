@@ -1132,7 +1132,34 @@
 
     }
 
-    function drawCirclePoints ( mergedGeom, fillColor, strokeColor, radius, x, y, z, rotx, roty, rotz, scalar ) {
+    function makeCircleGeometryLinePieces(radius, segments) {
+        var geometry = new THREE.Geometry();    
+        var segmentStep = (1 / segments) * 2 * Math.PI;
+        var theta = 0;
+
+        for(var i = 0; i <= segments - 1; i++) {
+            geometry.vertices.push(new THREE.Vector3( Math.cos( theta ) * radius, 0, Math.sin( theta ) * radius ) )
+            theta += segmentStep;
+            geometry.vertices.push(new THREE.Vector3( Math.cos( theta ) * radius, 0, Math.sin( theta ) * radius ) ); 
+        }
+        return geometry;
+    }
+
+
+
+    var circleMatrix = new THREE.Matrix4();
+    var circlePositionVector = new THREE.Vector3();
+    var circleGeometry = makeCircleGeometryLinePieces(1, 24);
+
+    function drawCirclePoints ( mergedGeom, radius, x, y, z) {
+        circlePositionVector.set(x, y, z);
+        circleMatrix.makeScale(radius, radius, radius);
+        circleMatrix.setPosition(circlePositionVector);
+        mergedGeom.merge(circleGeometry, circleMatrix);
+    }
+
+    function drawCirclePointsOld ( mergedGeom, fillColor, strokeColor, radius, x, y, z, rotx, roty, rotz, scalar ) {
+
 
         var circShape = new THREE.Shape();
         circShape.moveTo(radius, 0);
@@ -1147,12 +1174,11 @@
         //var points = circShape.createSpacedPointsGeometry(12);
         //var points2 = circShape.createPointsGeometry();
 
-        var extrudeSettings = { amount: 1, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 0.01, bevelThickness: 0.01 };
-
+        var extrudeSettings = { amount: 1, bevelEnabled: false};
         var geometry = new THREE.ExtrudeGeometry( circShape, extrudeSettings );
 
+    var outline = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: strokeColor, side: THREE.DoubleSide } ) );
 
-        var outline = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: strokeColor, side: THREE.DoubleSide } ) );
         outline.position.set( x, y, z);
         outline.rotation.set( rotx, roty, rotz );
         outline.scale.set( scalar, scalar, scalar );
@@ -1183,6 +1209,9 @@
 
         //drawCirclePoints(fillColor, strokeColor, radius, x, y, z, Math.PI/2, 0, 0, 1);
         //drawShaderCircle(fillColor, strokeColor, radius * 2, 2.0, x, y, z, Math.PI/2, 0, 0, 1, id, title, authors);
+
+
+
 
         drawCirclePoints ( mergedGeom, fillColor, strokeColor, radius, x, y, z, Math.PI/2, 0, 0, 1 );
 
@@ -1267,7 +1296,7 @@
                 parseArticle(data);
 
                 //console.log(articles.length);
-                loadTerms(articles);
+                //loadTerms(articles);
 
             })
             .fail(function() {
@@ -1298,9 +1327,10 @@
             articles.push(tempArticle);
         }
 
-        //console.log(articles);
+        console.log("finished parsing articles - decide when to drawArticles");
 
-        drawArticles(articles);
+        //drawArticles(articles);
+        loadTerms(articles);
     }
 
     function drawArticles( array ) {
@@ -1338,12 +1368,11 @@
             var strokeColor;
             if (array[i].published) {
                 strokeColor = new THREE.Color(0x00dbbb);
-                //drawCircle(mergedGeomPub, array[i].x, array[i].z, array[i].y , array[i].radius, 24, fillColor, strokeColor, array[i].id, array[i].title, authorStr);
-                drawCirclePoints ( mergedGeomPub, fillColor, strokeColor, array[i].radius, array[i].x, array[i].z, array[i].y, Math.PI/2, 0, 0, 1 );
+                drawCirclePoints ( mergedGeomPub, array[i].radius * .99, array[i].x, array[i].z, array[i].y);
             } else {
                 strokeColor = new THREE.Color(0x5309aa);
-                //drawCircle(mergedGeomUnPub, array[i].x, array[i].z, array[i].y , array[i].radius, 24, fillColor, strokeColor, array[i].id, array[i].title, authorStr);
-                drawCirclePoints ( mergedGeomUnPub, fillColor, strokeColor, array[i].radius, array[i].x, array[i].z, array[i].y, Math.PI/2, 0, 0, 1 );
+            drawCirclePoints ( mergedGeomUnPub, array[i].radius * .99, array[i].x, array[i].z, array[i].y);
+
             }
             drawShaderCircle(fillColor, strokeColor, array[i].radius * 2, 2.0, array[i].x, array[i].z, array[i].y, Math.PI/2, 0, 0, 1, array[i].id, array[i].title, authorStr);
             //drawCircle(array[i].x * -2, array[i].z * 0.25, array[i].y * 2, array[i].radius * 0.2, 64, fillColor, strokeColor);
@@ -1351,13 +1380,17 @@
 
         }
 
-        var totalCirclePub = new THREE.Mesh(mergedGeomPub, new THREE.MeshBasicMaterial( { color: 0x00dbbb , side: THREE.DoubleSide } ));
-        var totalCircleUnPub = new THREE.Mesh(mergedGeomUnPub, new THREE.MeshBasicMaterial( { color: 0x5309aa , side: THREE.DoubleSide } ));
+        var totalCirclePub = new THREE.Line(mergedGeomPub, new THREE.LineBasicMaterial( { color : 0x00dbbb}), THREE.LinePieces);
+        var totalCircleUnPub = new THREE.Line(mergedGeomUnPub, new THREE.LineBasicMaterial( { color : 0x5309aa }), THREE.LinePieces);
         
         scene.add( totalCirclePub );
         scene.add( totalCircleUnPub );
         //console.log("size of articleObjects array: " + articleObjects.length);
         drawGrid();
+        
+        $("#loader").fadeOut( function() {
+            startIntro(); //TOUR STARTS AFTER EVERYTHING LOADS
+        });
     }
 
     function loadTerms(articleArray) {
@@ -1373,7 +1406,7 @@
 
             parseTerm(data, articleArray);
 
-            $("#loader").fadeOut();
+            // $("#loader").fadeOut();
             //drawSplines(articles, terms);
  
         })
@@ -1417,9 +1450,9 @@
 
         // console.log(terms);
         // console.log(terms.length);
+        console.log("finished parsing terms - decide when to drawTerms");
+        drawArticles(articles);
         drawTerms(terms);
-
-        startIntro(); //TOUR STARTS AFTER EVERYTHING LOADS
 
     }
 
