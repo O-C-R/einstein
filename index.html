@@ -228,8 +228,6 @@
 
     var selectedArticles = [];
 
-    //var spriteTooltip, tooltipTexture, tooltipCanvas, tooltipContext;
-
     var tourActive = false;
 
     var termOffset = -1500;
@@ -240,8 +238,6 @@
     init();
 
     // postprocessing
-
-    //startIntro();
 
     function startIntro(){
         var intro = introJs();
@@ -254,7 +250,7 @@
                 },
                 {
                     //element: '#step2',
-                    intro: "<h2>Data Source</h2><br>Each colored dot represents a paper uploaded in 2014 to the well-known online database arXiv.org. Each paper has been classified as having 'General Relativity - Quantum Cosmology' as its main category - a total of 2,435 papers.<br><br>Use your mouse to roll over an article and reveal its title, authors and URL on arXiv.org. Right (or CTRL) clicking on the article dot when highlighted opens a new window to the article's page on arXiv.org."
+                    intro: "<h2>Data Source</h2><br>Each colored dot represents a paper uploaded in 2014 to the well-known online database arXiv.org. Each paper has been classified as having 'General Relativity - Quantum Cosmology' as its main category - a total of 2,435 papers.<br><br>Use your mouse to roll over an article and reveal its title, authors, number of citations and URL on arXiv.org. Right (or CTRL) clicking on the article dot when highlighted opens a new window to the article's page on arXiv.org."
                 },
                 {
                     //element: '#keyword-container',
@@ -265,13 +261,13 @@
                     intro: "<h2>Article and Keyword Layout</h2><br>Article dots are positioned near keywords (diamonds). If the article has multiple keywords, the dot is placed between terms, such as the article with special relativity and Noether's theorem.<br><br> NOTE: This section and keywords in general need some thought / layout decisions."
                 },
                 {
-                    intro: "<h2>Citations</h2><br>The size of the dot is based on how often the 2014 article has been cited since publication through the middle of this year. The minimum sized dot corresponds to a paper with no citations, whereas the largest dot has 85 citations."
+                    intro: "<h2>Citations</h2><br>The size of the dot is based on how often the 2014 article has been cited since publication through the middle of this year. The smallest dot corresponds to a paper with no citations, whereas the largest dot has 85 citations."
                 },
                 {
                     intro: "<h2>Publication Status</h2><br>The colored circle around each dot indicates publication status. Many physicists put their papers on arXiv before they are published.<br><br>Articles with a bright blue outline have been published, while articles circled in dark purple are awaiting peer review."
                 },
                 {
-                    intro: "<h2>Authors</h2><br>The number of authors per article generally varies between 1 and 5. In some cases, like the LIGO research, there are over 850 authors per article."
+                    intro: "<h2>Authors</h2><br>The number of authors per article generally varies between one and five. In some cases, like the LIGO research, there are over 850 authors for a single article."
                 },
                 {
                     //element:'#authorKey',
@@ -280,12 +276,12 @@
                 },
                 {
                     //element: '#navInstructions',
-                    intro: '<h2>Navigation</h2><br>You may explore the visualization by using your mouse to orbit around the scene.<br><br>Orbit: left mouse / touch: one finger move<br>Zoom: mousewheel / touch: two finger spread or squish<br>Pan: right mouse, or arrow keys / touch: two finger drag<br><br>You can also select various views to focus on the top, bottom, or sides of the graphic. Select the tour to replay this introduction<br><br>NOTE: Need to work on camera views.',
+                    intro: "<h2>Navigation</h2><br>You may explore the visualization by using your mouse to orbit around the scene.<br><br>Orbit: left mouse / touch: one finger move<br>Zoom: mousewheel / touch: two finger spread or squish<br>Pan: right mouse, or arrow keys / touch: two finger drag<br><br>You can also select various views to focus on the top, bottom, or sides of the graphic. Select the tour to replay this introduction.",
                     //position: 'left'
                 },
                 {
                     //element: '#navButtons',
-                    intro: '<h2>Views</h2><br>You can select various views to focus on the top, bottom, or sides of the graphic. Select the tour to replay this introduction.',
+                    intro: "<h2>Views</h2><br>You can select various views to focus on the top, bottom, or sides of the graphic. Select the tour to replay this introduction.",
                     //position: 'left'
                 }
             ],
@@ -299,17 +295,113 @@
             //console.log("Current Scene: " + intro._currentStep);
             var introTweenOptions = {duration: 1000, easing: TWEEN.Easing.Quadratic.InOut};
 
+            /*
+            switch(intro._currentStep) { 
+                case 0: //INTRO SCREEN
+                    tourActive = true;
+                    moveAndLookAt(camera, new THREE.Vector3(580, 1390, 1600), new THREE.Vector3(435, -430, 560), introTweenOptions);
+                    break;
 
-//             switch(intro._currentStep) {
-//             case 0:
-//         code block
-//         break;
-//     case 1:
-//         code block
-//         break;
-//     default:
-//         default code block
-// }
+                case 1: //Data Source - explains article rollover behavior
+                    unselectSelectableElement($("#selectable"));
+                    moveAndLookAt(camera, new THREE.Vector3(1350, 500, 1200), new THREE.Vector3(925, -1170, 75), introTweenOptions);
+                    if( splineObj.children.length > 0 ) {
+                        for ( s in splineObj.children) {
+                            splineObj.remove(s);
+                        }
+                        scene.remove(splineObj);
+                        var key = "physical cosmology";
+                        var selected = termObj.getObjectByName(key);
+                        for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                            var index = selected.userData.articleIndices[k];
+                            //console.log(articleObjects[index].userData.id);
+                            articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                            articleObjects[index].userData.clicked = false;
+                        }
+                    }
+                    break;
+
+                case 2: //Concept Keywords - shows how to highlight articles
+                    moveAndLookAt(camera, new THREE.Vector3(-411, 600, 2566), new THREE.Vector3(-10, -525, 57), introTweenOptions);
+                    //highlight physical cosmology
+                    var key = "physical cosmology";
+                    var selected = termObj.getObjectByName(key);
+
+                    //set highlight of selected articles and draw splines to selected terms
+                    for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                        var index = selected.userData.articleIndices[k];
+                        //console.log(articleObjects[index].userData.id);
+                        //articleObjects[index].material.color.setHex( 0xFFFCC7); //0xFEFFA9); //0xFFF586); //0xFECA40); //0xF3CE00 );
+                        articleObjects[index].material.uniforms.innerCol.value = new THREE.Color ( 0xFFFCC7 );
+                        articleObjects[index].userData.clicked = true;
+
+                        if (k % 2 === 0) {
+                            drawSplines ( articleObjects[index].position, selected.position, key );
+                        }
+                    }
+
+                    splineObj.name = key;
+                    scene.add( splineObj );
+                    selectSelectableElement($("#selectable"), $("#selectable li:eq(1)"));
+                    break;
+
+                case 3: //Article and Keyword Layout
+                    unselectSelectableElement($("#selectable"));
+
+                    var str = "http://arxiv.org/abs/1401.4548v2";
+                    var objlookAt = articleObj.getObjectByName(str);
+                    //console.log(objlookAt);
+                    moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x, objlookAt.position.y + 2000, objlookAt.position.z + 1e-10), objlookAt.position, introTweenOptions);
+
+                    if(splineObj.children.length > 0) {
+                        //console.log(splineObj.children.length);
+                        for ( var i = 0; i < splineObj.children.length; i++) {
+                            var child = splineObj.children[i];
+                            //console.log(child);
+                            splineObj.remove(child);
+                        }
+                        scene.remove(splineObj);
+                        var key = "physical cosmology";
+                        var selected = termObj.getObjectByName(key);
+                        for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                            var index = selected.userData.articleIndices[k];
+                            //console.log(articleObjects[index].userData.id);
+                            articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                            articleObjects[index].userData.clicked = false;
+                        }
+                    }
+
+                case 4: //Citations
+                    moveAndLookAt(camera, new THREE.Vector3(740, 300, 1111), new THREE.Vector3(485, -575, -190), introTweenOptions);
+                    break;
+
+                case 5: //Publication status
+                    moveAndLookAt(camera, new THREE.Vector3(1146, 205, 633), new THREE.Vector3(600, -663, -143), introTweenOptions);
+                    break;
+
+                case 6: //Authors
+                    moveAndLookAt(camera, new THREE.Vector3(1157, 580, 785), new THREE.Vector3(382, -1437, 867), introTweenOptions);
+                    break;
+
+                case 7: //Key (wide view)
+                    topView();
+                    break;
+
+                case 8: //Navigation
+                    var str = "http://arxiv.org/abs/1403.5306v2";
+                    var objlookAt = articleObj.getObjectByName(str);
+                    //console.log(objlookAt);
+                    moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x + 700, objlookAt.position.y, objlookAt.position.z + 700), objlookAt.position, introTweenOptions);
+                    break;
+
+                case 9: //Views (bottomView)
+                    bottomView();
+                    break;
+
+                // default:
+                //     default code block
+            }
+            */
 
             if (intro._currentStep === 0) { //INTRO SCREEN
                 tourActive = true;
