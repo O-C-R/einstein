@@ -93,20 +93,20 @@
     font-weight: 600;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 1.5em;
-    line-height: 1.2em;
-    /* font-weight: 900; */
+/*    line-height: 1.2em;
+*/    /* font-weight: 900; */
     background-color: rgba(0, 0, 0, 0.6);
     padding-bottom: 10px;
   }
 
   #articleInfo #authors {
     background-color: rgba(0, 0, 0, 0.6);
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 
   #articleInfo #citations {
     background-color: rgba(0, 0, 0, 0.6);
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 
   #articleInfo #articleUrl {
