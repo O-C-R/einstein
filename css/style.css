@@ -79,30 +79,38 @@
   }
 
   #articleInfo {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      color: white;
-      padding: 10px;
-      line-height: 1.2em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    max-width: 350px;
+    height: 100px;
+    color: white;
+    padding: 10px;
+    line-height: 1.5em;
   }
 
   #articleInfo #title {
-      font-weight: bold;
-      font-family: 'Helvetica', 'Arial', sans-serif;
-      font-size: 1.1em;
-  /*                font-weight: 900; 
-  */                background-color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    /* font-weight: 900; */
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 10px;
   }
 
   #articleInfo #authors {
-      background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 1.5em;
+  }
+
+  #articleInfo #citations {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 1.4em;
   }
 
   #articleInfo #articleUrl {
-       background-color: rgba(0, 0, 0, 0.5);
+       background-color: rgba(0, 0, 0, 0.6);
   }
 
   #articleInfo #articleUrl a {
@@ -147,13 +155,13 @@
     position: relative;
     background: rgba(55, 55, 55, 0.9); 
     color: white; 
-    border: 1px solid #6B6B6B;
+    /*border: 1px solid #6B6B6B;*/
     line-height: 1.6em;
   }
 
   #authorKey {
     position: relative;
-    width: 120px;
+    width: 113px;
     height: auto;
     padding: 5px;
     /*margin: 6px 3px 0px 0px;*/
@@ -162,7 +170,7 @@
     margin-right: 3px;
     background: rgba(55, 55, 55, 0.9); 
     color: white; 
-    border: 1px solid #6B6B6B;
+    /*border: 1px solid #6B6B6B;*/
     line-height: 1.1em;
   }
 

@@ -94,6 +94,7 @@
     <div id="articleInfo" class="visible">
         <div><span id="title" ></span></div>
         <div><span id="authors" ></span></div>
+        <div><span id="citations" ></span></div>
         <div><span id="articleUrl"><a href="" target="_blank"></a></span></div>
     </div>
 </div>
@@ -320,6 +321,8 @@
                 moveAndLookAt(camera, new THREE.Vector3(580, 1390, 1600), new THREE.Vector3(435, -430, 560), introTweenOptions);
 
             } else if (intro._currentStep === 1) { //Data Source - explains article rollover behavior
+                unselectSelectableElement($("#selectable"));
+
                 //var str = "http://arxiv.org/abs/1403.7377v1";
                 //var str = "http://arxiv.org/abs/1410.7764v2";
                 //var str = "http://arxiv.org/abs/1410.5071v1";
@@ -350,10 +353,10 @@
                 moveAndLookAt(camera, new THREE.Vector3(-411, 600, 2566), new THREE.Vector3(-10, -525, 57), introTweenOptions);
 
                 //highlight physical cosmology
-                //$(".ui-widget-content:eq(1)").addClass('click-selected'); //doesn't work
                     var key = "physical cosmology";
                     
                     var selected = termObj.getObjectByName(key);
+
                     //console.log(selected);
                     //var termPos = selected.position;
                     //console.log("selected name: " + selected.name);
@@ -387,9 +390,11 @@
 
                     splineObj.name = key;
                     scene.add( splineObj );
+                    selectSelectableElement($("#selectable"), $("#selectable li:eq(1)"));
 
             } else if (intro._currentStep === 3) { //Article and Keyword Layout
-               
+                unselectSelectableElement($("#selectable"));
+
                 if(splineObj.children.length > 0) {
                     //console.log(splineObj.children.length);
                     for ( var i = 0; i < splineObj.children.length; i++) {
@@ -762,6 +767,24 @@
         }
     }
 
+    function selectSelectableElement (selectableContainer, elementsToSelect) {
+        console.log("selecting: ");
+        console.log(elementsToSelect);
+        // add unselecting class to all elements in the styleboard canvas except the ones to select
+        $(".ui-selected", selectableContainer).not(elementsToSelect).removeClass("ui-selected").addClass("ui-unselecting");
+        
+        // add ui-selecting class to the elements to select
+        $(elementsToSelect).not(".ui-selected").addClass("ui-selecting");
+
+        // trigger the mouse stop event (this will select all .ui-selecting elements, and deselect all .ui-unselecting elements)
+        //selectableContainer.data("selectable")._mouseStop(null);
+    }
+
+    function unselectSelectableElement (selectableContainer) {
+        console.log("unselecting: ");
+        $(".ui-selecting", selectableContainer).removeClass("ui-selecting").addClass("ui-unselecting");
+    }
+
     function onMouseUp( event ) {
         //console.log("MOUSE UP");
 
@@ -979,7 +1002,12 @@
 
                 //update article info
                 $("#title").text(INTERSECTED.userData.title);
-                $("#authors").text(INTERSECTED.userData.authors);
+                if (INTERSECTED.userData.numAuthors > 1 ) {
+                    $("#authors").text("Authors: " + INTERSECTED.userData.authors);
+                } else {
+                    $("#authors").text("Author: " + INTERSECTED.userData.authors);
+                }
+                $("#citations").text("Citations: " + INTERSECTED.userData.cites);
                 var url = INTERSECTED.userData.id;
                 $("#articleUrl a").prop('href', url);
                 $("#articleUrl a").text(url);
@@ -1026,7 +1054,7 @@
 
     var maxrad = 0;
 
-    function drawShaderCircle(fillColor, strokeColor, radius, strokeWeight, x, y, z, rotx, roty, rotz, scalar, id, title, authors) {
+    function drawShaderCircle(fillColor, strokeColor, radius, strokeWeight, x, y, z, rotx, roty, rotz, scalar, id, title, authors, numAuthors, numCites) {
 
     //shader stuff
 
@@ -1095,7 +1123,7 @@
         squareMesh.rotation.set( rotx, roty, rotz );
         squareMesh.scale.set( scalar, scalar, scalar );
 
-        squareMesh.userData = { id: id, title: title, authors: authors, colour: fillColor, clicked: false };
+        squareMesh.userData = { id: id, title: title, authors: authors, colour: fillColor, clicked: false, cites: numCites, numAuthors: numAuthors };
         squareMesh.name = id;
 
         articleObj.add( squareMesh );
@@ -1372,9 +1400,8 @@
             } else {
                 strokeColor = new THREE.Color(0x5309aa);
             drawCirclePoints ( mergedGeomUnPub, array[i].radius * .99, array[i].x, array[i].z, array[i].y);
-
             }
-            drawShaderCircle(fillColor, strokeColor, array[i].radius * 2, 2.0, array[i].x, array[i].z, array[i].y, Math.PI/2, 0, 0, 1, array[i].id, array[i].title, authorStr);
+            drawShaderCircle(fillColor, strokeColor, array[i].radius * 2, 2.0, array[i].x, array[i].z, array[i].y, Math.PI/2, 0, 0, 1, array[i].id, array[i].title, authorStr, array[i].numAuthors, array[i].numCites);
             //drawCircle(array[i].x * -2, array[i].z * 0.25, array[i].y * 2, array[i].radius * 0.2, 64, fillColor, strokeColor);
             
 
@@ -1477,7 +1504,6 @@
                         //borderColor: {r:234, g:79, b:28, a:1.0}, 
                         borderColor: {r: 107, g: 107, b: 107, a:1.0},
                         backgroundColor: {r: 55, g:55, b:55, a:0.9} } );
-            //spritey.position.set(t1.x * -0.1, t1.z * 0.1, t1.y * 0.1);
             spritey.position.set(t1.x , termOffset + 2*t1.z - 50 , t1.y);
             spriteObj.add( spritey );
 
