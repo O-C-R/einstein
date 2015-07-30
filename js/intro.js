@@ -342,11 +342,13 @@
    * @param {Object} targetElement
    */
   function _exitIntro(targetElement) {
+    console.log("_exitIntro function");
     //remove overlay layer from the page
     var overlayLayer = targetElement.querySelector('.introjs-overlay');
 
     //return if intro already completed or skipped
     if (overlayLayer == null) {
+      console.log("overlayLayer == null");
       return;
     }
 
@@ -1070,16 +1072,16 @@
 
     targetElm.appendChild(overlayLayer);
 
-    overlayLayer.onclick = function() {
-      if (self._options.exitOnOverlayClick == true) {
-        _exitIntro.call(self, targetElm);
+    // overlayLayer.onclick = function() {
+    //   if (self._options.exitOnOverlayClick == true) {
+    //     _exitIntro.call(self, targetElm);
 
-        //check if any callback is defined
-        if (self._introExitCallback != undefined) {
-          self._introExitCallback.call(self);
-        }
-      }
-    };
+    //     //check if any callback is defined
+    //     if (self._introExitCallback != undefined) {
+    //       self._introExitCallback.call(self);
+    //     }
+    //   }
+    // };
 
     setTimeout(function() {
       styleText += 'opacity: ' + self._options.overlayOpacity.toString() + ';';
