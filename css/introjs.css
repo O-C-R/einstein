@@ -66,6 +66,7 @@ tr.introjs-showElement > th {
 
 .introjs-tooltipReferenceLayer {
   position: absolute;
+  visibility: hidden;
   z-index: 10000000;
   background-color: transparent;
   -webkit-transition: all 0.3s ease-out;
@@ -87,6 +88,7 @@ tr.introjs-showElement > th {
 
 .introjs-helperNumberLayer {
   position: absolute;
+  visibility: visible;
   top: -16px;
   left: -16px;
   z-index: 9999999999 !important;
@@ -197,6 +199,7 @@ tr.introjs-showElement > th {
 
 .introjs-tooltip {
   position: absolute;
+  visibility: visible;
   padding: 15px;
 /*  background-color: white;
 */  background-color: rgba(55, 55, 55, 0.9);
@@ -218,7 +221,7 @@ tr.introjs-showElement > th {
 
 .introjs-tooltiptext {
   color: white;
-  font-size: 1.3em;
+  font-size: 1.4em;
   line-height: 1.6em;
 }
 
@@ -262,9 +265,9 @@ tr.introjs-showElement > th {
   -moz-background-clip: padding;
   -o-background-clip: padding-box;
   /*background-clip: padding-box;*/ /* commented out due to Opera 11.10 bug */
-  -webkit-border-radius: 0.2em;
+/*  -webkit-border-radius: 0.2em;
   -moz-border-radius: 0.2em;
-  border-radius: 0.2em;
+  border-radius: 0.2em;*/
   /* IE hacks */
   zoom: 1;
   *display: inline;
@@ -304,16 +307,16 @@ tr.introjs-showElement > th {
 }
 
 .introjs-prevbutton {
-  -webkit-border-radius: 0.2em 0 0 0.2em;
+/*  -webkit-border-radius: 0.2em 0 0 0.2em;
   -moz-border-radius: 0.2em 0 0 0.2em;
-  border-radius: 0.2em 0 0 0.2em;
+  border-radius: 0.2em 0 0 0.2em;*/
   border-right: none;
 }
 
 .introjs-nextbutton {
-  -webkit-border-radius: 0 0.2em 0.2em 0;
+/*  -webkit-border-radius: 0 0.2em 0.2em 0;
   -moz-border-radius: 0 0.2em 0.2em 0;
-  border-radius: 0 0.2em 0.2em 0;
+  border-radius: 0 0.2em 0.2em 0;*/
 }
 
 .introjs-disabled, .introjs-disabled:hover, .introjs-disabled:focus {

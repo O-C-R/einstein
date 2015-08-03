@@ -907,9 +907,9 @@
     }
 
     //disable interaction
-    if (this._options.disableInteraction === true) {
-      _disableInteraction.call(self);
-    }
+    // if (this._options.disableInteraction === true) {
+    //   _disableInteraction.call(self);
+    // }
 
     prevTooltipButton.removeAttribute('tabIndex');
     nextTooltipButton.removeAttribute('tabIndex');
@@ -1049,6 +1049,7 @@
    * @method _addOverlayLayer
    * @param {Object} targetElm
    */
+
   function _addOverlayLayer(targetElm) {
     var overlayLayer = document.createElement('div'),
         styleText = '',
@@ -1072,16 +1073,16 @@
 
     targetElm.appendChild(overlayLayer);
 
-    // overlayLayer.onclick = function() {
-    //   if (self._options.exitOnOverlayClick == true) {
-    //     _exitIntro.call(self, targetElm);
+    overlayLayer.onclick = function() {
+      if (self._options.exitOnOverlayClick == true) {
+        _exitIntro.call(self, targetElm);
 
-    //     //check if any callback is defined
-    //     if (self._introExitCallback != undefined) {
-    //       self._introExitCallback.call(self);
-    //     }
-    //   }
-    // };
+        //check if any callback is defined
+        if (self._introExitCallback != undefined) {
+          self._introExitCallback.call(self);
+        }
+      }
+    };
 
     setTimeout(function() {
       styleText += 'opacity: ' + self._options.overlayOpacity.toString() + ';';
@@ -1090,6 +1091,7 @@
 
     return true;
   }
+  
 
   /**
    * Get an element position on the page

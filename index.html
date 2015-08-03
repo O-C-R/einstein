@@ -25,9 +25,11 @@
             </div>
             <div id="navInstructions" class="noselect">
                 <h2>Navigation Info</h2>
-                <br>Orbit: left mouse / touch: one finger move
-                <br>Zoom: mousewheel / touch: two finger spread or squish
-                <br>Pan: right mouse, or arrow keys / touch: two finger drag
+                <div id="navInfo">
+                    <br><span id="orbit">Orbit: left mouse / touch: one finger move</span>
+                    <br><span id="zoom">Zoom: mousewheel / touch: two finger spread or squish</span>
+                    <br><span id="pan">Pan: right mouse, or arrow keys / touch: two finger drag</span>
+                </div>
             </div>
             <div id="authorKey" class="noselect">
                 <h2>Key</h2>
@@ -231,7 +233,7 @@
     var tourActive = false;
 
     var termOffset = -1500;
-    var labelDistThreshold = 4000;
+    var labelDistThreshold = 3600;
 
     var eyeTargetScale;
 
@@ -287,6 +289,7 @@
             ],
             skipLabel: 'Exit',
             tooltipPosition: 'bottom',
+            exitOnOverlayClick: true,
             showStepNumbers: false,
             overlayOpacity: 0.1
         });
@@ -295,7 +298,7 @@
             //console.log("Current Scene: " + intro._currentStep);
             var introTweenOptions = {duration: 1000, easing: TWEEN.Easing.Quadratic.InOut};
 
-            /*
+            
             switch(intro._currentStep) { 
                 case 0: //INTRO SCREEN
                     tourActive = true;
@@ -322,7 +325,7 @@
                     break;
 
                 case 2: //Concept Keywords - shows how to highlight articles
-                    moveAndLookAt(camera, new THREE.Vector3(-411, 600, 2566), new THREE.Vector3(-10, -525, 57), introTweenOptions);
+                    moveAndLookAt(camera, new THREE.Vector3(130, 550, 2670), new THREE.Vector3(530, -570, 165), introTweenOptions);
                     //highlight physical cosmology
                     var key = "physical cosmology";
                     var selected = termObj.getObjectByName(key);
@@ -370,6 +373,7 @@
                             articleObjects[index].userData.clicked = false;
                         }
                     }
+                    break;
 
                 case 4: //Citations
                     moveAndLookAt(camera, new THREE.Vector3(740, 300, 1111), new THREE.Vector3(485, -575, -190), introTweenOptions);
@@ -397,151 +401,6 @@
                 case 9: //Views (bottomView)
                     bottomView();
                     break;
-
-                // default:
-                //     default code block
-            }
-            */
-
-            if (intro._currentStep === 0) { //INTRO SCREEN
-                tourActive = true;
-                //var str = "http://arxiv.org/abs/1403.7377v1";
-                //var str = "http://arxiv.org/abs/1410.7764v2";
-                //var str = "http://arxiv.org/abs/1410.5071v1";
-                //var objlookAt = articleObj.getObjectByName(str);
-                //console.log(objlookAt);
-                moveAndLookAt(camera, new THREE.Vector3(580, 1390, 1600), new THREE.Vector3(435, -430, 560), introTweenOptions);
-
-            } else if (intro._currentStep === 1) { //Data Source - explains article rollover behavior
-                unselectSelectableElement($("#selectable"));
-
-                //var str = "http://arxiv.org/abs/1403.7377v1";
-                //var str = "http://arxiv.org/abs/1410.7764v2";
-                //var str = "http://arxiv.org/abs/1410.5071v1";
-                //var objlookAt = articleObj.getObjectByName(str);
-                //console.log(objlookAt);
-                moveAndLookAt(camera, new THREE.Vector3(1350, 500, 1200), new THREE.Vector3(925, -1170, 75), introTweenOptions);
-
-                if( splineObj.children.length > 0 ) {
-                    for ( s in splineObj.children) {
-                        splineObj.remove(s);
-                    }
-                    scene.remove(splineObj);
-                    var key = "physical cosmology";
-                    var selected = termObj.getObjectByName(key);
-                    for (var k = 0; k < selected.userData.articleIndices.length; k++) {
-                        var index = selected.userData.articleIndices[k];
-                        //console.log(articleObjects[index].userData.id);
-                        articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
-                        articleObjects[index].userData.clicked = false;
-                    }
-                }
-                //console.log(splineObj);
-                
-            } else if (intro._currentStep === 2) { //Concept Keywords - shows how to highlight articles, should it be top down, or a view of the terms??
-                
-                
-                //moveAndLookAt(camera, new THREE.Vector3(-1293, -2140, 1492), new THREE.Vector3(-156, -1048, 535), introTweenOptions);
-                moveAndLookAt(camera, new THREE.Vector3(-411, 600, 2566), new THREE.Vector3(-10, -525, 57), introTweenOptions);
-
-                //highlight physical cosmology
-                    var key = "physical cosmology";
-                    
-                    var selected = termObj.getObjectByName(key);
-
-                    //console.log(selected);
-                    //var termPos = selected.position;
-                    //console.log("selected name: " + selected.name);
-
-                    // var tempSelectedObj = {};
-                    // tempSelectedObj.tempName = selected.name;
-                    // tempSelectedObj.tempArray = selected.userData.articleIndices.slice();
-                    // //console.log(tempSelectedObj);
-                    // selectedArticles.push(tempSelectedObj);
-                    // console.log(selectedArticles);
-                    // console.log(selectedArticles.length);
-
-                    //scene.remove(splineObj.getObjectByName(tempName));
-                    //var splineHolder = splineObj.getObjectByName(selected.name);
-                    // console.log("splineHolder: ");
-                    // console.log(splineHolder);
-
-                    //set highlight of selected articles and draw splines to selected terms
-                    for (var k = 0; k < selected.userData.articleIndices.length; k++) {
-                        var index = selected.userData.articleIndices[k];
-                        //console.log(articleObjects[index].userData.id);
-
-                        //articleObjects[index].material.color.setHex( 0xFFFCC7); //0xFEFFA9); //0xFFF586); //0xFECA40); //0xF3CE00 );
-                        articleObjects[index].material.uniforms.innerCol.value = new THREE.Color ( 0xFFFCC7 );
-                        articleObjects[index].userData.clicked = true;
-
-                        if (k % 2 === 0) {
-                            drawSplines ( articleObjects[index].position, selected.position, key );
-                        }
-                    }
-
-                    splineObj.name = key;
-                    scene.add( splineObj );
-                    selectSelectableElement($("#selectable"), $("#selectable li:eq(1)"));
-
-            } else if (intro._currentStep === 3) { //Article and Keyword Layout
-                unselectSelectableElement($("#selectable"));
-
-                if(splineObj.children.length > 0) {
-                    //console.log(splineObj.children.length);
-                    for ( var i = 0; i < splineObj.children.length; i++) {
-                        var child = splineObj.children[i];
-                        //console.log(child);
-                        splineObj.remove(child);
-                    }
-                    scene.remove(splineObj);
-                    var key = "physical cosmology";
-                    var selected = termObj.getObjectByName(key);
-                    for (var k = 0; k < selected.userData.articleIndices.length; k++) {
-                        var index = selected.userData.articleIndices[k];
-                        //console.log(articleObjects[index].userData.id);
-                        articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
-                        articleObjects[index].userData.clicked = false;
-                    }
-                }
-
-                var str = "http://arxiv.org/abs/1401.4548v2";
-                var objlookAt = articleObj.getObjectByName(str);
-                //console.log(objlookAt);
-                moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x, objlookAt.position.y + 2000, objlookAt.position.z + 1e-10), objlookAt.position, introTweenOptions);
-
-
-            } else if (intro._currentStep === 4) { //Citations
-                // var str = "http://arxiv.org/abs/1403.7377v1";
-                // var objlookAt = articleObj.getObjectByName(str);
-                //console.log(objlookAt);
-                // moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x + 600, objlookAt.position.y + 400, objlookAt.position.z + 600), objlookAt.position, introTweenOptions);
-                moveAndLookAt(camera, new THREE.Vector3(740, 300, 1111), new THREE.Vector3(485, -575, -190), introTweenOptions);
-
-
-            } else if (intro._currentStep === 5 ) { //Publication Status
-                // var str = "http://arxiv.org/abs/1401.1282v3";
-                // var objlookAt = articleObj.getObjectByName(str);
-                // //console.log(objlookAt);
-                // moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x - 100, objlookAt.position.y + 200, objlookAt.position.z - 100 ), objlookAt.position, introTweenOptions);
-                moveAndLookAt(camera, new THREE.Vector3(1146, 205, 633), new THREE.Vector3(600, -663, -143), introTweenOptions);
-
-            } else if (intro._currentStep === 6) { //Authors
-                // var str = "http://arxiv.org/abs/1403.5306v2";
-                // var objlookAt = articleObj.getObjectByName(str);
-                // //console.log(objlookAt);
-                // moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x + 700, objlookAt.position.y + 800, objlookAt.position.z + 700), objlookAt.position, introTweenOptions);
-                moveAndLookAt(camera, new THREE.Vector3(1157, 580, 785), new THREE.Vector3(382, -1437, 867), introTweenOptions);
-
-            } else if (intro._currentStep === 7) { //Key (wide view)
-                topView();
-            } else if (intro._currentStep === 8) { //Navigation
-                var str = "http://arxiv.org/abs/1403.5306v2";
-                var objlookAt = articleObj.getObjectByName(str);
-                //console.log(objlookAt);
-                moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x + 700, objlookAt.position.y, objlookAt.position.z + 700), objlookAt.position, introTweenOptions);
-            } else if (intro._currentStep === 9 ) { //Views (bottomView)
-                bottomView();
             }
         });
 
@@ -560,6 +419,14 @@
         intro.start();
     }
 
+    window.mobileAndTabletcheck = function() {
+      var check = false;
+      (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+      return check;
+    }
+
+
+
 
     function init() {
         //SCENE
@@ -577,8 +444,10 @@
         scene.add( spriteObj );
 
         //CAMERA
-        SCREEN_WIDTH = window.innerWidth;
-        SCREEN_HEIGHT = window.innerHeight;
+        //SCREEN_WIDTH = window.innerWidth;
+        //SCREEN_HEIGHT = window.innerHeight;
+        SCREEN_WIDTH = 960;
+        SCREEN_HEIGHT = 680;
         var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 10, FAR = 10000;
 
         camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
@@ -593,7 +462,6 @@
             console.log("using canvas renderer... slow");
             renderer = new THREE.CanvasRenderer();
         }
-
         
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -662,6 +530,40 @@
         ////////////
         // CUSTOM //
         ////////////
+        var isMobile = {
+            Android: function() {
+                return navigator.userAgent.match(/Android/i);
+            },
+            BlackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            iOS: function() {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            Opera: function() {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            Windows: function() {
+                return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+            },
+            any: function() {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+            }
+        };
+
+        if( isMobile.any() ) {
+            console.log('Mobile');
+            $("#navInstructions").css({ 'width': '165px'});
+            $("#orbit").text("Orbit:  one finger move");
+            $("#zoom").text("Zoom:  two finger spread or squish");
+            $("#pan").text("Pan:  two finger drag");
+        } else {
+            $("#navInstructions").css({ 'width': '150px'});
+            $("#orbit").text("Orbit: left mouse");
+            $("#zoom").text("Zoom:  mousewheel");
+            $("#pan").text("Pan:  right mouse, or arrow keys");
+        }
+            
 
         stats = new Stats();
         stats.domElement.style.position = 'absolute';
@@ -669,9 +571,9 @@
         stats.domElement.style.left = '0px';
         container.appendChild( stats.domElement );
 
-        document.addEventListener('mousemove', onMouseMove, false);
-        document.addEventListener('mouseup', onMouseUp, false);
-        document.addEventListener('mousedown', onMouseDown, false);
+        window.addEventListener('mousemove', onMouseMove, false);
+        window.addEventListener('mouseup', onMouseUp, false);
+        window.addEventListener('mousedown', onMouseDown, false);
         window.addEventListener( 'resize', onWindowResize, false );
 
         $(window).keypress(function(e) {
@@ -690,7 +592,7 @@
         console.log(camera.position);
         console.log(camera.rotation);
         console.log(camera.quaternion);
-        //console.log(controls.center);
+        console.log(controls.center);
         console.log("articles");
         console.log(articleObjects[0].rotation);
         console.log(articleObjects[0].quaternion);
@@ -714,7 +616,7 @@
 
         // TODO zoom out to fit...
         var grid = scene.getObjectByName("lowerGrid");
-        moveAndLookAt(camera, new THREE.Vector3( grid.position.x + 45, grid.position.y + 4000, grid.position.z + 55 + 1e-10), new THREE.Vector3(grid.position.x + 45, grid.position.y, grid.position.z + 55), {
+        moveAndLookAt(camera, new THREE.Vector3( grid.position.x - 80, grid.position.y + 4000, grid.position.z + 45 + 1e-10), new THREE.Vector3(grid.position.x - 80, grid.position.y, grid.position.z + 45), {
             duration: 1000,
             easing: TWEEN.Easing.Quadratic.InOut
         });
@@ -722,14 +624,8 @@
 
     function sideView() {
         console.log("sideView");
-        // for(var i = 0; i < articleObjects.length; i++) {
-        //     console.log(articleObjects[i].rotation);
-        // }
-        // moveAndLookAt(camera, new THREE.Vector3( 440, 150, 5000), new THREE.Vector3(440, -600, 900), {
-        //             duration: 1000,
-        //             easing: TWEEN.Easing.Quadratic.InOut
-        //         });
-        moveAndLookAt(camera, new THREE.Vector3( 580, -295, 4100), new THREE.Vector3(440, -600, 900), {
+
+        moveAndLookAt(camera, new THREE.Vector3( 400, -320, 4100), new THREE.Vector3(350, -860, 920), {
                     duration: 1000,
                     easing: TWEEN.Easing.Quadratic.InOut
                 });
@@ -834,7 +730,7 @@
     }
 
     function onMouseDown( event ) {
-        //console.log("MOUSE DOWN");
+        console.log("MOUSE DOWN");
         //console.log("tourActive is: " + tourActive);
 
         mouse.x = (event.clientX / renderer.domElement.width) * window.devicePixelRatio * 2 - 1;
@@ -843,15 +739,16 @@
         raycaster.setFromCamera( mouse, camera );
         var intersects = raycaster.intersectObjects( articleObjects );
 
-        if (intersects.length > 0 && !tourActive ) {
+        if (intersects.length > 0) {
             //don't open article new window if clicking on UI elements
             if($('#selectable').is(':hover') || $('#navButtons').is(':hover') || $('#navInstructions').is(':hover') || $('#authorKey').is(':hover') || $('#header').is(':hover')) {
                 //console.log("over the term menu");
             } else {
                 //opens new tab with article page
-                if(event.which === 3) { //only opens on right click
+                //if(event.which === 3) { //only opens on right click
+                    console.log("clicking");
                     window.open(intersects[0].object.userData.id);
-                }
+                //}
             }
 
             //disabled camera movement to point on click - but could be a good interface?
@@ -866,7 +763,7 @@
         $(".ui-selected", selectableContainer).not(elementsToSelect).removeClass("ui-selected").addClass("ui-unselecting");
         
         // add ui-selecting class to the elements to select
-        $(elementsToSelect).not(".ui-selected").addClass("ui-selecting");
+        $(elementsToSelect).not(".ui-selected").addClass("ui-selected");
 
         // trigger the mouse stop event (this will select all .ui-selecting elements, and deselect all .ui-unselecting elements)
         //selectableContainer.data("selectable")._mouseStop(null);
@@ -874,11 +771,11 @@
 
     function unselectSelectableElement (selectableContainer) {
         console.log("unselecting: ");
-        $(".ui-selecting", selectableContainer).removeClass("ui-selecting").addClass("ui-unselecting");
+        $(".ui-selected", selectableContainer).removeClass("ui-selected").addClass("ui-unselecting");
     }
 
     function onMouseUp( event ) {
-        //console.log("MOUSE UP");
+        console.log("MOUSE UP");
 
         //SELECT TERMS FROM SIDE NAVIGATION
         $( "#selectable" ).selectable({
@@ -1084,7 +981,7 @@
 
                 //INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
                 //INTERSECTED.material.color.setHex( 0xccff00 );
-                // console.log(INTERSECTED.name);
+                //console.log(INTERSECTED.name);
                 // console.log(INTERSECTED.userData);
                 // console.log(INTERSECTED.position);
 
@@ -1100,9 +997,9 @@
                     $("#authors").text("Author: " + INTERSECTED.userData.authors);
                 }
                 $("#citations").text("Citations: " + INTERSECTED.userData.cites);
-                var url = INTERSECTED.userData.id;
-                $("#articleUrl a").prop('href', url);
-                $("#articleUrl a").text(url);
+                // var url = INTERSECTED.userData.id;
+                // $("#articleUrl a").prop('href', url);
+                // $("#articleUrl a").text(url);
 
             }
 
@@ -1148,9 +1045,9 @@
 
     function drawShaderCircle(fillColor, strokeColor, radius, strokeWeight, x, y, z, rotx, roty, rotz, scalar, id, title, authors, numAuthors, numCites) {
 
-    //shader stuff
+        //shader stuff
 
-    maxrad = Math.max(maxrad, radius);
+        maxrad = Math.max(maxrad, radius);
 
         var uniforms = {
             innerCol: {
@@ -1591,7 +1488,7 @@
             var title = toTitleCase(t1.term);
 
             var spritey = makeTextSprite(" " + title, 
-                   { fontsize: 72, 
+                   { fontsize: 100, 
                         fontface: "Georgia", 
                         //borderColor: {r:234, g:79, b:28, a:1.0}, 
                         borderColor: {r: 107, g: 107, b: 107, a:1.0},
@@ -1771,6 +1668,8 @@
     }
 
     function makeTextSprite( message, parameters ) {
+        var group = new THREE.Object3D();
+
         if ( parameters === undefined ) parameters = {};
 
         var fontface = parameters.hasOwnProperty("fontface") ? parameters["fontface"] : "Georgia";
@@ -1782,13 +1681,13 @@
 
         var canvas = document.createElement('canvas');
         var ctx = canvas.getContext('2d');
-        canvas.width = 1600;
+        canvas.width = 2160;
         canvas.height = 200;
         var context = canvas.getContext('2d');
         context.font = "Bold " + fontsize + "px " + fontface;
         var metrics = context.measureText( message );
-        // console.log(message);
-        // console.log("metrics: " + metrics.width);
+        console.log(message);
+        console.log("metrics: " + metrics.width);
         var textWidth = metrics.width;
 
         //var textWidth = 500;
@@ -1798,25 +1697,35 @@
         context.lineWidth = borderThickness;
         //roundRect(context, borderThickness/2, borderThickness/2, (textWidth + borderThickness) * 1.05, fontsize * 1.4 + borderThickness, 8);
 
-        rect(context, borderThickness/2 + (canvas.width/2) - (textWidth/2), borderThickness/2 , (textWidth * 1.025 + borderThickness), fontsize * 1.4 + borderThickness);
+        rect(context, borderThickness/2 + (canvas.width/2) - (textWidth/2), borderThickness/2 , (textWidth * 1.025 + borderThickness), fontsize * 1.3 + borderThickness);
 
         context.fillStyle = "rgba("+textColor.r+", "+textColor.g+", "+textColor.b+", 1.0)";
-        context.fillText( message, borderThickness + (canvas.width/2) - (textWidth/2), (fontsize + borderThickness));
+        context.fillText( message, borderThickness + (canvas.width/2) - (textWidth/2), (fontsize));
 
         //console.log('textWidth: ' + textWidth);
 
         var labelTexture = new THREE.Texture(canvas); //label texture
         labelTexture.needsUpdate = true;
 
+        var texture = new THREE.Texture(context); //white texture
+        texture.needsUpdate = true;
+
+        var spriteMaterial = new THREE.SpriteMaterial( { map: texture });
+        var sprite = new THREE.Sprite( spriteMaterial );
+        sprite.scale.set(460, fontsize, fontsize);
+
         var spriteMaterial2 = new THREE.SpriteMaterial( { map: labelTexture });
         var labelsprite = new THREE.Sprite( spriteMaterial2);
-        labelsprite.scale.set(460, fontsize, fontsize);
+        labelsprite.scale.set(800, fontsize * 0.9, fontsize);
 
         labelsprite.userData = { width: textWidth };
-        //group.name = "labelSprite";
+        group.name = "labelSprite";
 
-        //group.add(labelsprite);
-        return labelsprite;
+        //group.add(sprite);
+        group.add(labelsprite);
+
+        //return labelsprite;
+        return group;
     }
 
     //UTIL FUNCTIONS
@@ -1831,6 +1740,7 @@
     }
 
     function onWindowResize() {
+        console.log("resizing window");
 
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();

@@ -118,18 +118,59 @@
       cursor: pointer;
   }
 
-  #feedback { font-size: 1.2em; }
-  #selectable .ui-selecting { background: #FFF586; }
-  #selectable .ui-selected { background: #FFFCC7; color: gray; cursor: default;}
-  #selectable { list-style-type: none; margin: 0; padding: 0; width: 100%; cursor: pointer;}
-  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.2em; height: 14px; }
-  .ui-widget-content {background: rgba(55, 55, 55, 0.9) ; color: white; border: 1px solid #6B6B6B;}
+  #feedback { 
+    font-size: 1.2em; 
+  }
+
+  #selectable .ui-selecting { 
+    background: #FFF586; 
+  }
+  #selectable .ui-selected { 
+    background: #FFFCC7; 
+    color: gray; 
+    cursor: default;
+  }
+
+  #selectable { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    cursor: pointer;
+  }
+
+  #selectable li { 
+    margin: 3px; 
+    padding: 0.4em; 
+    font-size: 1.33em; 
+    height: 14px; 
+  }
+  .ui-widget-content {
+    background: rgba(55, 55, 55, 0.9); 
+    color: white; 
+    border: 1px solid #6B6B6B;
+  }
 
   button {
     margin: 3px 3px 0px 0px;
     font-style: uppercase;
     background: rgba(55, 55, 55, 0.9); color: white; border: 1px solid #6B6B6B; 
     font-size: 12px;
+  }
+
+  button:focus {
+    outline: none;
+    color: #FFF586;
+  }
+
+  a {
+    color: #FFF586;
+    text-decoration: none;
+  }
+
+  a:hover, a:focus {
+    color: #FFFCC7;
+    text-decoration: none;
   }
 
   #keyInfo {
@@ -161,7 +202,7 @@
 
   #authorKey {
     position: relative;
-    width: 113px;
+    width: 120px;
     height: auto;
     padding: 5px;
     /*margin: 6px 3px 0px 0px;*/
@@ -172,6 +213,12 @@
     color: white; 
     /*border: 1px solid #6B6B6B;*/
     line-height: 1.1em;
+    font-size: 1.1em;
+  }
+
+  #navInfo {
+    font-size: 1.1em;
+    line-height: 1.5em;
   }
 
   .circle {
