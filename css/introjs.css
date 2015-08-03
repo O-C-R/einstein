@@ -274,6 +274,10 @@ tr.introjs-showElement > th {
   margin-top: 10px;
 }
 
+a.introjs-button {
+  outline-color: #FFF586;
+}
+
 .introjs-button:hover {
   border-color: #e3e3e3;
   text-decoration: none;

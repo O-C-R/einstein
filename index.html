@@ -730,7 +730,7 @@
     }
 
     function onMouseDown( event ) {
-        console.log("MOUSE DOWN");
+        //console.log("MOUSE DOWN");
         //console.log("tourActive is: " + tourActive);
 
         mouse.x = (event.clientX / renderer.domElement.width) * window.devicePixelRatio * 2 - 1;
@@ -741,14 +741,13 @@
 
         if (intersects.length > 0) {
             //don't open article new window if clicking on UI elements
-            if($('#selectable').is(':hover') || $('#navButtons').is(':hover') || $('#navInstructions').is(':hover') || $('#authorKey').is(':hover') || $('#header').is(':hover')) {
+            if($('#selectable').is(':hover') || $('#navButtons').is(':hover') || $('#navInstructions').is(':hover') || $('#authorKey').is(':hover') || $('#header').is(':hover') || $('.introjs-tooltip:first').is(':hover')) {
                 //console.log("over the term menu");
             } else {
                 //opens new tab with article page
-                //if(event.which === 3) { //only opens on right click
-                    console.log("clicking");
+                if(event.which === 3) { //only opens on right click
                     window.open(intersects[0].object.userData.id);
-                //}
+                }
             }
 
             //disabled camera movement to point on click - but could be a good interface?
@@ -757,8 +756,8 @@
     }
 
     function selectSelectableElement (selectableContainer, elementsToSelect) {
-        console.log("selecting: ");
-        console.log(elementsToSelect);
+        // console.log("selecting: ");
+        // console.log(elementsToSelect);
         // add unselecting class to all elements in the styleboard canvas except the ones to select
         $(".ui-selected", selectableContainer).not(elementsToSelect).removeClass("ui-selected").addClass("ui-unselecting");
         
@@ -770,12 +769,12 @@
     }
 
     function unselectSelectableElement (selectableContainer) {
-        console.log("unselecting: ");
+        //console.log("unselecting: ");
         $(".ui-selected", selectableContainer).removeClass("ui-selected").addClass("ui-unselecting");
     }
 
     function onMouseUp( event ) {
-        console.log("MOUSE UP");
+        //console.log("MOUSE UP");
 
         //SELECT TERMS FROM SIDE NAVIGATION
         $( "#selectable" ).selectable({
