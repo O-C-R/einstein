@@ -110,7 +110,14 @@
 <script type="text/javascript" src="js/intro.js"></script>
 <script type="text/javascript" src="js/jquery.scrollto.min.js"></script>
 
+<script type="text/javascript" src="js/shaders/CopyShader.js"></script>
+<script type="text/javascript" src="js/shaders/BokehShader.js"></script>
 
+<script type="text/javascript" src="js/postprocessing/EffectComposer.js"></script>
+<script type="text/javascript" src="js/postprocessing/RenderPass.js"></script>
+<script type="text/javascript" src="js/postprocessing/ShaderPass.js"></script>
+<script type="text/javascript" src="js/postprocessing/MaskPass.js"></script>
+<script type="text/javascript" src="js/postprocessing/BokehPass.js"></script>
 <!-- 
 <script src="js/shaders/CopyShader.js"></script>
 <script src="js/shaders/DotScreenShader.js"></script>
@@ -209,7 +216,10 @@
     var cameraOrtho, sceneOrtho;
     var mouse = { x: 0, y: 0 };
     var INTERSECTED, INTERSECTED_TERMS;
-    var SCREEN_WIDTH, SCREEN_HEIGHT;
+    var SCREEN_WIDTH = window.innerWidth; 
+    var SCREEN_HEIGHT = window.innerHeight;
+    var EMBED_WIDTH = 960;
+    var EMBED_HEIGHT = 680;
 
     //custom global variables
     var mesh;
@@ -237,9 +247,35 @@
 
     var eyeTargetScale;
 
+    // postprocessing
+    var postprocessing = {};
+
     init();
 
-    // postprocessing
+    function initPostprocessing() {
+        var renderPass = new THREE.RenderPass( scene, camera );
+
+        var bokehPass = new THREE.BokehPass( scene, camera, {
+            focus:      0.9,
+            aperture:   0.005,
+            maxblur:    0.9,
+
+            width: SCREEN_WIDTH,
+            height: SCREEN_HEIGHT
+        } );
+
+        bokehPass.renderToScreen = true;
+
+        var composer = new THREE.EffectComposer( renderer );
+
+        composer.addPass( renderPass );
+        composer.addPass( bokehPass );
+
+        postprocessing.composer = composer;
+        postprocessing.bokeh = bokehPass;
+
+    }
+
 
     function startIntro(){
         var intro = introJs();
@@ -435,10 +471,6 @@
         scene.add( spriteObj );
 
         //CAMERA
-        SCREEN_WIDTH = window.innerWidth;
-        SCREEN_HEIGHT = window.innerHeight;
-        // SCREEN_WIDTH = 960;
-        // SCREEN_HEIGHT = 680;
         var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 10, FAR = 10000;
 
         camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
@@ -448,7 +480,7 @@
 
         //RENDERER
         if (Detector.webgl) {
-            renderer = new THREE.WebGLRenderer( {antialias: true} );
+            renderer = new THREE.WebGLRenderer( {antialias: false} );
         } else {
             console.log("using canvas renderer... slow");
             renderer = new THREE.CanvasRenderer();
@@ -490,6 +522,11 @@
         loadArticles();
 
         //SHADERS
+        scene.matrixAutoUpdate = false;
+
+        initPostprocessing();
+
+        renderer.autoClear = false;
         /*
         var renderModel = new THREE.RenderPass( scene, camera );
         //var effectBloom = new THREE.BloomPass( .25 );
@@ -554,7 +591,6 @@
             $("#zoom").text("Zoom:  mousewheel");
             $("#pan").text("Pan:  right mouse, or arrow keys");
         }
-            
 
         stats = new Stats();
         stats.domElement.style.position = 'absolute';
@@ -714,7 +750,8 @@
         }
         
         //composer.render();
-        renderer.render( scene, camera );
+        postprocessing.composer.render( 0.1 );
+        //renderer.render( scene, camera );
         stats.end();
         requestAnimationFrame(render);
 
@@ -1656,10 +1693,14 @@
     function onWindowResize() {
         console.log("resizing window");
 
-        camera.aspect = window.innerWidth / window.innerHeight;
+        width = window.innerWidth;
+        height = window.innerHeight;
+
+        camera.aspect = width / height;
         camera.updateProjectionMatrix();
 
-        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.setSize( width, height );
+        postprocessing.composer.setSize( width, height );
 
     }
 
