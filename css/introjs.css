@@ -384,7 +384,7 @@ a.introjs-button {
 }
 
 .introjsFloatingElement {
-  position: absolute;
+  position: fixed;
   height: 0;
   width: 0;
   bottom: 0;

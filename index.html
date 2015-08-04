@@ -71,6 +71,7 @@
         <div id="UI">
             <div id="keyword-container" class="noselect">
                 <h2 style="padding-left: 5px;">Concept Keywords</h2>
+                <p id="tagline">(Most frequently used)</p>
                 <ol id="selectable">
                     <li class="ui-widget-content">Black hole</li>
                     <li class="ui-widget-content">Physical cosmology</li>
@@ -109,22 +110,6 @@
 <script type="text/javascript" src="js/stats.min.js"></script>
 <script type="text/javascript" src="js/intro.js"></script>
 <script type="text/javascript" src="js/jquery.scrollto.min.js"></script>
-
-
-<!-- 
-<script src="js/shaders/CopyShader.js"></script>
-<script src="js/shaders/DotScreenShader.js"></script>
-<script src="js/shaders/RGBShiftShader.js"></script>
-<script src="js/shaders/FilmShader.js"></script> 
-<script src="js/shaders/ConvolutionShader.js"></script>
-<script src="js/postprocessing/EffectComposer.js"></script>
-<script src="js/postprocessing/RenderPass.js"></script>
-<script src="js/postprocessing/BloomPass.js"></script>
-<script src="js/postprocessing/FilmPass.js"></script>
-<script src="js/postprocessing/MaskPass.js"></script>
-<script src="js/postprocessing/ShaderPass.js"></script>
- -->
-
 
 <script type="x-shader/x-vertex" id="vertexshader">
     //for spline object - have transparency
@@ -238,8 +223,6 @@
     var eyeTargetScale;
 
     init();
-
-    // postprocessing
 
     function startIntro(){
         var intro = introJs();
@@ -1600,8 +1583,8 @@
         var context = canvas.getContext('2d');
         context.font = "Bold " + fontsize + "px " + fontface;
         var metrics = context.measureText( message );
-        console.log(message);
-        console.log("metrics: " + metrics.width);
+        //console.log(message);
+        //console.log("metrics: " + metrics.width);
         var textWidth = metrics.width;
 
         //var textWidth = 500;

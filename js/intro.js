@@ -455,6 +455,7 @@
 
     currentTooltipPosition = this._introItems[this._currentStep].position;
     if ((currentTooltipPosition == "auto" || this._options.tooltipPosition == "auto")) {
+      console.log("currentTooltipPosition: " + currentTooltipPosition);
       if (currentTooltipPosition != "floating") { // Floating is always valid, no point in calculating
         currentTooltipPosition = _determineAutoPosition.call(this, targetElement, tooltipLayer, currentTooltipPosition)
       }
@@ -478,6 +479,7 @@
         }
         arrowLayer.className = 'introjs-arrow left';
         break;
+
       case 'left':
         if (this._options.showStepNumbers == true) {
           tooltipLayer.style.top = '15px';
@@ -495,16 +497,26 @@
 
 
         break;
+      
       case 'floating':
+        //console.log(this._currentStep);
         arrowLayer.style.display = 'none';
 
         //we have to adjust the top and left of layer manually for intro items without element
         tooltipOffset = _getOffset(tooltipLayer);
 
-        //tooltipLayer.style.left   = '50%';
-        //tooltipLayer.style.top    = '50%';
-        tooltipLayer.style.marginLeft = '-' + (tooltipOffset.width)  + 'px';
-        tooltipLayer.style.marginTop  = '-' + (tooltipOffset.height) + 'px';
+        if (this._currentStep === 0) {
+          tooltipLayer.style.top = '-' + (windowSize.height / 2) + 'px';
+          tooltipLayer.style.left = '-' + (windowSize.width / 2) + 'px';;
+          tooltipLayer.style.marginLeft = '-' + (tooltipOffset.width / 2)  + 'px';
+          tooltipLayer.style.marginTop  = '-' + (tooltipOffset.height / 2) + 'px';
+        } else {
+          tooltipLayer.style.bottom = '0px';
+          tooltipLayer.style.right = '0px';
+          tooltipLayer.style.marginLeft = '-' + (tooltipOffset.width)  + 'px';
+          tooltipLayer.style.marginTop  = '-' + (tooltipOffset.height) + 'px';
+        }
+        
 
         if (typeof(helperNumberLayer) != 'undefined' && helperNumberLayer != null) {
           helperNumberLayer.style.left = '-' + ((tooltipOffset.width / 2) + 18) + 'px';
