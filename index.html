@@ -1154,8 +1154,7 @@
         return geometry;
     }
 
-
-
+    //variables for circlePoints / merged geometry
     var circleMatrix = new THREE.Matrix4();
     var circlePositionVector = new THREE.Vector3();
     var circleGeometry = makeCircleGeometryLinePieces(1, 24);
@@ -1167,9 +1166,8 @@
         mergedGeom.merge(circleGeometry, circleMatrix);
     }
 
+    //not using this anymore
     function drawCirclePointsOld ( mergedGeom, fillColor, strokeColor, radius, x, y, z, rotx, roty, rotz, scalar ) {
-
-
         var circShape = new THREE.Shape();
         circShape.moveTo(radius, 0);
         circShape.absarc(0, 0, radius, 0, Math.PI*2, false);
@@ -1186,7 +1184,7 @@
         var extrudeSettings = { amount: 1, bevelEnabled: false};
         var geometry = new THREE.ExtrudeGeometry( circShape, extrudeSettings );
 
-    var outline = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: strokeColor, side: THREE.DoubleSide } ) );
+        var outline = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: strokeColor, side: THREE.DoubleSide } ));
 
         outline.position.set( x, y, z);
         outline.rotation.set( rotx, roty, rotz );
@@ -1194,25 +1192,9 @@
         //THREE.GeometryUtils.merge(geometry, outline);
         //scene.add( outline );
         outline.updateMatrix();
-
-//  
+ 
         mergedGeom.merge( outline.geometry, outline.matrix );
         return mergedGeom;
-    }
-
-    function drawTetrahedron(x, y, z, radius, fillColor, term, articleIndices ) {
-
-        var material = new THREE.LineBasicMaterial( { color: fillColor });
-        var tetra = new THREE.Mesh( new THREE.TetrahedronGeometry( radius, 0 ), material );
-        tetra.material.side = THREE.DoubleSide;
-        tetra.name = term;
-        tetra.userData = { id: term, articleIndices: articleIndices }
-        tetra.position.set( x, y, z );
-        scene.add( tetra );
-        termObj.add( tetra );
-        termObjects.push( tetra );
-
-        //console.log("DRAW TETRA");
     }
 
     function drawGrid() {
