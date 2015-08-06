@@ -342,7 +342,7 @@
    * @param {Object} targetElement
    */
   function _exitIntro(targetElement) {
-    console.log("_exitIntro function");
+    //console.log("_exitIntro function");
     //remove overlay layer from the page
     var overlayLayer = targetElement.querySelector('.introjs-overlay');
 
