@@ -209,7 +209,7 @@
     var articleObj;
     var splineObj;
     var spriteObj;
-
+    var frequentKeywords = ["Black hole", "Physical cosmology", "String theory", "Gravitation", "Dark matter", "Spacetime", "Special relativity", "Time", "Quantum gravity", "Gravitational wave", "Big bang", "Standard model", "Hawking radiation" , "Dark energy", "Symmetry"];
     //shader variables
     var attributes;
 
@@ -221,6 +221,7 @@
 
     var termOffset = 0;
     var labelDistThreshold = 4000;
+    var frequentLabelThresh = 2000;
     var termPosGridLevel = 0;
     var termPosAboveGrid = 250;
     var termPosLower = -1500;
@@ -667,6 +668,7 @@
     function render() {
         //stats.begin();
         TWEEN.update();
+        //console.log(controls.minDistance);
 
         //if we've drawn the grid
         if (scene.getObjectByName("lowerGrid")) {
@@ -674,6 +676,7 @@
 
             var dist;
             dist = camera.position.distanceTo( grid.position );
+            console.log(dist);
             //var scalar = 1000/dist; 
             var inverseScalar = dist/(1000 * 2.8);
             //console.log(scalar);
@@ -681,26 +684,53 @@
             //sprite labels should only appear when close enough to read
             if (spriteObj != undefined && spriteObj.children.length > 60) {
                 var spr = scene.getObjectByName("sprites");
+                //console.log(spr);
                 var term = scene.getObjectByName("terms");
                 
                 if (dist > labelDistThreshold) {
                     //turn off labels                   
-                    spr.visible = false;
-                } else {
-                    spr.visible = true;
+                    //spr.visible = false;
+                    for (var i = 0; i < spr.children.length; i++) {
+                        spr.children[i].visible = false;
+                    }
+                } else if (dist > frequentLabelThresh && dist < labelDistThreshold) {
+                    for (var i = 0; i < spr.children.length; i++) {
+                        var name = spr.children[i].name;
+                        if (spr.children[i].userData.frequent) {
+                            spr.children[i].visible = true;
+                        } else {
+                            spr.children[i].visible = false;
+                        }  
+                    }  
+                    //spr.visible = true;
+                } else if (dist < frequentLabelThresh ) {
+                    for (var i = 0; i < spr.children.length; i++) {
+                        spr.children[i].visible = true;
+                    }
+                    //spr.visible = true;
                 }
+                
                 if(inverseScalar > 1.5) inverseScalar = 1.5;
                 if(inverseScalar < 0.2) inverseScalar = 0.2;
                 
                 for (var i = 0; i < term.children.length; i++) {
                     term.children[i].scale.set(inverseScalar, inverseScalar, inverseScalar );
                 }
+
                 for (var i = 0; i < spr.children.length; i++) {
                     spr.children[i].scale.set(inverseScalar, inverseScalar, inverseScalar);
                 }  
             }
         }
-        
+
+        if (tourActive) {
+            controls.minDistance = 0;
+            //controls.update();
+        } else {
+            controls.minDistance = 1600;
+            //controls.update();
+        }
+
         //composer.render();
         renderer.render( scene, camera );
         //stats.end();
@@ -1656,7 +1686,7 @@
 
         rect(context, borderThickness/2 + (canvas.width/2) - (textWidth/2), borderThickness/2 , (textWidth * 1.025 + borderThickness), fontsize * 1.3 + borderThickness);
 
-        context.fillStyle = "rgba("+textColor.r+", "+textColor.g+", "+textColor.b+", 1.0)";
+        context.fillStyle = "rgba("+textColor.r + ", " + textColor.g+", "+textColor.b+", 1.0)";
         context.fillText( message, borderThickness + (canvas.width/2) - (textWidth/2), (fontsize));
 
         //console.log('textWidth: ' + textWidth);
@@ -1677,7 +1707,16 @@
         labelsprite.scale.set(fontsize * 10, fontsize * 0.9, fontsize * 0.75);
 
         group.userData = { width: textWidth, ypos: ypos };
-        group.name = "labelSprite: " + message;
+
+        var strippedStr = message.substring(1); //take out space in front of message
+        
+        if ($.inArray(strippedStr, frequentKeywords) === -1) {
+            group.userData.frequent = false;
+        } else {
+            group.userData.frequent = true;
+        }
+        
+        group.name = message;
 
         //group.add(sprite);
         group.add(labelsprite);
