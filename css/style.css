@@ -6,6 +6,11 @@
       /*font-family: "Trebuchet MS", Helvetica, sans-serif;*/
       font-family: "Georgia";
       font-size: 60.5%;
+      overflow-y: hidden;
+      overflow-x: hidden;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
 
   h2 {
@@ -187,15 +192,15 @@
   .wrapper {
     position: absolute;
    /* overflow: hidden;*/
-    width: 215px;
+    width: 272px;
     height: 20px;
     top: 0px;
-    right: 300px;
+    right: 305px;
   }
 
   .wrapper:hover #keyInfo {
-    transition: 1s;
-    -webkit-transition: 1s;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
     top:0;
       /*right: 0;*/
   }
@@ -206,12 +211,12 @@
     width: 160px;
     height: 20px;
     top: 0px;
-    right: 135px;
+    right: 145px;
   }
 
   .wrapper-nav:hover #navInstructions {
-    transition: top 1s;
-    -webkit-transition: top 1s;
+    transition: top 0.2s;
+    -webkit-transition: top 0.2s;
     top:0;
   }
 
@@ -221,12 +226,12 @@
     width: 130px;
     height: 20px;
     top: 0px;
-    right: 0px;
+    right: 10px;
   }
 
   .wrapper-legend:hover #authorKey {
-    -webkit-transition: top 2s;
-    transition: top 2s;
+    -webkit-transition: top 0.2s;
+    transition: top 0.2s;
     top:0;
   }
 
@@ -239,26 +244,29 @@
     position: absolute;
     /*right: -210px;*/
     top: -35px;
-    width: 215px;
+    width: 262px;
     height: 55px;
-    transition: 1s;
+    padding-left: 5px;
+    float: right;
+    transition: 0.2s;
     float: right;
     border: 1px solid #6B6B6B;
+    background: rgba(55, 55, 55, 0.9);
   }
 
   #navButtons {
-    position: absolute;
+/*    position: absolute;
     float: right;
     padding: 0px 5px 5px 5px;
-    background: rgba(55, 55, 55, 0.9);
-    height: 50px;
+    background: rgba(55, 55, 55, 0.9);*/
+  /*  height: 50px;*/
   }
 
   #navInstructions {
     position: absolute;
-    width: 250px;
-    height: 70px;
-    padding: 5px 5px 0px 5px;
+    width: 160px;
+    /*height: 70px;*/
+    padding: 5px 5px 5px 5px;
     /*margin: 6px 3px 0px 0px;*/
     /*margin-left: auto;*/
     top: -55px;
@@ -268,13 +276,13 @@
     color: white; 
     border: 1px solid #6B6B6B;
     line-height: 1.6em;
-    transition: 1s;
-    -webkit-transition: 1s;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
   }
 
   #authorKey {
     position: absolute;
-    width: 120px;
+    width: 130px;
     height: 230px;
     top: -223px;
     padding: 5px 5px 8px 5px;
@@ -287,8 +295,8 @@
     border: 1px solid #6B6B6B;
     line-height: 1.1em;
     font-size: 1.1em;
-    transition: 1s;
-    -webkit-transition: 1s;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
   }
 
   #navInfo {

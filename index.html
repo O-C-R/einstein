@@ -20,8 +20,8 @@
             <div id="keyInfo" class="noselect">
                 <div id="navButtons" class="noselect">
                     <button id="topView" onclick="topView();">TOP VIEW</button>
-                    <!-- <button id="bottomView" onclick="bottomView();">BOTTOM VIEW</button> -->
                     <button id="sideView" onclick="sideView();">SIDE VIEW</button>
+                    <button id="resetView" onclick="resetView();">RESET</button>
                     <button id="introTour" onclick="startIntro();">TOUR</button>
                     <br>
                     <h2 class="wrapper-title">Views</h2>
@@ -197,7 +197,7 @@
     //var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
     if (!isChrome) {
-        alert("For best viewing results, please load this visualization in Google Chrome or another WebGL enabled browser");
+        console.log("For best viewing results, please load this visualization in Google Chrome or another WebGL enabled browser");
         // console.log("BROWSER NOT CHROME");
     }
     //standard global variables
@@ -228,10 +228,14 @@
 
     var tourActive = false;
     var sideViewActive = false;
+    var navViewActive = false;
 
-    var termOffset = -1500;
-    //var termOffset = 0;
+    //var termOffset = -1500;
+    var termOffset = 0;
     var labelDistThreshold = 4000;
+    var termPosGridLevel = 0;
+    var termPosAboveGrid = 250;
+    var termPosLower = -1500;
 
     var eyeTargetScale;
 
@@ -252,11 +256,11 @@
                 },
                 {
                     //element: '#keyword-container',
-                    intro: "<h2>Concept Keywords</h2><br>A powerful text analysis tool, which is now part of IBM's Watson AI system, examined the abstracts of all 2,435 papers in the General Relativity&ndash;Quantum Cosmology category and identified keywords for critical concepts within those papers. Scientific American then edited them for relevancy, leaving 61 keywords. The 15 most used ones are listed on the left in order of frequency.<br><br>You may select a keyword to see which articles reference it. Select multiple keywords by dragging over multiple buttons or selecting while pressing the CTRL key.",
+                    intro: "<h2>Concept Keywords</h2><br>A powerful text analysis tool, which is now part of IBM's Watson AI system, examined the abstracts of all 2,435 papers in the General Relativity&ndash;Quantum Cosmology category and identified keywords for critical concepts within those papers. Scientific American then edited them for relevancy, leaving 61 keywords. The 15 most used ones are listed on the left in order of frequency.<br><br>You may select a keyword to see which articles reference it. Select multiple keywords by dragging over multiple buttons or selecting while pressing the CTRL key."
                     //position: 'right'
                 },
                 {
-                    intro: "<h2>Article and Keyword Layout</h2><br>Article dots are positioned near keywords (red diamonds). If the article has multiple keywords, the dot is placed between terms, such as the article with special relativity and Noether's theorem."
+                    intro: "<h2>Article and Keyword Layout</h2><br>Article dots are positioned near keywords (red diamonds). If the article has multiple keywords, the dot is placed between terms, such as the article with antimatter and gravitation keywords."
                 },
                 {
                     intro: "<h2>Citations</h2><br>The size of the dot is based on how often the 2014 article has been cited since publication through the middle of 2015. The smallest dot corresponds to a paper with no citations whereas the largest dot has 85 citations."
@@ -288,85 +292,93 @@
         intro.onchange(function(targetElement, currentStep) {
             //console.log("Current Scene: " + intro._currentStep);
             var introTweenOptions = {duration: 1000, easing: TWEEN.Easing.Quadratic.InOut};
-            if (sideViewActive) !sideViewActive;
+            if (sideViewActive) sideViewActive = false;
             
             switch(intro._currentStep) { 
                 case 0: //INTRO SCREEN
                     tourActive = true;
+                    moveTermsToStartPos();
                     moveAndLookAt(camera, new THREE.Vector3(580, 1390, 1600), new THREE.Vector3(435, -430, 560), introTweenOptions);
                     break;
 
                 case 1: //Data Source - explains article rollover behavior
-                    unselectSelectableElement($("#selectable"));
+                    // unselectSelectableElement($("#selectable"));
+                    turnOffSpline( "physical cosmology" );
                     moveAndLookAt(camera, new THREE.Vector3(1350, 500, 1200), new THREE.Vector3(925, -1170, 75), introTweenOptions);
-                    if( splineObj.children.length > 0 ) {
-                        for ( s in splineObj.children) {
-                            splineObj.remove(s);
-                        }
-                        scene.remove(splineObj);
-                        var key = "physical cosmology";
-                        var selected = termObj.getObjectByName(key);
-                        for (var k = 0; k < selected.userData.articleIndices.length; k++) {
-                            var index = selected.userData.articleIndices[k];
-                            //console.log(articleObjects[index].userData.id);
-                            articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
-                            articleObjects[index].userData.clicked = false;
-                        }
-                    }
+                    // if( splineObj.children.length > 0 ) {
+                    //     for ( s in splineObj.children) {
+                    //         splineObj.remove(s);
+                    //     }
+                    //     scene.remove(splineObj);
+                    //     var key = "physical cosmology";
+                    //     var selected = termObj.getObjectByName(key);
+                    //     for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                    //         var index = selected.userData.articleIndices[k];
+                    //         //console.log(articleObjects[index].userData.id);
+                    //         articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                    //         articleObjects[index].userData.clicked = false;
+                    //     }
+                    // }
                     break;
 
                 case 2: //Concept Keywords - shows how to highlight articles
                     moveAndLookAt(camera, new THREE.Vector3(130, 550, 2670), new THREE.Vector3(530, -570, 165), introTweenOptions);
                     //highlight physical cosmology
-                    var key = "physical cosmology";
-                    var selected = termObj.getObjectByName(key);
+                    moveTermsDown();
+                    // var key = "physical cosmology";
+                    // var selected = termObj.getObjectByName(key);
 
-                    //set highlight of selected articles and draw splines to selected terms
-                    for (var k = 0; k < selected.userData.articleIndices.length; k++) {
-                        var index = selected.userData.articleIndices[k];
-                        //console.log(articleObjects[index].userData.id);
-                        //articleObjects[index].material.color.setHex( 0xFFFCC7); //0xFEFFA9); //0xFFF586); //0xFECA40); //0xF3CE00 );
-                        articleObjects[index].material.uniforms.innerCol.value = new THREE.Color ( 0xFFFCC7 );
-                        articleObjects[index].userData.clicked = true;
+                    // //set highlight of selected articles and draw splines to selected terms
+                    // for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                    //     var index = selected.userData.articleIndices[k];
+                    //     //console.log(articleObjects[index].userData.id);
+                    //     //articleObjects[index].material.color.setHex( 0xFFFCC7); //0xFEFFA9); //0xFFF586); //0xFECA40); //0xF3CE00 );
+                    //     articleObjects[index].material.uniforms.innerCol.value = new THREE.Color ( 0xFFFCC7 );
+                    //     articleObjects[index].userData.clicked = true;
 
-                        if (k % 2 === 0) {
-                            drawSplines ( articleObjects[index].position, selected.position, key );
-                        }
-                    }
+                    //     if (k % 2 === 0) {
+                    //         drawSplines ( articleObjects[index], selected, key );
+                    //     }
+                    // }
 
-                    splineObj.name = key;
-                    scene.add( splineObj );
-                    selectSelectableElement($("#selectable"), $("#selectable li:eq(1)"));
+                    // splineObj.name = key;
+                    // scene.add( splineObj );
+                    // selectSelectableElement($("#selectable"), $("#selectable li:eq(1)"));
+                    
                     break;
 
                 case 3: //Article and Keyword Layout
-                    unselectSelectableElement($("#selectable"));
+                    //unselectSelectableElement($("#selectable"));
 
-                    var str = "http://arxiv.org/abs/1401.4548v2";
-                    var objlookAt = articleObj.getObjectByName(str);
+                    // var str = "http://arxiv.org/abs/1401.4548v2";
+                    // var objlookAt = articleObj.getObjectByName(str);
                     //console.log(objlookAt);
-                    moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x, objlookAt.position.y + 2000, objlookAt.position.z + 1e-10), objlookAt.position, introTweenOptions);
-
-                    if(splineObj.children.length > 0) {
-                        //console.log(splineObj.children.length);
-                        for ( var i = 0; i < splineObj.children.length; i++) {
-                            var child = splineObj.children[i];
-                            //console.log(child);
-                            splineObj.remove(child);
-                        }
-                        scene.remove(splineObj);
-                        var key = "physical cosmology";
-                        var selected = termObj.getObjectByName(key);
-                        for (var k = 0; k < selected.userData.articleIndices.length; k++) {
-                            var index = selected.userData.articleIndices[k];
-                            //console.log(articleObjects[index].userData.id);
-                            articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
-                            articleObjects[index].userData.clicked = false;
-                        }
-                    }
+                    // moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x, objlookAt.position.y + 2000, objlookAt.position.z + 1e-10), objlookAt.position, introTweenOptions);
+                    // moveTermsUp();
+                    moveAndLookAt(camera, new THREE.Vector3(62, 750, 195 + 1e-10), new THREE.Vector3(62, 33, 195), introTweenOptions);
+                    moveTermsUp();
+                    turnOffSpline("physical cosmology");
+                    // if(splineObj.children.length > 0) {
+                    //     //console.log(splineObj.children.length);
+                    //     for ( var i = 0; i < splineObj.children.length; i++) {
+                    //         var child = splineObj.children[i];
+                    //         //console.log(child);
+                    //         splineObj.remove(child);
+                    //     }
+                    //     scene.remove(splineObj);
+                    //     var key = "physical cosmology";
+                    //     var selected = termObj.getObjectByName(key);
+                    //     for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                    //         var index = selected.userData.articleIndices[k];
+                    //         //console.log(articleObjects[index].userData.id);
+                    //         articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                    //         articleObjects[index].userData.clicked = false;
+                    //     }
+                    // }
                     break;
 
                 case 4: //Citations
+                    moveTermsToStartPos();
                     moveAndLookAt(camera, new THREE.Vector3(740, 300, 1111), new THREE.Vector3(485, -575, -190), introTweenOptions);
                     break;
 
@@ -380,31 +392,37 @@
                     break;
 
                 case 7: //Key (wide view)
-                    topView();
+                    // topView();
+                    navViewActive = false;
+                    moveAndLookAt(camera, new THREE.Vector3(450, 3500, 890 + 1e-10), new THREE.Vector3(450, 0, 890), introTweenOptions);
                     break;
 
                 case 8: //Navigation
                     var str = "http://arxiv.org/abs/1403.5306v2";
                     var objlookAt = articleObj.getObjectByName(str);
                     //console.log(objlookAt);
+                    navViewActive = true;
+                    moveTermsDown();
                     moveAndLookAt(camera, new THREE.Vector3(objlookAt.position.x + 700, objlookAt.position.y, objlookAt.position.z + 700), objlookAt.position, introTweenOptions);
                     break;
 
-                case 9: //Views (bottomView)
-                    bottomView();
-                    break;
+                // case 9: //Views (bottomView)
+                //     bottomView();
+                //     break;
             }
         });
 
         intro.onexit(function() {
-            //console.log("Intro completed");
+            console.log("Intro completed");
             tourActive = false;
+            navViewActive = false;
             topView();
         });
 
         intro.oncomplete(function() {
-            //console.log("Intro completed");
+            console.log("Intro completed");
             tourActive = false;
+            navViewActive = false;
             topView();
         });
 
@@ -476,7 +494,7 @@
         light.position.set(100, -2000, 100);
 
         scene.add(bottomLight);
-        //scene.add(light);
+        scene.add(light);
 
         //LOADING DATA
         loadArticles();
@@ -519,11 +537,11 @@
         }
             
 
-        stats = new Stats();
-        stats.domElement.style.position = 'absolute';
-        stats.domElement.style.bottom = '0px';
-        stats.domElement.style.left = '0px';
-        container.appendChild( stats.domElement );
+        // stats = new Stats();
+        // stats.domElement.style.position = 'absolute';
+        // stats.domElement.style.bottom = '0px';
+        // stats.domElement.style.left = '0px';
+        // container.appendChild( stats.domElement );
 
         window.addEventListener('mousemove', onMouseMove, false);
         window.addEventListener('mouseup', onMouseUp, false);
@@ -557,7 +575,7 @@
 
     function bottomView() {
         console.log("bottomView");
-        if (sideViewActive) !sideViewActive;
+        if (sideViewActive) sideViewActive = false;
 
         var grid = scene.getObjectByName("lowerGrid");
         moveAndLookAt(camera, new THREE.Vector3( grid.position.x - 225, grid.position.y - 3000, grid.position.z + 200 + 1e-10), new THREE.Vector3(grid.position.x - 225, grid.position.y, grid.position.z + 200), {
@@ -566,13 +584,25 @@
         });
     }
 
+    function resetView() {
+        console.log("resetView");
+        if (sideViewActive) sideViewActive = false;
+
+        moveTermsToStartPos();
+
+        moveAndLookAt(camera, new THREE.Vector3( 265, 2900, 750 + 1e-10), new THREE.Vector3(265, termPosLower, 750), {
+            duration: 1000,
+            easing: TWEEN.Easing.Quadratic.InOut
+        });
+    }
+
     function topView() {
         console.log("topView");
-        if (sideViewActive) !sideViewActive;
+        if (sideViewActive) sideViewActive = false;
 
-        // TODO zoom out to fit...
-        var grid = scene.getObjectByName("lowerGrid");
-        moveAndLookAt(camera, new THREE.Vector3( grid.position.x - 80, grid.position.y + 3000, grid.position.z - 145 + 1e-10), new THREE.Vector3(grid.position.x - 80, grid.position.y, grid.position.z - 145), {
+        moveTermsUp();
+
+        moveAndLookAt(camera, new THREE.Vector3( 265, 2900, 750 + 1e-10), new THREE.Vector3(265, termPosLower, 750), {
             duration: 1000,
             easing: TWEEN.Easing.Quadratic.InOut
         });
@@ -581,16 +611,20 @@
     function sideView() {
         console.log("sideView");
         sideViewActive = true;
-        // var term = scene.getObjectByName("terms");
+
+        moveTermsDown();
         
-        // for (var i = 0; i < term.children.length; i++) {
-        //     term.children[i].position.set(term.children[i].position.x, terms[i].z -1500, term.children[i].position.z);
-        // }
+        moveAndLookAt(camera, new THREE.Vector3( 400, -320, 4100), new THREE.Vector3(350, -860, 920), {
+            duration: 1000,
+            easing: TWEEN.Easing.Quadratic.InOut
+        });
+    }
+
+    function turnOnSplines() {
         $("#selectable li").each(function(index) {
-            //console.log(index + ": " + $( this ).text());
+            console.log(index + ": " + $( this ).text());
             var concept = $(this).text().toLowerCase();
             var selected = termObj.getObjectByName(concept);
-            
 
             //set highlight of selected articles and draw splines to selected terms
             for (var k = 0; k < selected.userData.articleIndices.length; k++) {
@@ -599,19 +633,79 @@
                 articleObjects[index].userData.clicked = true;
 
                 if (k % 2 === 0) {
-                    drawSplines ( articleObjects[index].position, selected.position, concept );
+                    drawSplines ( articleObjects[index], selected, concept );
                 }
             }
 
             splineObj.name = concept;
-            scene.add( splineObj );
+            scene.add(splineObj);
             selectSelectableElement($("#selectable"), $("#selectable li") );
         });
-        
+    }
 
-        moveAndLookAt(camera, new THREE.Vector3( 400, -320, 4100), new THREE.Vector3(350, -860, 920), {
-            duration: 1000,
-            easing: TWEEN.Easing.Quadratic.InOut
+    function turnOnSpline( key ) {
+        //var key = "physical cosmology";
+        var selected = termObj.getObjectByName(key);
+
+        //set highlight of selected articles and draw splines to selected terms
+        for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+            var index = selected.userData.articleIndices[k];
+            //console.log(articleObjects[index].userData.id);
+            //articleObjects[index].material.color.setHex( 0xFFFCC7); //0xFEFFA9); //0xFFF586); //0xFECA40); //0xF3CE00 );
+            articleObjects[index].material.uniforms.innerCol.value = new THREE.Color ( 0xFFFCC7 );
+            articleObjects[index].userData.clicked = true;
+
+            if (k % 2 === 0) {
+                drawSplines ( articleObjects[index], selected, key );
+            }
+        }
+
+        splineObj.name = key;
+        scene.add( splineObj );
+        selectSelectableElement($("#selectable"), $("#selectable li:eq(1)"));
+    }
+
+    function turnOffSpline( key ) {
+        unselectSelectableElement($("#selectable"));
+        if( splineObj.children.length > 0 ) {
+            for ( s in splineObj.children) {
+                splineObj.remove(s);
+            }
+            scene.remove(splineObj);
+            //var key = "physical cosmology";
+            var selected = termObj.getObjectByName(key);
+            for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                var index = selected.userData.articleIndices[k];
+                //console.log(articleObjects[index].userData.id);
+                articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                articleObjects[index].userData.clicked = false;
+            }
+        }
+    }
+
+    function turnOffSplines() {
+        $("#selectable li").each(function(index) {
+            //console.log(index + ": " + $( this ).text());
+            var concept = $(this).text().toLowerCase();
+            var selected = termObj.getObjectByName(concept);
+
+            //set highlight of selected articles and draw splines to selected terms
+            for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                var index = selected.userData.articleIndices[k];
+                articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                articleObjects[index].userData.clicked = false;
+            }
+
+            var splineHolder = splineObj.getObjectByName(concept);
+            if (splineHolder != undefined) {
+                //remove splines that were previously created
+                for (var i = splineHolder.children.length - 1; i >= 0; i--) {
+                    //console.log(splineHolder.children[i]);
+                    splineObj.remove(splineHolder.children[i]);
+                }
+                scene.remove(splineObj);
+            }
+            unselectSelectableElement($("#selectable"), $("#selectable li") );
         });
     }
 
@@ -661,7 +755,7 @@
 
     // 60 hz
     function render() {
-        stats.begin();
+        //stats.begin();
         TWEEN.update();
 
         /*
@@ -693,41 +787,36 @@
             var dist;
             dist = camera.position.distanceTo( grid.position );
             //var scalar = 1000/dist; 
-            var inverseScalar = dist/1000;
+            var inverseScalar = dist/(1000 * 2.8);
             //console.log(scalar);
-            //console.log(inverseScalar);
+            console.log(inverseScalar);
             //sprite labels should only appear when close enough to read
             if (spriteObj != undefined && spriteObj.children.length > 60) {
                 var spr = scene.getObjectByName("sprites");
                 var term = scene.getObjectByName("terms");
                 
                 if (dist > labelDistThreshold) {
-                    //turn off labels
-                    //console.log(scalar);
-                    //console.log(term);
-                    //console.log(inverseScalar);                    
+                    //turn off labels                   
                     spr.visible = false;
-                    for (var i = 0; i < term.children.length; i++) {
-                        term.children[i].scale.set(1, 1, 1);
-                    }
-                    for (var i = 0; i < spr.children.length; i++) {
-                        spr.children[i].scale.set(1, 1, 1);
-                    }
                 } else {
                     spr.visible = true;
-                    for (var i = 0; i < term.children.length; i++) {
-                        term.children[i].scale.set(inverseScalar * 0.6, inverseScalar * 0.6, inverseScalar * 0.6);
-                    }
-                    for (var i = 0; i < spr.children.length; i++) {
-                        spr.children[i].scale.set(inverseScalar * 0.6, inverseScalar * 0.6, inverseScalar * 0.6);
-                    }
                 }
+                if(inverseScalar > 1.5) inverseScalar = 1.5;
+                if(inverseScalar < 0.2) inverseScalar = 0.2;
+                
+                for (var i = 0; i < term.children.length; i++) {
+                    term.children[i].scale.set(inverseScalar, inverseScalar, inverseScalar );
+                }
+                for (var i = 0; i < spr.children.length; i++) {
+                    spr.children[i].scale.set(inverseScalar, inverseScalar, inverseScalar);
+                }
+                
             }
         }
         
         //composer.render();
         renderer.render( scene, camera );
-        stats.end();
+        //stats.end();
         requestAnimationFrame(render);
 
     }
@@ -782,14 +871,8 @@
         console.log("MOUSE UP");
         console.log("sideViewActive: " + sideViewActive);
 
-        
-            
-            
-
         //SELECT TERMS FROM SIDE NAVIGATION
         $( "#selectable" ).selectable({
-
-
 
             //if terms selected from side nav
             selected: function(event, ui) {
@@ -913,7 +996,7 @@
                         articleObjects[index].userData.clicked = true;
 
                         if (k % 2 === 0) {
-                            drawSplines ( articleObjects[index].position, selected.position, lc );
+                            drawSplines ( articleObjects[index], selected, lc );
                         }
 
 
@@ -1152,14 +1235,14 @@
         squareMesh.rotation.set( rotx, roty, rotz );
         squareMesh.scale.set( scalar, scalar, scalar );
 
-        squareMesh.userData = { id: id, title: title, authors: authors, colour: fillColor, clicked: false, cites: numCites, numAuthors: numAuthors };
+        squareMesh.userData = { id: id, title: title, authors: authors, colour: fillColor, clicked: false, cites: numCites, numAuthors: numAuthors, radius: radius };
         squareMesh.name = id;
 
         articleObj.add( squareMesh );
         articleObjects.push( squareMesh );
     }
 
-    function drawTermDiamond( size, fillColor, x, y, z, term, articleIndices ) {
+    function drawTermDiamond( size, fillColor, x, y, z, term, articleIndices, ypos ) {
         var extrudeSettings = { amount: 2, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1 }
 
         var rect = new THREE.Shape();
@@ -1173,13 +1256,13 @@
         var material = new THREE.MeshBasicMaterial( { color: fillColor, side: THREE.DoubleSide });
 
         var rectMesh = new THREE.Mesh( rectGeom, material );
-        rectMesh.material.side = THREE.DoubleSide;
 
-        rectMesh.name = term;
-        rectMesh.userData = { id: term, articleIndices: articleIndices }
+        
 
-        rectMesh.position.set( x , y, z );
+        rectMesh.position.set(x, y, z);
         rectMesh.rotation.set( Math.PI/2, 0, Math.PI/4 );
+        rectMesh.name = term;
+        rectMesh.userData = { id: term, ypos: ypos, articleIndices: articleIndices };
 
         //var edge = new THREE.EdgesHelper( rectMesh, fillColor );
 
@@ -1437,32 +1520,162 @@
 
     }
 
+    function moveTermsDown( ) {
+
+        var terms = scene.getObjectByName("terms");
+        //console.log(terms);    
+        for (var i = 0; i < terms.children.length; i++) {
+            var t = terms.children[i];
+            //console.log(t);
+            var index = 0;
+            new TWEEN.Tween( t.position )
+                .to({ x: t.position.x, y: t.userData.ypos, z: t.position.z} , 1000)
+                .easing( TWEEN.Easing.Quadratic.InOut )
+                .onComplete(function() {
+                    //console.log(i);
+                    index++;
+                    //console.log(index);
+                    console.log("tourActive: " + tourActive);
+                    if(index === terms.children.length && !tourActive) {
+                        turnOnSplines();
+                        console.log("finished tweening terms");
+                    } else if (index === terms.children.length && tourActive && !navViewActive) {
+                        console.log("only turn on physical cosmology");
+                        turnOnSpline( "physical cosmology" );
+                    }
+                })
+                .start();
+            //t.position.set(t.position.x, t.userData.ypos, t.position.z);
+        }
+        var labels = scene.getObjectByName("sprites");
+        //console.log(labels);
+        for (var j = 0; j < labels.children.length; j++) {
+            var l = labels.children[j];
+            //console.log(l);
+            new TWEEN.Tween( l.position )
+                .to({ x: l.position.x, y: l.userData.ypos, z: l.position.z} , 1000)
+                .easing( TWEEN.Easing.Quadratic.InOut )
+                .start();
+            //l.position.set(l.position.x, l.userData.ypos, l.position.z);
+        }
+
+        var g = scene.getObjectByName("lowerGrid");
+        new TWEEN.Tween (g.position)
+            .to({ x: g.position.x, y: termPosLower, z: g.position.z}, 1000)
+            .easing( TWEEN.Easing.Quadratic.InOut )
+            .start();        
+    }
+
+    function moveTermsToStartPos() {
+        var terms = scene.getObjectByName("terms");
+        //console.log(terms);    
+        for (var i = 0; i < terms.children.length; i++) {
+            var t = terms.children[i];
+            //console.log(t);
+            var index = 0;
+            new TWEEN.Tween( t.position )
+                .to({ x: t.position.x, y: termPosGridLevel + 50, z: t.position.z} , 1000)
+                .easing( TWEEN.Easing.Quadratic.InOut )
+                .onComplete(function() {
+                    //console.log(i);
+                    index++;
+                    //console.log(index);
+                    if(index === terms.children.length) {
+                        turnOffSplines();
+                        console.log("finished tweening terms");
+                    }
+                })
+                .start();
+            //t.position.set(t.position.x, t.userData.ypos, t.position.z);
+        }
+        var labels = scene.getObjectByName("sprites");
+        //console.log(labels);
+        for (var j = 0; j < labels.children.length; j++) {
+            var l = labels.children[j];
+            //console.log(l);
+            new TWEEN.Tween( l.position )
+                .to({ x: l.position.x, y: termPosGridLevel, z: l.position.z} , 1000)
+                .easing( TWEEN.Easing.Quadratic.InOut )
+                .start();
+            //l.position.set(l.position.x, l.userData.ypos, l.position.z);
+        }
+
+        var g = scene.getObjectByName("lowerGrid");
+        new TWEEN.Tween (g.position)
+            .to({ x: g.position.x, y: termPosGridLevel, z: g.position.z}, 1000)
+            .easing( TWEEN.Easing.Quadratic.InOut )
+            .start();        
+    }
+
+
+    function moveTermsUp() {
+        var terms = scene.getObjectByName("terms");
+        //console.log(terms);    
+        for (var i = 0; i < terms.children.length; i++) {
+            var t = terms.children[i];
+            //console.log(t);
+            var index = 0;
+            new TWEEN.Tween( t.position )
+                .to({ x: t.position.x, y: termPosAboveGrid + 50, z: t.position.z} , 1000)
+                .easing( TWEEN.Easing.Quadratic.InOut )
+                .onComplete(function() {
+                    //console.log(i);
+                    index++;
+                    //console.log(index);
+                    if(index === terms.children.length) {
+                        turnOffSplines();
+                        console.log("finished tweening terms");
+                    }
+                })
+                .start();
+            //t.position.set(t.position.x, t.userData.ypos, t.position.z);
+        }
+        var labels = scene.getObjectByName("sprites");
+        //console.log(labels);
+        for (var j = 0; j < labels.children.length; j++) {
+            var l = labels.children[j];
+            //console.log(l);
+            new TWEEN.Tween( l.position )
+                .to({ x: l.position.x, y: termPosAboveGrid, z: l.position.z} , 1000)
+                .easing( TWEEN.Easing.Quadratic.InOut )
+                .start();
+            //l.position.set(l.position.x, l.userData.ypos, l.position.z);
+        }
+
+        var g = scene.getObjectByName("lowerGrid");
+        new TWEEN.Tween (g.position)
+            .to({ x: g.position.x, y: termPosGridLevel, z: g.position.z}, 1000)
+            .easing( TWEEN.Easing.Quadratic.InOut )
+            .start();        
+    }
+
     function drawTerms ( termArray, articleArray ) {
         for (var i = 0; i < termArray.length; i++) {
             var t1 = termArray[i];
             // console.log("t1: " );
-            // console.log(t1.connections);
+            console.log((t1.x + 300) + ", " + termOffset + 2 * t1.z + ", " + t1.y);
 
             var fillColor = new THREE.Color ( 0xea4f1c );
 
-            drawTermDiamond (20, fillColor, t1.x + 300, termOffset + 2 * t1.z, t1.y, t1.term, t1.articleIndex);
-            //drawTermDiamond (20, fillColor, t1.x + 300, 250, t1.y, t1.term, t1.articleIndex);
+            //drawTermDiamond (20, fillColor, t1.x + 300, termOffset + 2 * t1.z, t1.y, t1.term, t1.articleIndex, -1500 + 2*t1.z);
+            //drawTermDiamond( size, fillColor, x, y, z, term, articleIndices, ypos ) 
+            drawTermDiamond (20, fillColor, t1.x + 300, termPosGridLevel, t1.y, t1.term, t1.articleIndex, termPosLower + 2*t1.z);
 
             //console.log("DRAW CIRCLE");
             //console.log(t1.term + " - x: " + t1.x + " z: " + t1.y  + " y: " + t1.z);
             //console.log(termObj);
             var title = toTitleCase(t1.term);
 
-            var spritey = makeTextSprite(" " + title, 
-                   { fontsize: 72, 
+            var spritey = makeTextSprite(" " + title, termPosLower + 2*t1.z  - 50,
+                   { fontsize: 100, 
                         fontface: "Georgia", 
                         //borderColor: {r:234, g:79, b:28, a:1.0}, 
                         borderColor: {r: 107, g: 107, b: 107, a:1.0},
                         backgroundColor: {r: 55, g:55, b:55, a:0.9} } );
-            spritey.position.set(t1.x + 300, termOffset + 2*t1.z - 50 , t1.y);
+            // spritey.position.set(t1.x + 300, termOffset + 2*t1.z - 50 , t1.y);
+            // spriteObj.add( spritey );
+            spritey.position.set(t1.x + 300, termPosGridLevel + 50, t1.y);
             spriteObj.add( spritey );
-            //spritey.position.set(t1.x + 300, 200 , t1.y);
-            //spriteObj.add( spritey );
 
             //for network lines between terms (seem like there are too many being drawn, or not transparent enough)
             //this is currently disabled for legibility
@@ -1494,6 +1707,7 @@
         }
         termObj.name = "terms";
         spriteObj.name = "sprites";
+        console.log(termObj);
     }
 
     function drawSplines( article, term, name ) {
@@ -1519,8 +1733,8 @@
         var slideA = 0.8;
         var slideB = 1 - slideA;
 
-        var start = new THREE.Vector3(article.x, article.y, article.z);
-        var end = new THREE.Vector3(term.x, term.y, term.z);
+        var start = new THREE.Vector3(article.position.x + article.userData.radius/2, article.position.y, article.position.z + article.userData.radius/2);
+        var end = new THREE.Vector3(term.position.x, term.position.y, term.position.z);
         var startMid = new THREE.Vector3(slideA * start.x + slideB * end.x, slideA * start.y + slideB * end.y, start.z -.25 * Math.abs(end.z - start.z));
         var endMid = new THREE.Vector3(slideA * end.x + slideB * start.x, slideA * end.y + slideB * start.y, end.z + .35 * Math.abs(end.z - start.z));
 
@@ -1547,9 +1761,9 @@
         //shader stuff
         var values_color = attributes.customColor.value;
         for ( var v = 0; v < geometry.vertices.length; v++ ) {
-            values_color[ v ] = new THREE.Color(THREE.ColorKeywords.black);
+            values_color[ v ] = new THREE.Color(THREE.ColorKeywords.white);
             values_color[ v ].set( 0xea4f1c );
-            attributes.customOpacity.value[ v ] = 0.1;
+            attributes.customOpacity.value[ v ] = 0.2;
         }
 
         //Create the final Object3d to add to the scene
@@ -1633,7 +1847,7 @@
         ctx.stroke();
     }
 
-    function makeTextSprite( message, parameters ) {
+    function makeTextSprite( message, ypos, parameters ) {
         var group = new THREE.Object3D();
 
         if ( parameters === undefined ) parameters = {};
@@ -1685,7 +1899,7 @@
         var labelsprite = new THREE.Sprite( spriteMaterial2);
         labelsprite.scale.set(fontsize * 10, fontsize * 0.9, fontsize * 0.75);
 
-        group.userData = { width: textWidth };
+        group.userData = { width: textWidth, ypos: ypos };
         group.name = "labelSprite: " + message;
 
         //group.add(sprite);
