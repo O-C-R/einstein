@@ -764,6 +764,7 @@
             //if terms selected from side nav
             selected: function(event, ui) {
                 //clear all splines from sideViewActive view
+                //moveTermsDownNoSpline();
                 if (sideViewActive) {
                     $("#selectable li").each(function(index) {
                         //console.log(index + ": " + $( this ).text());
@@ -789,7 +790,7 @@
                         unselectSelectableElement($("#selectable"), $("#selectable li") );
                     });
                 }
-            if(sideViewActive) sideViewActive = false;
+                if(sideViewActive) sideViewActive = false;
 
                 if ($(ui.selected).hasClass('click-selected')) {
                     //if clicking on previously selected term
@@ -886,6 +887,7 @@
                 }
             },
             unselected: function( event, ui ) {
+                //moveTermsDownNoSpline();
                 $(ui.unselected).removeClass('click-selected');
                 //console.log("unselected " + ui.unselected.innerText.toLowerCase());
 
@@ -1305,6 +1307,36 @@
         //console.log("finished parsing terms - decide when to drawTerms");
         drawArticles(articles);
         drawTerms(terms);
+    }
+
+    function moveTermsDownNoSpline() {
+        var terms = scene.getObjectByName("terms");
+        //console.log(terms);    
+        for (var i = 0; i < terms.children.length; i++) {
+            var t = terms.children[i];
+            //console.log(t);
+            var index = 0;
+            new TWEEN.Tween( t.position )
+                .to({ x: t.position.x, y: t.userData.ypos, z: t.position.z} , 1000)
+                .easing( TWEEN.Easing.Quadratic.InOut )
+                .start();
+        }
+        var labels = scene.getObjectByName("sprites");
+        //console.log(labels);
+        for (var j = 0; j < labels.children.length; j++) {
+            var l = labels.children[j];
+            //console.log(l);
+            new TWEEN.Tween( l.position )
+                .to({ x: l.position.x, y: l.userData.ypos, z: l.position.z} , 1000)
+                .easing( TWEEN.Easing.Quadratic.InOut )
+                .start();
+        }
+
+        var g = scene.getObjectByName("lowerGrid");
+        new TWEEN.Tween (g.position)
+            .to({ x: g.position.x, y: termPosLower, z: g.position.z}, 1000)
+            .easing( TWEEN.Easing.Quadratic.InOut )
+            .start();       
     }
 
     function moveTermsDown( ) {
