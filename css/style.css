@@ -39,8 +39,10 @@
   }
 
   #header {
-      height: 100px;
-      width: 300px;
+      /*height: 100px;
+      width: 300px;*/
+      height: 60px;
+      width: 180px;
       top: 5px;
       left: 10px;
       padding-left: 10px;
@@ -57,10 +59,11 @@
   #UI {
     z-index: 15;
     display: block;
-    width: 150px;
+    width: 140px;
     height: auto;
     position: absolute;
-    top: 140px;
+    /*top: 140px;*/
+    top: 100px;
     padding: 10px;
     overflow: visible;
   }
@@ -181,16 +184,47 @@
     text-decoration: none;
   }
 
-  #keyInfo {
+  .wrapper {
     position: absolute;
+   /* overflow: hidden;*/
+    width: 50px;
+    height: 50px;
     top: 5px;
     right: 5px;
-    width: auto;
+    float: right;
+     border: 1px solid white;
+  }
+
+  #slide {
+    position: absolute;
+    /*right: -200px;*/
+    top: -360px;
+    width: 210px;
+    height: 360px;
+    background: blue;
+    transition: 1s;
+}
+
+.wrapper:hover #keyInfo {
+    transition: 1s;
+/*    top:0;*/
+    right: 0;
+}
+
+  #keyInfo {
+    position: absolute;
+    right: -210px;
+    /*top: -360px;*/
+    width: 210px;
+    height: 360px;
+    background: blue;
+    transition: 1s;
     float: right;
   }
 
   #navButtons {
-    position: relative;
+    position: absolute;
+    float: right;
   }
 
   #navInstructions {
@@ -199,7 +233,7 @@
     padding: 5px 5px 10px 5px;
     /*margin: 6px 3px 0px 0px;*/
     margin-left: auto;
-    margin-top: 6px;
+    margin-top: 35px;
     margin-right: 3px;
     position: relative;
     background: rgba(55, 55, 55, 0.9); 

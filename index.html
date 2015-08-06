@@ -16,55 +16,60 @@
     <div id="hud" class="visible">
         <div id = "loader"></div>
         <div id="header" alt="Relativity's Reach"></div>
-        <div id="keyInfo" class="noselect">
-            <div id="navButtons" class="noselect">
-                <button id="topView" onclick="topView();">TOP VIEW</button>
-                <button id="bottomView" onclick="bottomView();">BOTTOM VIEW</button>
-                <button id="sideView" onclick="sideView();">SIDE VIEW</button>
-                <button id="introTour" onclick="startIntro();">TOUR</button>
-            </div>
-            <div id="navInstructions" class="noselect">
-                <h2>Navigation Info</h2>
-                <div id="navInfo">
-                    <br><span id="orbit">Orbit: left mouse / touch: one finger move</span>
-                    <br><span id="zoom">Zoom: mousewheel / touch: two finger spread or squish</span>
-                    <br><span id="pan">Pan: right mouse, or arrow keys / touch: two finger drag</span>
+        <div class="wrapper">
+            <div id="keyInfo" class="noselect">
+                <div id="navButtons" class="noselect">
+                    <button id="topView" onclick="topView();">TOP VIEW</button>
+                    <!-- <button id="bottomView" onclick="bottomView();">BOTTOM VIEW</button> -->
+                    <button id="sideView" onclick="sideView();">SIDE VIEW</button>
+                    <button id="introTour" onclick="startIntro();">TOUR</button>
                 </div>
-            </div>
-            <div id="authorKey" class="noselect">
-                <h2>Key</h2>
-                <br>
-                <div>
-                    <div id="circle_author1" class="circle"></div><span class="circle_info">&nbsp; 1 author</span>
+                <div id="navInstructions" class="noselect">
+                    <h2>Navigation Info</h2>
+                    <div id="navInfo">
+                        <br><span id="orbit">Orbit: left mouse / touch: one finger move</span>
+                        <br><span id="zoom">Zoom: mousewheel / touch: two finger spread or squish</span>
+                        <br><span id="pan">Pan: right mouse, or arrow keys / touch: two finger drag</span>
+                    </div>
                 </div>
-                <div>
-                    <div id="circle_author2" class="circle"></div><span class="circle_info">&nbsp; 2 authors</span>
-                </div>
-                <div>
-                    <div id="circle_author3" class="circle"></div><span class="circle_info">&nbsp; 3 authors</span>
-                </div>
-                <div>
-                    <div id="circle_author4" class="circle"></div><span class="circle_info">&nbsp; 4 authors</span>
-                </div>
-                <div>
-                    <div id="circle_author5" class="circle"></div><span class="circle_info">&nbsp; 5 - 849 authors</span>
-                </div>
-                <div>
-                    <div id="circle_author6" class="circle"></div><span class="circle_info">&nbsp; 850+ authors</span>
-                </div>
-                <br>
-                <div>
-                    <div id="circle_pub" class="circle"></div><span class="circle_info">&nbsp; Currently published</span>
-                </div>
-                <div>
-                    <div id="circle_unpub" class="circle"></div><span class="circle_info">&nbsp; Awaiting peer review</span>
-                </div>
-                <br>
-                <div>
-                    <div id="circle_noCites" class="circle"></div><span class="circle_info">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No citations</span>
-                </div>
-                <div>
-                    <div id="circle_85cites" class="circle"></div><span class="circle_info">&nbsp; 85 citations</span>
+                <div id="authorKey" class="noselect">
+                    <!-- <h2>Key</h2>
+                    <br> -->
+                    <div>
+                        <div id="circle_author1" class="circle"></div><span class="circle_info">&nbsp; 1 author</span>
+                    </div>
+                    <div>
+                        <div id="circle_author2" class="circle"></div><span class="circle_info">&nbsp; 2 authors</span>
+                    </div>
+                    <div>
+                        <div id="circle_author3" class="circle"></div><span class="circle_info">&nbsp; 3 authors</span>
+                    </div>
+                    <div>
+                        <div id="circle_author4" class="circle"></div><span class="circle_info">&nbsp; 4 authors</span>
+                    </div>
+                    <div>
+                        <div id="circle_author5" class="circle"></div><span class="circle_info">&nbsp; 5 - 849 authors</span>
+                    </div>
+                    <div>
+                        <div id="circle_author6" class="circle"></div><span class="circle_info">&nbsp; 850+ authors</span>
+                    </div>
+                    <br>
+                    <div>
+                        <div id="circle_pub" class="circle"></div><span class="circle_info">&nbsp; Currently published</span>
+                    </div>
+                    <div>
+                        <div id="circle_unpub" class="circle"></div><span class="circle_info">&nbsp; Awaiting peer review</span>
+                    </div>
+                    <br>
+                    <div>
+                        <span class="circle_info">Smallest dot: no citations</span>
+                        <!-- <div id="circle_noCites" class="circle"></div><span class="circle_info">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No citations</span> -->
+                    </div>
+                    <div>
+                        <br>
+                         <span class="circle_info">Largest dot: 85 citations</span>
+                        <!-- <div id="circle_85cites" class="circle"></div><span class="circle_info">&nbsp; 85 citations</span> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -216,9 +221,11 @@
     var selectedArticles = [];
 
     var tourActive = false;
+    var sideViewActive = false;
 
     var termOffset = -1500;
-    var labelDistThreshold = 3600;
+    //var termOffset = 0;
+    var labelDistThreshold = 4000;
 
     var eyeTargetScale;
 
@@ -231,28 +238,28 @@
             steps: [
                 {
 
-                    intro: "<h2>Relativity's Reach</h2><br>This interactive graphic visualizes the impact of the general theory of relativity on current physics research a hundred years after Albert Einstein first described how gravity emerges from the bending of space and time.<br><br>Data on the modern research trends comes from arXiv.org, an online database of scientific papers."
+                    intro: "<h2>Relativity's Reach</h2><br>This interactive graphic visualizes the impact of the general theory of relativity on current physics research a hundred years after Albert Einstein first described how gravity emerges from the bending of spacetime.<br><br>Data on the modern research trends comes from arXiv.org, an online database of scientific papers."
                 },
                 {
                     //element: '#step2',
-                    intro: "<h2>Data Source</h2><br>Each colored dot represents a paper uploaded in 2014 to the well-known online database arXiv.org. Each paper has been classified as having 'General Relativity - Quantum Cosmology' as its main category - a total of 2,435 papers.<br><br>Use your mouse to roll over an article and reveal its title, authors, number of citations and URL on arXiv.org. Right (or CTRL) clicking on the article dot when highlighted opens a new window to the article's page on arXiv.org."
+                    intro: "<h2>Data Source</h2><br>Each colored dot represents a paper uploaded in 2014 to the arXiv.org database. Each paper has been classified as having 'General Relativity&ndash;Quantum Cosmology' as its main category &ndash; a total of 2,435 papers.<br><br>Use your mouse to roll over an article and reveal its title, authors, and number of citations by other researchers (a mark of the paper's influence). Right (or CTRL) clicking on the article dot when highlighted opens a new window to the article's page on arXiv.org."
                 },
                 {
                     //element: '#keyword-container',
-                    intro: "<h2>Concept Keywords</h2><br>A powerful text analysis tool, which is now part of IBM's Watson AI system, examined the abstracts of all 2,435 papers in the General Relativity - Quantum Cosmology category and identified keywords for critical concepts within those papers. These keywords were edited for relevancy by <i>Scientific American</i> down to 61. The 15 most used keywords are visible here in order of frequency.<br><br>You may select a keyword to see which articles reference it. Select multiple keywords by dragging over multiple buttons or selecting while pressing the CTRL key.",
+                    intro: "<h2>Concept Keywords</h2><br>A powerful text analysis tool, which is now part of IBM's Watson AI system, examined the abstracts of all 2,435 papers in the General Relativity&ndash;Quantum Cosmology category and identified keywords for critical concepts within those papers. Scientific American then edited them for relevancy, leaving 61 keywords. The 15 most used ones are listed on the left in order of frequency.<br><br>You may select a keyword to see which articles reference it. Select multiple keywords by dragging over multiple buttons or selecting while pressing the CTRL key.",
                     //position: 'right'
                 },
                 {
-                    intro: "<h2>Article and Keyword Layout</h2><br>Article dots are positioned near keywords (diamonds). If the article has multiple keywords, the dot is placed between terms, such as the article with special relativity and Noether's theorem.<br><br> NOTE: This section and keywords in general need some thought / layout decisions."
+                    intro: "<h2>Article and Keyword Layout</h2><br>Article dots are positioned near keywords (red diamonds). If the article has multiple keywords, the dot is placed between terms, such as the article with special relativity and Noether's theorem."
                 },
                 {
-                    intro: "<h2>Citations</h2><br>The size of the dot is based on how often the 2014 article has been cited since publication through the middle of this year. The smallest dot corresponds to a paper with no citations, whereas the largest dot has 85 citations."
+                    intro: "<h2>Citations</h2><br>The size of the dot is based on how often the 2014 article has been cited since publication through the middle of 2015. The smallest dot corresponds to a paper with no citations whereas the largest dot has 85 citations."
                 },
                 {
-                    intro: "<h2>Publication Status</h2><br>The colored circle around each dot indicates publication status. Many physicists put their papers on arXiv before they are published.<br><br>Articles with a bright blue outline have been published, while articles circled in dark purple are awaiting peer review."
+                    intro: "<h2>Publication Status</h2><br>The colored circle around each dot indicates publication status. Many physicists put their papers on arXiv before they are published. Articles with a bright blue outline have been published whereas articles circled in dark purple are awaiting peer review (as of June, 2015)."
                 },
                 {
-                    intro: "<h2>Authors</h2><br>The number of authors per article generally varies between one and five. In some cases, like the LIGO research, there are over 850 authors for a single article."
+                    intro: "<h2>Authors</h2><br>The number of authors per article generally varies between one and five. In some cases, like the LIGO research (red dot in center), there are over 850 authors for a single article."
                 },
                 {
                     //element:'#authorKey',
@@ -261,12 +268,7 @@
                 },
                 {
                     //element: '#navInstructions',
-                    intro: "<h2>Navigation</h2><br>You may explore the visualization by using your mouse to orbit around the scene.<br><br>Orbit: left mouse / touch: one finger move<br>Zoom: mousewheel / touch: two finger spread or squish<br>Pan: right mouse, or arrow keys / touch: two finger drag<br><br>You can also select various views to focus on the top, bottom, or sides of the graphic. Select the tour to replay this introduction.",
-                    //position: 'left'
-                },
-                {
-                    //element: '#navButtons',
-                    intro: "<h2>Views</h2><br>You can select various views to focus on the top, bottom, or sides of the graphic. Select the tour to replay this introduction.",
+                    intro: "<h2>Navigation</h2><br>You may explore the visualization by using your mouse to tour around the scene.<br><br>Tour: left mouse / touch: one finger move<br>Zoom: mousewheel / touch: two finger spread or squish<br>Pan: right mouse, or arrow keys / touch: two finger drag<br><br>You can also select various views to focus on the top or sides of the graphic. Select the tour to replay this introduction.",
                     //position: 'left'
                 }
             ],
@@ -280,7 +282,7 @@
         intro.onchange(function(targetElement, currentStep) {
             //console.log("Current Scene: " + intro._currentStep);
             var introTweenOptions = {duration: 1000, easing: TWEEN.Easing.Quadratic.InOut};
-
+            if (sideViewActive) !sideViewActive;
             
             switch(intro._currentStep) { 
                 case 0: //INTRO SCREEN
@@ -367,7 +369,8 @@
                     break;
 
                 case 6: //Authors
-                    moveAndLookAt(camera, new THREE.Vector3(1157, 580, 785), new THREE.Vector3(382, -1437, 867), introTweenOptions);
+                    // moveAndLookAt(camera, new THREE.Vector3(1157, 580, 785), new THREE.Vector3(382, -1437, 867), introTweenOptions);
+                    moveAndLookAt(camera, new THREE.Vector3(675, 330, 675), new THREE.Vector3(30, -1300, 690), introTweenOptions);
                     break;
 
                 case 7: //Key (wide view)
@@ -461,45 +464,16 @@
         var light = new THREE.PointLight( 0xFFFFFF );
         // light.shadowMapWidth = 1024; // default is 512
         // light.shadowMapHeight = 1024; // default is 512
-        light.position.set(100, 250, 100);
+        light.position.set(100, 2050, 100);
 
         var bottomLight = new THREE.PointLight( 0xFFFFFF );
         light.position.set(100, -2000, 100);
 
         scene.add(bottomLight);
-        scene.add(light);
+        //scene.add(light);
 
         //LOADING DATA
         loadArticles();
-
-        //SHADERS
-        /*
-        var renderModel = new THREE.RenderPass( scene, camera );
-        //var effectBloom = new THREE.BloomPass( .25 );
-        var effectFilm = new THREE.FilmPass( 0,0,0, false );
-        effectFilm.renderToScreen = true;
-
-
-        composer = new THREE.EffectComposer( renderer );
-        composer.addPass( renderModel );
-        //composer.addPass( effectBloom );
-        composer.addPass( effectFilm );
-
-
-        composer.addPass( new THREE.RenderPass( scene, camera ) );
-        composer.addPass( new THREE.BloomPass( 1.25 ));
-
-        renderer.autoClear = false;
-        */
-
-           
-
-        // SKYBOX
-        // var skyBoxGeometry = new THREE.CubeGeometry( 10000, 10000, 10000 );
-        // var skyBoxMaterial = new THREE.MeshBasicMaterial( { color: 0x9999ff, side: THREE.BackSide } );
-        // var skyBox = new THREE.Mesh( skyBoxGeometry, skyBoxMaterial );
-        // scene.add(skyBox);
-
 
         ////////////
         // CUSTOM //
@@ -577,6 +551,7 @@
 
     function bottomView() {
         console.log("bottomView");
+        if (sideViewActive) !sideViewActive;
 
         var grid = scene.getObjectByName("lowerGrid");
         moveAndLookAt(camera, new THREE.Vector3( grid.position.x - 225, grid.position.y - 3000, grid.position.z + 200 + 1e-10), new THREE.Vector3(grid.position.x - 225, grid.position.y, grid.position.z + 200), {
@@ -587,10 +562,11 @@
 
     function topView() {
         console.log("topView");
+        if (sideViewActive) !sideViewActive;
 
         // TODO zoom out to fit...
         var grid = scene.getObjectByName("lowerGrid");
-        moveAndLookAt(camera, new THREE.Vector3( grid.position.x - 80, grid.position.y + 4000, grid.position.z + 45 + 1e-10), new THREE.Vector3(grid.position.x - 80, grid.position.y, grid.position.z + 45), {
+        moveAndLookAt(camera, new THREE.Vector3( grid.position.x - 80, grid.position.y + 3000, grid.position.z - 145 + 1e-10), new THREE.Vector3(grid.position.x - 80, grid.position.y, grid.position.z - 145), {
             duration: 1000,
             easing: TWEEN.Easing.Quadratic.InOut
         });
@@ -598,11 +574,39 @@
 
     function sideView() {
         console.log("sideView");
+        sideViewActive = true;
+        // var term = scene.getObjectByName("terms");
+        
+        // for (var i = 0; i < term.children.length; i++) {
+        //     term.children[i].position.set(term.children[i].position.x, terms[i].z -1500, term.children[i].position.z);
+        // }
+        $("#selectable li").each(function(index) {
+            //console.log(index + ": " + $( this ).text());
+            var concept = $(this).text().toLowerCase();
+            var selected = termObj.getObjectByName(concept);
+            
+
+            //set highlight of selected articles and draw splines to selected terms
+            for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                var index = selected.userData.articleIndices[k];
+                articleObjects[index].material.uniforms.innerCol.value = new THREE.Color ( 0xFFFCC7 );
+                articleObjects[index].userData.clicked = true;
+
+                if (k % 2 === 0) {
+                    drawSplines ( articleObjects[index].position, selected.position, concept );
+                }
+            }
+
+            splineObj.name = concept;
+            scene.add( splineObj );
+            selectSelectableElement($("#selectable"), $("#selectable li") );
+        });
+        
 
         moveAndLookAt(camera, new THREE.Vector3( 400, -320, 4100), new THREE.Vector3(350, -860, 920), {
-                    duration: 1000,
-                    easing: TWEEN.Easing.Quadratic.InOut
-                });
+            duration: 1000,
+            easing: TWEEN.Easing.Quadratic.InOut
+        });
     }
 
     // Camera Tweening
@@ -682,16 +686,35 @@
 
             var dist;
             dist = camera.position.distanceTo( grid.position );
-
+            //var scalar = 1000/dist; 
+            var inverseScalar = dist/1000;
+            //console.log(scalar);
+            //console.log(inverseScalar);
             //sprite labels should only appear when close enough to read
             if (spriteObj != undefined && spriteObj.children.length > 60) {
                 var spr = scene.getObjectByName("sprites");
+                var term = scene.getObjectByName("terms");
+                
                 if (dist > labelDistThreshold) {
                     //turn off labels
-                    //console.log(spr);
+                    //console.log(scalar);
+                    //console.log(term);
+                    //console.log(inverseScalar);                    
                     spr.visible = false;
+                    for (var i = 0; i < term.children.length; i++) {
+                        term.children[i].scale.set(1, 1, 1);
+                    }
+                    for (var i = 0; i < spr.children.length; i++) {
+                        spr.children[i].scale.set(1, 1, 1);
+                    }
                 } else {
                     spr.visible = true;
+                    for (var i = 0; i < term.children.length; i++) {
+                        term.children[i].scale.set(inverseScalar * 0.6, inverseScalar * 0.6, inverseScalar * 0.6);
+                    }
+                    for (var i = 0; i < spr.children.length; i++) {
+                        spr.children[i].scale.set(inverseScalar * 0.6, inverseScalar * 0.6, inverseScalar * 0.6);
+                    }
                 }
             }
         }
@@ -750,11 +773,47 @@
     }
 
     function onMouseUp( event ) {
-        //console.log("MOUSE UP");
+        console.log("MOUSE UP");
+        console.log("sideViewActive: " + sideViewActive);
+
+        
+            
+            
 
         //SELECT TERMS FROM SIDE NAVIGATION
         $( "#selectable" ).selectable({
+
+
+
+            //if terms selected from side nav
             selected: function(event, ui) {
+                //clear all splines from sideViewActive view
+                if (sideViewActive) {
+                    $("#selectable li").each(function(index) {
+                        //console.log(index + ": " + $( this ).text());
+                        var concept = $(this).text().toLowerCase();
+                        var selected = termObj.getObjectByName(concept);
+
+                        //set highlight of selected articles and draw splines to selected terms
+                        for (var k = 0; k < selected.userData.articleIndices.length; k++) {
+                            var index = selected.userData.articleIndices[k];
+                            articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                            articleObjects[index].userData.clicked = false;
+                        }
+
+                        var splineHolder = splineObj.getObjectByName(concept);
+                        if (splineHolder != undefined) {
+                            //remove splines that were previously created
+                            for (var i = splineHolder.children.length - 1; i >= 0; i--) {
+                                //console.log(splineHolder.children[i]);
+                                splineObj.remove(splineHolder.children[i]);
+                            }
+                            scene.remove(splineObj);
+                        }
+                        unselectSelectableElement($("#selectable"), $("#selectable li") );
+                    });
+                }
+            if(sideViewActive) sideViewActive = false;
 
                 if ($(ui.selected).hasClass('click-selected')) {
                     //if clicking on previously selected term
@@ -958,7 +1017,7 @@
                 //INTERSECTED.material.color.setHex( 0xccff00 );
                 //console.log(INTERSECTED.name);
                 // console.log(INTERSECTED.userData);
-                // console.log(INTERSECTED.position);
+                console.log(INTERSECTED.position);
 
                 $("#articleInfo").css({'top':mouseY,'left':mouseX })
                     .stop(true,true)
@@ -1094,7 +1153,7 @@
         articleObjects.push( squareMesh );
     }
 
-    function drawTermDiamond( size, fillColor, x, y, z,term, articleIndices ) {
+    function drawTermDiamond( size, fillColor, x, y, z, term, articleIndices ) {
         var extrudeSettings = { amount: 2, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1 }
 
         var rect = new THREE.Shape();
@@ -1105,7 +1164,7 @@
         rect.lineTo (0, 0);
 
         var rectGeom = new THREE.ExtrudeGeometry( rect, extrudeSettings );
-        var material = new THREE.MeshPhongMaterial( { color: fillColor });
+        var material = new THREE.MeshBasicMaterial( { color: fillColor, side: THREE.DoubleSide });
 
         var rectMesh = new THREE.Mesh( rectGeom, material );
         rectMesh.material.side = THREE.DoubleSide;
@@ -1380,7 +1439,8 @@
 
             var fillColor = new THREE.Color ( 0xea4f1c );
 
-            drawTermDiamond (20, fillColor, t1.x, termOffset + 2 * t1.z, t1.y, t1.term, t1.articleIndex);
+            drawTermDiamond (20, fillColor, t1.x + 300, termOffset + 2 * t1.z, t1.y, t1.term, t1.articleIndex);
+            //drawTermDiamond (20, fillColor, t1.x + 300, 250, t1.y, t1.term, t1.articleIndex);
 
             //console.log("DRAW CIRCLE");
             //console.log(t1.term + " - x: " + t1.x + " z: " + t1.y  + " y: " + t1.z);
@@ -1388,13 +1448,15 @@
             var title = toTitleCase(t1.term);
 
             var spritey = makeTextSprite(" " + title, 
-                   { fontsize: 100, 
+                   { fontsize: 72, 
                         fontface: "Georgia", 
                         //borderColor: {r:234, g:79, b:28, a:1.0}, 
                         borderColor: {r: 107, g: 107, b: 107, a:1.0},
                         backgroundColor: {r: 55, g:55, b:55, a:0.9} } );
-            spritey.position.set(t1.x , termOffset + 2*t1.z - 50 , t1.y);
+            spritey.position.set(t1.x + 300, termOffset + 2*t1.z - 50 , t1.y);
             spriteObj.add( spritey );
+            //spritey.position.set(t1.x + 300, 200 , t1.y);
+            //spriteObj.add( spritey );
 
             //for network lines between terms (seem like there are too many being drawn, or not transparent enough)
             //this is currently disabled for legibility
@@ -1424,6 +1486,7 @@
              console.log("____________________");
             */
         }
+        termObj.name = "terms";
         spriteObj.name = "sprites";
     }
 
@@ -1602,6 +1665,7 @@
         //console.log('textWidth: ' + textWidth);
 
         var labelTexture = new THREE.Texture(canvas); //label texture
+        labelTexture.generateMipmaps = false;
         labelTexture.needsUpdate = true;
 
         var texture = new THREE.Texture(context); //white texture
@@ -1613,10 +1677,10 @@
 
         var spriteMaterial2 = new THREE.SpriteMaterial( { map: labelTexture });
         var labelsprite = new THREE.Sprite( spriteMaterial2);
-        labelsprite.scale.set(800, fontsize * 0.9, fontsize);
+        labelsprite.scale.set(fontsize * 10, fontsize * 0.9, fontsize * 0.75);
 
-        labelsprite.userData = { width: textWidth };
-        group.name = "labelSprite";
+        group.userData = { width: textWidth };
+        group.name = "labelSprite: " + message;
 
         //group.add(sprite);
         group.add(labelsprite);
