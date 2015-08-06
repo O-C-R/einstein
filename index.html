@@ -465,7 +465,7 @@
         $(window).keypress(function(e) {
             if (e.keyCode === 0 || e.keyCode === 32) {
                 //console.log('Space pressed');
-                //saveCamera();
+                saveCamera();
             }
         });
 
@@ -477,7 +477,7 @@
         console.log("Saving Camera");
         console.log(camera.position);
         console.log(camera.rotation);
-        console.log(camera.quaternion);
+        //console.log(camera.quaternion);
         console.log(controls.center);
         console.log("articles");
         console.log(articleObjects[0].rotation);
@@ -504,7 +504,7 @@
 
         moveTermsToStartPos();
 
-        moveAndLookAt(camera, new THREE.Vector3( 265, 2900, 750 + 1e-10), new THREE.Vector3(265, termPosLower, 750), {
+        moveAndLookAt(camera, new THREE.Vector3( 265, 2000, 750 + 1e-10), new THREE.Vector3(265, 0, 750), {
             duration: 1000,
             easing: TWEEN.Easing.Quadratic.InOut
         });
@@ -516,7 +516,7 @@
 
         moveTermsUp();
 
-        moveAndLookAt(camera, new THREE.Vector3( 265, 2900, 750 + 1e-10), new THREE.Vector3(265, termPosLower, 750), {
+        moveAndLookAt(camera, new THREE.Vector3( 265, 3500, 750 + 1e-10), new THREE.Vector3(265, 0, 750), {
             duration: 1000,
             easing: TWEEN.Easing.Quadratic.InOut
         });
@@ -676,7 +676,7 @@
 
             var dist;
             dist = camera.position.distanceTo( grid.position );
-            console.log(dist);
+            //console.log(dist);
             //var scalar = 1000/dist; 
             var inverseScalar = dist/(1000 * 2.8);
             //console.log(scalar);
@@ -727,7 +727,7 @@
             controls.minDistance = 0;
             //controls.update();
         } else {
-            controls.minDistance = 1600;
+            controls.minDistance = 500;
             //controls.update();
         }
 
@@ -794,7 +794,7 @@
             //if terms selected from side nav
             selected: function(event, ui) {
                 //clear all splines from sideViewActive view
-                //moveTermsDownNoSpline();
+                
                 if (sideViewActive) {
                     $("#selectable li").each(function(index) {
                         //console.log(index + ": " + $( this ).text());
@@ -861,7 +861,7 @@
                             break;
                         }
                     }
-
+                    moveTermsDownNoSpline();
                     //console.log(selectedArticles);
 
                 } else {
@@ -914,10 +914,11 @@
 
                     splineObj.name = lc;
                     scene.add( splineObj );
+
+                    moveTermsDownNoSpline();
                 }
             },
             unselected: function( event, ui ) {
-                //moveTermsDownNoSpline();
                 $(ui.unselected).removeClass('click-selected');
                 //console.log("unselected " + ui.unselected.innerText.toLowerCase());
 
@@ -954,7 +955,7 @@
                     }
                 }
                 //console.log(selectedArticles);
-
+                moveTermsDownNoSpline();
             }
 
         });
