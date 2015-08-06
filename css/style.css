@@ -193,15 +193,17 @@
     position: absolute;
    /* overflow: hidden;*/
     width: 272px;
-    height: 20px;
+    height: 25px;
     top: 0px;
     right: 305px;
+    background: rgba(55, 55, 55, 1.0);
   }
 
   .wrapper:hover #keyInfo {
     transition: 0.2s;
     -webkit-transition: 0.2s;
-    top:0;
+    top: 27px;
+
       /*right: 0;*/
   }
 
@@ -209,35 +211,37 @@
     position: absolute;
      /* overflow: hidden;*/
     width: 160px;
-    height: 20px;
+    height: 25px;
     top: 0px;
-    right: 145px;
+    right: 140px;
+    background: rgba(55, 55, 55, 1.0);
   }
 
   .wrapper-nav:hover #navInstructions {
     transition: top 0.2s;
     -webkit-transition: top 0.2s;
-    top:0;
+    top:30px;
   }
 
   .wrapper-legend {
     position: absolute;
      /* overflow: hidden;*/
     width: 130px;
-    height: 20px;
+    height: 25px;
     top: 0px;
-    right: 10px;
+    right: 5px;
+    background: rgba(55, 55, 55, 1.0);
   }
 
   .wrapper-legend:hover #authorKey {
     -webkit-transition: top 0.2s;
     transition: top 0.2s;
-    top:0;
+    top:30px;
   }
 
   .wrapper-title {
     text-align: center;
-    padding-top: 5px;
+    padding: 5px;
   }
 
   #keyInfo {
@@ -247,11 +251,11 @@
     width: 262px;
     height: 55px;
     padding-left: 5px;
-    float: right;
     transition: 0.2s;
     float: right;
-    border: 1px solid #6B6B6B;
-    background: rgba(55, 55, 55, 0.9);
+    z-index: -1;
+    /*border: 1px solid #6B6B6B;
+    background: rgba(55, 55, 55, 0.9);*/
   }
 
   #navButtons {
@@ -267,14 +271,11 @@
     width: 160px;
     /*height: 70px;*/
     padding: 5px 5px 5px 5px;
-    /*margin: 6px 3px 0px 0px;*/
-    /*margin-left: auto;*/
     top: -50px;
-    /*margin-right: 3px;*/
-    
-    background: rgba(55, 55, 55, 0.9); 
+    z-index: -1;
+    background: rgba(55, 55, 55, 0.7); 
     color: white; 
-    border: 1px solid #6B6B6B;
+    /*border: 1px solid #6B6B6B;*/
     line-height: 1.6em;
     transition: 0.2s;
     -webkit-transition: 0.2s;
@@ -282,17 +283,18 @@
 
   #authorKey {
     position: absolute;
-    width: 130px;
-    height: 230px;
+    width: 120px;
+    height: 210px;
     top: -218px;
     padding: 5px 5px 8px 5px;
+    z-index: -1;
     /*margin: 6px 3px 0px 0px;*/
     /*margin-left: auto;
     margin-top: 6px;
     margin-right: 3px;*/
-    background: rgba(55, 55, 55, 0.9); 
+    background: rgba(55, 55, 55, 0.7); 
     color: white; 
-    border: 1px solid #6B6B6B;
+    /*border: 1px solid #6B6B6B;*/
     line-height: 1.1em;
     font-size: 1.1em;
     transition: 0.2s;
