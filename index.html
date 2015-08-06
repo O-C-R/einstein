@@ -219,7 +219,7 @@
     var navViewActive = false;
 
     var termOffset = 0;
-    var labelDistThreshold = 4000;
+    var labelDistThreshold = 3600;
     var frequentLabelThresh = 2000;
     var termPosGridLevel = 0;
     var termPosAboveGrid = 250;
@@ -389,7 +389,7 @@
 
         //EVENTS
         controls = new THREE.OrbitControls( camera,  renderer.domElement );
-        controls.maxDistance = 7000;
+        controls.maxDistance = 6000;
         controls.target.set( 250, -680, 930 );
 
         var startdir = new THREE.Vector3();
@@ -515,7 +515,7 @@
 
         moveTermsUp();
 
-        moveAndLookAt(camera, new THREE.Vector3( 265, 3500, 750 + 1e-10), new THREE.Vector3(265, 0, 750), {
+        moveAndLookAt(camera, new THREE.Vector3( 275, 2700, 850 + 1e-10), new THREE.Vector3(275, 0, 850), {
             duration: 1000,
             easing: TWEEN.Easing.Quadratic.InOut
         });
@@ -709,16 +709,16 @@
                     //spr.visible = true;
                 }
                 
-                if(inverseScalar > 1.5) inverseScalar = 1.5;
-                if(inverseScalar < 0.2) inverseScalar = 0.2;
+                // if(inverseScalar > 1.5) inverseScalar = 1.5;
+                // if(inverseScalar < 0.2) inverseScalar = 0.2;
                 
-                for (var i = 0; i < term.children.length; i++) {
-                    term.children[i].scale.set(inverseScalar, inverseScalar, inverseScalar );
-                }
+                // for (var i = 0; i < term.children.length; i++) {
+                //     term.children[i].scale.set(inverseScalar, inverseScalar, inverseScalar );
+                // }
 
-                for (var i = 0; i < spr.children.length; i++) {
-                    spr.children[i].scale.set(inverseScalar, inverseScalar, inverseScalar);
-                }  
+                // for (var i = 0; i < spr.children.length; i++) {
+                //     spr.children[i].scale.set(inverseScalar, inverseScalar * 0.9, inverseScalar * 0.7);
+                // }  
             }
         }
 
@@ -793,7 +793,7 @@
             //if terms selected from side nav
             selected: function(event, ui) {
                 //clear all splines from sideViewActive view
-                
+                moveTermsDownNoSpline();
                 if (sideViewActive) {
                     $("#selectable li").each(function(index) {
                         //console.log(index + ": " + $( this ).text());
@@ -860,7 +860,6 @@
                             break;
                         }
                     }
-                    moveTermsDownNoSpline();
                     //console.log(selectedArticles);
 
                 } else {
@@ -880,7 +879,7 @@
 
                     //console.log(scene.getObjectByName(lc));
                     var selected = termObj.getObjectByName(lc);
-                    //console.log(selected);
+                    console.log(selected);
                     //var termPos = selected.position;
                     //console.log("selected name: " + selected.name);
 
@@ -913,11 +912,10 @@
 
                     splineObj.name = lc;
                     scene.add( splineObj );
-
-                    moveTermsDownNoSpline();
                 }
             },
             unselected: function( event, ui ) {
+                moveTermsDownNoSpline();
                 $(ui.unselected).removeClass('click-selected');
                 //console.log("unselected " + ui.unselected.innerText.toLowerCase());
 
@@ -954,7 +952,6 @@
                     }
                 }
                 //console.log(selectedArticles);
-                moveTermsDownNoSpline();
             }
 
         });
@@ -1421,7 +1418,7 @@
             //console.log(t);
             var index = 0;
             new TWEEN.Tween( t.position )
-                .to({ x: t.position.x, y: termPosGridLevel + 50, z: t.position.z} , 1000)
+                .to({ x: t.position.x, y: termPosGridLevel, z: t.position.z} , 1000)
                 .easing( TWEEN.Easing.Quadratic.InOut )
                 .onComplete(function() {
                     //console.log(i);
@@ -1440,7 +1437,7 @@
             var l = labels.children[j];
             //console.log(l);
             new TWEEN.Tween( l.position )
-                .to({ x: l.position.x, y: termPosGridLevel, z: l.position.z} , 1000)
+                .to({ x: l.position.x, y: termPosGridLevel + 10, z: l.position.z} , 1000)
                 .easing( TWEEN.Easing.Quadratic.InOut )
                 .start();
         }
@@ -1461,7 +1458,7 @@
             //console.log(t);
             var index = 0;
             new TWEEN.Tween( t.position )
-                .to({ x: t.position.x, y: termPosAboveGrid + 50, z: t.position.z} , 1000)
+                .to({ x: t.position.x, y: termPosAboveGrid, z: t.position.z} , 1000)
                 .easing( TWEEN.Easing.Quadratic.InOut )
                 .onComplete(function() {
                     //console.log(i);
@@ -1480,7 +1477,7 @@
             var l = labels.children[j];
             //console.log(l);
             new TWEEN.Tween( l.position )
-                .to({ x: l.position.x, y: termPosAboveGrid, z: l.position.z} , 1000)
+                .to({ x: l.position.x, y: termPosAboveGrid + 10, z: l.position.z} , 1000)
                 .easing( TWEEN.Easing.Quadratic.InOut )
                 .start();
         }
@@ -1507,13 +1504,13 @@
             //console.log(termObj);
             var title = toTitleCase(t1.term);
 
-            var spritey = makeTextSprite(" " + title, termPosLower + 2*t1.z  - 50,
-                   { fontsize: 100, 
+            var spritey = makeTextSprite(" " + title, termPosLower + 2*t1.z + 10,
+                   { fontsize: 90, 
                         fontface: "Georgia", 
                         //borderColor: {r:234, g:79, b:28, a:1.0}, 
                         borderColor: {r: 107, g: 107, b: 107, a:1.0},
                         backgroundColor: {r: 55, g:55, b:55, a:0.9} } );
-            spritey.position.set(t1.x + 300, termPosGridLevel + 50, t1.y);
+            spritey.position.set(t1.x + 300, termPosGridLevel + 10, t1.y);
             spriteObj.add( spritey );
 
             //for network lines between terms (seem like there are too many being drawn, or not transparent enough)
@@ -1572,7 +1569,7 @@
         var slideB = 1 - slideA;
 
         var start = new THREE.Vector3(article.position.x + article.userData.radius/2, article.position.y, article.position.z + article.userData.radius/2);
-        var end = new THREE.Vector3(term.position.x, term.position.y, term.position.z);
+        var end = new THREE.Vector3(term.position.x, term.userData.ypos, term.position.z);
         var startMid = new THREE.Vector3(slideA * start.x + slideB * end.x, slideA * start.y + slideB * end.y, start.z -.25 * Math.abs(end.z - start.z));
         var endMid = new THREE.Vector3(slideA * end.x + slideB * start.x, slideA * end.y + slideB * start.y, end.z + .35 * Math.abs(end.z - start.z));
 
@@ -1673,7 +1670,7 @@
         canvas.width = 2160;
         canvas.height = 200;
         var context = canvas.getContext('2d');
-        context.font = "Bold " + fontsize + "px " + fontface;
+        context.font = fontsize + "px " + fontface;
         var metrics = context.measureText( message );
         //console.log(message);
         //console.log("metrics: " + metrics.width);
