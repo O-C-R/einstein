@@ -187,75 +187,108 @@
   .wrapper {
     position: absolute;
    /* overflow: hidden;*/
-    width: 50px;
-    height: 50px;
-    top: 5px;
-    right: 5px;
-    float: right;
-     border: 1px solid white;
+    width: 215px;
+    height: 20px;
+    top: 0px;
+    right: 300px;
   }
 
-  #slide {
-    position: absolute;
-    /*right: -200px;*/
-    top: -360px;
-    width: 210px;
-    height: 360px;
-    background: blue;
+  .wrapper:hover #keyInfo {
     transition: 1s;
-}
+    -webkit-transition: 1s;
+    top:0;
+      /*right: 0;*/
+  }
 
-.wrapper:hover #keyInfo {
-    transition: 1s;
-/*    top:0;*/
-    right: 0;
-}
+  .wrapper-nav {
+    position: absolute;
+     /* overflow: hidden;*/
+    width: 160px;
+    height: 20px;
+    top: 0px;
+    right: 135px;
+  }
+
+  .wrapper-nav:hover #navInstructions {
+    transition: top 1s;
+    -webkit-transition: top 1s;
+    top:0;
+  }
+
+  .wrapper-legend {
+    position: absolute;
+     /* overflow: hidden;*/
+    width: 130px;
+    height: 20px;
+    top: 0px;
+    right: 0px;
+  }
+
+  .wrapper-legend:hover #authorKey {
+    -webkit-transition: top 2s;
+    transition: top 2s;
+    top:0;
+  }
+
+  .wrapper-title {
+    text-align: center;
+    padding-top: 5px;
+  }
 
   #keyInfo {
     position: absolute;
-    right: -210px;
-    /*top: -360px;*/
-    width: 210px;
-    height: 360px;
-    background: blue;
+    /*right: -210px;*/
+    top: -35px;
+    width: 215px;
+    height: 55px;
     transition: 1s;
     float: right;
+    border: 1px solid #6B6B6B;
   }
 
   #navButtons {
     position: absolute;
     float: right;
+    padding: 0px 5px 5px 5px;
+    background: rgba(55, 55, 55, 0.9);
+    height: 50px;
   }
 
   #navInstructions {
+    position: absolute;
     width: 250px;
-    height: auto;
-    padding: 5px 5px 10px 5px;
+    height: 70px;
+    padding: 5px 5px 0px 5px;
     /*margin: 6px 3px 0px 0px;*/
-    margin-left: auto;
-    margin-top: 35px;
-    margin-right: 3px;
-    position: relative;
+    /*margin-left: auto;*/
+    top: -55px;
+    /*margin-right: 3px;*/
+    
     background: rgba(55, 55, 55, 0.9); 
     color: white; 
-    /*border: 1px solid #6B6B6B;*/
+    border: 1px solid #6B6B6B;
     line-height: 1.6em;
+    transition: 1s;
+    -webkit-transition: 1s;
   }
 
   #authorKey {
-    position: relative;
+    position: absolute;
     width: 120px;
-    height: auto;
-    padding: 5px;
+    height: 230px;
+    top: -223px;
+    padding: 5px 5px 8px 5px;
     /*margin: 6px 3px 0px 0px;*/
-    margin-left: auto;
+    /*margin-left: auto;
     margin-top: 6px;
-    margin-right: 3px;
+    margin-right: 3px;*/
     background: rgba(55, 55, 55, 0.9); 
     color: white; 
-    /*border: 1px solid #6B6B6B;*/
+    border: 1px solid #6B6B6B;
     line-height: 1.1em;
     font-size: 1.1em;
+    transition: 1s;
+    -webkit-transition: 1s;
   }
 
   #navInfo {
