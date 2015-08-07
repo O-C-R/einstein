@@ -195,7 +195,7 @@
     width: 272px;
     height: 25px;
     top: 0px;
-    right: 305px;
+    right: 310px;
     background: rgba(55, 55, 55, 1.0);
   }
 
@@ -213,7 +213,7 @@
     width: 160px;
     height: 25px;
     top: 0px;
-    right: 140px;
+    right: 145px;
     background: rgba(55, 55, 55, 1.0);
   }
 
@@ -226,7 +226,7 @@
   .wrapper-legend {
     position: absolute;
      /* overflow: hidden;*/
-    width: 130px;
+    width: 135px;
     height: 25px;
     top: 0px;
     right: 5px;
@@ -283,7 +283,7 @@
 
   #authorKey {
     position: absolute;
-    width: 120px;
+    width: 125px;
     height: 210px;
     top: -218px;
     padding: 5px 5px 8px 5px;
