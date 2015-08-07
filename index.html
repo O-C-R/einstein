@@ -588,6 +588,7 @@
                 var index = selected.userData.articleIndices[k];
                 //console.log(articleObjects[index].userData.id);
                 articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                 // articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.darkColor;
                 articleObjects[index].userData.clicked = false;
             }
         }
@@ -603,6 +604,7 @@
             for (var k = 0; k < selected.userData.articleIndices.length; k++) {
                 var index = selected.userData.articleIndices[k];
                 articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                // articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.darkColor;
                 articleObjects[index].userData.clicked = false;
             }
 
@@ -792,8 +794,12 @@
 
             //if terms selected from side nav
             selected: function(event, ui) {
-                //clear all splines from sideViewActive view
+               
                 moveTermsDownNoSpline();
+                var pub = scene.getObjectByName("published");
+                var unpub = scene.getObjectByName("unpublished");
+
+                //clear all splines from sideViewActive view
                 if (sideViewActive) {
                     $("#selectable li").each(function(index) {
                         //console.log(index + ": " + $( this ).text());
@@ -803,7 +809,8 @@
                         //set highlight of selected articles and draw splines to selected terms
                         for (var k = 0; k < selected.userData.articleIndices.length; k++) {
                             var index = selected.userData.articleIndices[k];
-                            articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                              articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                             // articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.darkColor;
                             articleObjects[index].userData.clicked = false;
                         }
 
@@ -819,6 +826,7 @@
                         unselectSelectableElement($("#selectable"), $("#selectable li") );
                     });
                 }
+
                 if(sideViewActive) sideViewActive = false;
 
                 if ($(ui.selected).hasClass('click-selected')) {
@@ -827,20 +835,25 @@
 
                     //console.log('same topic clicked');
                     var lc = ui.selected.innerText.toLowerCase();
-                    //console.log(lc);
+                    console.log("turn term: " + lc + " off");
 
                     // for(var g = 0; g < articleObjects.length; g++) {
                     //     console.log(articleObjects[g]);
                     // }
 
                     //console.log("selectedArticles has: " + selectedArticles.length);
+                    
                     if (selectedArticles.length > 0) {
+
+                        //reset previously selected articles to normal colors
                         for (var n = 0; n < selectedArticles.length; n++) {
                             var articleArray = selectedArticles[n].tempArray;
 
                             for (var m = 0; m < articleArray.length; m++) {
                                 var index = articleArray[m];
-                                articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                                 articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+
+                                 //articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.darkColor;
                                 articleObjects[index].userData.clicked = false;
                             }
 
@@ -865,6 +878,18 @@
                         }
                     }
                     //console.log(selectedArticles);
+                    
+                    //set other articles to original color
+                    for (var m = 0; m < articleObjects.length; m++) {
+                        if (articleObjects[m].userData.clicked) {
+                            //do nothing
+                        } else {
+                            articleObjects[m].material.uniforms.innerCol.value = articleObjects[m].userData.colour;
+                        }
+                    }
+                    //change stroke colors back to normal
+                    pub.material.color.setHex(0x00dbbb);
+                    unpub.material.color.setHex(0x5309aa);
 
                 } else {
                     //if clicking on new term
@@ -872,7 +897,7 @@
 
                     $(ui.selected).addClass('click-selected');
                     var lc = ui.selected.innerText.toLowerCase();
-                    //console.log(lc);
+                    console.log("turn term: " + lc + " on");
 
                     var splineHolder = splineObj.getObjectByName(lc);
                     // console.log("splineHolder: ");
@@ -916,23 +941,44 @@
 
                     splineObj.name = lc;
                     scene.add( splineObj );
+
+                    //set other articles to darker color
+                    for (var m = 0; m < articleObjects.length; m++) {
+                        if (articleObjects[m].userData.clicked) {
+                            //do nothing
+                        } else {
+                            articleObjects[m].material.uniforms.innerCol.value = articleObjects[m].userData.darkColor;
+                        }
+                    }
+                    //change stroke colors
+                    pub.material.color.setHex(0x01463C);
+                    unpub.material.color.setHex(0x320865);
                 }
             },
             unselected: function( event, ui ) {
+                //term was not selected
                 moveTermsDownNoSpline();
+                var pub = scene.getObjectByName("published");
+                var unpub = scene.getObjectByName("unpublished");
+
                 $(ui.unselected).removeClass('click-selected');
-                //console.log("unselected " + ui.unselected.innerText.toLowerCase());
+                console.log("unselected " + ui.unselected.innerText.toLowerCase());
 
                 //if the array for what was selected on last click is populated, then change color of those articles back to original color
 
-                //console.log("selectedArticles has: " + selectedArticles.length);
+                console.log("selectedArticles has: " + selectedArticles.length);
                 if (selectedArticles.length > 0) {
+                    // //change stroke colors
+                    // pub.material.color.setHex(0x01463C);
+                    // unpub.material.color.setHex(0x320865);
+
                     for (var n = 0; n < selectedArticles.length; n++) {
                         var articleArray = selectedArticles[n].tempArray;
                         //console.log("selectedArticles name: " + selectedArticles[n].tempName);
                         for (var m = 0; m < articleArray.length; m++) {
                             var index = articleArray[m];
                             articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.colour;
+                            //articleObjects[index].material.uniforms.innerCol.value = articleObjects[index].userData.darkColor;
                             articleObjects[index].userData.clicked = false;
                         }
 
@@ -1104,7 +1150,13 @@
         squareMesh.rotation.set( rotx, roty, rotz );
         squareMesh.scale.set( scalar, scalar, scalar );
 
-        squareMesh.userData = { id: id, title: title, authors: authors, colour: fillColor, clicked: false, cites: numCites, numAuthors: numAuthors, radius: radius };
+        
+        var blackColor = new THREE.Color(0x000000);
+        var tempColor = new THREE.Color();
+        tempColor.copy(fillColor);
+        var lerpColor = tempColor.lerp(blackColor, 0.5);
+
+        squareMesh.userData = { id: id, title: title, authors: authors, colour: fillColor,  clicked: false, darkColor: lerpColor, cites: numCites, numAuthors: numAuthors, radius: radius };
         squareMesh.name = id;
 
         articleObj.add( squareMesh );
@@ -1271,6 +1323,9 @@
 
         var totalCirclePub = new THREE.Line(mergedGeomPub, new THREE.LineBasicMaterial( { color : 0x00dbbb}), THREE.LinePieces);
         var totalCircleUnPub = new THREE.Line(mergedGeomUnPub, new THREE.LineBasicMaterial( { color : 0x5309aa }), THREE.LinePieces);
+
+        totalCirclePub.name = "published";
+        totalCircleUnPub.name = "unpublished";
         
         scene.add( totalCirclePub );
         scene.add( totalCircleUnPub );
