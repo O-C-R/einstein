@@ -25,10 +25,11 @@
     font-size: 1.3em;
   }
 
-
   #ThreeJS {
       z-index: -100;
       position: static;
+/*      width: 960px;
+      height: 680px;*/
   }
 
   #loader {
