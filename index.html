@@ -695,10 +695,11 @@
             //sprite labels should only appear when close enough to read
             if (spriteObj != undefined && spriteObj.children.length > 60) {
                 var spr = scene.getObjectByName("sprites");
-                //console.log(spr);
+                
                 var term = scene.getObjectByName("terms");
                 
                 if (dist > labelDistThreshold) {
+                    console.log(spr);
                     //turn off labels                   
                     //spr.visible = false;
                     for (var i = 0; i < spr.children.length; i++) {
@@ -1769,10 +1770,10 @@
 
         group.userData = { width: textWidth, ypos: ypos };
 
-        var strippedStr = message.substring(1); //take out space in front of message
+        //var strippedStr = message.substring(1); //take out space in front of message
         
         //is the label one of the top fifteen?
-        if ($.inArray(strippedStr, frequentKeywords) === -1) {
+        if ($.inArray(message, frequentKeywords) === -1) {
             group.userData.frequent = false;
         } else {
             group.userData.frequent = true;
