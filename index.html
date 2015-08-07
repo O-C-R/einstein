@@ -365,7 +365,7 @@
         SCREEN_HEIGHT = window.innerHeight;
         // SCREEN_WIDTH = 960;
         // SCREEN_HEIGHT = 680;
-        
+
         var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 10, FAR = 10000;
 
         camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
@@ -465,7 +465,7 @@
         $(window).keypress(function(e) {
             if (e.keyCode === 0 || e.keyCode === 32) {
                 //console.log('Space pressed');
-                saveCamera();
+                //saveCamera();
             }
         });
 
@@ -1750,8 +1750,8 @@
         var context = canvas.getContext('2d');
         context.font = fontsize + "px " + fontface;
         var metrics = context.measureText( message );
-        console.log(message);
-        console.log("metrics: " + metrics.width);
+        // console.log(message);
+        // console.log("metrics: " + metrics.width);
         var textWidth = metrics.width;
 
         context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + "," + backgroundColor.b + "," + backgroundColor.a + ")";
