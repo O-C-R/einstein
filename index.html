@@ -501,6 +501,16 @@
         //console.log("resetView");
         if (sideViewActive) sideViewActive = false;
 
+        var pub = scene.getObjectByName("published");
+        var unpub = scene.getObjectByName("unpublished");
+        //set other articles to darker color
+        for (var m = 0; m < articleObjects.length; m++) {
+            articleObjects[m].material.uniforms.innerCol.value = articleObjects[m].userData.colour;
+        }
+        //change stroke colors back to normal
+        pub.material.color.setHex(0x00dbbb);
+        unpub.material.color.setHex(0x5309aa);
+
         moveTermsToStartPos();
 
         moveAndLookAt(camera, new THREE.Vector3( 265, 2000, 750 + 1e-10), new THREE.Vector3(265, 0, 750), {
