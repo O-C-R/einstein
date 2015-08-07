@@ -721,16 +721,16 @@
                     //spr.visible = true;
                 }
                 
-                // if(inverseScalar > 1.5) inverseScalar = 1.5;
-                // if(inverseScalar < 0.2) inverseScalar = 0.2;
+                if(inverseScalar > 1.5) inverseScalar = 1.5;
+                if(inverseScalar < 0.2) inverseScalar = 0.2;
                 
-                // for (var i = 0; i < term.children.length; i++) {
-                //     term.children[i].scale.set(inverseScalar, inverseScalar, inverseScalar );
-                // }
+                for (var i = 0; i < term.children.length; i++) {
+                    term.children[i].scale.set(inverseScalar, inverseScalar, inverseScalar );
+                }
 
-                // for (var i = 0; i < spr.children.length; i++) {
-                //     spr.children[i].scale.set(inverseScalar, inverseScalar * 0.9, inverseScalar * 0.7);
-                // }  
+                for (var i = 0; i < spr.children.length; i++) {
+                    spr.children[i].scale.set(inverseScalar, inverseScalar * 0.9, inverseScalar * 0.7);
+                }  
             }
         }
 
@@ -1325,7 +1325,7 @@
                 drawCirclePoints ( mergedGeomPub, array[i].radius * .99, array[i].x, array[i].z, array[i].y);
             } else {
                 strokeColor = new THREE.Color(0x5309aa);
-            drawCirclePoints ( mergedGeomUnPub, array[i].radius * .99, array[i].x, array[i].z, array[i].y);
+                drawCirclePoints ( mergedGeomUnPub, array[i].radius * .99, array[i].x, array[i].z, array[i].y);
             }
             drawShaderCircle(fillColor, strokeColor, array[i].radius * 2, 2.0, array[i].x, array[i].z, array[i].y, Math.PI/2, 0, 0, 1, array[i].id, array[i].title, authorStr, array[i].numAuthors, array[i].numCites);
 
@@ -1573,11 +1573,11 @@
             //console.log(termObj);
             var title = toTitleCase(t1.term);
 
-            var spritey = makeTextSprite(" " + title, termPosLower + 2*t1.z + 10,
-                   { fontsize: 90, 
+            var spritey = makeTextSprite(title, termPosLower + 2*t1.z + 10,
+                   { fontsize: 20, 
                         fontface: "Georgia", 
                         //borderColor: {r:234, g:79, b:28, a:1.0}, 
-                        borderColor: {r: 107, g: 107, b: 107, a:1.0},
+                        borderColor: {r: 55, g: 55, b: 55, a:0.9},
                         backgroundColor: {r: 55, g:55, b:55, a:0.9} } );
             spritey.position.set(t1.x + 300, termPosGridLevel + 10, t1.y);
             spriteObj.add( spritey );
@@ -1729,20 +1729,22 @@
 
         var fontface = parameters.hasOwnProperty("fontface") ? parameters["fontface"] : "Georgia";
         var fontsize = parameters.hasOwnProperty("fontsize") ? parameters["fontsize"] : 18;
-        var borderThickness = parameters.hasOwnProperty("borderThickness") ? parameters["borderThickness"] : 4;
+        var borderThickness = parameters.hasOwnProperty("borderThickness") ? parameters["borderThickness"] : 2;
         var borderColor = parameters.hasOwnProperty("borderColor") ?parameters["borderColor"] : { r:255, g:255, b:255, a:1.0 };
         var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?parameters["backgroundColor"] : { r:0, g:0, b:0, a:1.0 };
         var textColor = parameters.hasOwnProperty("textColor") ?parameters["textColor"] : { r:255, g:255, b:255, a:1.0 };
 
         var canvas = document.createElement('canvas');
         var ctx = canvas.getContext('2d');
-        canvas.width = 2160;
-        canvas.height = 200;
+        // canvas.width = 2160;
+        // canvas.height = 200;
+        canvas.width = 440;
+        canvas.height = 40;
         var context = canvas.getContext('2d');
         context.font = fontsize + "px " + fontface;
         var metrics = context.measureText( message );
-        //console.log(message);
-        //console.log("metrics: " + metrics.width);
+        console.log(message);
+        console.log("metrics: " + metrics.width);
         var textWidth = metrics.width;
 
         context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + "," + backgroundColor.b + "," + backgroundColor.a + ")";
@@ -1750,7 +1752,7 @@
 
         context.lineWidth = borderThickness;
 
-        rect(context, borderThickness/2 + (canvas.width/2) - (textWidth/2), borderThickness/2 , (textWidth * 1.025 + borderThickness), fontsize * 1.3 + borderThickness);
+        rect(context, borderThickness/2 + (canvas.width/2) - (textWidth/2), borderThickness/2 , (textWidth + borderThickness), fontsize * 1.2 + borderThickness);
 
         context.fillStyle = "rgba("+textColor.r + ", " + textColor.g+", "+textColor.b+", 1.0)";
         context.fillText( message, borderThickness + (canvas.width/2) - (textWidth/2), (fontsize));
@@ -1761,21 +1763,15 @@
         labelTexture.generateMipmaps = false;
         labelTexture.needsUpdate = true;
 
-        var texture = new THREE.Texture(context); //white texture
-        texture.needsUpdate = true;
-
-        var spriteMaterial = new THREE.SpriteMaterial( { map: texture });
-        var sprite = new THREE.Sprite( spriteMaterial );
-        sprite.scale.set(460, fontsize, fontsize);
-
         var spriteMaterial2 = new THREE.SpriteMaterial( { map: labelTexture });
         var labelsprite = new THREE.Sprite( spriteMaterial2);
-        labelsprite.scale.set(fontsize * 10, fontsize * 0.9, fontsize * 0.75);
+        labelsprite.scale.set(1000, 100 , 1000);
 
         group.userData = { width: textWidth, ypos: ypos };
 
         var strippedStr = message.substring(1); //take out space in front of message
         
+        //is the label one of the top fifteen?
         if ($.inArray(strippedStr, frequentKeywords) === -1) {
             group.userData.frequent = false;
         } else {
