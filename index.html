@@ -523,6 +523,16 @@
         //console.log("topView");
         if (sideViewActive) sideViewActive = false;
 
+        var pub = scene.getObjectByName("published");
+        var unpub = scene.getObjectByName("unpublished");
+        //set other articles to darker color
+        for (var m = 0; m < articleObjects.length; m++) {
+            articleObjects[m].material.uniforms.innerCol.value = articleObjects[m].userData.colour;
+        }
+        //change stroke colors back to normal
+        pub.material.color.setHex(0x00dbbb);
+        unpub.material.color.setHex(0x5309aa);
+
         moveTermsUp();
 
         moveAndLookAt(camera, new THREE.Vector3( 275, 2700, 850 + 1e-10), new THREE.Vector3(275, 0, 850), {
@@ -688,9 +698,7 @@
             var dist;
             dist = camera.position.distanceTo( grid.position );
             //console.log(dist);
-            //var scalar = 1000/dist; 
             var inverseScalar = dist/(1000 * 2.8);
-            //console.log(scalar);
             //console.log(inverseScalar);
             //sprite labels should only appear when close enough to read
             if (spriteObj != undefined && spriteObj.children.length > 60) {
@@ -701,7 +709,6 @@
                 if (dist > labelDistThreshold) {
                     console.log(spr);
                     //turn off labels                   
-                    //spr.visible = false;
                     for (var i = 0; i < spr.children.length; i++) {
                         spr.children[i].visible = false;
                     }
@@ -714,12 +721,10 @@
                             spr.children[i].visible = false;
                         }  
                     }  
-                    //spr.visible = true;
                 } else if (dist < frequentLabelThresh ) {
                     for (var i = 0; i < spr.children.length; i++) {
                         spr.children[i].visible = true;
                     }
-                    //spr.visible = true;
                 }
                 
                 if(inverseScalar > 1.5) inverseScalar = 1.5;
