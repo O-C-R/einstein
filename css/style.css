@@ -185,7 +185,7 @@
 
   .backButton {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    bottom: 5px;
+    bottom: 10px;
     left: 15px;
     position: fixed;
     font-size: 1.5em;
