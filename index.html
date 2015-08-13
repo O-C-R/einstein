@@ -375,7 +375,7 @@
 
         //RENDERER
         if (Detector.webgl) {
-            renderer = new THREE.WebGLRenderer( {antialias: true} );
+            renderer = new THREE.WebGLRenderer( { antialias: true} );
         } else {
             console.log("using canvas renderer... slow");
             renderer = new THREE.CanvasRenderer();
@@ -383,6 +383,7 @@
         
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        renderer.setClearColor( 0x000000 );
 
         container = document.getElementById( 'ThreeJS' );
         document.body.appendChild(container);
